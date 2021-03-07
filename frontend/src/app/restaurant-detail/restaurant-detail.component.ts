@@ -10,7 +10,6 @@ import { Restaurant } from './restaurant.model';
   templateUrl: './restaurant-detail.component.html'
 })
 export class RestaurantDetailComponent implements OnInit {
-
   restaurant: Restaurant;
 
   constructor(
@@ -19,27 +18,26 @@ export class RestaurantDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.chamada();
+    // this.getDB();
+    this.mockDB();
   }
 
-  chamada() {
+  mockDB() {
+    this.restaurant = {
+      "id": "bread-bakery",
+      "name": "Bread & Bakery",
+      "category": "Bakery",
+      "deliveryEstimate": "25m",
+      "rating": 4.9,
+      "imagePath": "assets/img/restaurants/breadbakery.png",
+      "about": "A Bread & Brakery tem 40 anos de mercado. Fazemos os melhores doces e pães. Compre e confira.",
+      "hours": "Funciona de segunda à sexta, de 8h às 23h"
+    }
+  }
+
+  getDB() {
     this.http
-    .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery`)
-    .subscribe(restaurant => {
-      if (restaurant = null) {
-        this.restaurant = restaurant;
-      } else {
-        this.restaurant = {
-          "id": "bread-bakery",
-          "name": "Bread & Bakery",
-          "category": "Bakery",
-          "deliveryEstimate": "25m",
-          "rating": 4.9,
-          "imagePath": "assets/img/restaurants/breadbakery.png",
-          "about": "A Bread & Brakery tem 40 anos de mercado. Fazemos os melhores doces e pães. Compre e confira.",
-          "hours": "Funciona de segunda à sexta, de 8h às 23h"
-        }
-      }
-    });
+      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery`)
+      .subscribe( restaurant => this.restaurant = restaurant );
   }
 }
