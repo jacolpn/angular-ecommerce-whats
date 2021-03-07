@@ -1,10 +1,10 @@
-# PrimeNG
-$ `npm install primeng --save`
-$ `npm install primeicons --save`
+# Generate build:
+$ `ng build --prod --base-href="./whats-restaurant"`
 
-## angular.json > "styles": [
-        "node_modules/primeng/resources/themes/saga-blue/theme.css",
-        "node_modules/primeng/resources/primeng.min.css",
-        "node_modules/primeicons/primeicons.css",
-        //...
-    ],
+# Angular CLI:
+$ `ng --version`
+$ `Angular CLI: 11.2.3`
+
+# NodeJS:
+$ `node -v`
+$ `v15.11.0`
