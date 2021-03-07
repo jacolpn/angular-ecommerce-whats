@@ -1,5 +1,5 @@
 # Generate build:
-$ `ng build --prod --base-href="./whats-restaurant"`
+$ `ng build --prod --base-href="./frontend"`
 
 # Angular CLI:
 $ `ng --version`

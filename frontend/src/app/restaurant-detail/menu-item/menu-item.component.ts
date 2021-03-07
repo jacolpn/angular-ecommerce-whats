@@ -26,9 +26,19 @@ export class MenuItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    if (this.menuItem == null) {
+      console.log('jack');
+      this.menuItem = {
+        "id": "cup-cake",
+        "imagePath": "assets/img/foods/cupcake.png",
+        "name": "Cup Cake",
+        "description": "Cup Cake recheado de Doce de Leite",
+        "price": 8.7
+      }}
   }
 
   emitAddEvent() {
     this.add.emit(this.menuItem);
+    
   }
 }
