@@ -61,6 +61,10 @@ export class OrderComponent implements OnInit {
       ),
       paymentOption: this.formBuilder.control('MON', [Validators.required])
     }, { validator: OrderComponent.equalsTo });
+
+    // console.log(this.orderForm.value);
+    // console.log(this.orderService.cartItems())
+    
   }
 
   static equalsTo(group: AbstractControl): { [key: string]: boolean } {
@@ -103,6 +107,17 @@ export class OrderComponent implements OnInit {
   }
 
   checkOrder(order: Order) {
+    this.whats =
+          `https://web.whatsapp.com/send/?phone=+5547997737168&text=` +
+          `Olá VilleMeat, gostaria de XXX` +
+          // `Olá Angélica, gostaria de (${order.orderItems[0].quantity}) ${order.orderItems[0].name}. ` +
+          `. Entregar no endereço: XXX, Nº XXX. (Ass. Jackson)`;
+
+    window.location.href = this.whats;
+  }
+  /*
+  checkOrder(order: Order) {
+    
     order.orderItems = this
       .cartItems()
       .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id, item.menuItem.name));
@@ -133,4 +148,5 @@ export class OrderComponent implements OnInit {
         console.log(this.whats);
       });
   }
+  */
 }
