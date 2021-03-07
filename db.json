@@ -1,0 +1,148 @@
+{
+  "restaurants": [
+    {
+      "id": "bread-bakery",
+      "name": "Bread & Bakery",
+      "category": "Bakery",
+      "deliveryEstimate": "25m",
+      "rating": 4.9,
+      "imagePath": "assets/img/restaurants/breadbakery.png",
+      "about": "A Bread & Brakery tem 40 anos de mercado. Fazemos os melhores doces e pães. Compre e confira.",
+      "hours": "Funciona de segunda à sexta, de 8h às 23h"
+    }
+  ],
+  "menu": [
+    {
+      "id": "cup-cake",
+      "imagePath": "assets/img/foods/cupcake.png",
+      "name": "Cup Cake",
+      "description": "Cup Cake recheado de Doce de Leite",
+      "price": 8.7,
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "id": "donut",
+      "imagePath": "assets/img/foods/donut.png",
+      "name": "Donut",
+      "description": "Coberto com chantilly",
+      "price": 2.5,
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "id": "bread",
+      "imagePath": "assets/img/foods/bread.png",
+      "name": "Pão Artesanal Italiano",
+      "description": "Pão artesanal com queijos italianos",
+      "price": 15.9,
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "id": "burger",
+      "imagePath": "assets/img/foods/burger.png",
+      "name": "Classic Burger",
+      "description": "O clássico. Não tem como errar.",
+      "price": 18.5,
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "id": "fries",
+      "imagePath": "assets/img/foods/fries.png",
+      "name": "Batatas Fritas",
+      "description": "Batatas fritas crocantes",
+      "price": 5.5,
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "id": "coke.png",
+      "imagePath": "assets/img/foods/coke.png",
+      "name": "Refrigerante",
+      "description": "O refri mais gelado da cidade.",
+      "price": 4.5,
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "id": "capp",
+      "imagePath": "assets/img/foods/capp.png",
+      "name": "Cappuccino com Chantilly",
+      "description": "Tradicional cappuccino com chantilly",
+      "price": 9.9,
+      "restaurantId": "bread-bakery"
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Julia",
+      "date": "2017-01-23T18:25:43",
+      "rating": 4.5,
+      "comments": "Tudo muito bom, entrega no tempo certo",
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "name": "Aline",
+      "date": "2016-12-12T18:25:43",
+      "rating": 3,
+      "comments": "NÃO recomendo. O recheio é só um creme, não tem camarão e nem carne",
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "name": "Renata",
+      "date": "2016-12-12T18:25:43",
+      "rating": 2,
+      "comments": "Não foi muito agradável ao nosso paladar, e eu e meu esposo no outro dia passamos super mal. Pode até ter sido outra coisa, mas...",
+      "restaurantId": "bread-bakery"
+    },
+    {
+      "name": "Renata",
+      "date": "2016-12-12T18:25:43",
+      "rating": 5,
+      "comments": "Nunca deixou na mão, comida sempre deliciosa.",
+      "restaurantId": "bread-bakery"
+    }
+  ],
+  "orders": [
+    {
+      "name": "Jackson Neves",
+      "email": "jacoLPN@outlook.com",
+      "emailConfirmation": "jacoLPN@outlook.com",
+      "address": "Rua Xanxerê",
+      "number": "650",
+      "optionalAddress": "Apto 104, BL 03",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake",
+          "name": "Cup Cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "fries",
+          "name": "Batatas Fritas"
+        },
+        {
+          "quantity": 1,
+          "menuId": "coke.png",
+          "name": "Refrigerante"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Jackson Neves",
+      "email": "jacoLPN@outlook.com",
+      "emailConfirmation": "jacoLPN@outlook.com",
+      "address": "Rua Xanxerê",
+      "number": "650",
+      "optionalAddress": "Apto 104, BL 03",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "capp",
+          "name": "Cappuccino com Chantilly"
+        }
+      ],
+      "id": 2
+    }
+  ]
+}
