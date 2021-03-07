@@ -17,8 +17,13 @@ export class ReviewsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    // this.getDB();
-    this.mockDB();
+    let db = false;
+
+    if (db == false) {
+      this.mockDB();
+    } else {
+      this.getDB();
+    }
   }
 
   getDB() {

@@ -12,7 +12,6 @@ import { tap } from 'rxjs/operators';
   templateUrl: './order.component.html'
 })
 export class OrderComponent implements OnInit {
-
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   numberPattern = /^[0-9]*$/;
   orderForm: FormGroup;
@@ -61,10 +60,6 @@ export class OrderComponent implements OnInit {
       ),
       paymentOption: this.formBuilder.control('MON', [Validators.required])
     }, { validator: OrderComponent.equalsTo });
-
-    // console.log(this.orderForm.value);
-    // console.log(this.orderService.cartItems())
-    
   }
 
   static equalsTo(group: AbstractControl): { [key: string]: boolean } {
@@ -107,46 +102,45 @@ export class OrderComponent implements OnInit {
   }
 
   checkOrder(order: Order) {
-    this.whats =
-          `https://web.whatsapp.com/send/?phone=+5547997737168&text=` +
-          `Olá VilleMeat, gostaria de XXX` +
-          // `Olá Angélica, gostaria de (${order.orderItems[0].quantity}) ${order.orderItems[0].name}. ` +
-          `. Entregar no endereço: XXX, Nº XXX. (Ass. Jackson)`;
+    let bd = false;
 
-    window.location.href = this.whats;
-  }
-  /*
-  checkOrder(order: Order) {
+    if (bd == false) {
+    let itens = [];
     
     order.orderItems = this
       .cartItems()
       .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id, item.menuItem.name));
-    this.orderService
-      .checkOrder(order)
-      .pipe(tap((orderId: string) => {
-        this.orderId = orderId;
-      }))
-      .subscribe((orderId: string) => {
-        let itens = [];
+    
+    itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));
 
-        itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));
-        //96974076
-        //997737168
-        this.whats =
-          `https://web.whatsapp.com/send/?phone=+554796974076&text=` +
-          `Olá VilleMeat, gostaria de${itens}` +
-          // `Olá Angélica, gostaria de (${order.orderItems[0].quantity}) ${order.orderItems[0].name}. ` +
-          `. Entregar no endereço: ${order.address}, Nº ${order.number}. (Ass. Jackson)`;
+      this.whats =
+        `https://web.whatsapp.com/send/?phone=+5547988458640&text=` +
+        `Olá VilleMeat, gostaria de${itens}` +
+        `. Entregar no endereço: ${order.address}, Nº ${order.number}. (Ass. Jackson)`;
+
+      window.location.href = this.whats;
+    } else {
+      order.orderItems = this
+        .cartItems()
+        .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id, item.menuItem.name));
+      
+      this.orderService
+        .checkOrder(order)
+        .pipe(tap((orderId: string) => {
+          this.orderId = orderId;
+        })).subscribe((orderId: string) => {
+          let itens = [];
+
+          itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));
         
-        window.location.href = this.whats;
-        // this.router.navigate(['/order-summary']);
-        // window.open(this.whats, '_blank');
-        this.orderService.clear();
-
-        console.log(`Compra concluída: ${orderId}.`);
-        console.log(itens);
-        console.log(this.whats);
+          this.whats =
+            `https://web.whatsapp.com/send/?phone=+554796974076&text=` +
+            `Olá VilleMeat, gostaria de${itens}` +
+            `. Entregar no endereço: ${order.address}, Nº ${order.number}. (Ass. Jackson)`;
+        
+          window.location.href = this.whats;
+          this.orderService.clear();
       });
+    }
   }
-  */
 }
