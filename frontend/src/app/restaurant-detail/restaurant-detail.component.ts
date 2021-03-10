@@ -24,14 +24,14 @@ export class RestaurantDetailComponent implements OnInit {
 
   mockDB() {
     this.restaurant = {
-      "id": "bread-bakery",
-      "name": "Bread & Bakery",
-      "category": "Bakery",
+      "id": "jack-daniels",
+      "name": "Jack Daniel's",
+      "category": "whisky",
       "deliveryEstimate": "25m",
-      "rating": 4.9,
-      "imagePath": "assets/img/restaurants/breadbakery.png",
-      "about": "A Bread & Brakery tem 40 anos de mercado. Fazemos os melhores doces e pães. Compre e confira.",
-      "hours": "Funciona de segunda à sexta, de 8h às 23h"
+      "rating": 9.9,
+      "imagePath": "assets/img/restaurants/jack-daniels.jpg",
+      "about": "Mais de 150 anos se passaram desde que Nearest e Jack começaram a fazer whiskey juntos e, até hoje, sempre houve um membro da família Green trabalhando na Destilaria Jack Daniel.",
+      "hours": "Funciona de segunda à segunda, de 00h às 23h"
     }
   }
 

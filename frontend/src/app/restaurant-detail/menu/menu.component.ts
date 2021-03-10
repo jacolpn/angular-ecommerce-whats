@@ -33,27 +33,35 @@ export class MenuComponent implements OnInit {
   mockDB() {
     this.menu = [
       {
-        "id": "cup-cake",
-        "imagePath": "assets/img/foods/cupcake.png",
-        "name": "Cup Cake",
-        "description": "Cup Cake recheado de Doce de Leite",
-        "price": 8.7,
+        "id": "jack-daniels-black",
+        "imagePath": "assets/img/foods/jack-daniels-black.jpg",
+        "name": "Jack Daniels",
+        "description": "Diferencia-se pelo seu cuidadoso processo de elaboração, destilação e envelhecimento.",
+        "price": 136.99,
         "restaurantId": "bread-bakery"
       },
       {
-        "id": "donut",
-        "imagePath": "assets/img/foods/donut.png",
-        "name": "Donut",
-        "description": "Coberto com chantilly",
-        "price": 2.5,
+        "id": "jack-daniels-fire",
+        "imagePath": "assets/img/foods/jack-daniels-fire.jpg",
+        "name": "Jack Daniels Fire",
+        "description": " Jack Daniels Fire destaca-se pela mistura natural de licor de canela picante com o clássico whiskey Americano Jack Daniels.",
+        "price": 149.90,
         "restaurantId": "bread-bakery"
       },
       {
-        "id": "bread",
-        "imagePath": "assets/img/foods/bread.png",
-        "name": "Pão Artesanal Italiano",
-        "description": "Pão artesanal com queijos italianos",
-        "price": 15.9,
+        "id": "jack-daniels-honey",
+        "imagePath": "assets/img/foods/jack-daniels-honey.jpg",
+        "name": "Jack Daniels Honey",
+        "description": "Suavidade do Jack Daniel levemente temperada com mel.",
+        "price": 136.90,
+        "restaurantId": "bread-bakery"
+      },
+      {
+        "id": "jack-daniels-apple",
+        "imagePath": "assets/img/foods/jack-daniels-apple.jpg",
+        "name": "Jack Daniels Apple",
+        "description": "A nova bebida é a mistura do clássico Jack Daniels Tennessee Whiskey com licor de maçã.",
+        "price": 134.90,
         "restaurantId": "bread-bakery"
       }
     ];

@@ -12,10 +12,9 @@ import { tap } from 'rxjs/operators';
   templateUrl: './order.component.html'
 })
 export class OrderComponent implements OnInit {
-  emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   numberPattern = /^[0-9]*$/;
   orderForm: FormGroup;
-  delivery = 8;
+  delivery = 3.99;
   orderId: string;
   whats = null;
 
@@ -37,14 +36,6 @@ export class OrderComponent implements OnInit {
         'Jackson Neves',
         [Validators.required, Validators.minLength(5)]
       ),
-      email: this.formBuilder.control(
-        'jacoLPN@outlook.com',
-        [Validators.required, Validators.pattern(this.emailPattern)]
-      ),
-      emailConfirmation: this.formBuilder.control(
-        'jacoLPN@outlook.com',
-        [Validators.required, Validators.pattern(this.emailPattern)]
-      ),
       address: this.formBuilder.control(
         'Rua Xanxerê',
         [Validators.required, Validators.minLength(5)]
@@ -54,10 +45,7 @@ export class OrderComponent implements OnInit {
         [Validators.required, Validators.pattern(this.numberPattern)]
       ),
       // optionalAddress: this.formBuilder.control(''),
-      optionalAddress: new FormControl(
-        'Apto 104, BL 03',
-        { updateOn: 'blur' }
-      ),
+      optionalAddress: new FormControl('', { updateOn: 'blur' }),
       paymentOption: this.formBuilder.control('MON', [Validators.required])
     }, { validator: OrderComponent.equalsTo });
   }
