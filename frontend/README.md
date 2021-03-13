@@ -11,3 +11,7 @@ $ `v15.11.0`
 
 # JSON Server:
 $ `json-server .\db.json`
+
+# Storybook:
+$ `npx -p @storybook/cli sb init`
+$ `npm run storybook` (port 6006)

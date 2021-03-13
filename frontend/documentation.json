@@ -1,0 +1,4022 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "MenuItem",
+            "id": "interface-MenuItem-005d179ccd29d5f8be5995cf0397ab3d",
+            "file": "src/app/restaurant-detail/menu-item/menu-item.model.ts",
+            "type": "interface",
+            "sourceCode": "export interface MenuItem {\r\n  id: string,\r\n  name: string,\r\n  description: string,\r\n  price: number,\r\n  imagePath: string\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "description",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "id",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "imagePath",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "price",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "Restaurant",
+            "id": "interface-Restaurant-f2cdf5aebf7827b8b7849223c713a168",
+            "file": "src/app/restaurant-detail/restaurant.model.ts",
+            "type": "interface",
+            "sourceCode": "export interface Restaurant {\r\n    id: string,\r\n    name: string,\r\n    category: string,\r\n    deliveryEstimate: string,\r\n    rating: number,\r\n    imagePath: string,\r\n    about?: string,\r\n    hours?: string\r\n  }\r\n  ",
+            "properties": [
+                {
+                    "name": "about",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "category",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "deliveryEstimate",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "hours",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "id",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "imagePath",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "rating",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "OrderService",
+            "id": "injectable-OrderService-dbd434138174be2595a3e896ff4ae242",
+            "file": "src/app/order/order.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "cartItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "CartItem[]",
+                    "typeParameters": [],
+                    "line": 22
+                },
+                {
+                    "name": "checkOrder",
+                    "args": [
+                        {
+                            "name": "order",
+                            "type": "Order"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<string>",
+                    "typeParameters": [],
+                    "line": 43,
+                    "jsdoctags": [
+                        {
+                            "name": "order",
+                            "type": "Order",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "clear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38
+                },
+                {
+                    "name": "decreaseQty",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "increaseQty",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "itemsValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 18
+                },
+                {
+                    "name": "removeItem",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { VILLE_API } from './../app.api';\r\nimport { Observable } from 'rxjs';\r\nimport { map } from 'rxjs/operators';\r\nimport { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';\r\nimport { ShoppingCartService } from './../restaurant-detail/shopping-cart/shopping-cart.service';\r\nimport { Injectable } from '@angular/core';\r\nimport { Order } from './order.model';\r\nimport { HttpClient } from '@angular/common/http';\r\n\r\n@Injectable()\r\nexport class OrderService {\r\n\r\n  constructor(\r\n    private cartService: ShoppingCartService,\r\n    private http: HttpClient\r\n  ) { }\r\n\r\n  itemsValue(): number {\r\n    return this.cartService.total();\r\n  }\r\n\r\n  cartItems(): CartItem[] {\r\n    return this.cartService.items;\r\n  }\r\n\r\n  increaseQty(item: CartItem) {\r\n    this.cartService.increaseQty(item);\r\n  }\r\n\r\n  decreaseQty(item: CartItem) {\r\n    this.cartService.decreaseQty(item);\r\n  }\r\n\r\n  removeItem(item: CartItem) {\r\n    this.cartService.removeItem(item);\r\n  }\r\n\r\n  clear() {\r\n    this.cartService.clear();\r\n  }\r\n\r\n  // checkOrder(order: Order): Observable<Order> {\r\n  checkOrder(order: Order): Observable<string> {\r\n    return this.http.post<Order>(\r\n      `${VILLE_API}/orders`,\r\n      order,\r\n    )\r\n      .pipe(map(order => order.id));\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "cartService",
+                        "type": "ShoppingCartService"
+                    },
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "cartService",
+                        "type": "ShoppingCartService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "ShoppingCartService",
+            "id": "injectable-ShoppingCartService-5d53c1b4216cbd156bddd7de12ab929b",
+            "file": "src/app/restaurant-detail/shopping-cart/shopping-cart.service.ts",
+            "properties": [
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "type": "CartItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "methods": [
+                {
+                    "name": "addItem",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "MenuItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "MenuItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "clear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                },
+                {
+                    "name": "decreaseQty",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "increaseQty",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "removeItem",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "total",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 45
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { NotificationService } from './../../shared/messages/notification.service';\r\nimport { Injectable } from '@angular/core';\r\nimport { MenuItem } from './../menu-item/menu-item.model';\r\nimport { CartItem } from './shopping-cart.model';\r\n\r\n@Injectable()\r\nexport class ShoppingCartService {\r\n  items: CartItem[] = [];\r\n\r\n  constructor(private notificationService: NotificationService) {}\r\n  clear() {\r\n    this.items = [];\r\n  }\r\n\r\n  addItem(item: MenuItem) {\r\n    let foundItem = this.items.find(\r\n      (mItem) => mItem.menuItem.id === item.id\r\n    );\r\n\r\n    if (foundItem) {\r\n      this.increaseQty(foundItem);\r\n    } else {\r\n      this.items.push(new CartItem(item));\r\n    }\r\n    this.notificationService.notify(`Você adicionou o item ${item.name}`);\r\n  }\r\n\r\n  increaseQty(item: CartItem) {\r\n    item.quantity = item.quantity + 1;\r\n  }\r\n\r\n  decreaseQty(item: CartItem) {\r\n    item.quantity = item.quantity - 1;\r\n\r\n    if (item.quantity === 0) {\r\n      this.removeItem(item);\r\n    }\r\n  }\r\n\r\n  removeItem(item: CartItem) {\r\n    this.items.splice(this.items.indexOf(item), 1);\r\n    this.notificationService.notify(`Você adicionou o item ${item.menuItem.name}`);\r\n  }\r\n\r\n  total(): number {\r\n    return this.items\r\n      .map(item => item.value())\r\n      .reduce((prev, value) => prev + value, 0);\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "notificationService",
+                        "type": "NotificationService"
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "notificationService",
+                        "type": "NotificationService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "classes": [
+        {
+            "name": "AppPage",
+            "id": "class-AppPage-ee2067dfb1c303f41003aea7d82d51e0",
+            "file": "e2e/src/app.po.ts",
+            "type": "class",
+            "sourceCode": "import { browser, by, element } from 'protractor';\n\nexport class AppPage {\n  async navigateTo(): Promise<unknown> {\n    return browser.get(browser.baseUrl);\n  }\n\n  async getTitleText(): Promise<string> {\n    return element(by.css('app-root .content span')).getText();\n  }\n}\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getTitleText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<string>",
+                    "typeParameters": [],
+                    "line": 8,
+                    "modifierKind": [
+                        120
+                    ]
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<unknown>",
+                    "typeParameters": [],
+                    "line": 4,
+                    "modifierKind": [
+                        120
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "CartItem",
+            "id": "class-CartItem-66813ff6cdfad2baebd9572c46564415",
+            "file": "src/app/restaurant-detail/shopping-cart/shopping-cart.model.ts",
+            "type": "class",
+            "sourceCode": "import { MenuItem } from './../menu-item/menu-item.model';\r\nexport class CartItem {\r\n  constructor(\r\n    public menuItem: MenuItem,\r\n    public quantity = 1\r\n  ) { }\r\n\r\n  value(): number {\r\n    return this.menuItem.price * this.quantity;\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "menuItem",
+                        "type": "MenuItem"
+                    },
+                    {
+                        "name": "quantity",
+                        "type": "number",
+                        "defaultValue": "1"
+                    }
+                ],
+                "line": 2,
+                "jsdoctags": [
+                    {
+                        "name": "menuItem",
+                        "type": "MenuItem",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "quantity",
+                        "type": "number",
+                        "defaultValue": "1",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "menuItem",
+                    "type": "MenuItem",
+                    "optional": false,
+                    "description": "",
+                    "line": 4,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "quantity",
+                    "defaultValue": "1",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "value",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 8
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "NotificationService",
+            "id": "class-NotificationService-a1a3ca5190ad2fb3e7084e116da05430",
+            "file": "src/app/shared/messages/notification.service.ts",
+            "type": "class",
+            "sourceCode": "import { EventEmitter } from '@angular/core';\r\nexport class NotificationService {\r\n  notifier = new EventEmitter<any>();\r\n\r\n  notify(message: string) {\r\n    this.notifier.emit(message);\r\n  }\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "notifier",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "methods": [
+                {
+                    "name": "notify",
+                    "args": [
+                        {
+                            "name": "message",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 5,
+                    "jsdoctags": [
+                        {
+                            "name": "message",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "Order",
+            "id": "class-Order-53d039b2f900af410e3744c700e56359",
+            "file": "src/app/order/order.model.ts",
+            "type": "class",
+            "sourceCode": "class Order {\r\n  constructor(\r\n    public address: string,\r\n    public number: number,\r\n    public optionalAddress: string,\r\n    public paymentOption: string,\r\n    public orderItems: OrderItem[] = [],\r\n    public id?: string,\r\n    public name?: string,\r\n    public phone?: string\r\n  ) {}\r\n}\r\n\r\nclass OrderItem {\r\n  constructor(\r\n    public quantity: number,\r\n    public menuId: string,\r\n    public name: string\r\n  ) {}\r\n}\r\n\r\nexport {\r\n  Order,\r\n  OrderItem\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "address",
+                        "type": "string"
+                    },
+                    {
+                        "name": "number",
+                        "type": "number"
+                    },
+                    {
+                        "name": "optionalAddress",
+                        "type": "string"
+                    },
+                    {
+                        "name": "paymentOption",
+                        "type": "string"
+                    },
+                    {
+                        "name": "orderItems",
+                        "type": "OrderItem[]",
+                        "defaultValue": "[]"
+                    },
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "optional": true
+                    },
+                    {
+                        "name": "phone",
+                        "type": "string",
+                        "optional": true
+                    }
+                ],
+                "line": 1,
+                "jsdoctags": [
+                    {
+                        "name": "address",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "number",
+                        "type": "number",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "optionalAddress",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "paymentOption",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "orderItems",
+                        "type": "OrderItem[]",
+                        "defaultValue": "[]",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "optional": true,
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "optional": true,
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "type": "string",
+                        "optional": true,
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "address",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "id",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "number",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 4,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "optionalAddress",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "orderItems",
+                    "defaultValue": "[]",
+                    "type": "OrderItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 7,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "paymentOption",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "phone",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "OrderItem",
+            "id": "class-OrderItem-53d039b2f900af410e3744c700e56359",
+            "file": "src/app/order/order.model.ts",
+            "type": "class",
+            "sourceCode": "class Order {\r\n  constructor(\r\n    public address: string,\r\n    public number: number,\r\n    public optionalAddress: string,\r\n    public paymentOption: string,\r\n    public orderItems: OrderItem[] = [],\r\n    public id?: string,\r\n    public name?: string,\r\n    public phone?: string\r\n  ) {}\r\n}\r\n\r\nclass OrderItem {\r\n  constructor(\r\n    public quantity: number,\r\n    public menuId: string,\r\n    public name: string\r\n  ) {}\r\n}\r\n\r\nexport {\r\n  Order,\r\n  OrderItem\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "quantity",
+                        "type": "number"
+                    },
+                    {
+                        "name": "menuId",
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "type": "string"
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "quantity",
+                        "type": "number",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "menuId",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "menuId",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "quantity",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "RadioOption",
+            "id": "class-RadioOption-7a995b9f6434dc5939b3e8c843dd8dec",
+            "file": "src/app/shared/radio/radio-option.model.ts",
+            "type": "class",
+            "sourceCode": "export class RadioOption {\r\n  constructor(public label: string, public value: any) { }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "label",
+                        "type": "string"
+                    },
+                    {
+                        "name": "value",
+                        "type": "any"
+                    }
+                ],
+                "line": 1,
+                "jsdoctags": [
+                    {
+                        "name": "label",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "value",
+                        "type": "any",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "label",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "value",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 2,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AboutComponent",
+            "id": "component-AboutComponent-6ad5677f9b25ef9c4db1de2f9fc0ca17",
+            "file": "src/app/about/about.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-about",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./about.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about',\n  templateUrl: './about.component.html'\n})\nexport class AboutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 7
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<section class=\"content-header\">\n  <h1>About</h1>\n</section>\n<section class=\"content\">\n  <p class=\"lead\">\n    Ville | Aplication\n  </p>\n  <p class=\"lead\">\n    MIT license\n  </p>\n  <p class=\"lead\">\n    Copyright 2020 Ville\n  </p>\n  <p class=\"lead\">\n    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n  </p>\n  <p class=\"lead\">\n    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n  </p>\n</section>\n"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-a011cb1f25b45d5a442d43faf91fe8aa",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 10
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html'\n})\nexport class AppComponent implements OnInit {\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 7
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"wrapper\">\n\n  <app-header></app-header>\n\n  <div class=\"content-wrapper\">\n    <div class=\"container\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n\n  <app-snackbar></app-snackbar>\n\n  <footer class=\"main-footer\">\n    <div class=\"container\">\n      <div class=\"pull-right hidden-xs\">\n        <b>Version</b> 1.0.0\n      </div>\n      <strong>Ville</strong> Angular Application\n    </div>\n  </footer>\n</div>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-d4718d25524336f517da77f425e7fed9",
+            "file": "src/stories/components/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "line": 12
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "line": 9
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "line": 11,
+                    "type": "\"small\" | \"medium\" | \"large\""
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.css']\n})\nexport class ButtonComponent implements OnInit {\n  @Input() primary = false;\n  @Input() backgroundColor?: string;\n  @Input() size: 'small' | 'medium' | 'large' = 'medium';\n  @Input() label = 'Button';\n  @Output() onClick = new EventEmitter<Event>();\n  \n  constructor() { }\n\n  ngOnInit(): void { }\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-weight: 700;\r\n    border: 0;\r\n    border-radius: 3em;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n    color: white;\r\n    background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n    color: #333;\r\n    background-color: transparent;\r\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n    font-size: 12px;\r\n    padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n    font-size: 14px;\r\n    padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\r\n}\r\n  ",
+                    "styleUrl": "./button.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 19
+                    }
+                }
+            },
+            "templateData": "<button type=\"button\"\n        (click)=\"onClick.emit($event)\"\n        [ngClass]=\"classes\"\n        [ngStyle]=\"{ 'background-color': backgroundColor }\">\n    {{ label }}\n</button>"
+        },
+        {
+            "name": "DeliveryCostsComponent",
+            "id": "component-DeliveryCostsComponent-38e245d2cb173b577f3932fe60b16263",
+            "file": "src/app/order/delivery-costs/delivery-costs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-delivery-costs",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./delivery-costs.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "delivery",
+                    "line": 9,
+                    "type": "number"
+                },
+                {
+                    "name": "itemsValue",
+                    "line": 10,
+                    "type": "number"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                },
+                {
+                    "name": "total",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-delivery-costs',\n  templateUrl: './delivery-costs.component.html'\n})\nexport class DeliveryCostsComponent implements OnInit {\n\n  @Input() delivery: number;\n  @Input() itemsValue: number;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  total(): number {\n    return this.delivery + this.itemsValue;\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"table-responsive\">\n    <table class=\"table\">\n      <tbody><tr>\n        <th style=\"width:50%\">Itens:</th>\n        <td class=\"text-right\">\n          {{ itemsValue | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n      <tr>\n        <th>Frete:</th>\n        <td class=\"text-right\">\n          {{ delivery | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n      <tr>\n        <th>Total:</th>\n        <td class=\"text-right\">\n          {{ total() | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n    </tbody></table>\n  </div>\n  "
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-b7f198418851d7f563486b3e9e9dab6a",
+            "file": "src/app/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html'\n})\nexport class HeaderComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 7
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<header class=\"main-header\">\n  <nav class=\"navbar navbar-static-top\">\n    <div class=\"container\">\n      <div class=\"navbar-header\">\n        <a [routerLink]=\"['/']\" class=\"navbar-brand\">\n          <b>Ville</b>\n        </a>\n        <button\n          type=\"button\"\n          class=\"navbar-toggle collapsed\"\n          data-toggle=\"collapse\"\n          data-target=\"#navbar-collapse\"\n        >\n          <i class=\"fa fa-bars\"></i>\n        </button>\n      </div>\n      <div class=\"collapse navbar-collapse pull-left\" id=\"navbar-collapse\">\n        <ul class=\"nav navbar-nav\">\n            <li routerLinkActive=\"active\">\n              <a [routerLink]=\"['/about']\">Sobre</a>\n            </li>\n        </ul>\n      </div>\n      <app-user-detail></app-user-detail>\n    </div>\n  </nav>\n</header>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-4a420d895fbd8ea8b25156e1c3a32d64-1",
+            "file": "src/stories/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "line": 9,
+                    "type": "unknown"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 12,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 10,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 11,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.css']\n})\nexport class HeaderComponent implements OnInit {\n  @Input() user: unknown = null;\n  @Output() onLogin = new EventEmitter<Event>();\n  @Output() onLogout = new EventEmitter<Event>();\n  @Output() onCreateAccount = new EventEmitter<Event>();\n  \n  constructor() { }\n\n  ngOnInit(): void { }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n",
+                    "styleUrl": "./header.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 12
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "HeaderComponent-1",
+            "templateData": "<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Ville</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n</header>"
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-bf30e5cc2303baaf73dc45051f618ffd",
+            "file": "src/app/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html'\n})\nexport class HomeComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 7
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<section class=\"content\">\n  <div class=\"jumbotron welcome-jumbotron\">\n    <h1>Bem vindo ao Ville!</h1>\n    \n    <p>\n      Bora beber? Peça e receba em casa.\n    </p>\n    <a class=\"btn btn-primary btn-lg\"\n       [routerLink]=\"['/restaurant/jack-daniels']\">\n      Comprar\n    </a>\n  </div>\n</section>\n"
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-df140c48157ffa173b53fa987a27adfa",
+            "file": "src/app/shared/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input-container",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "errorMessage",
+                    "line": 11,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "showTip",
+                    "defaultValue": "true",
+                    "line": 12,
+                    "type": "boolean"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "control",
+                    "type": "FormControlName",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "decorators": [
+                        {
+                            "name": "ContentChild",
+                            "stringifiedArguments": "FormControlName"
+                        }
+                    ]
+                },
+                {
+                    "name": "input",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "model",
+                    "type": "NgModel",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "decorators": [
+                        {
+                            "name": "ContentChild",
+                            "stringifiedArguments": "NgModel"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "hasError",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 36
+                },
+                {
+                    "name": "hasSuccess",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 32
+                },
+                {
+                    "name": "ngAfterContentInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit, ContentChild, AfterContentInit } from '@angular/core';\nimport { FormControlName, NgModel } from '@angular/forms';\n\n@Component({\n  selector: 'app-input-container',\n  templateUrl: './input.component.html'\n})\nexport class InputComponent implements OnInit, AfterContentInit {\n\n  @Input() label: string;\n  @Input() errorMessage: string;\n  @Input() showTip: boolean = true;\n\n  input: any;\n\n  @ContentChild(NgModel) model: NgModel;\n  @ContentChild(FormControlName) control: FormControlName;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  ngAfterContentInit() {\n    this.input = this.model || this.control;\n\n    if (this.input === undefined) {\n      throw new Error('Esse componente precisa ser usado com uma diretiva ngModel ou formControlName.');\n    }\n  }\n\n  hasSuccess(): boolean {\n    return this.input.valid && (this.input.dirty || this.input.touched);\n  }\n\n  hasError(): boolean {\n    return this.input.invalid && (this.input.dirty || this.input.touched);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 17
+            },
+            "implements": [
+                "OnInit",
+                "AfterContentInit"
+            ],
+            "templateData": "<div\n  class=\"form-group has-feedback\"\n  [class.has-success]=\"hasSuccess()\"\n  [class.has-error]=\"hasError()\"\n>\n  <label class=\"control-label sr-only\" for=\"inputSuccess\">\n    <i class=\"fa fa-check\"></i> {{ label }}\n  </label>\n  <ng-content></ng-content>\n  <span\n    class=\"help-block\"\n    *ngIf=\"showTip && hasSuccess()\"\n  >\n    <i class=\"fa fa-check\"></i> Ok\n  </span>\n  <span\n    class=\"help-block\"\n    *ngIf=\"showTip && hasError()\"\n  >\n  <i class=\"fa fa-remove\"></i> {{ errorMessage }}\n  </span>\n</div>\n"
+        },
+        {
+            "name": "MenuComponent",
+            "id": "component-MenuComponent-e1e797242403cd8ec53fb8f2fd6c349a",
+            "file": "src/app/restaurant-detail/menu/menu.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-menu",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./menu.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "menu",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getDB",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28
+                },
+                {
+                    "name": "mockDB",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { VILLE_API } from 'src/app/app.api';\nimport { Restaurant } from '../restaurant.model';\n\n@Component({\n  selector: 'app-menu',\n  templateUrl: './menu.component.html'\n})\nexport class MenuComponent implements OnInit {\n  // menu: Observable<any>;\n  menu: any;\n\n  constructor(private http: HttpClient) { }\n\n  ngOnInit() {\n    let db = false;\n\n    if (db) {\n      this.getDB();\n    } else {\n      this.mockDB();\n    }\n  }\n\n  getDB() {\n    this.menu = this.http\n      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery/menu`)\n  }\n\n  mockDB() {\n    this.menu = [\n      {\n        \"id\": \"jack-daniels-black\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-black.jpg\",\n        \"name\": \"Jack Daniels\",\n        \"description\": \"Diferencia-se pelo seu cuidadoso processo de elaboração, destilação e envelhecimento.\",\n        \"price\": 136.99,\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"id\": \"jack-daniels-fire\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-fire.jpg\",\n        \"name\": \"Jack Daniels Fire\",\n        \"description\": \" Jack Daniels Fire destaca-se pela mistura natural de licor de canela picante com o clássico whiskey Americano Jack Daniels.\",\n        \"price\": 149.90,\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"id\": \"jack-daniels-honey\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-honey.jpg\",\n        \"name\": \"Jack Daniels Honey\",\n        \"description\": \"Suavidade do Jack Daniel levemente temperada com mel.\",\n        \"price\": 136.90,\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"id\": \"jack-daniels-apple\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-apple.jpg\",\n        \"name\": \"Jack Daniels Apple\",\n        \"description\": \"A nova bebida é a mistura do clássico Jack Daniels Tennessee Whiskey com licor de maçã.\",\n        \"price\": 134.90,\n        \"restaurantId\": \"bread-bakery\"\n      }\n    ];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"col-md-9 col-xs-12\">\n  <app-menu-item\n    *ngFor=\"let item of menu\"\n    [menuItem]=\"item\"\n    (add)=\"shoppingCart.addItem($event)\"\n  >\n  <!-- *ngFor=\"let item of menu | async\" -->\n  </app-menu-item>\n</div>\n<div class=\"col-md-3 col-xs-12\">\n  <app-shopping-cart #shoppingCart></app-shopping-cart>\n</div>\n"
+        },
+        {
+            "name": "MenuItemComponent",
+            "id": "component-MenuItemComponent-df9e0aaf232ea7d6c279f6e7a150a8ef",
+            "file": "src/app/restaurant-detail/menu-item/menu-item.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-menu-item",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./menu-item.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "menuItem",
+                    "line": 23,
+                    "type": "MenuItem"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "add",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 24,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "menuItemState",
+                    "defaultValue": "'ready'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "emitAddEvent",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { trigger, transition, state, style, animate } from '@angular/animations';\n\nimport { MenuItem } from './menu-item.model';\n\n@Component({\n  selector: 'app-menu-item',\n  templateUrl: './menu-item.component.html',\n  animations: [\n    trigger('menuItemAppeared', [\n      state('ready', style({ opacity: 1 })),\n      transition('void => ready', [\n        style({ opacity: 0, transform: 'translateY(-20px)'}),\n        animate('300ms 0s ease-in')\n      ])\n    ])\n  ]\n})\nexport class MenuItemComponent implements OnInit {\n\n  menuItemState = 'ready';\n\n  @Input() menuItem: MenuItem;\n  @Output() add = new EventEmitter();\n\n  constructor() { }\n\n  ngOnInit() { }\n\n  emitAddEvent() {\n    this.add.emit(this.menuItem); \n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 24
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"menu-item-info-box\" [@menuItemAppeared]=\"menuItemState\">\n  <span class=\"menu-item-info-box-icon\">\n    <img [src]=\"menuItem.imagePath\">\n  </span>\n  <div class=\"menu-item-info-box-content\">\n    <span class=\"menu-item-info-box-text\">\n      {{ menuItem.name }}\n    </span>\n    <span class=\"menu-item-info-box-detail\">\n      {{ menuItem.description }}\n    </span>\n    <span class=\"menu-item-info-box-price\">\n      {{ menuItem.price | currency: 'BRL': 'symbol' }}\n    </span>\n    <a class=\"\" (click)=\"emitAddEvent()\">\n      <i class=\"fa fa-plus-circle\"></i>\n      Adicionar\n    </a>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "NotFoundComponent",
+            "id": "component-NotFoundComponent-a6a9222230989fdb4349ba5cb10fb620",
+            "file": "src/app/not-found/not-found.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-not-found",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./not-found.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 11
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-not-found',\n  templateUrl: './not-found.component.html'\n})\nexport class NotFoundComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 7
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<section class=\"content\">\n  <div class=\"jumbotron\">\n    <img src=\"assets/img/404.png\" />\n    <h2>Página Não Encontrada</h2>\n    <p>\n      Está com fome? Acesse a página de\n      <a [routerLink]=\"['/restaurant']\">restaurantes</a>.\n    </p>\n  </div>\n</section>\n"
+        },
+        {
+            "name": "OrderComponent",
+            "id": "component-OrderComponent-fcaf3f4de7200a7ebbee2a283965b84b",
+            "file": "src/app/order/order.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-order",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./order.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "delivery",
+                    "defaultValue": "3.99",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "numberPattern",
+                    "defaultValue": "/^[0-9]*$/",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "orderForm",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "orderId",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "paymentOptions",
+                    "defaultValue": "[\n    { label: 'Dinheiro', value: 'Dinheiro' },\n    { label: 'Cartão de débito', value: 'Cartão Débito' },\n    { label: 'Vale refeição', value: 'Vale Refeição' }\n  ]",
+                    "type": "RadioOption[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "whatsApp",
+                    "defaultValue": "null",
+                    "type": "null",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "cartItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "CartItem[]",
+                    "typeParameters": [],
+                    "line": 60
+                },
+                {
+                    "name": "checkOrder",
+                    "args": [
+                        {
+                            "name": "order",
+                            "type": "Order"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 80,
+                    "jsdoctags": [
+                        {
+                            "name": "order",
+                            "type": "Order",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "decreaseQty",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 68,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "increaseQty",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 64,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "isOrderCompleted",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 76
+                },
+                {
+                    "name": "itemsValue",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 56
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33
+                },
+                {
+                    "name": "removeItem",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 72,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';\nimport { OrderService } from './order.service';\nimport { RadioOption } from './../shared/radio/radio-option.model';\nimport { Component, OnInit } from '@angular/core';\nimport { Order, OrderItem } from './order.model';\nimport { Router } from '@angular/router';\nimport { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';\nimport { tap } from 'rxjs/operators';\n\n@Component({\n  selector: 'app-order',\n  templateUrl: './order.component.html'\n})\nexport class OrderComponent implements OnInit {\n  numberPattern = /^[0-9]*$/;\n  orderForm: FormGroup;\n  delivery = 3.99;\n  orderId: string;\n  whatsApp = null;\n\n  paymentOptions: RadioOption[] = [\n    { label: 'Dinheiro', value: 'Dinheiro' },\n    { label: 'Cartão de débito', value: 'Cartão Débito' },\n    { label: 'Vale refeição', value: 'Vale Refeição' }\n  ];\n\n  constructor(\n    private orderService: OrderService,\n    private router: Router,\n    private formBuilder: FormBuilder\n  ) { }\n\n  ngOnInit(): void {\n    this.orderForm = this.formBuilder.group({\n      name: this.formBuilder.control(\n        'Jackson Neves',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      phone: this.formBuilder.control(\n        '47999342827',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      address: this.formBuilder.control(\n        'Rua Xanxerê',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      number: this.formBuilder.control(\n        '650',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      optionalAddress: new FormControl('', { updateOn: 'blur' }),\n      paymentOption: this.formBuilder.control('Dinheiro', [Validators.required])\n    });\n  }\n\n  itemsValue(): number {\n    return this.orderService.itemsValue();\n  }\n\n  cartItems(): CartItem[] {\n    return this.orderService.cartItems();\n  }\n\n  increaseQty(item: CartItem) {\n    this.orderService.increaseQty(item);\n  }\n\n  decreaseQty(item: CartItem) {\n    this.orderService.decreaseQty(item);\n  }\n\n  removeItem(item: CartItem) {\n    this.orderService.removeItem(item);\n  }\n\n  isOrderCompleted(): boolean {\n    return this.orderId !== undefined;\n  }\n\n  checkOrder(order: Order) {\n    let db = false;\n    let itens = [];\n    \n    order.orderItems = this\n      .cartItems()\n      .map((item: CartItem) => new OrderItem(\n        item.quantity,\n        item.menuItem.id,\n        item.menuItem.name\n        ));\n        \n    itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));\n        \n    if (db) {\n      this.orderService\n        .checkOrder(order)\n        .pipe(tap((orderId: string) => {\n          this.orderId = orderId;\n      })).subscribe((orderId: string) => {\n        this.orderService.clear();\n      });\n    }\n\n    this.whatsApp =\n      `https://wa.me/5547988458640/?text=` +\n      `Olá VilleMeat, gostaria de${itens}. ` +\n      `Pagamento: ${order.paymentOption}. ` +\n      `Entregar no endereço: ${order.address}, Nº ${order.number}. ` +\n      `(Ass. ${order.name}, ${order.phone})`;\n\n    // window.location.href = this.whatsApp; \n    this.router.navigate(['/order-summary']);\n    window.open(this.whatsApp, '_blank');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "orderService",
+                        "type": "OrderService"
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router"
+                    },
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder"
+                    }
+                ],
+                "line": 25,
+                "jsdoctags": [
+                    {
+                        "name": "orderService",
+                        "type": "OrderService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "formBuilder",
+                        "type": "FormBuilder",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<section class=\"invoice m-top\">\r\n  <!-- {{ orderForm.valid }} -->\r\n  <!-- {{ orderForm.value | json }} -->\r\n  <form novalidate [formGroup]=\"orderForm\">\r\n    <div class=\"row\">\r\n      <div class=\"col-xs-12\">\r\n        <h2 class=\"page-header\">\r\n          <i class=\"fa fa-shopping-cart\"></i> Finalize o seu pedido\r\n        </h2>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-xs-12 col-sm-9\">\r\n        <p class=\"lead\">Seus dados:</p>\r\n      </div>\r\n      <div class=\"col-sm-6 col-xs-12\">\r\n        <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                              label=\"Nome\">\r\n          <input  type=\"text\"\r\n                  class=\"form-control\"\r\n                  formControlName=\"name\"\r\n                  placeholder=\"Olá, qual seu nome? (ex. Jackson Neves)\"\r\n                  autocomplete=\"off\"/>\r\n        </app-input-container>\r\n      </div>\r\n      <div class=\"col-sm-6 col-xs-12\">\r\n        <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                              label=\"Telefone\">\r\n          <input  type=\"text\"\r\n                  class=\"form-control\"\r\n                  formControlName=\"phone\"\r\n                  placeholder=\"Qual seu telefone? (ex. 47 9 9934-2827)\"\r\n                  autocomplete=\"off\">\r\n        </app-input-container>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-xs-12\">\r\n        <p class=\"lead\">Endereço de Entrega:</p>\r\n      </div>\r\n      <div class=\"col-sm-6 col-xs-12\">\r\n        <app-input-container\r\n          errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n          label=\"Endereço\">\r\n          <input  type=\"text\"\r\n                  class=\"form-control\"\r\n                  formControlName=\"address\"\r\n                  placeholder=\"Qual seu endereço?\"\r\n                  autocomplete=\"off\"/>\r\n        </app-input-container>\r\n      </div>\r\n      <div class=\"col-sm-3 col-xs-6\">\r\n        <app-input-container  errorMessage=\"Obrigatório e somente números.\"\r\n                              label=\"Número\">\r\n          <input  type=\"text\"\r\n                  class=\"form-control\"\r\n                  placeholder=\"Número\"\r\n                  formControlName=\"number\"\r\n                  autocomplete=\"off\">\r\n        </app-input-container>\r\n      </div>\r\n      <div class=\"col-sm-3 col-xs-6\">\r\n        <app-input-container label=\"Complemento\">\r\n          <input  type=\"text\"\r\n                  class=\"form-control\"\r\n                  placeholder=\"Complemento\"\r\n                  formControlName=\"optionalAddress\"\r\n                  autocomplete=\"off\">\r\n        </app-input-container>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-xs-12\">\r\n        <p class=\"lead\">Itens do Pedido:</p>\r\n      </div>\r\n      <app-order-items  [items]=\"cartItems()\"\r\n                        (increaseQty)=\"increaseQty($event)\"\r\n                        (decreaseQty)=\"decreaseQty($event)\"\r\n                        (remove)=\"removeItem($event)\">\r\n      </app-order-items>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-6 col-xs-12\">\r\n        <p class=\"lead\">Formas de Pagamento:</p>\r\n        <div class=\"form-group\">\r\n            <app-radio  [options]=\"paymentOptions\"\r\n                        formControlName=\"paymentOption\">\r\n            </app-radio>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"col-sm-6 col-xs-12\">\r\n        <p class=\"lead\">Frete e Total:</p>\r\n        <app-delivery-costs [delivery]=\"delivery\"\r\n                            [itemsValue]=\"itemsValue()\">\r\n        </app-delivery-costs>\r\n      </div>\r\n    </div>\r\n  </form>\r\n\r\n  <div class=\"row\">\r\n    <div class=\"col-xs-12\">\r\n      <button href=\"order-summary.html\"\r\n              class=\"btn btn-success pull-right\"\r\n              [disabled]=\"!orderForm.valid || cartItems().length === 0\"\r\n              (click)=\"checkOrder(orderForm.value)\">\r\n        <i class=\"fa fa-credit-card\"></i> Concluir Pedido\r\n    </button>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
+        },
+        {
+            "name": "OrderItemsComponent",
+            "id": "component-OrderItemsComponent-a25b1330119998bf9a7bd2fc1a3a46b7",
+            "file": "src/app/order/order-items/order-items.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-order-items",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./order-items.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "line": 10,
+                    "type": "CartItem[]"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "decreaseQty",
+                    "defaultValue": "new EventEmitter<CartItem>()",
+                    "line": 13,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "increaseQty",
+                    "defaultValue": "new EventEmitter<CartItem>()",
+                    "line": 12,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "remove",
+                    "defaultValue": "new EventEmitter<CartItem>()",
+                    "line": 14,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "emitDecreaseQty",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "emitIncreaseQty",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "emitRemove",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "CartItem"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "CartItem",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { CartItem } from './../../restaurant-detail/shopping-cart/shopping-cart.model';\r\nimport { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-order-items',\r\n  templateUrl: './order-items.component.html'\r\n})\r\nexport class OrderItemsComponent implements OnInit {\r\n\r\n  @Input() items: CartItem[];\r\n\r\n  @Output() increaseQty = new EventEmitter<CartItem>();\r\n  @Output() decreaseQty = new EventEmitter<CartItem>();\r\n  @Output() remove = new EventEmitter<CartItem>();\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  emitIncreaseQty(item: CartItem) {\r\n    this.increaseQty.emit(item);\r\n  }\r\n\r\n  emitDecreaseQty(item: CartItem) {\r\n    this.decreaseQty.emit(item);\r\n  }\r\n\r\n  emitRemove(item: CartItem) {\r\n    this.remove.emit(item);\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 14
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"col-xs-12\" *ngIf=\"!items.length\">\n    <p>\n      Não há itens no seus carrinho. Que tal começar por\n      <a [routerLink]=\"['/restaurant/jack-daniels']\"> aqui</a>?\n    </p>\n  </div>\n  \n  <div class=\"col-xs-12 table-responsive\" *ngIf=\"items.length\">\n    <table class=\"table table-striped\">\n      <thead>\n      <tr>\n        <th class=\"text-center\">Quantidade</th>\n        <th>Item</th>\n        <th>Descrição</th>\n        <th class=\"text-right\">Subtotal</th>\n        <th class=\"text-right\"></th>\n      </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of items\">\n          <td class=\"text-center\">\n            <a (click)=\"emitDecreaseQty(item)\" class=\"btn btn-sm\">\n              <i class=\"fa fa-minus\"></i>\n            </a>\n            {{ item.quantity }}\n            <a (click)=\"emitIncreaseQty(item)\" class=\"btn btn-sm\">\n              <i class=\"fa fa-plus\"></i>\n            </a>\n          </td>\n          <td>{{ item.menuItem.name }}</td>\n          <td>{{ item.menuItem.description }}</td>\n          <td class=\"text-right\">\n            {{ item.value() | currency: 'BRL': 'symbol' }}\n          </td>\n          <td class=\"text-right\">\n            <a (click)=\"emitRemove(item)\" class=\"btn btn-sm danger\">\n              <i class=\"fa fa-remove\"></i>\n            </a>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  "
+        },
+        {
+            "name": "OrderSummaryComponent",
+            "id": "component-OrderSummaryComponent-33f345e73b4868bf363e080ca6f3d81f",
+            "file": "src/app/order-summary/order-summary.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-order-summary",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./order-summary.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "rated",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                },
+                {
+                    "name": "rate",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-order-summary',\n  templateUrl: './order-summary.component.html'\n})\nexport class OrderSummaryComponent implements OnInit {\n  rated: boolean;\n\n  constructor() { }\n\n  ngOnInit() { }\n  \n  rate() {\n    this.rated = true;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<section class=\"content\">\n    <div class=\"jumbotron\">\n      <h2>Pedido Conluído</h2>\n      <p>\n        Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!\n      </p>\n      <p>\n        <b>Avalie</b> sua experiência:\n      </p>\n      <p>\n        <app-rating (rated)=\"rate()\">\n        </app-rating>\n      </p>\n        <p *ngIf=\"rated\">\n          Obrigado pela sua avaliação!\n        </p>\n    </div>\n  \n  </section>\n  "
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-774df76b1a181b97223434cfd47f4909",
+            "file": "src/stories/components/page/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "line": 9,
+                    "type": "unknown"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 12,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 10,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 11,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  templateUrl: './page.component.html',\n  styleUrls: ['./page.component.css']\n})\nexport class PageComponent implements OnInit {\n  @Input() user: unknown = null;\n  @Output() onLogin = new EventEmitter<Event>();\n  @Output() onLogout = new EventEmitter<Event>();\n  @Output() onCreateAccount = new EventEmitter<Event>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "section {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    padding: 48px 20px;\r\n    margin: 0 auto;\r\n    max-width: 600px;\r\n    color: #333;\r\n  }\r\n  \r\n  h2 {\r\n    font-weight: 900;\r\n    font-size: 32px;\r\n    line-height: 1;\r\n    margin: 0 0 4px;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n  }\r\n  \r\n  p {\r\n    margin: 1em 0;\r\n  }\r\n  \r\n  a {\r\n    text-decoration: none;\r\n    color: #1ea7fd;\r\n  }\r\n  \r\n  ul {\r\n    padding-left: 30px;\r\n    margin: 1em 0;\r\n  }\r\n  \r\n  li {\r\n    margin-bottom: 8px;\r\n  }\r\n  \r\n  .tip {\r\n    display: inline-block;\r\n    border-radius: 1em;\r\n    font-size: 11px;\r\n    line-height: 12px;\r\n    font-weight: 700;\r\n    background: #e7fdd8;\r\n    color: #66bf3c;\r\n    padding: 4px 12px;\r\n    margin-right: 10px;\r\n    vertical-align: top;\r\n  }\r\n  \r\n  .tip-wrapper {\r\n    font-size: 13px;\r\n    line-height: 20px;\r\n    margin-top: 40px;\r\n    margin-bottom: 40px;\r\n  }\r\n  \r\n  .tip-wrapper svg {\r\n    display: inline-block;\r\n    height: 12px;\r\n    width: 12px;\r\n    margin-right: 4px;\r\n    vertical-align: top;\r\n    margin-top: 3px;\r\n  }\r\n  \r\n  .tip-wrapper svg path {\r\n    fill: #1ea7fd;\r\n  }\r\n  ",
+                    "styleUrl": "./page.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 12
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n</article>"
+        },
+        {
+            "name": "RadioComponent",
+            "id": "component-RadioComponent-8ffca5bf0a469e27435bc9f5a050d5ca",
+            "file": "src/app/shared/radio/radio.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => RadioComponent), multi: true\n}",
+                    "type": "component"
+                }
+            ],
+            "selector": "app-radio",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./radio.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "options",
+                    "line": 18,
+                    "type": "RadioOption[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "onChange",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "value",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25
+                },
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 41,
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setDisabledState",
+                    "args": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean"
+                        }
+                    ],
+                    "optional": true,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "jsdoctags": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setValue",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "obj",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "jsdoctags": [
+                        {
+                            "name": "obj",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { RadioOption } from './radio-option.model';\nimport { Component, forwardRef, Input, OnInit } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Component({\n  selector: 'app-radio',\n  templateUrl: './radio.component.html',\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => RadioComponent),\n      multi: true\n    }\n  ]\n})\nexport class RadioComponent implements OnInit, ControlValueAccessor {\n\n  @Input() options: RadioOption[];\n\n  value: any;\n  onChange: any;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  setValue(value: any) {\n    this.value = value;\n    this.onChange(this.value);\n  }\n\n  writeValue(obj: any): void {\n    this.value = obj;\n  }\n\n  registerOnChange(fn: any): void {\n    this.onChange = fn;\n  }\n\n  registerOnTouched(fn: any): void { }\n\n  setDisabledState?(isDisabled: boolean): void { }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 21
+            },
+            "implements": [
+                "OnInit",
+                "ControlValueAccessor"
+            ],
+            "templateData": "<div *ngFor=\"let option of options\">\n    <label>\n      <div\n        (click)=\"setValue(option.value)\"\n        class=\"iradio_flat-red\"\n        [class.checked]=\"option.value === value\"\n        aria-checked=\"false\"\n        aria-disabled=\"false\"\n        style=\"position: relative;\"\n      >\n        <ins class=\"iCheck-helper checkbox\"></ins>\n      </div>\n      {{ option.label }}\n    </label>\n  </div>\n  "
+        },
+        {
+            "name": "RatingComponent",
+            "id": "component-RatingComponent-ff598b6326eb9a396ec443565c2a802f",
+            "file": "src/app/shared/rating/rating.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-rating",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./rating.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "rated",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "previusRate",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "rate",
+                    "defaultValue": "0",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "rates",
+                    "defaultValue": "[1, 2, 3, 4, 5]",
+                    "type": "number[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "clearTemporaryRate",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                },
+                {
+                    "name": "setRate",
+                    "args": [
+                        {
+                            "name": "r",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "jsdoctags": [
+                        {
+                            "name": "r",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setTemporaryRate",
+                    "args": [
+                        {
+                            "name": "r",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "jsdoctags": [
+                        {
+                            "name": "r",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, EventEmitter, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-rating',\n  templateUrl: './rating.component.html'\n})\nexport class RatingComponent implements OnInit {\n\n  rates: number[] = [1, 2, 3, 4, 5];\n  rate = 0;\n  previusRate: number;\n\n  @Output() rated = new EventEmitter<number>();\n\n  constructor() { }\n\n  ngOnInit(): void {}\n\n  setRate(r: number) {\n    this.rate = r;\n    this.previusRate = undefined;\n    this.rated.emit(this.rate);\n  }\n\n  setTemporaryRate(r: number) {\n    if (this.previusRate === undefined) {\n      this.previusRate = this.rate;\n    }\n    this.rate = r;\n  }\n\n  clearTemporaryRate() {\n    if (this.previusRate !== undefined) {\n      this.rate = this.previusRate;\n      this.previusRate = undefined;\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<i\n  *ngFor=\"let r of rates\" class=\"fa\"\n  [class.fa-star]=\"r <= rate\"\n  [class.fa-star-o]=\"r > rate\"\n  (click)=\"setRate(r)\"\n  (mouseenter)=\"setTemporaryRate(r)\"\n  (mouseleave)=\"clearTemporaryRate()\"\n>\n</i>\n"
+        },
+        {
+            "name": "RestaurantDetailComponent",
+            "id": "component-RestaurantDetailComponent-9c430312eb0e1e63f9a6bbc7fa022516",
+            "file": "src/app/restaurant-detail/restaurant-detail.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-restaurant-detail",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./restaurant-detail.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "restaurant",
+                    "type": "Restaurant",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getDB",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39
+                },
+                {
+                    "name": "mockDB",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\n\nimport { VILLE_API } from './../app.api';\nimport { Restaurant } from './restaurant.model';\n\n@Component({\n  selector: 'app-restaurant-detail',\n  templateUrl: './restaurant-detail.component.html'\n})\nexport class RestaurantDetailComponent implements OnInit {\n  restaurant: Restaurant;\n\n  constructor(private http: HttpClient) { }\n\n  ngOnInit() {\n    let db = false;\n\n    if (db) {\n      this.getDB();\n    } else {\n      this.mockDB();\n    }\n  }\n\n  mockDB() {\n    this.restaurant = {\n      \"id\": \"jack-daniels\",\n      \"name\": \"Jack Daniel's\",\n      \"category\": \"whisky\",\n      \"deliveryEstimate\": \"25m\",\n      \"rating\": 9.9,\n      \"imagePath\": \"assets/img/restaurants/jack-daniels.jpg\",\n      \"about\": \"Mais de 150 anos se passaram desde que Nearest e Jack começaram a fazer whiskey juntos e, até hoje, sempre houve um membro da família Green trabalhando na Destilaria Jack Daniel.\",\n      \"hours\": \"Funciona de segunda à segunda, de 00h às 23h\"\n    }\n  }\n\n  getDB() {\n    this.http\n      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery`)\n      .subscribe( restaurant => this.restaurant = restaurant );\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<section class=\"content\">\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <div class=\"box box-solid\">\n        <div class=\"box-header with-border\">\n          <i class=\"fa fa-home\"></i>\n          <h3 class=\"box-title\">{{ restaurant?.name }}</h3>\n            <span class=\"pull-right\">\n              <i class=\"fa fa-star\"></i>\n              {{ restaurant?.rating }}\n            </span>\n        </div>\n        <div class=\"box-body\">\n          <div class=\"col-sm-3 col-xs-12\" *ngIf=\"restaurant\">\n              <img class=\"box-img-detail\" [src]=\"restaurant?.imagePath\" />\n          </div>\n            <dl class=\"col-sm-9 col-xs-12\">\n              <dt>Categoria</dt>\n              <dd>{{ restaurant?.category }}</dd>\n              <dt>Quem somos</dt>\n              <dd>{{ restaurant?.about }}</dd>\n              <dt>Horários</dt>\n              <dd>{{ restaurant?.hours}}</dd>\n            </dl>\n        </div>\n        <div class=\"box-footer detail-footer\">\n          <a class=\"pull-left\" routerLinkActive=\"detail-active\" [routerLink]=\"['menu']\">\n            Menu\n          </a>\n          <a class=\"pull-right\" routerLinkActive=\"detail-active\" [routerLink]=\"['reviews']\">\n            Avaliações\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n      <router-outlet></router-outlet>\n  </div>\n</section>\n  "
+        },
+        {
+            "name": "ReviewsComponent",
+            "id": "component-ReviewsComponent-51f08f612376b42220e715af102ce0ce",
+            "file": "src/app/restaurant-detail/reviews/reviews.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-reviews",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./reviews.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "reviews",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getDB",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29
+                },
+                {
+                    "name": "mockDB",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { BehaviorSubject, Observable } from 'rxjs';\nimport { Component, OnInit } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\n\nimport { VILLE_API } from './../../app.api';\nimport { Restaurant } from '../restaurant.model';\nimport { map, tap } from 'rxjs/operators';\n\n@Component({\n  selector: 'app-reviews',\n  templateUrl: './reviews.component.html'\n})\nexport class ReviewsComponent implements OnInit {\n  // reviews: Observable<any>;\n  reviews: any;\n\n  constructor(private http: HttpClient) { }\n\n  ngOnInit() {\n    let db = false;\n\n    if (db) {\n      this.getDB();\n    } else {\n      this.mockDB();\n    }\n  }\n\n  getDB() {\n    this.reviews = this.http\n      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery/reviews`)\n      .pipe(tap(console.log));\n  }\n\n  mockDB() {\n    this.reviews = [\n      {\n        \"name\": \"Julia\",\n        \"date\": \"2017-01-23T18:25:43\",\n        \"rating\": 4.5,\n        \"comments\": \"Tudo muito bom, entrega no tempo certo\",\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"name\": \"Aline\",\n        \"date\": \"2016-12-12T18:25:43\",\n        \"rating\": 3,\n        \"comments\": \"NÃO recomendo. O recheio é só um creme, não tem camarão e nem carne\",\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"name\": \"Renata\",\n        \"date\": \"2016-12-12T18:25:43\",\n        \"rating\": 2,\n        \"comments\": \"Não foi muito agradável ao nosso paladar, e eu e meu esposo no outro dia passamos super mal. Pode até ter sido outra coisa, mas...\",\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"name\": \"Renata\",\n        \"date\": \"2016-12-12T18:25:43\",\n        \"rating\": 5,\n        \"comments\": \"Nunca deixou na mão, comida sempre deliciosa.\",\n        \"restaurantId\": \"bread-bakery\"\n      }\n    ];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient"
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"col-xs-12 col-sm-6\"\n     *ngFor=\"let review of reviews\">\n  <!-- *ngFor=\"let review of reviews | async\" -->\n  <div class=\"box box-solid\">\n    <div class=\"box-header with-border\">\n      <span class=\"review-score pull-right\">\n        <i class=\"fa fa-star\"></i>\n        {{ review.rating }}\n      </span>\n      <div class=\"user-block\">\n        <img\n          *ngIf=\"review.rating < 3\"\n          alt=\"User Image\"\n          class=\"img-circle\"\n          src=\"assets/img/reactions/pissed.png\"\n        >\n        <img\n          *ngIf=\"review.rating >= 3 && review.rating < 4\"\n          alt=\"User Image\"\n          class=\"img-circle\"\n          src=\"assets/img/reactions/soso.png\"\n        >\n        <img\n          *ngIf=\"review.rating >= 4\"\n          alt=\"User Image\"\n          class=\"img-circle\"\n          src=\"assets/img/reactions/loved.png\"\n        >\n        <span class=\"username\">\n          {{ review.name }}\n        </span>\n        <span class=\"description\">\n          {{ review.date | date:'dd/MM/yyyy'}}\n        </span>\n      </div>\n    </div>\n    <div class=\"box-body\">\n      <p>{{ review.comments }}</p>\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "ShoppingCartComponent",
+            "id": "component-ShoppingCartComponent-25ad7aff636d1e09e663ffbc36033422",
+            "file": "src/app/restaurant-detail/shopping-cart/shopping-cart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-shopping-cart",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./shopping-cart.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "rowState",
+                    "defaultValue": "'ready'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "addItem",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 47,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "clear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39
+                },
+                {
+                    "name": "items",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 35
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32
+                },
+                {
+                    "name": "removeItem",
+                    "args": [
+                        {
+                            "name": "item",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "jsdoctags": [
+                        {
+                            "name": "item",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "total",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 51
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { trigger, transition, state, style, animate, keyframes } from '@angular/animations';\n\nimport { ShoppingCartService } from './shopping-cart.service';\n\n@Component({\n  selector: 'app-shopping-cart',\n  templateUrl: './shopping-cart.component.html',\n  preserveWhitespaces: true,\n  animations: [\n    trigger('row', [\n      state('ready', style({ opacity: 1 })),\n      transition('void => ready', animate('300ms 0s ease-in', keyframes([\n        style({ opacity: 0, transform: 'translateX(-30px)', offset: 0}),\n        style({ opacity: 0.8, transform: 'translateX(10px)', offset: 0.8}),\n        style({ opacity: 1, transform: 'translateX(0px)', offset: 1})\n      ]))),\n      transition('ready => void', animate('300ms 0s ease-out', keyframes([\n        style({ opacity: 1, transform: 'translateX(0px)', offset: 0}),\n        style({ opacity: 0.8, transform: 'translateX(-10px)', offset: 0.2}),\n        style({ opacity: 0, transform: 'translateX(30px)', offset: 1})\n      ])))\n    ])\n  ]\n})\nexport class ShoppingCartComponent implements OnInit {\n\n  rowState = 'ready';\n\n  constructor(private shoppingCartService: ShoppingCartService) { }\n\n  ngOnInit() {\n  }\n\n  items(): any[] {\n    return this.shoppingCartService.items;\n  }\n\n  clear() {\n    this.shoppingCartService.clear();\n  }\n\n  removeItem(item: any) {\n    this.shoppingCartService.removeItem(item);\n  }\n\n  addItem(item: any) {\n    this.shoppingCartService.addItem(item);\n  }\n\n  total(): number {\n    return this.shoppingCartService.total();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "preserveWhitespaces": true,
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "shoppingCartService",
+                        "type": "ShoppingCartService"
+                    }
+                ],
+                "line": 28,
+                "jsdoctags": [
+                    {
+                        "name": "shoppingCartService",
+                        "type": "ShoppingCartService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"box box-solid\">\n    <div class=\"box-header\">\n      <i class=\"fa fa-shopping-cart\"></i>\n  \n      <h3 class=\"box-title\">Carrinho</h3>\n    </div>\n  \n    <div class=\"box-body\">\n      <div *ngIf=\"!items().length\">\n        <p class=\"text-center\">\n          Seu carrinho está vazio!\n        </p>\n      </div>\n      <div class=\"table-responsive\" *ngIf=\"items().length\">\n          <table class=\"table\">\n            <tbody>\n            <tr *ngFor=\"let item of items()\" [@row]=\"rowState\">\n              <th>\n                ({{ item.quantity }}x)\n                {{ item.menuItem.name }}\n              </th>\n  \n              <td class=\"text-right\">\n                {{ item.value() | currency: 'BRL': 'symbol'}}\n              </td>\n  \n              <td class=\"text-right\">\n                <a\n                  class=\"btn btn-sn danger\"\n                  (click)=\"removeItem(item)\">\n                  <i class=\"fa fa-remove\"></i>\n                </a>\n              </td>\n            </tr>\n            <tr>\n              <th>Total:</th>\n  \n              <td class=\"text-right\">\n                {{ total() | currency: 'BRL': 'symbol' }}\n              </td>\n            </tr>\n          </tbody></table>\n        </div>\n    </div>\n    <div class=\"box-footer\" *ngIf=\"items().length\">\n      <div class=\"pull-right\">\n        <button\n          type=\"button\"\n          class=\"btn btn-danger\"\n          (click)=\"clear()\">\n          <i class=\"fa fa-trash\"></i>\n          Limpar\n        </button>\n        <a\n          href=\"order.html\"\n          class=\"btn btn-success\"\n          [routerLink]=\"['/order']\"\n        >\n          <i class=\"fa fa-credit-card\"></i>\n          Fechar Pedido\n        </a>\n      </div>\n    </div>\n  </div>\n  "
+        },
+        {
+            "name": "SnackbarComponent",
+            "id": "component-SnackbarComponent-4e9a3020530143c23db86edfb99df870",
+            "file": "src/app/shared/messages/snackbar/snackbar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-snackbar",
+            "styleUrls": [
+                "./snackbar.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./snackbar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "message",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "snackVisibility",
+                    "defaultValue": "'hidden'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { timer } from 'rxjs';\nimport { NotificationService } from './../notification.service';\nimport { Component, OnInit } from '@angular/core';\nimport { state, style, trigger, transition, animate } from '@angular/animations';\nimport { tap, switchMap } from 'rxjs/operators';\n\n@Component({\n  selector: 'app-snackbar',\n  templateUrl: './snackbar.component.html',\n  styleUrls: ['./snackbar.component.css'],\n  animations: [\n    trigger('snack-visibility', [\n      state('hidden', style({\n        opacity: 0,\n        bottom: 0\n      })),\n      state('visible', style({\n        opacity: 1,\n        bottom: '30px'\n      })),\n      transition(\n        'hidden => visible',\n        animate('500ms 0s ease-in')\n      ),\n      transition(\n        'visible => hidden',\n        animate('500ms 0s ease-out')\n      )\n    ])\n  ]\n})\nexport class SnackbarComponent implements OnInit {\n\n  message: string;\n  snackVisibility = 'hidden';\n\n  constructor(private notificationService: NotificationService) { }\n\n  ngOnInit(): void {\n    this.notificationService.notifier\n      .pipe(\n        tap(message => {\n          this.message = message;\n          this.snackVisibility = 'visible';\n        }), switchMap(message => timer(2000))\n      ).subscribe(timer => this.snackVisibility = 'hidden');\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".snackbar {\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n    background-color: #333;\r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n  }\r\n  ",
+                    "styleUrl": "./snackbar.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "notificationService",
+                        "type": "NotificationService"
+                    }
+                ],
+                "line": 35,
+                "jsdoctags": [
+                    {
+                        "name": "notificationService",
+                        "type": "NotificationService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"snackbar\" [@snack-visibility]=\"snackVisibility\">\n    {{ message }}\n  </div>\n  "
+        },
+        {
+            "name": "UserDetailComponent",
+            "id": "component-UserDetailComponent-43017a3859606db8c10716dc524deec0",
+            "file": "src/app/header/user-detail/user-detail.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-user-detail",
+            "styleUrls": [
+                "./user-detail.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./user-detail.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "\"Cachaceiro\"",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-user-detail',\n  templateUrl: './user-detail.component.html',\n  styleUrls: ['./user-detail.component.css']\n})\nexport class UserDetailComponent implements OnInit {\n  user: string = \"Cachaceiro\";\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".user-menu>span{\r\n  position: relative;\r\n  display: block;\r\n  padding: 15px 15px;\r\n  color: #fff;\r\n}\r\n\r\n.user-menu a{\r\n  color: #fff;\r\n  cursor: pointer\r\n}\r\n\r\n@media (max-width: 991px){\r\n  .navbar-custom-menu {\r\n      display: block;\r\n      position: absolute;\r\n      top: 0;\r\n      right: 40px;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./user-detail.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"navbar-custom-menu\">\n  <ul class=\"nav navbar-nav\">\n    <li class=\"user user-menu\">\n      <span>\n        Olá, {{ user }}\n      </span>\n    </li>\n  </ul>\n</div>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AboutModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AboutComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "HeaderComponent"
+                        },
+                        {
+                            "name": "HomeComponent"
+                        },
+                        {
+                            "name": "MenuComponent"
+                        },
+                        {
+                            "name": "MenuItemComponent"
+                        },
+                        {
+                            "name": "NotFoundComponent"
+                        },
+                        {
+                            "name": "OrderSummaryComponent"
+                        },
+                        {
+                            "name": "RestaurantDetailComponent"
+                        },
+                        {
+                            "name": "ReviewsComponent"
+                        },
+                        {
+                            "name": "ShoppingCartComponent"
+                        },
+                        {
+                            "name": "UserDetailComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ComponentsModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "PageComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "PageComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "OrderModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DeliveryCostsComponent"
+                        },
+                        {
+                            "name": "OrderComponent"
+                        },
+                        {
+                            "name": "OrderItemsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SharedModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "InputComponent"
+                        },
+                        {
+                            "name": "RadioComponent"
+                        },
+                        {
+                            "name": "RatingComponent"
+                        },
+                        {
+                            "name": "SnackbarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "InputComponent"
+                        },
+                        {
+                            "name": "RadioComponent"
+                        },
+                        {
+                            "name": "RatingComponent"
+                        },
+                        {
+                            "name": "SnackbarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/button/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/header/Header.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/page/Page.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/header/Header.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/page/Page.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/button/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/button/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/button/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/header/Header.stories.ts",
+                "type": "Story<HeaderComponent>",
+                "defaultValue": "(args: HeaderComponent) => ({\n  component: HeaderComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/button/Button.stories.ts",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/page/Page.stories.ts",
+                "type": "Story<PageComponent>",
+                "defaultValue": "(args: PageComponent) => ({\n  component: PageComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "VILLE_API",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.api.ts",
+                "type": "",
+                "defaultValue": "environment.api"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/stories/components/button/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/button/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/button/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/button/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/button/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/button/Button.stories.ts",
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/components/header/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/header/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/header/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/header/Header.stories.ts",
+                    "type": "Story<HeaderComponent>",
+                    "defaultValue": "(args: HeaderComponent) => ({\n  component: HeaderComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/components/page/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/page/Page.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/page/Page.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/page/Page.stories.ts",
+                    "type": "Story<PageComponent>",
+                    "defaultValue": "(args: PageComponent) => ({\n  component: PageComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/app.api.ts": [
+                {
+                    "name": "VILLE_API",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.api.ts",
+                    "type": "",
+                    "defaultValue": "environment.api"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "e2e/src/app.po.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/about/about.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AboutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.api.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "VILLE_API",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/header/user-detail/user-detail.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UserDetailComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/not-found/not-found.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NotFoundComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/order-summary/order-summary.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "OrderSummaryComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/order/delivery-costs/delivery-costs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DeliveryCostsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/order/order-items/order-items.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "OrderItemsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/order/order.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "OrderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/order/order.model.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Order",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/order/order.model.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "OrderItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/order/order.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "OrderService",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/restaurant-detail/menu-item/menu-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MenuItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/restaurant-detail/menu-item/menu-item.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MenuItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/restaurant-detail/menu/menu.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MenuComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/restaurant-detail/restaurant-detail.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RestaurantDetailComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/restaurant-detail/restaurant.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Restaurant",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/restaurant-detail/reviews/reviews.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ReviewsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/restaurant-detail/shopping-cart/shopping-cart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ShoppingCartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/restaurant-detail/shopping-cart/shopping-cart.model.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CartItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/restaurant-detail/shopping-cart/shopping-cart.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ShoppingCartService",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/messages/notification.service.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "NotificationService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/messages/snackbar/snackbar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SnackbarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/radio/radio-option.model.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "RadioOption",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/radio/radio.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/rating/rating.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RatingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/button/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/header/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/header/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/header/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/page/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/page/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/page/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/page/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

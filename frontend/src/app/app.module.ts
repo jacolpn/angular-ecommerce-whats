@@ -1,7 +1,7 @@
 import { SharedModule } from './shared/shared.module';
 import { ROUTES } from './app-route';
 import { BrowserModule } from '@angular/platform-browser';
-import { LOCALE_ID, NgModule, ErrorHandler } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +22,7 @@ import locatePt from '@angular/common/locales/pt';
 registerLocaleData(locatePt, 'pt');
 
 import { UserDetailComponent } from './header/user-detail/user-detail.component';
+import { ComponentsModule } from 'src/stories/components/components.module';
 
 @NgModule({
   declarations: [
@@ -36,12 +37,12 @@ import { UserDetailComponent } from './header/user-detail/user-detail.component'
     MenuItemComponent,
     ReviewsComponent,
     OrderSummaryComponent
-    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ComponentsModule.forRoot(),
     SharedModule.forRoot(),
     RouterModule.forRoot(
       ROUTES,
