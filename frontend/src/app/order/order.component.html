@@ -20,15 +20,16 @@
           <input  type="text"
                   class="form-control"
                   formControlName="name"
-                  placeholder="Por favor, nos informe seu nome. (ex. Jackson Neves)"
+                  placeholder="Olá, qual seu nome? (ex. Jackson Neves)"
                   autocomplete="off"/>
         </app-input-container>
       </div>
       <div class="col-sm-6 col-xs-12">
-          <app-input-container label="Complemento">
+        <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
+                              label="Telefone">
           <input  type="text"
                   class="form-control"
-                  formControlName="telefone"
+                  formControlName="phone"
                   placeholder="Qual seu telefone? (ex. 47 9 9934-2827)"
                   autocomplete="off">
         </app-input-container>
@@ -47,7 +48,7 @@
             type="text"
             class="form-control"
             formControlName="address"
-            placeholder="Endereço"
+            placeholder="Qual seu endereço?"
             autocomplete="off"
           />
         </app-input-container>

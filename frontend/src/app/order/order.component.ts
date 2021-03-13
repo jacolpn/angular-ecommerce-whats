@@ -36,6 +36,10 @@ export class OrderComponent implements OnInit {
         'Jackson Neves',
         [Validators.required, Validators.minLength(5)]
       ),
+      phone: this.formBuilder.control(
+        '47999342827',
+        [Validators.required, Validators.minLength(5)]
+      ),
       address: this.formBuilder.control(
         'Rua Xanxerê',
         [Validators.required, Validators.minLength(5)]
@@ -44,25 +48,9 @@ export class OrderComponent implements OnInit {
         '650',
         [Validators.required, Validators.pattern(this.numberPattern)]
       ),
-      // optionalAddress: this.formBuilder.control(''),
       optionalAddress: new FormControl('', { updateOn: 'blur' }),
       paymentOption: this.formBuilder.control('MON', [Validators.required])
-    }, { validator: OrderComponent.equalsTo });
-  }
-
-  static equalsTo(group: AbstractControl): { [key: string]: boolean } {
-    const email = group.get('email');
-    const emailConfirmation = group.get('emailConfirmation');
-
-    if (!email || !emailConfirmation) {
-      return undefined;
-    }
-
-    if (email.value !== emailConfirmation.value) {
-      return { emailsNotMatch: true };
-    }
-
-    return undefined;
+    });
   }
 
   itemsValue(): number {
@@ -102,7 +90,9 @@ export class OrderComponent implements OnInit {
     itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));
 
       this.whats =
-        `https://web.whatsapp.com/send/?phone=+5547988458640&text=` +
+        // `https://api.whatsapp.com/send/?phone=5547988458640&text=` +
+        `https://wa.me/5547988458640/?text=` +
+        // `https://web.whatsapp.com/send/?phone=+5547988458640&text=` +
         `Olá VilleMeat, gostaria de${itens}` +
         `. Entregar no endereço: ${order.address}, Nº ${order.number}. (Ass. Jackson)`;
 
