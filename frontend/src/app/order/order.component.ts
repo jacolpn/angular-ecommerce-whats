@@ -16,12 +16,12 @@ export class OrderComponent implements OnInit {
   orderForm: FormGroup;
   delivery = 3.99;
   orderId: string;
-  whats = null;
+  whatsApp = null;
 
   paymentOptions: RadioOption[] = [
-    { label: 'Dinheiro', value: 'MON' },
-    { label: 'Cartão de débito', value: 'DEB' },
-    { label: 'Vale refeição', value: 'VR' }
+    { label: 'Dinheiro', value: 'Dinheiro' },
+    { label: 'Cartão de débito', value: 'Cartão Débito' },
+    { label: 'Vale refeição', value: 'Vale Refeição' }
   ];
 
   constructor(
@@ -38,7 +38,7 @@ export class OrderComponent implements OnInit {
       ),
       phone: this.formBuilder.control(
         '47999342827',
-        [Validators.required, Validators.minLength(5)]
+        [Validators.required, Validators.pattern(this.numberPattern)]
       ),
       address: this.formBuilder.control(
         'Rua Xanxerê',
@@ -49,7 +49,7 @@ export class OrderComponent implements OnInit {
         [Validators.required, Validators.pattern(this.numberPattern)]
       ),
       optionalAddress: new FormControl('', { updateOn: 'blur' }),
-      paymentOption: this.formBuilder.control('MON', [Validators.required])
+      paymentOption: this.formBuilder.control('Dinheiro', [Validators.required])
     });
   }
 
@@ -78,47 +78,38 @@ export class OrderComponent implements OnInit {
   }
 
   checkOrder(order: Order) {
-    let bd = false;
-
-    if (bd == false) {
+    let db = false;
     let itens = [];
     
     order.orderItems = this
       .cartItems()
-      .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id, item.menuItem.name));
-    
+      .map((item: CartItem) => new OrderItem(
+        item.quantity,
+        item.menuItem.id,
+        item.menuItem.name
+        ));
+        
     itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));
-
-      this.whats =
-        // `https://api.whatsapp.com/send/?phone=5547988458640&text=` +
-        `https://wa.me/5547988458640/?text=` +
-        // `https://web.whatsapp.com/send/?phone=+5547988458640&text=` +
-        `Olá VilleMeat, gostaria de${itens}` +
-        `. Entregar no endereço: ${order.address}, Nº ${order.number}. (Ass. Jackson)`;
-
-      window.location.href = this.whats;
-    } else {
-      order.orderItems = this
-        .cartItems()
-        .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id, item.menuItem.name));
-      
+        
+    if (db) {
       this.orderService
         .checkOrder(order)
         .pipe(tap((orderId: string) => {
           this.orderId = orderId;
-        })).subscribe((orderId: string) => {
-          let itens = [];
-
-          itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));
-        
-          this.whats =
-            `https://web.whatsapp.com/send/?phone=+554796974076&text=` +
-            `Olá VilleMeat, gostaria de${itens}` +
-            `. Entregar no endereço: ${order.address}, Nº ${order.number}. (Ass. Jackson)`;
-        
-          window.location.href = this.whats;
-          this.orderService.clear();
+      })).subscribe((orderId: string) => {
+        this.orderService.clear();
       });
     }
+
+    this.whatsApp =
+      `https://wa.me/5547988458640/?text=` +
+      `Olá VilleMeat, gostaria de${itens}. ` +
+      `Pagamento: ${order.paymentOption}. ` +
+      `Entregar no endereço: ${order.address}, Nº ${order.number}. ` +
+      `(Ass. ${order.name}, ${order.phone})`;
+
+    // window.location.href = this.whatsApp; 
+    this.router.navigate(['/order-summary']);
+    window.open(this.whatsApp, '_blank');
   }
 }

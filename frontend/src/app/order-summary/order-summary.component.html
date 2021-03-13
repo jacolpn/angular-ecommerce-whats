@@ -8,16 +8,12 @@
         <b>Avalie</b> sua experiência:
       </p>
       <p>
-        <app-rating
-          (rated)="rate()"
-          [hidden]="rated"
-        >
+        <app-rating (rated)="rate()">
         </app-rating>
       </p>
         <p *ngIf="rated">
           Obrigado pela sua avaliação!
         </p>
-        <button (click)="redirectWhats()">Send again</button>
     </div>
   
   </section>

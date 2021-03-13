@@ -42,40 +42,31 @@
       <div class="col-sm-6 col-xs-12">
         <app-input-container
           errorMessage="Campo obrigatório e com 5 caracteres."
-          label="Endereço"
-        >
-          <input
-            type="text"
-            class="form-control"
-            formControlName="address"
-            placeholder="Qual seu endereço?"
-            autocomplete="off"
-          />
+          label="Endereço">
+          <input  type="text"
+                  class="form-control"
+                  formControlName="address"
+                  placeholder="Qual seu endereço?"
+                  autocomplete="off"/>
         </app-input-container>
       </div>
       <div class="col-sm-3 col-xs-6">
-        <app-input-container
-          errorMessage="Obrigatório e somente números."
-          label="Número"
-        >
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Número"
-            formControlName="number"
-            autocomplete="off"
-          >
+        <app-input-container  errorMessage="Obrigatório e somente números."
+                              label="Número">
+          <input  type="text"
+                  class="form-control"
+                  placeholder="Número"
+                  formControlName="number"
+                  autocomplete="off">
         </app-input-container>
       </div>
       <div class="col-sm-3 col-xs-6">
         <app-input-container label="Complemento">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Complemento"
-            formControlName="optionalAddress"
-            autocomplete="off"
-          >
+          <input  type="text"
+                  class="form-control"
+                  placeholder="Complemento"
+                  formControlName="optionalAddress"
+                  autocomplete="off">
         </app-input-container>
       </div>
     </div>
@@ -84,12 +75,10 @@
       <div class="col-xs-12">
         <p class="lead">Itens do Pedido:</p>
       </div>
-      <app-order-items
-        [items]="cartItems()"
-        (increaseQty)="increaseQty($event)"
-        (decreaseQty)="decreaseQty($event)"
-        (remove)="removeItem($event)"
-      >
+      <app-order-items  [items]="cartItems()"
+                        (increaseQty)="increaseQty($event)"
+                        (decreaseQty)="decreaseQty($event)"
+                        (remove)="removeItem($event)">
       </app-order-items>
     </div>
 
@@ -97,20 +86,16 @@
       <div class="col-sm-6 col-xs-12">
         <p class="lead">Formas de Pagamento:</p>
         <div class="form-group">
-            <app-radio
-              [options]="paymentOptions"
-              formControlName="paymentOption"
-            >
+            <app-radio  [options]="paymentOptions"
+                        formControlName="paymentOption">
             </app-radio>
         </div>
       </div>
 
       <div class="col-sm-6 col-xs-12">
         <p class="lead">Frete e Total:</p>
-        <app-delivery-costs
-          [delivery]="delivery"
-          [itemsValue]="itemsValue()"
-        >
+        <app-delivery-costs [delivery]="delivery"
+                            [itemsValue]="itemsValue()">
         </app-delivery-costs>
       </div>
     </div>
@@ -118,13 +103,11 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <button
-        href="order-summary.html"
-        class="btn btn-success pull-right"
-        [disabled]="!orderForm.valid || cartItems().length === 0"
-        (click)="checkOrder(orderForm.value)"
-      >
-          <i class="fa fa-credit-card"></i> Concluir Pedido
+      <button href="order-summary.html"
+              class="btn btn-success pull-right"
+              [disabled]="!orderForm.valid || cartItems().length === 0"
+              (click)="checkOrder(orderForm.value)">
+        <i class="fa fa-credit-card"></i> Concluir Pedido
     </button>
     </div>
   </div>

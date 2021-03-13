@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 import { VILLE_API } from './../app.api';
@@ -12,14 +11,16 @@ import { Restaurant } from './restaurant.model';
 export class RestaurantDetailComponent implements OnInit {
   restaurant: Restaurant;
 
-  constructor(
-    private route: ActivatedRoute,
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    // this.getDB();
-    this.mockDB();
+    let db = false;
+
+    if (db) {
+      this.getDB();
+    } else {
+      this.mockDB();
+    }
   }
 
   mockDB() {

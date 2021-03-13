@@ -44,7 +44,6 @@ export class OrderService {
     return this.http.post<Order>(
       `${VILLE_API}/orders`,
       order,
-      // { headers: headers } //Obriga estar logado
     )
       .pipe(map(order => order.id));
   }

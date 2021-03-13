@@ -19,10 +19,10 @@ export class ReviewsComponent implements OnInit {
   ngOnInit() {
     let db = false;
 
-    if (db == false) {
-      this.mockDB();
-    } else {
+    if (db) {
       this.getDB();
+    } else {
+      this.mockDB();
     }
   }
 
