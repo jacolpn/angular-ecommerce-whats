@@ -6,7 +6,8 @@ import { Restaurant } from './restaurant.model';
 
 @Component({
   selector: 'app-restaurant-detail',
-  templateUrl: './restaurant-detail.component.html'
+  templateUrl: './restaurant-detail.component.html',
+  styleUrls: ['./restaurant-detail.component.css']
 })
 export class RestaurantDetailComponent implements OnInit {
   restaurant: Restaurant;
@@ -27,10 +28,10 @@ export class RestaurantDetailComponent implements OnInit {
     this.restaurant = {
       "id": "jack-daniels",
       "name": "Jack Daniel's",
-      "category": "whisky",
+      "category": "Whisky",
       "deliveryEstimate": "25m",
       "rating": 9.9,
-      "imagePath": "assets/img/restaurants/jack-daniels.jpg",
+      "imagePath": "assets/img/restaurants/jack-daniels.png",
       "about": "Mais de 150 anos se passaram desde que Nearest e Jack começaram a fazer whiskey juntos e, até hoje, sempre houve um membro da família Green trabalhando na Destilaria Jack Daniel.",
       "hours": "Funciona de segunda à segunda, de 00h às 23h"
     }

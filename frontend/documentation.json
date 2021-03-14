@@ -976,7 +976,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper-about {\r\n  height: 100%; \r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.content {\r\n  background-color: var(--color-box-footer);\r\n  border: 1px solid rgba(0, 0.3, 0, 0);\r\n  border-radius: 6px; \r\n  margin-top: 20px;\r\n  height: 90%;\r\n  width: 70%;\r\n}\r\nh1 {\r\n padding: 25px 25px 20px 25px; \r\n}\r\np {\r\npadding: 7px 25px 0 25px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .content {\r\n      width: 90%;\r\n  }\r\n}\r\n",
+                    "data": ".wrapper-about {\r\n  height: 100%; \r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.content {\r\n  background-color: var(--color-box-footer);\r\n  border: 1px solid rgba(0, 0.3, 0, 0);\r\n  border-radius: 6px; \r\n  margin-top: 20px;\r\n  height: 90%;\r\n  width: 70%;\r\n}\r\nh1 {\r\n padding: 25px 25px 20px 25px; \r\n}\r\np {\r\n  padding: 7px 25px 0 25px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .content {\r\n      width: 90%;\r\n  }\r\n}\r\n",
                     "styleUrl": "./about.component.css"
                 }
             ],
@@ -1117,7 +1117,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-weight: 700;\r\n    border: 0;\r\n    border-radius: 3em;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    text-decoration: none;\r\n    line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n    color: white;\r\n    background-color: var(--color-primary);\r\n}\r\n.storybook-button--primary:hover {\r\n    background-color: var(--color-primary-darker);\r\n}\r\n.storybook-button--secondary {\r\n    color: var(--color-button-text);\r\n    background-color: transparent;\r\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--secondary:hover {\r\n    background-color: var(--color-text-title);\r\n    color: var(--color-button-text);\r\n}\r\n.storybook-button--small {\r\n    font-size: 12px;\r\n    padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n    font-size: 14px;\r\n    padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\r\n}\r\n  ",
+                    "data": ".storybook-button {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-weight: 700;\r\n    border: 0;\r\n    border-radius: 3em;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    outline-style: none;\r\n    line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n    color: white;\r\n    background-color: var(--color-primary);\r\n}\r\n.storybook-button--primary:hover {\r\n    background-color: var(--color-primary-darker);\r\n}\r\n.storybook-button--secondary {\r\n    color: var(--color-button-text);\r\n    background-color: transparent;\r\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--secondary:hover {\r\n    background-color: var(--color-text-title);\r\n    color: var(--color-button-text);\r\n}\r\n.storybook-button--small {\r\n    font-size: 12px;\r\n    padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n    font-size: 14px;\r\n    padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\r\n}\r\n  ",
                     "styleUrl": "./button.component.css"
                 }
             ],
@@ -1730,7 +1730,7 @@
         },
         {
             "name": "NotFoundComponent",
-            "id": "component-NotFoundComponent-a6a9222230989fdb4349ba5cb10fb620",
+            "id": "component-NotFoundComponent-a32cd05f022e0efb68617735bd10f4bc",
             "file": "src/app/not-found/not-found.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1738,7 +1738,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-not-found",
-            "styleUrls": [],
+            "styleUrls": [
+                "./not-found.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./not-found.component.html"
@@ -1754,7 +1756,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 11
+                    "line": 12
                 }
             ],
             "hostBindings": [],
@@ -1762,20 +1764,25 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-not-found',\n  templateUrl: './not-found.component.html'\n})\nexport class NotFoundComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-not-found',\n  templateUrl: './not-found.component.html',\n  styleUrls: ['./not-found.component.css']\n})\nexport class NotFoundComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": "img {\r\n    padding-top: 45px;\r\n}\r\np {\r\n    padding-top: 7px;\r\n}\r\na {\r\n    /* text-decoration: none; */\r\n    color: var(--color-text-title);\r\n}",
+                    "styleUrl": "./not-found.component.css"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 7
+                "line": 8
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"content\">\n  <div class=\"jumbotron\">\n    <img src=\"assets/img/404.png\" />\n    <h2>Página Não Encontrada</h2>\n    <p>\n      Está com fome? Acesse a página de\n      <a [routerLink]=\"['/restaurant']\">restaurantes</a>.\n    </p>\n  </div>\n</section>\n"
+            "templateData": "<storybook-square-white>\n    <img src=\"assets/img/404.png\" />\n    <h2>Página Não Encontrada</h2>\n    <p>\n      Está com fome? Acesse a página do\n      <a [routerLink]=\"['/restaurant/jack-daniels']\">\n        <b>Jack Daniel's</b>\n      </a>.\n    </p>\n</storybook-square-white>"
         },
         {
             "name": "OrderComponent",
@@ -2711,7 +2718,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"content\">\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <div class=\"box box-solid\">\n        <div class=\"box-header with-border\">\n          <i class=\"fa fa-home\"></i>\n          <h3 class=\"box-title\">{{ restaurant?.name }}</h3>\n            <span class=\"pull-right\">\n              <i class=\"fa fa-star\"></i>\n              {{ restaurant?.rating }}\n            </span>\n        </div>\n        <div class=\"box-body\">\n          <div class=\"col-sm-3 col-xs-12\" *ngIf=\"restaurant\">\n              <img class=\"box-img-detail\" [src]=\"restaurant?.imagePath\" />\n          </div>\n            <dl class=\"col-sm-9 col-xs-12\">\n              <dt>Categoria</dt>\n              <dd>{{ restaurant?.category }}</dd>\n              <dt>Quem somos</dt>\n              <dd>{{ restaurant?.about }}</dd>\n              <dt>Horários</dt>\n              <dd>{{ restaurant?.hours}}</dd>\n            </dl>\n        </div>\n        <div class=\"box-footer detail-footer\">\n          <a class=\"pull-left\" routerLinkActive=\"detail-active\" [routerLink]=\"['menu']\">\n            Menu\n          </a>\n          <a class=\"pull-right\" routerLinkActive=\"detail-active\" [routerLink]=\"['reviews']\">\n            Avaliações\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n      <router-outlet></router-outlet>\n  </div>\n</section>\n  "
+            "templateData": "<section class=\"content\">\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <div class=\"box box-solid\">\n        <div class=\"box-header with-border\">\n          <i class=\"fa fa-home\"></i>\n          <h3 class=\"box-title\">{{ restaurant?.name }}</h3>\n            <span class=\"pull-right\">\n              <i class=\"fa fa-star\"></i>\n              {{ restaurant?.rating }}\n            </span>\n        </div>\n        <div class=\"box-body\">\n          <div class=\"col-sm-3 col-xs-12\" *ngIf=\"restaurant\">\n              <img class=\"box-img-detail\" [src]=\"restaurant?.imagePath\" />\n          </div>\n            <dl class=\"col-sm-9 col-xs-12\">\n              <dt>Categoria</dt>\n              <dd>{{ restaurant?.category }}</dd>\n              <dt>Quem somos</dt>\n              <dd>{{ restaurant?.about }}</dd>\n              <dt>Horários</dt>\n              <dd>{{ restaurant?.hours}}</dd>\n            </dl>\n        </div>\n        <div class=\"box-footer detail-footer\">\n          <a class=\"pull-left\" routerLinkActive=\"detail-active\" [routerLink]=\"['menu']\">\n            Menu\n          </a>\n          <a class=\"pull-right\" routerLinkActive=\"detail-active\" [routerLink]=\"['reviews']\">\n            Avaliações\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n      <!-- <router-outlet></router-outlet> -->\n  </div>\n</section>\n  "
         },
         {
             "name": "ReviewsComponent",
@@ -3358,17 +3365,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "Large",
@@ -3479,16 +3486,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -3497,6 +3494,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
                 }
             ],
             "src/stories/components/button/Button.stories.ts": [
