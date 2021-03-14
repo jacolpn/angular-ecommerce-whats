@@ -1,285 +1,71 @@
-body {
-  color: #555;
+:root {
+  --color-background: #F0F0F7;
+  --color-primary-lighter: #9871F5;
+  --color-primary-light: #916BEA;
+  --color-primary: #8257E5;
+  --color-primary-dark: #774DD6;
+  --color-primary-darker: #6842C2;
+  --color-secundary: #04D361;
+  --color-secundary-dark: #04BF58;
+  --color-title-in-primary: #FFFFFF;
+  --color-text-in-primary: #D4C2FF;
+  --color-text-title: #32264D;
+  --color-text-complement: #9C98A6;
+  --color-text-base: #6A6180;
+  --color-line-in-white: #E6E6F0;
+  --color-input-background: #F8F8FC;
+  --color-button-text: #FFFFFF;
+  --color-box-base: #FFFFFF;
+  --color-box-footer: #FAFAFC;
 }
 
-.box-header {
-  color: inherit;
-}
-.place-info-box {
-  color: #555;
-  display: block;
-  min-height: 120px;
-  background: #fff;
-  width: 100%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  margin-bottom: 15px;
-}
-
-.place-info-box small {
-  font-size: 14px;
-}
-
-.place-info-box .progress {
-  background: rgba(0, 0, 0, 0.2);
-  margin: 5px -10px 5px -10px;
-  height: 2px;
-}
-
-.place-info-box .progress,
-.place-info-box .progress .progress-bar {
-  border-radius: 0;
-}
-
-.place-info .progress .progress-bar {
-  background: #fff;
-}
-
-.place-info-box-icon {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  display: block;
-  float: left;
-  /*height: 120px;*/
-  width: 120px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.place-info-box-icon > img {
-  max-width: 100%;
-  /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
-}
-
-.place-info-box-content {
-  padding: 5px 10px;
-  margin-left: 120px;
-}
-
-.place-info-box-detail {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-  width: 100%;
-}
-
-.place-info-box-text {
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  width: 80%;
-  float: left
-}
-
-.place-info-box-star {
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 10px;
-  width: 20%;
-  float: right;
-}
-
-.place-info-box-more {
-  display: block;
-}
-
-.progress-description {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
+  padding: 0;
+  border: 0;
+  /* font-size: 100%; */
+  /* font: inherit; */
+  vertical-align: baseline;
 }
 
-.box-img-detail {
-  width: 180px;
-  height: 180px;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-title);
 }
-
-.box-body dl {
-  font-size: 18px;
-}
-
-.menu-item-info-box {
-  color: #555;
-  display: block;
-  min-height: 120px;
-  background: #fff;
-  width: 100%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  margin-bottom: 15px;
-}
-
-.menu-item-info-box small {
-  font-size: 14px;
-}
-
-.menu-item-info-box .progress {
-  background: rgba(0, 0, 0, 0.2);
-  margin: 5px -10px 5px -10px;
-  height: 2px;
-}
-
-.menu-item-info-box .progress,
-.menu-item-info-box .progress .progress-bar {
-  border-radius: 0;
-}
-
-.menu-item-info .progress .progress-bar {
-  background: #fff;
-}
-
-.menu-item-info-box-icon {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  display: block;
-  float: left;
-  /*height: 120px;*/
-  width: 120px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.menu-item-info-box-icon > img {
-  max-width: 100%;
-  /*border-right: 1px solid rgba(0, 0, 0, 0.1);*/
-}
-
-.menu-item-info-box-price {
-  font-weight: bold;
-  margin-right: 20px;
-  font-size: 16px;
-}
-
-.menu-item-info-box-content {
-  padding: 5px 10px;
-  margin-left: 120px;
-}
-
-.menu-item-info-box-content a {
-  cursor: pointer;
-}
-
-.menu-item-info-box-detail {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 15px;
-  width: 100%;
-}
-
-.menu-item-info-box-text {
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  width: 80%;
-}
-
-.menu-item-info-box-more {
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
-.danger {
-  color: #dd4b39;
-  display: inline;
+body {
+  line-height: 1;
+  background-color: var(--color-background);
 }
-.jumbotron {
-  background-color: #fff;
-  text-align:center;
+p, ol, ul {
+  color: var(--color-text-base);
+  list-style: none;
 }
-
-.jumbotron h2 {
-  font-size: 40px;
+blockquote, q {
+  quotes: none;
 }
-
-.welcome-jumbotron h1 {
-  margin-bottom: 60px;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
 }
-
-.welcome-jumbotron p {
-  margin-bottom: 60px;
-  font-size: 30px;
-}
-
-.fancy-radio {
-  position: absolute;
-  opacity: 0;
-}
-
-.review-score{
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.detail-footer{
-  padding:0px
-}
-
-.detail-footer > a{
-  text-align: center;
-  font-size: 16px;
-  color: #555;
-  width:50%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.detail-footer > a:hover{
-  outline: none;
-  text-decoration: none;
-}
-
-.detail-active {
-  border-bottom: 2px solid #dd4b39;
-}
-
-.has-error-block {
-  color: #dd4b39;
-}
-
-.checkbox {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  background: rgb(255, 255, 255);
-  border: 0px;
-  opacity: 0;
-}
-
-/* Barra de busca de restaurantes */
-.search-link {
-  cursor: pointer;
-  color: #555;
-}
-
-.search-link:hover {
-  color: #dd4b39;
-}
-
-.search-bar {
-  opacity: 0;
-  max-height: 0px;
-}
-
-.m-top {
-  margin-top: 15px;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

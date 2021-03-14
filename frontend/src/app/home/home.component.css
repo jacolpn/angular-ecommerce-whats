@@ -1,4 +1,7 @@
-.wrapper-home {
- height: 100%; 
- width: 100%;
+h1 {
+    padding-top: 116px;
+    font-size: xxx-large;
+}
+p {
+    padding: 15px 0 36px 0;
 }

@@ -1,13 +1,12 @@
-<section class="wrapper-home">
-  <div class="jumbotron welcome-jumbotron">
-    <h1>Bem vindo ao Ville!</h1>
-    
-    <p>
-      Bora beber? Peça e receba em casa.
-    </p>
-    <a class="btn btn-primary btn-lg"
-       [routerLink]="['/restaurant/jack-daniels']">
-      Comprar
-    </a>
-  </div>
-</section>
+<storybook-square-white>
+  <h1>Bem vindo ao Whisky Ville!</h1>
+  
+  <p>
+    Bora beber? Peça e receba em casa.
+  </p>
+  <storybook-button primary="true"
+                    label="Comprar"
+                    (onClick)="navigateRestaurant()"
+                    size="large">
+  </storybook-button>
+</storybook-square-white>

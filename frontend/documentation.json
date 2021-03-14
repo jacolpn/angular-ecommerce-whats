@@ -938,7 +938,7 @@
     "components": [
         {
             "name": "AboutComponent",
-            "id": "component-AboutComponent-6ad5677f9b25ef9c4db1de2f9fc0ca17",
+            "id": "component-AboutComponent-75b8a66439c7aeaa85559e51ada13561",
             "file": "src/app/about/about.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -946,10 +946,68 @@
             "outputs": [],
             "providers": [],
             "selector": "app-about",
-            "styleUrls": [],
+            "styleUrls": [
+                "./about.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./about.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about',\n  templateUrl: './about.component.html',\n  styleUrls: ['./about.component.css']\n})\nexport class AboutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper-about {\r\n  height: 100%; \r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.content {\r\n  background-color: var(--color-box-footer);\r\n  border: 1px solid rgba(0, 0.3, 0, 0);\r\n  border-radius: 6px; \r\n  margin-top: 20px;\r\n  height: 90%;\r\n  width: 70%;\r\n}\r\nh1 {\r\n padding: 25px 25px 20px 25px; \r\n}\r\np {\r\npadding: 7px 25px 0 25px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .content {\r\n      width: 90%;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./about.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<section class=\"wrapper-about\">\n  <div class=\"content\">\n    <h1>Sobre</h1>\n    \n    <p>\n      Whisky Ville | Aplication\n    </p>\n    <p>\n      MIT license\n    </p>\n    <p>\n      Copyright 2020 Whisky Ville\n    </p>\n    <p>\n      Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n    </p>\n    <p>\n      The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n    </p>\n  </div>\n</section>\n"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-4fed7dcae05101663f4ceb7f0c3b1716",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [],
@@ -970,69 +1028,25 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about',\n  templateUrl: './about.component.html'\n})\nexport class AboutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent implements OnInit {\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 7
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<section class=\"content-header\">\n  <h1>About</h1>\n</section>\n<section class=\"content\">\n  <p class=\"lead\">\n    Ville | Aplication\n  </p>\n  <p class=\"lead\">\n    MIT license\n  </p>\n  <p class=\"lead\">\n    Copyright 2020 Ville\n  </p>\n  <p class=\"lead\">\n    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n  </p>\n  <p class=\"lead\">\n    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n  </p>\n</section>\n"
-        },
-        {
-            "name": "AppComponent",
-            "id": "component-AppComponent-a011cb1f25b45d5a442d43faf91fe8aa",
-            "file": "src/app/app.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-root",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./app.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
+            "styleUrlsData": [
                 {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 10
+                    "data": ".wrapper {\r\n  /* height: 100%; */\r\n  /* width: 100%; */\r\n  margin: 0;\r\n}\r\n\r\n.wrapper-header {\r\n  height: 12vh;\r\n}\r\n\r\n.wrapper-content {\r\n  height: 81vh;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n}",
+                    "styleUrl": "./app.component.css"
                 }
             ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html'\n})\nexport class AppComponent implements OnInit {\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 7
+                "line": 8
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"wrapper\">\r\n\r\n  <app-header></app-header>\r\n  <!-- <storybook-header></storybook-header> -->\r\n\r\n  <div class=\"content-wrapper\">\r\n    <div class=\"container\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n\r\n  <app-snackbar></app-snackbar>\r\n\r\n  <footer class=\"main-footer\">\r\n    <div class=\"container\">\r\n      <div class=\"pull-right hidden-xs\">\r\n        <b>Version</b> 1.0.0\r\n      </div>\r\n      <strong>Ville</strong> Angular Application\r\n    </div>\r\n  </footer>\r\n</div>\r\n"
+            "templateData": "<div class=\"wrapper\">\r\n  <div class=\"wrapper-header\">\r\n    <app-header></app-header>\r\n  </div>\r\n  <div class=\"wrapper-content\">\r\n    <router-outlet></router-outlet>\r\n    <app-snackbar></app-snackbar>\r\n    <app-footer></app-footer>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1103,7 +1117,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-weight: 700;\r\n    border: 0;\r\n    border-radius: 3em;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n    color: white;\r\n    background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n    color: rgb(10, 48, 82);\r\n    background-color: transparent;\r\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--secondary:hover {\r\n    background-color: rgb(10, 48, 82);\r\n    color: rgb(157, 204, 245);\r\n}\r\n.storybook-button--small {\r\n    font-size: 12px;\r\n    padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n    font-size: 14px;\r\n    padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\r\n}\r\n  ",
+                    "data": ".storybook-button {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-weight: 700;\r\n    border: 0;\r\n    border-radius: 3em;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    text-decoration: none;\r\n    line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n    color: white;\r\n    background-color: var(--color-primary);\r\n}\r\n.storybook-button--primary:hover {\r\n    background-color: var(--color-primary-darker);\r\n}\r\n.storybook-button--secondary {\r\n    color: var(--color-button-text);\r\n    background-color: transparent;\r\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--secondary:hover {\r\n    background-color: var(--color-text-title);\r\n    color: var(--color-button-text);\r\n}\r\n.storybook-button--small {\r\n    font-size: 12px;\r\n    padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n    font-size: 14px;\r\n    padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\r\n}\r\n  ",
                     "styleUrl": "./button.component.css"
                 }
             ],
@@ -1199,6 +1213,62 @@
             "templateData": "<div class=\"table-responsive\">\n    <table class=\"table\">\n      <tbody><tr>\n        <th style=\"width:50%\">Itens:</th>\n        <td class=\"text-right\">\n          {{ itemsValue | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n      <tr>\n        <th>Frete:</th>\n        <td class=\"text-right\">\n          {{ delivery | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n      <tr>\n        <th>Total:</th>\n        <td class=\"text-right\">\n          {{ total() | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n    </tbody></table>\n  </div>\n  "
         },
         {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-29c03aa3a1e21c771e991c7f9c97796a",
+            "file": "src/app/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer",
+            "styleUrls": [
+                "./footer.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.css']\n})\nexport class FooterComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper-footer {\r\n    text-align: center;\r\n}\r\n",
+                    "styleUrl": "./footer.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<footer class=\"wrapper-footer\">\n    <p>\n        <b>Ville</b> angular application, <b>Version</b> 11.2.3\n    </p>\n</footer>"
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-10c4d8fd1458e62b7a1f3b54b7d29a1f",
             "file": "src/app/header/header.component.ts",
@@ -1259,7 +1329,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  background-color: rgb(94, 164, 226);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  color: rgb(10, 48, 82);\r\n}\r\n\r\nbutton + button {\r\n  margin-left: 10px;\r\n}\r\n",
+                    "data": ".wrapper-header {\r\n  border-bottom: 1px solid rgba(0, 0.1, 0, 0);\r\n  background-color: var(--color-primary);\r\n  padding: 15px 20%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  margin: 0;\r\n\r\n  /* Impedir seleção do texto. */\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -khtml-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  color: var(--color-box-base);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .wrapper-header {\r\n    padding: 15px 30px;\r\n  }\r\n}\r\n",
                     "styleUrl": "./header.component.css"
                 }
             ],
@@ -1287,11 +1357,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<header>\r\n  <div class=\"wrapper\">\r\n    <div>\r\n      <a [routerLink]=\"['/']\">\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        \r\n        <h1>{{ titleHeader }}</h1>\r\n      </a>\r\n    </div>\r\n    <div>\r\n      <storybook-button size=\"small\"\r\n                        (onClick)=\"navigateAbout()\"\r\n                        label=\"About\">\r\n      </storybook-button>\r\n    </div>\r\n  </div>\r\n</header>\r\n\r\n<!-- <header class=\"main-header\">\r\n  <nav class=\"navbar navbar-static-top\">\r\n    <div class=\"container\">\r\n      <div class=\"navbar-header\">\r\n        <a [routerLink]=\"['/']\" class=\"navbar-brand\">\r\n          <b>Ville</b>\r\n        </a>\r\n        <button\r\n          type=\"button\"\r\n          class=\"navbar-toggle collapsed\"\r\n          data-toggle=\"collapse\"\r\n          data-target=\"#navbar-collapse\"\r\n        >\r\n          <i class=\"fa fa-bars\"></i>\r\n        </button>\r\n      </div>\r\n      <div class=\"collapse navbar-collapse pull-left\" id=\"navbar-collapse\">\r\n        <ul class=\"nav navbar-nav\">\r\n            <li routerLinkActive=\"active\">\r\n              <a [routerLink]=\"['/about']\">Sobre</a>\r\n            </li>\r\n        </ul>\r\n      </div>\r\n      <app-user-detail></app-user-detail>\r\n    </div>\r\n  </nav>\r\n</header> -->\r\n"
+            "templateData": "<header>\r\n  <div class=\"wrapper-header\">\r\n    <div>\r\n      <a [routerLink]=\"['/']\">\r\n        <svg  width=\"32\"\r\n              height=\"32\"\r\n              viewBox=\"0 0 32 32\"\r\n              xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n                  fill=\"#FFF\"/>\r\n            <path d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n                  fill=\"#555AB9\"/>\r\n            <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n                  fill=\"#91BAF8\"/>\r\n          </g>\r\n        </svg>\r\n\r\n        <h1>{{ titleHeader }}</h1>\r\n      </a>\r\n    </div>\r\n\r\n    <div>\r\n      <storybook-button size=\"small\"\r\n                        (onClick)=\"navigateAbout()\"\r\n                        label=\"Sobre\">\r\n      </storybook-button>\r\n    </div>\r\n  </div>\r\n</header>\r\n"
         },
         {
             "name": "HomeComponent",
-            "id": "component-HomeComponent-bf30e5cc2303baaf73dc45051f618ffd",
+            "id": "component-HomeComponent-aa90825bea29eacef2e1b82b28eca078",
             "file": "src/app/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1299,7 +1369,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-home",
-            "styleUrls": [],
+            "styleUrls": [
+                "./home.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./home.component.html"
@@ -1310,12 +1382,20 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
+                    "name": "navigateRestaurant",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                },
+                {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 11
+                    "line": 13
                 }
             ],
             "hostBindings": [],
@@ -1323,20 +1403,39 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html'\n})\nexport class HomeComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.css']\n})\nexport class HomeComponent implements OnInit {\n\n  constructor(private router: Router) { }\n\n  ngOnInit(): void { }\n\n  navigateRestaurant() {\n    this.router.navigate(['/restaurant/jack-daniels']);\n  }\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper-home {\r\n    height: 100%; \r\n    width: 100%;\r\n    display: flex;\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n.content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    margin-top: 20px;\r\n    height: 90%;\r\n    width: 70%;\r\n}\r\nh1 {\r\n    padding-top: 116px;\r\n    font-size: xxx-large;\r\n}\r\np {\r\n    padding: 15px 0 36px 0;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .content {\r\n        width: 90%;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./home.component.css"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
-                "args": [],
-                "line": 7
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router"
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"content\">\n  <div class=\"jumbotron welcome-jumbotron\">\n    <h1>Bem vindo ao Ville!</h1>\n    \n    <p>\n      Bora beber? Peça e receba em casa.\n    </p>\n    <a class=\"btn btn-primary btn-lg\"\n       [routerLink]=\"['/restaurant/jack-daniels']\">\n      Comprar\n    </a>\n  </div>\n</section>\n"
+            "templateData": "<section class=\"wrapper-home\">\n  <div class=\"content\">\n    <h1>Bem vindo ao Whisky Ville!</h1>\n    \n    <p>\n      Bora beber? Peça e receba em casa.\n    </p>\n    <storybook-button primary=\"true\"\n                      label=\"Comprar\"\n                      (onClick)=\"navigateRestaurant()\"\n                      size=\"large\">\n    </storybook-button>\n  </div>\n</section>\n"
         },
         {
             "name": "InputComponent",
@@ -2193,7 +2292,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    padding: 48px 20px;\r\n    margin: 0 auto;\r\n    max-width: 600px;\r\n    color: #333;\r\n  }\r\n  \r\n  h2 {\r\n    font-weight: 900;\r\n    font-size: 32px;\r\n    line-height: 1;\r\n    margin: 0 0 4px;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n  }\r\n  \r\n  p {\r\n    margin: 1em 0;\r\n  }\r\n  \r\n  a {\r\n    text-decoration: none;\r\n    color: #1ea7fd;\r\n  }\r\n  \r\n  ul {\r\n    padding-left: 30px;\r\n    margin: 1em 0;\r\n  }\r\n  \r\n  li {\r\n    margin-bottom: 8px;\r\n  }\r\n  \r\n  .tip {\r\n    display: inline-block;\r\n    border-radius: 1em;\r\n    font-size: 11px;\r\n    line-height: 12px;\r\n    font-weight: 700;\r\n    background: #e7fdd8;\r\n    color: #66bf3c;\r\n    padding: 4px 12px;\r\n    margin-right: 10px;\r\n    vertical-align: top;\r\n  }\r\n  \r\n  .tip-wrapper {\r\n    font-size: 13px;\r\n    line-height: 20px;\r\n    margin-top: 40px;\r\n    margin-bottom: 40px;\r\n  }\r\n  \r\n  .tip-wrapper svg {\r\n    display: inline-block;\r\n    height: 12px;\r\n    width: 12px;\r\n    margin-right: 4px;\r\n    vertical-align: top;\r\n    margin-top: 3px;\r\n  }\r\n  \r\n  .tip-wrapper svg path {\r\n    fill: #1ea7fd;\r\n  }\r\n  ",
+                    "data": "section {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    padding: 48px 20px;\r\n    margin: 0 auto;\r\n    max-width: 600px;\r\n    color: #333;\r\n    background-color: aliceblue;\r\n  }\r\n  \r\n  h2 {\r\n    font-weight: 900;\r\n    font-size: 32px;\r\n    line-height: 1;\r\n    margin: 0 0 4px;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n  }\r\n  \r\n  p {\r\n    margin: 1em 0;\r\n  }\r\n  \r\n  a {\r\n    text-decoration: none;\r\n    color: #1ea7fd;\r\n  }\r\n  \r\n  ul {\r\n    padding-left: 30px;\r\n    margin: 1em 0;\r\n  }\r\n  \r\n  li {\r\n    margin-bottom: 8px;\r\n  }\r\n  \r\n  .tip {\r\n    display: inline-block;\r\n    border-radius: 1em;\r\n    font-size: 11px;\r\n    line-height: 12px;\r\n    font-weight: 700;\r\n    background: #e7fdd8;\r\n    color: #66bf3c;\r\n    padding: 4px 12px;\r\n    margin-right: 10px;\r\n    vertical-align: top;\r\n  }\r\n  \r\n  .tip-wrapper {\r\n    font-size: 13px;\r\n    line-height: 20px;\r\n    margin-top: 40px;\r\n    margin-bottom: 40px;\r\n  }\r\n  \r\n  .tip-wrapper svg {\r\n    display: inline-block;\r\n    height: 12px;\r\n    width: 12px;\r\n    margin-right: 4px;\r\n    vertical-align: top;\r\n    margin-top: 3px;\r\n  }\r\n  \r\n  .tip-wrapper svg path {\r\n    fill: #1ea7fd;\r\n  }\r\n  ",
                     "styleUrl": "./page.component.css"
                 }
             ],
@@ -2929,35 +3028,26 @@
             "templateData": "<div class=\"snackbar\" [@snack-visibility]=\"snackVisibility\">\n    {{ message }}\n  </div>\n  "
         },
         {
-            "name": "UserDetailComponent",
-            "id": "component-UserDetailComponent-43017a3859606db8c10716dc524deec0",
-            "file": "src/app/header/user-detail/user-detail.component.ts",
+            "name": "SquareWhiteComponent",
+            "id": "component-SquareWhiteComponent-5ca1060a03d090b5410e39e0bcdab1bf",
+            "file": "src/stories/components/square-white/square-white.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-user-detail",
+            "selector": "storybook-square-white",
             "styleUrls": [
-                "./user-detail.component.css"
+                "./square-white.component.css"
             ],
             "styles": [],
             "templateUrl": [
-                "./user-detail.component.html"
+                "./square-white.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "\"Cachaceiro\"",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -2965,7 +3055,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13
+                    "line": 11
                 }
             ],
             "hostBindings": [],
@@ -2973,12 +3063,12 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-user-detail',\n  templateUrl: './user-detail.component.html',\n  styleUrls: ['./user-detail.component.css']\n})\nexport class UserDetailComponent implements OnInit {\n  user: string = \"Cachaceiro\";\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-square-white',\n  templateUrl: './square-white.component.html',\n  styleUrls: ['./square-white.component.css']\n})\nexport class SquareWhiteComponent implements OnInit {  \n  constructor() { }\n\n  ngOnInit(): void { }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".user-menu>span{\r\n  position: relative;\r\n  display: block;\r\n  padding: 15px 15px;\r\n  color: #fff;\r\n}\r\n\r\n.user-menu a{\r\n  color: #fff;\r\n  cursor: pointer\r\n}\r\n\r\n@media (max-width: 991px){\r\n  .navbar-custom-menu {\r\n      display: block;\r\n      position: absolute;\r\n      top: 0;\r\n      right: 40px;\r\n    }\r\n}\r\n",
-                    "styleUrl": "./user-detail.component.css"
+                    "data": ".content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    margin-top: 20px;\r\n    height: 90%;\r\n    width: 70%;\r\n}",
+                    "styleUrl": "./square-white.component.css"
                 }
             ],
             "stylesData": "",
@@ -2986,12 +3076,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 9
+                "line": 8
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"navbar-custom-menu\">\n  <ul class=\"nav navbar-nav\">\n    <li class=\"user user-menu\">\n      <span>\n        Olá, {{ user }}\n      </span>\n    </li>\n  </ul>\n</div>\n"
+            "templateData": "<div class=\"content\">\n</div>"
         }
     ],
     "modules": [
@@ -3042,6 +3132,9 @@
                             "name": "AppComponent"
                         },
                         {
+                            "name": "FooterComponent"
+                        },
+                        {
                             "name": "HeaderComponent"
                         },
                         {
@@ -3067,9 +3160,6 @@
                         },
                         {
                             "name": "ShoppingCartComponent"
-                        },
-                        {
-                            "name": "UserDetailComponent"
                         }
                     ]
                 },
@@ -3114,6 +3204,9 @@
                         },
                         {
                             "name": "PageComponent"
+                        },
+                        {
+                            "name": "SquareWhiteComponent"
                         }
                     ]
                 },
@@ -3129,6 +3222,9 @@
                         },
                         {
                             "name": "PageComponent"
+                        },
+                        {
+                            "name": "SquareWhiteComponent"
                         }
                     ]
                 },
@@ -3315,6 +3411,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Square",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/square-white/Square-white.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3329,6 +3433,14 @@
                 "file": "src/stories/components/page/Page.stories.ts",
                 "type": "Story<PageComponent>",
                 "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/square-white/Square-white.stories.ts",
+                "type": "Story<SquareWhiteComponent>",
+                "defaultValue": "(args: SquareWhiteComponent) => ({\n  component: SquareWhiteComponent,\n  props: args,\n})"
             },
             {
                 "name": "VILLE_API",
@@ -3440,6 +3552,24 @@
                     "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
                 }
             ],
+            "src/stories/components/square-white/Square-white.stories.ts": [
+                {
+                    "name": "Square",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/square-white/Square-white.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/square-white/Square-white.stories.ts",
+                    "type": "Story<SquareWhiteComponent>",
+                    "defaultValue": "(args: SquareWhiteComponent) => ({\n  component: SquareWhiteComponent,\n  props: args,\n})"
+                }
+            ],
             "src/app/app.api.ts": [
                 {
                     "name": "VILLE_API",
@@ -3498,6 +3628,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/header/header.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3507,21 +3646,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/header/user-detail/user-detail.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UserDetailComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/home/home.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HomeComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3837,6 +3967,35 @@
                 "name": "PageComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/square-white/Square-white.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Square",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/square-white/Square-white.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/square-white/square-white.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SquareWhiteComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

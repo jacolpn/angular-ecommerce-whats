@@ -7,11 +7,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { ROUTES } from 'src/app/app-route';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SquareWhiteComponent } from './square-white/square-white.component';
 
 @NgModule({
   declarations: [
     ButtonComponent,
-    PageComponent
+    PageComponent,
+    SquareWhiteComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   exports: [
     ButtonComponent,
     PageComponent,
+    SquareWhiteComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule
