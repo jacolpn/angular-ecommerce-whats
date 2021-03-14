@@ -1,0 +1,14 @@
+.wrapper {
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: aliceblue;
+    height: 50px;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(10, 48, 82);
+    
+    width: 100%;
+    bottom: 0;
+}

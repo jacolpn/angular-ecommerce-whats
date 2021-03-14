@@ -1032,7 +1032,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"wrapper\">\n\n  <app-header></app-header>\n\n  <div class=\"content-wrapper\">\n    <div class=\"container\">\n      <router-outlet></router-outlet>\n    </div>\n  </div>\n\n  <app-snackbar></app-snackbar>\n\n  <footer class=\"main-footer\">\n    <div class=\"container\">\n      <div class=\"pull-right hidden-xs\">\n        <b>Version</b> 1.0.0\n      </div>\n      <strong>Ville</strong> Angular Application\n    </div>\n  </footer>\n</div>\n"
+            "templateData": "<div class=\"wrapper\">\r\n\r\n  <app-header></app-header>\r\n  <!-- <storybook-header></storybook-header> -->\r\n\r\n  <div class=\"content-wrapper\">\r\n    <div class=\"container\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n\r\n  <app-snackbar></app-snackbar>\r\n\r\n  <footer class=\"main-footer\">\r\n    <div class=\"container\">\r\n      <div class=\"pull-right hidden-xs\">\r\n        <b>Version</b> 1.0.0\r\n      </div>\r\n      <strong>Ville</strong> Angular Application\r\n    </div>\r\n  </footer>\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1103,7 +1103,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-weight: 700;\r\n    border: 0;\r\n    border-radius: 3em;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n    color: white;\r\n    background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n    color: #333;\r\n    background-color: transparent;\r\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n    font-size: 12px;\r\n    padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n    font-size: 14px;\r\n    padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\r\n}\r\n  ",
+                    "data": ".storybook-button {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-weight: 700;\r\n    border: 0;\r\n    border-radius: 3em;\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n    color: white;\r\n    background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n    color: rgb(10, 48, 82);\r\n    background-color: transparent;\r\n    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--secondary:hover {\r\n    background-color: rgb(10, 48, 82);\r\n    color: rgb(157, 204, 245);\r\n}\r\n.storybook-button--small {\r\n    font-size: 12px;\r\n    padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n    font-size: 14px;\r\n    padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\r\n}\r\n  ",
                     "styleUrl": "./button.component.css"
                 }
             ],
@@ -1200,7 +1200,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-b7f198418851d7f563486b3e9e9dab6a",
+            "id": "component-HeaderComponent-10c4d8fd1458e62b7a1f3b54b7d29a1f",
             "file": "src/app/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1208,55 +1208,6 @@
             "outputs": [],
             "providers": [],
             "selector": "app-header",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./header.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 11
-                }
-            ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html'\n})\nexport class HeaderComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 7
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<header class=\"main-header\">\n  <nav class=\"navbar navbar-static-top\">\n    <div class=\"container\">\n      <div class=\"navbar-header\">\n        <a [routerLink]=\"['/']\" class=\"navbar-brand\">\n          <b>Ville</b>\n        </a>\n        <button\n          type=\"button\"\n          class=\"navbar-toggle collapsed\"\n          data-toggle=\"collapse\"\n          data-target=\"#navbar-collapse\"\n        >\n          <i class=\"fa fa-bars\"></i>\n        </button>\n      </div>\n      <div class=\"collapse navbar-collapse pull-left\" id=\"navbar-collapse\">\n        <ul class=\"nav navbar-nav\">\n            <li routerLinkActive=\"active\">\n              <a [routerLink]=\"['/about']\">Sobre</a>\n            </li>\n        </ul>\n      </div>\n      <app-user-detail></app-user-detail>\n    </div>\n  </nav>\n</header>\n"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-4a420d895fbd8ea8b25156e1c3a32d64-1",
-            "file": "src/stories/components/header/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-header",
             "styleUrls": [
                 "./header.component.css"
             ],
@@ -1267,27 +1218,14 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "line": 9,
-                    "type": "unknown"
+                    "name": "titleHeader",
+                    "defaultValue": "\"Whisky Ville\"",
+                    "line": 10
                 }
             ],
             "outputsClass": [
                 {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 12,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 10,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
+                    "name": "onAbout",
                     "defaultValue": "new EventEmitter<Event>()",
                     "line": 11,
                     "type": "EventEmitter"
@@ -1296,12 +1234,20 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
+                    "name": "navigateAbout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                },
+                {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16
+                    "line": 15
                 }
             ],
             "hostBindings": [],
@@ -1309,11 +1255,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.css']\n})\nexport class HeaderComponent implements OnInit {\n  @Input() user: unknown = null;\n  @Output() onLogin = new EventEmitter<Event>();\n  @Output() onLogout = new EventEmitter<Event>();\n  @Output() onCreateAccount = new EventEmitter<Event>();\n  \n  constructor() { }\n\n  ngOnInit(): void { }\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.css']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n  @Input() titleHeader = \"Whisky Ville\";\r\n  @Output() onAbout = new EventEmitter<Event>();\r\n  \r\n  constructor(private router: Router) { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  navigateAbout() {\r\n    this.router.navigate(['/about']);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n",
+                    "data": ".wrapper {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  background-color: rgb(94, 164, 226);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  color: rgb(10, 48, 82);\r\n}\r\n\r\nbutton + button {\r\n  margin-left: 10px;\r\n}\r\n",
                     "styleUrl": "./header.component.css"
                 }
             ],
@@ -1321,16 +1267,27 @@
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
-                "args": [],
-                "line": 12
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router"
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
                 "OnInit"
             ],
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "HeaderComponent-1",
-            "templateData": "<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Ville</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n</header>"
+            "templateData": "<header>\r\n  <div class=\"wrapper\">\r\n    <div>\r\n      <a [routerLink]=\"['/']\">\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        \r\n        <h1>{{ titleHeader }}</h1>\r\n      </a>\r\n    </div>\r\n    <div>\r\n      <storybook-button size=\"small\"\r\n                        (onClick)=\"navigateAbout()\"\r\n                        label=\"About\">\r\n      </storybook-button>\r\n    </div>\r\n  </div>\r\n</header>\r\n\r\n<!-- <header class=\"main-header\">\r\n  <nav class=\"navbar navbar-static-top\">\r\n    <div class=\"container\">\r\n      <div class=\"navbar-header\">\r\n        <a [routerLink]=\"['/']\" class=\"navbar-brand\">\r\n          <b>Ville</b>\r\n        </a>\r\n        <button\r\n          type=\"button\"\r\n          class=\"navbar-toggle collapsed\"\r\n          data-toggle=\"collapse\"\r\n          data-target=\"#navbar-collapse\"\r\n        >\r\n          <i class=\"fa fa-bars\"></i>\r\n        </button>\r\n      </div>\r\n      <div class=\"collapse navbar-collapse pull-left\" id=\"navbar-collapse\">\r\n        <ul class=\"nav navbar-nav\">\r\n            <li routerLinkActive=\"active\">\r\n              <a [routerLink]=\"['/about']\">Sobre</a>\r\n            </li>\r\n        </ul>\r\n      </div>\r\n      <app-user-detail></app-user-detail>\r\n    </div>\r\n  </nav>\r\n</header> -->\r\n"
         },
         {
             "name": "HomeComponent",
@@ -2172,7 +2129,7 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-774df76b1a181b97223434cfd47f4909",
+            "id": "component-PageComponent-6ce10324288a54c1a64b90d64dc0b45b",
             "file": "src/stories/components/page/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2232,7 +2189,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  templateUrl: './page.component.html',\n  styleUrls: ['./page.component.css']\n})\nexport class PageComponent implements OnInit {\n  @Input() user: unknown = null;\n  @Output() onLogin = new EventEmitter<Event>();\n  @Output() onLogout = new EventEmitter<Event>();\n  @Output() onCreateAccount = new EventEmitter<Event>();\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-page',\r\n  templateUrl: './page.component.html',\r\n  styleUrls: ['./page.component.css']\r\n})\r\nexport class PageComponent implements OnInit {\r\n  @Input() user: unknown = null;\r\n  @Output() onLogin = new EventEmitter<Event>();\r\n  @Output() onLogout = new EventEmitter<Event>();\r\n  @Output() onCreateAccount = new EventEmitter<Event>();\r\n  \r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2250,7 +2207,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n</article>"
+            "templateData": "<article>\r\n    <section>\r\n      <h2>Pages in Storybook</h2>\r\n      <p>\r\n        We recommend building UIs with a\r\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          <strong>component-driven</strong>\r\n        </a>\r\n        process starting with atomic components and ending with pages.\r\n      </p>\r\n      <p>\r\n        Render pages with mock data. This makes it easy to build and review page states without\r\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\r\n        in Storybook:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Use a higher-level connected component. Storybook helps you compose such data from the\r\n          \"args\" of child component stories\r\n        </li>\r\n        <li>\r\n          Assemble data in the page component from your services. You can mock these services out\r\n          using Storybook.\r\n        </li>\r\n      </ul>\r\n      <p>\r\n        Get a guided tutorial on component-driven development at\r\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          Learn Storybook\r\n        </a>\r\n        . Read more in the\r\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          docs\r\n        </a>\r\n        .\r\n      </p>\r\n      <div class=\"tip-wrapper\">\r\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n              id=\"a\"\r\n              fill=\"#999\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        Viewports addon in the toolbar\r\n      </div>\r\n    </section>\r\n</article>"
         },
         {
             "name": "RadioComponent",
@@ -3298,17 +3255,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "Large",
@@ -3319,31 +3276,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/components/header/Header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/components/page/Page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/components/header/Header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
+                "name": "Page",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/components/page/Page.stories.ts",
@@ -3385,14 +3318,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/header/Header.stories.ts",
-                "type": "Story<HeaderComponent>",
-                "defaultValue": "(args: HeaderComponent) => ({\n  component: HeaderComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/components/button/Button.stories.ts",
                 "type": "Story<ButtonComponent>",
                 "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
@@ -3403,7 +3328,7 @@
                 "subtype": "variable",
                 "file": "src/stories/components/page/Page.stories.ts",
                 "type": "Story<PageComponent>",
-                "defaultValue": "(args: PageComponent) => ({\n  component: PageComponent,\n  props: args,\n})"
+                "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "VILLE_API",
@@ -3435,16 +3360,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -3453,6 +3368,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
                 }
             ],
             "src/stories/components/button/Button.stories.ts": [
@@ -3497,43 +3422,9 @@
                     "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "src/stories/components/header/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/components/header/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/components/header/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/components/header/Header.stories.ts",
-                    "type": "Story<HeaderComponent>",
-                    "defaultValue": "(args: HeaderComponent) => ({\n  component: HeaderComponent,\n  props: args,\n})"
-                }
-            ],
             "src/stories/components/page/Page.stories.ts": [
                 {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/components/page/Page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
+                    "name": "Page",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/components/page/Page.stories.ts",
@@ -3546,7 +3437,7 @@
                     "subtype": "variable",
                     "file": "src/stories/components/page/Page.stories.ts",
                     "type": "Story<PageComponent>",
-                    "defaultValue": "(args: PageComponent) => ({\n  component: PageComponent,\n  props: args,\n})"
+                    "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/app/app.api.ts": [
@@ -3612,7 +3503,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -3920,60 +3811,11 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/components/header/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/components/header/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/components/header/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/components/header/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/components/page/Page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/components/page/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
+                "name": "Page",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

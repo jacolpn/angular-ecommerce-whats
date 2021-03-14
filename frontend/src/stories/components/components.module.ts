@@ -1,35 +1,35 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from './button/button.component';
-import { HeaderComponent } from './header/header.component';
 import { PageComponent } from './page/page.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { PreloadAllModules, RouterModule } from '@angular/router';
+import { ROUTES } from 'src/app/app-route';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     ButtonComponent,
-    HeaderComponent,
     PageComponent
   ],
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(
+      ROUTES,
+      { preloadingStrategy: PreloadAllModules }
+    )
   ],
   exports: [
     ButtonComponent,
-    HeaderComponent,
     PageComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule
   ]
 })
-export class ComponentsModule {
-  static forRoot(): ModuleWithProviders<any> {
-    return {
-      ngModule: ComponentsModule,
-      providers: []
-    };
-  }
-}
+export class ComponentsModule { }

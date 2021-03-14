@@ -5,6 +5,7 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import locatePt from '@angular/common/locales/pt';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -17,32 +18,30 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { registerLocaleData } from '@angular/common';
-import locatePt from '@angular/common/locales/pt';
+import { ComponentsModule } from 'src/stories/components/components.module';
+import { FooterComponent } from './footer/footer.component';
 
 registerLocaleData(locatePt, 'pt');
-
-import { UserDetailComponent } from './header/user-detail/user-detail.component';
-import { ComponentsModule } from 'src/stories/components/components.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    UserDetailComponent,
     NotFoundComponent,
     RestaurantDetailComponent,
     MenuComponent,
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ComponentsModule.forRoot(),
+    ComponentsModule,
     SharedModule.forRoot(),
     RouterModule.forRoot(
       ROUTES,
