@@ -1,0 +1,10 @@
+img {
+    padding-top: 45px;
+}
+p {
+    padding-top: 7px;
+}
+a {
+    /* text-decoration: none; */
+    color: var(--color-text-title);
+}

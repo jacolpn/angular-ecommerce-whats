@@ -1032,7 +1032,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\r\n  /* height: 100%; */\r\n  /* width: 100%; */\r\n  margin: 0;\r\n}\r\n\r\n.wrapper-header {\r\n  height: 12vh;\r\n}\r\n\r\n.wrapper-content {\r\n  height: 81vh;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n}",
+                    "data": ".wrapper {\r\n  margin: 0;\r\n}\r\n\r\n.wrapper-header {\r\n  height: 12vh;\r\n}\r\n\r\n.wrapper-content {\r\n  height: 81vh;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n}",
                     "styleUrl": "./app.component.css"
                 }
             ],
@@ -1407,7 +1407,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper-home {\r\n    height: 100%; \r\n    width: 100%;\r\n    display: flex;\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n.content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    margin-top: 20px;\r\n    height: 90%;\r\n    width: 70%;\r\n}\r\nh1 {\r\n    padding-top: 116px;\r\n    font-size: xxx-large;\r\n}\r\np {\r\n    padding: 15px 0 36px 0;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .content {\r\n        width: 90%;\r\n    }\r\n}\r\n",
+                    "data": "h1 {\r\n    padding-top: 116px;\r\n    font-size: xxx-large;\r\n}\r\np {\r\n    padding: 15px 0 36px 0;\r\n}\r\n",
                     "styleUrl": "./home.component.css"
                 }
             ],
@@ -1435,7 +1435,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"wrapper-home\">\n  <div class=\"content\">\n    <h1>Bem vindo ao Whisky Ville!</h1>\n    \n    <p>\n      Bora beber? Peça e receba em casa.\n    </p>\n    <storybook-button primary=\"true\"\n                      label=\"Comprar\"\n                      (onClick)=\"navigateRestaurant()\"\n                      size=\"large\">\n    </storybook-button>\n  </div>\n</section>\n"
+            "templateData": "<storybook-square-white>\n  <h1>Bem vindo ao Whisky Ville!</h1>\n  \n  <p>\n    Bora beber? Peça e receba em casa.\n  </p>\n  <storybook-button primary=\"true\"\n                    label=\"Comprar\"\n                    (onClick)=\"navigateRestaurant()\"\n                    size=\"large\">\n  </storybook-button>\n</storybook-square-white>\n"
         },
         {
             "name": "InputComponent",
@@ -3029,7 +3029,7 @@
         },
         {
             "name": "SquareWhiteComponent",
-            "id": "component-SquareWhiteComponent-5ca1060a03d090b5410e39e0bcdab1bf",
+            "id": "component-SquareWhiteComponent-911ff22f019ebd1252707865dec33f85",
             "file": "src/stories/components/square-white/square-white.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3045,7 +3045,14 @@
                 "./square-white.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "space",
+                    "defaultValue": "true",
+                    "line": 9,
+                    "type": "boolean"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -3055,7 +3062,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 11
+                    "line": 13
                 }
             ],
             "hostBindings": [],
@@ -3063,11 +3070,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-square-white',\n  templateUrl: './square-white.component.html',\n  styleUrls: ['./square-white.component.css']\n})\nexport class SquareWhiteComponent implements OnInit {  \n  constructor() { }\n\n  ngOnInit(): void { }\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-square-white',\n  templateUrl: './square-white.component.html',\n  styleUrls: ['./square-white.component.css']\n})\nexport class SquareWhiteComponent implements OnInit {  \n  @Input() space: boolean = true;\n  \n  constructor() { }\n\n  ngOnInit(): void { }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    margin-top: 20px;\r\n    height: 90%;\r\n    width: 70%;\r\n}",
+                    "data": ".wrapper {\r\n    height: 100%; \r\n    width: 100%;\r\n    display: flex;\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n.content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    margin-top: 20px;\r\n    height: 90%;\r\n    width: 70% !important;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .content {\r\n        width: 90% !important;\r\n    }\r\n}\r\n",
                     "styleUrl": "./square-white.component.css"
                 }
             ],
@@ -3076,12 +3083,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 8
+                "line": 9
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"content\">\n</div>"
+            "templateData": "<section class=\"wrapper\">\n    <div class=\"content\">\n        <div [hidden]=\"space\">\n            <br><br><br><br><br><br><br><br>\n            <br><br><br><br><br><br><br><br>\n        </div>\n        <ng-content>\n        </ng-content>\n    </div>\n</section>"
         }
     ],
     "modules": [
@@ -3351,17 +3358,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "Large",
@@ -3472,16 +3479,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -3490,6 +3487,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
                 }
             ],
             "src/stories/components/button/Button.stories.ts": [
@@ -3995,7 +4002,7 @@
                 "linktype": "component",
                 "name": "SquareWhiteComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

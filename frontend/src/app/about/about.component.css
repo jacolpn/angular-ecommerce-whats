@@ -16,7 +16,7 @@ h1 {
  padding: 25px 25px 20px 25px; 
 }
 p {
-padding: 7px 25px 0 25px;
+  padding: 7px 25px 0 25px;
 }
 
 @media (max-width: 1100px) {
