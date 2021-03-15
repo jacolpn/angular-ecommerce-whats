@@ -1,15 +1,20 @@
 .box-header {
     display: flex;
     justify-content: space-between;
-    margin: 5px 8px;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0.1, 0, 0.05);
 }
 .box-header-title {
     display: flex;
+    padding: 10px;
 }
 .box-header-title > a > i {
     color: var(--color-text-title);
     margin-right: 5px;
     margin-top: 0.3px;
+}
+.box-header-title > a > i:hover {
+    color: var(--color-primary-darker);
 }
 .box-header-title > p {
     color: var(--color-text-complement);
@@ -35,6 +40,7 @@
 }
 .box-body-information > dd {
     padding: 0 20px 15px 0px;
+    color: var(--color-text-base);
 }
 .box-footer {
     display: flex;
@@ -44,11 +50,14 @@
     font-weight: 600;
     text-decoration: none;
     width: 50%;
-    padding-bottom: 4px;
+}
+.box-footer > a:hover {
+    color: var(--color-primary-darker);
 }
 .detail-active {
     width: 50%;
-    border-bottom: 1px solid var(--color-primary-darker);
+    border-bottom: 2px solid var(--color-primary-darker);
+    border-radius: 2px;
 }
 
 @media (max-width: 1100px) {

@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trigger, transition, state, style, animate } from '@angular/animations';
 
-import { MenuItem } from './menu-item.model';
+import { MenuItem } from '../../../app/restaurant-detail/menu/menu-item.model';
 
 @Component({
-  selector: 'app-menu-item',
-  templateUrl: './menu-item.component.html',
+  selector: 'storybook-card-item',
+  templateUrl: './card-item.component.html',
+  styleUrls: ['./card-item.component.css'],
   animations: [
     trigger('menuItemAppeared', [
       state('ready', style({ opacity: 1 })),
@@ -16,16 +17,15 @@ import { MenuItem } from './menu-item.model';
     ])
   ]
 })
-export class MenuItemComponent implements OnInit {
-
-  menuItemState = 'ready';
-
+export class CardItemComponent implements OnInit {
   @Input() menuItem: MenuItem;
   @Output() add = new EventEmitter();
+  
+  menuItemState = 'ready';
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   emitAddEvent() {
     this.add.emit(this.menuItem); 

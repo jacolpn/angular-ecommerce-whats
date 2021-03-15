@@ -16,6 +16,6 @@ export class SquareWhiteComponent implements OnInit {
   public get classes(): string[] {
     const mode = this.height ? 'wrapper-height' : 'wrapper';
 
-    return [mode];
+    return ['wrapper', mode];
   }
 }

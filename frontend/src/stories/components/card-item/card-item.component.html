@@ -1,0 +1,25 @@
+<section>
+  <storybook-square-white>
+    <div class="wrapper-card" [@menuItemAppeared]="menuItemState">
+      <img [src]="menuItem.imagePath">
+
+      <div class="content-description">
+        <h1>
+          {{ menuItem.name }}
+        </h1>
+        <span>
+          {{ menuItem.description }}
+        </span>
+        <div class="content-price">
+          <span>
+            {{ menuItem.price | currency: 'BRL': 'symbol' }}
+          </span>
+          <a (click)="emitAddEvent()">
+            <i class="fa fa-plus-circle"></i>
+            Adicionar
+          </a>
+        </div>
+      </div>
+    </div>
+  </storybook-square-white>
+</section>

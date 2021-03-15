@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { SquareWhiteComponent } from './square-white.component'
 
 export default {
-  title: 'Example/Square',
+  title: 'Square White',
   component: SquareWhiteComponent,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -15,7 +15,7 @@ const Template: Story<SquareWhiteComponent> = (args: SquareWhiteComponent) => ({
   props: args,
 });
 
-export const Square = Template.bind({});
-Square.args = {
+export const SquareWhite = Template.bind({});
+SquareWhite.args = {
   space: false
 };

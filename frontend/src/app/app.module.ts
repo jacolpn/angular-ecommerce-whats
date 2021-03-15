@@ -13,13 +13,13 @@ import { HomeComponent } from './home/home.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
-import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { registerLocaleData } from '@angular/common';
 import { ComponentsModule } from 'src/stories/components/components.module';
 import { FooterComponent } from './footer/footer.component';
+import { CardItemComponent } from 'src/stories/components/card-item/card-item.component';
 
 registerLocaleData(locatePt, 'pt');
 
@@ -32,7 +32,6 @@ registerLocaleData(locatePt, 'pt');
     RestaurantDetailComponent,
     MenuComponent,
     ShoppingCartComponent,
-    MenuItemComponent,
     ReviewsComponent,
     OrderSummaryComponent,
     FooterComponent

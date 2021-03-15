@@ -6,7 +6,7 @@ import { ButtonComponent } from '../button/button.component';
 import { PageComponent } from './page.component';
 
 export default {
-  title: 'Example/Page',
+  title: 'Page',
   component: PageComponent,
   decorators: [
     moduleMetadata({

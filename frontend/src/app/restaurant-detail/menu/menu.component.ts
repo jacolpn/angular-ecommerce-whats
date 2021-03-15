@@ -7,7 +7,8 @@ import { Restaurant } from '../restaurant.model';
 
 @Component({
   selector: 'app-menu',
-  templateUrl: './menu.component.html'
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
   // menu: Observable<any>;
@@ -34,7 +35,7 @@ export class MenuComponent implements OnInit {
     this.menu = [
       {
         "id": "jack-daniels-black",
-        "imagePath": "assets/img/foods/jack-daniels-black.jpg",
+        "imagePath": "assets/img/foods/jack-daniels-black.png",
         "name": "Jack Daniels",
         "description": "Diferencia-se pelo seu cuidadoso processo de elaboração, destilação e envelhecimento.",
         "price": 136.99,
@@ -42,7 +43,7 @@ export class MenuComponent implements OnInit {
       },
       {
         "id": "jack-daniels-fire",
-        "imagePath": "assets/img/foods/jack-daniels-fire.jpg",
+        "imagePath": "assets/img/foods/jack-daniels-fire.png",
         "name": "Jack Daniels Fire",
         "description": " Jack Daniels Fire destaca-se pela mistura natural de licor de canela picante com o clássico whiskey Americano Jack Daniels.",
         "price": 149.90,
@@ -50,7 +51,7 @@ export class MenuComponent implements OnInit {
       },
       {
         "id": "jack-daniels-honey",
-        "imagePath": "assets/img/foods/jack-daniels-honey.jpg",
+        "imagePath": "assets/img/foods/jack-daniels-honey.png",
         "name": "Jack Daniels Honey",
         "description": "Suavidade do Jack Daniel levemente temperada com mel.",
         "price": 136.90,
@@ -58,7 +59,7 @@ export class MenuComponent implements OnInit {
       },
       {
         "id": "jack-daniels-apple",
-        "imagePath": "assets/img/foods/jack-daniels-apple.jpg",
+        "imagePath": "assets/img/foods/jack-daniels-apple.png",
         "name": "Jack Daniels Apple",
         "description": "A nova bebida é a mistura do clássico Jack Daniels Tennessee Whiskey com licor de maçã.",
         "price": 134.90,

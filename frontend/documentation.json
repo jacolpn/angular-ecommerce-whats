@@ -4,7 +4,7 @@
         {
             "name": "MenuItem",
             "id": "interface-MenuItem-005d179ccd29d5f8be5995cf0397ab3d",
-            "file": "src/app/restaurant-detail/menu-item/menu-item.model.ts",
+            "file": "src/app/restaurant-detail/menu/menu-item.model.ts",
             "type": "interface",
             "sourceCode": "export interface MenuItem {\r\n  id: string,\r\n  name: string,\r\n  description: string,\r\n  price: number,\r\n  imagePath: string\r\n}\r\n",
             "properties": [
@@ -274,7 +274,7 @@
         },
         {
             "name": "ShoppingCartService",
-            "id": "injectable-ShoppingCartService-5d53c1b4216cbd156bddd7de12ab929b",
+            "id": "injectable-ShoppingCartService-5e29288ea7b3b17fcb764998a1d7fae4",
             "file": "src/app/restaurant-detail/shopping-cart/shopping-cart.service.ts",
             "properties": [
                 {
@@ -393,7 +393,7 @@
                 }
             ],
             "description": "",
-            "sourceCode": "import { NotificationService } from './../../shared/messages/notification.service';\r\nimport { Injectable } from '@angular/core';\r\nimport { MenuItem } from './../menu-item/menu-item.model';\r\nimport { CartItem } from './shopping-cart.model';\r\n\r\n@Injectable()\r\nexport class ShoppingCartService {\r\n  items: CartItem[] = [];\r\n\r\n  constructor(private notificationService: NotificationService) {}\r\n  clear() {\r\n    this.items = [];\r\n  }\r\n\r\n  addItem(item: MenuItem) {\r\n    let foundItem = this.items.find(\r\n      (mItem) => mItem.menuItem.id === item.id\r\n    );\r\n\r\n    if (foundItem) {\r\n      this.increaseQty(foundItem);\r\n    } else {\r\n      this.items.push(new CartItem(item));\r\n    }\r\n    this.notificationService.notify(`Você adicionou o item ${item.name}`);\r\n  }\r\n\r\n  increaseQty(item: CartItem) {\r\n    item.quantity = item.quantity + 1;\r\n  }\r\n\r\n  decreaseQty(item: CartItem) {\r\n    item.quantity = item.quantity - 1;\r\n\r\n    if (item.quantity === 0) {\r\n      this.removeItem(item);\r\n    }\r\n  }\r\n\r\n  removeItem(item: CartItem) {\r\n    this.items.splice(this.items.indexOf(item), 1);\r\n    this.notificationService.notify(`Você adicionou o item ${item.menuItem.name}`);\r\n  }\r\n\r\n  total(): number {\r\n    return this.items\r\n      .map(item => item.value())\r\n      .reduce((prev, value) => prev + value, 0);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { NotificationService } from './../../shared/messages/notification.service';\r\nimport { Injectable } from '@angular/core';\r\nimport { MenuItem } from './../menu/menu-item.model';\r\nimport { CartItem } from './shopping-cart.model';\r\n\r\n@Injectable()\r\nexport class ShoppingCartService {\r\n  items: CartItem[] = [];\r\n\r\n  constructor(private notificationService: NotificationService) {}\r\n  clear() {\r\n    this.items = [];\r\n  }\r\n\r\n  addItem(item: MenuItem) {\r\n    let foundItem = this.items.find(\r\n      (mItem) => mItem.menuItem.id === item.id\r\n    );\r\n\r\n    if (foundItem) {\r\n      this.increaseQty(foundItem);\r\n    } else {\r\n      this.items.push(new CartItem(item));\r\n    }\r\n    this.notificationService.notify(`Você adicionou o item ${item.name}`);\r\n  }\r\n\r\n  increaseQty(item: CartItem) {\r\n    item.quantity = item.quantity + 1;\r\n  }\r\n\r\n  decreaseQty(item: CartItem) {\r\n    item.quantity = item.quantity - 1;\r\n\r\n    if (item.quantity === 0) {\r\n      this.removeItem(item);\r\n    }\r\n  }\r\n\r\n  removeItem(item: CartItem) {\r\n    this.items.splice(this.items.indexOf(item), 1);\r\n    this.notificationService.notify(`Você adicionou o item ${item.menuItem.name}`);\r\n  }\r\n\r\n  total(): number {\r\n    return this.items\r\n      .map(item => item.value())\r\n      .reduce((prev, value) => prev + value, 0);\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -457,10 +457,10 @@
         },
         {
             "name": "CartItem",
-            "id": "class-CartItem-66813ff6cdfad2baebd9572c46564415",
+            "id": "class-CartItem-453be67bf8acd163eb820d4c5d8bd469",
             "file": "src/app/restaurant-detail/shopping-cart/shopping-cart.model.ts",
             "type": "class",
-            "sourceCode": "import { MenuItem } from './../menu-item/menu-item.model';\r\nexport class CartItem {\r\n  constructor(\r\n    public menuItem: MenuItem,\r\n    public quantity = 1\r\n  ) { }\r\n\r\n  value(): number {\r\n    return this.menuItem.price * this.quantity;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { MenuItem } from './../menu/menu-item.model';\r\nexport class CartItem {\r\n  constructor(\r\n    public menuItem: MenuItem,\r\n    public quantity = 1\r\n  ) { }\r\n\r\n  value(): number {\r\n    return this.menuItem.price * this.quantity;\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1145,6 +1145,85 @@
             "templateData": "<button type=\"button\"\n        (click)=\"onClick.emit($event)\"\n        [ngClass]=\"classes\"\n        [ngStyle]=\"{ 'background-color': backgroundColor }\">\n    {{ label }}\n</button>"
         },
         {
+            "name": "CardItemComponent",
+            "id": "component-CardItemComponent-eb88537c524f9327deadc5058428081e",
+            "file": "src/stories/components/card-item/card-item.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-card-item",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card-item.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "menuItem",
+                    "line": 23,
+                    "type": "MenuItem"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "add",
+                    "defaultValue": "new EventEmitter()",
+                    "line": 24,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "menuItemState",
+                    "defaultValue": "'ready'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "emitAddEvent",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { trigger, transition, state, style, animate } from '@angular/animations';\n\nimport { MenuItem } from '../../../app/restaurant-detail/menu/menu-item.model';\n\n@Component({\n  selector: 'storybook-card-item',\n  templateUrl: './card-item.component.html',\n  animations: [\n    trigger('menuItemAppeared', [\n      state('ready', style({ opacity: 1 })),\n      transition('void => ready', [\n        style({ opacity: 0, transform: 'translateY(-20px)'}),\n        animate('300ms 0s ease-in')\n      ])\n    ])\n  ]\n})\nexport class CardItemComponent implements OnInit {\n\n  menuItemState = 'ready';\n\n  @Input() menuItem: MenuItem;\n  @Output() add = new EventEmitter();\n\n  constructor() { }\n\n  ngOnInit() { }\n\n  emitAddEvent() {\n    this.add.emit(this.menuItem); \n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 24
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"menu-item-info-box\" [@menuItemAppeared]=\"menuItemState\">\n  <span class=\"menu-item-info-box-icon\">\n    <img [src]=\"menuItem.imagePath\">\n  </span>\n  <div class=\"menu-item-info-box-content\">\n    <span class=\"menu-item-info-box-text\">\n      {{ menuItem.name }}\n    </span>\n    <span class=\"menu-item-info-box-detail\">\n      {{ menuItem.description }}\n    </span>\n    <span class=\"menu-item-info-box-price\">\n      {{ menuItem.price | currency: 'BRL': 'symbol' }}\n    </span>\n    <a class=\"\" (click)=\"emitAddEvent()\">\n      <i class=\"fa fa-plus-circle\"></i>\n      Adicionar\n    </a>\n  </div>\n</div>\n"
+        },
+        {
             "name": "DeliveryCostsComponent",
             "id": "component-DeliveryCostsComponent-38e245d2cb173b577f3932fe60b16263",
             "file": "src/app/order/delivery-costs/delivery-costs.component.ts",
@@ -1252,7 +1331,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper-footer {\r\n    text-align: center;\r\n}\r\n",
+                    "data": ".wrapper-footer {\r\n    text-align: center;\r\n    padding-bottom: 30px;\r\n}\r\n",
                     "styleUrl": "./footer.component.css"
                 }
             ],
@@ -1435,7 +1514,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<storybook-square-white>\n  <h1>Bem vindo ao Whisky Ville!</h1>\n  \n  <p>\n    Bora beber? Peça e receba em casa.\n  </p>\n  <storybook-button primary=\"true\"\n                    label=\"Comprar\"\n                    (onClick)=\"navigateRestaurant()\"\n                    size=\"large\">\n  </storybook-button>\n</storybook-square-white>\n"
+            "templateData": "<storybook-square-white height=\"true\">\n  <h1>Bem vindo ao Whisky Ville!</h1>\n  \n  <p>\n    Bora beber? Peça e receba em casa.\n  </p>\n  <storybook-button primary=\"true\"\n                    label=\"Comprar\"\n                    (onClick)=\"navigateRestaurant()\"\n                    size=\"large\">\n  </storybook-button>\n</storybook-square-white>\n"
         },
         {
             "name": "InputComponent",
@@ -1647,86 +1726,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"col-md-9 col-xs-12\">\n  <app-menu-item\n    *ngFor=\"let item of menu\"\n    [menuItem]=\"item\"\n    (add)=\"shoppingCart.addItem($event)\"\n  >\n  <!-- *ngFor=\"let item of menu | async\" -->\n  </app-menu-item>\n</div>\n<div class=\"col-md-3 col-xs-12\">\n  <app-shopping-cart #shoppingCart></app-shopping-cart>\n</div>\n"
-        },
-        {
-            "name": "MenuItemComponent",
-            "id": "component-MenuItemComponent-df9e0aaf232ea7d6c279f6e7a150a8ef",
-            "file": "src/app/restaurant-detail/menu-item/menu-item.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-menu-item",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./menu-item.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "menuItem",
-                    "line": 23,
-                    "type": "MenuItem"
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "add",
-                    "defaultValue": "new EventEmitter()",
-                    "line": 24,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [
-                {
-                    "name": "menuItemState",
-                    "defaultValue": "'ready'",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 21
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "emitAddEvent",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 30
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 28
-                }
-            ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { trigger, transition, state, style, animate } from '@angular/animations';\n\nimport { MenuItem } from './menu-item.model';\n\n@Component({\n  selector: 'app-menu-item',\n  templateUrl: './menu-item.component.html',\n  animations: [\n    trigger('menuItemAppeared', [\n      state('ready', style({ opacity: 1 })),\n      transition('void => ready', [\n        style({ opacity: 0, transform: 'translateY(-20px)'}),\n        animate('300ms 0s ease-in')\n      ])\n    ])\n  ]\n})\nexport class MenuItemComponent implements OnInit {\n\n  menuItemState = 'ready';\n\n  @Input() menuItem: MenuItem;\n  @Output() add = new EventEmitter();\n\n  constructor() { }\n\n  ngOnInit() { }\n\n  emitAddEvent() {\n    this.add.emit(this.menuItem); \n  }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 24
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"menu-item-info-box\" [@menuItemAppeared]=\"menuItemState\">\n  <span class=\"menu-item-info-box-icon\">\n    <img [src]=\"menuItem.imagePath\">\n  </span>\n  <div class=\"menu-item-info-box-content\">\n    <span class=\"menu-item-info-box-text\">\n      {{ menuItem.name }}\n    </span>\n    <span class=\"menu-item-info-box-detail\">\n      {{ menuItem.description }}\n    </span>\n    <span class=\"menu-item-info-box-price\">\n      {{ menuItem.price | currency: 'BRL': 'symbol' }}\n    </span>\n    <a class=\"\" (click)=\"emitAddEvent()\">\n      <i class=\"fa fa-plus-circle\"></i>\n      Adicionar\n    </a>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"col-md-9 col-xs-12\">\n  <storybook-card-item\n    *ngFor=\"let item of menu\"\n    [menuItem]=\"item\"\n    (add)=\"shoppingCart.addItem($event)\"\n  >\n  <!-- *ngFor=\"let item of menu | async\" -->\n  </storybook-card-item>\n</div>\n<div class=\"col-md-3 col-xs-12\">\n  <app-shopping-cart #shoppingCart></app-shopping-cart>\n</div>\n"
         },
         {
             "name": "NotFoundComponent",
@@ -2635,7 +2635,7 @@
         },
         {
             "name": "RestaurantDetailComponent",
-            "id": "component-RestaurantDetailComponent-9c430312eb0e1e63f9a6bbc7fa022516",
+            "id": "component-RestaurantDetailComponent-534676130983edf672475bacd29f54ef",
             "file": "src/app/restaurant-detail/restaurant-detail.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2643,7 +2643,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-restaurant-detail",
-            "styleUrls": [],
+            "styleUrls": [
+                "./restaurant-detail.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./restaurant-detail.component.html"
@@ -2657,7 +2659,7 @@
                     "type": "Restaurant",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 13
                 }
             ],
             "methodsClass": [
@@ -2667,7 +2669,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39
+                    "line": 40
                 },
                 {
                     "name": "mockDB",
@@ -2675,7 +2677,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26
+                    "line": 27
                 },
                 {
                     "name": "ngOnInit",
@@ -2683,7 +2685,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16
+                    "line": 17
                 }
             ],
             "hostBindings": [],
@@ -2691,9 +2693,14 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\n\nimport { VILLE_API } from './../app.api';\nimport { Restaurant } from './restaurant.model';\n\n@Component({\n  selector: 'app-restaurant-detail',\n  templateUrl: './restaurant-detail.component.html'\n})\nexport class RestaurantDetailComponent implements OnInit {\n  restaurant: Restaurant;\n\n  constructor(private http: HttpClient) { }\n\n  ngOnInit() {\n    let db = false;\n\n    if (db) {\n      this.getDB();\n    } else {\n      this.mockDB();\n    }\n  }\n\n  mockDB() {\n    this.restaurant = {\n      \"id\": \"jack-daniels\",\n      \"name\": \"Jack Daniel's\",\n      \"category\": \"whisky\",\n      \"deliveryEstimate\": \"25m\",\n      \"rating\": 9.9,\n      \"imagePath\": \"assets/img/restaurants/jack-daniels.jpg\",\n      \"about\": \"Mais de 150 anos se passaram desde que Nearest e Jack começaram a fazer whiskey juntos e, até hoje, sempre houve um membro da família Green trabalhando na Destilaria Jack Daniel.\",\n      \"hours\": \"Funciona de segunda à segunda, de 00h às 23h\"\n    }\n  }\n\n  getDB() {\n    this.http\n      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery`)\n      .subscribe( restaurant => this.restaurant = restaurant );\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\n\nimport { VILLE_API } from './../app.api';\nimport { Restaurant } from './restaurant.model';\n\n@Component({\n  selector: 'app-restaurant-detail',\n  templateUrl: './restaurant-detail.component.html',\n  styleUrls: ['./restaurant-detail.component.css']\n})\nexport class RestaurantDetailComponent implements OnInit {\n  restaurant: Restaurant;\n\n  constructor(private http: HttpClient) { }\n\n  ngOnInit() {\n    let db = false;\n\n    if (db) {\n      this.getDB();\n    } else {\n      this.mockDB();\n    }\n  }\n\n  mockDB() {\n    this.restaurant = {\n      \"id\": \"jack-daniels\",\n      \"name\": \"Jack Daniel's\",\n      \"category\": \"Whisky\",\n      \"deliveryEstimate\": \"25m\",\n      \"rating\": 9.9,\n      \"imagePath\": \"assets/img/restaurants/jack-daniels.png\",\n      \"about\": \"Mais de 150 anos se passaram desde que Nearest e Jack começaram a fazer whiskey juntos e, até hoje, sempre houve um membro da família Green trabalhando na Destilaria Jack Daniel.\",\n      \"hours\": \"Funciona de segunda à segunda, de 00h às 23h\"\n    }\n  }\n\n  getDB() {\n    this.http\n      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery`)\n      .subscribe( restaurant => this.restaurant = restaurant );\n  }\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".box-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 5px 8px;\r\n}\r\n.box-header-title {\r\n    display: flex;\r\n}\r\n.box-header-title > a > i {\r\n    color: var(--color-text-title);\r\n    margin-right: 5px;\r\n    margin-top: 0.3px;\r\n}\r\n.box-header-title > p {\r\n    color: var(--color-text-complement);\r\n}\r\n.box-header-title > a {\r\n    color: var(--color-text-title);\r\n}\r\n.box-body {\r\n    display: flex;\r\n    padding: 25px;\r\n}\r\n.box-img-detail {\r\n    width: 250px;\r\n}\r\n.box-body-information {\r\n    text-align: left;\r\n    padding: 10px 0 0 15px;\r\n}\r\n.box-body-information > dt {\r\n    padding-bottom: 7px;\r\n    font-size: large;\r\n    font-weight: 600;\r\n}\r\n.box-body-information > dd {\r\n    padding: 0 20px 15px 0px;\r\n}\r\n.box-footer {\r\n    display: flex;\r\n}\r\n.box-footer > a {\r\n    color: var(--color-text-title);\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    width: 50%;\r\n    padding-bottom: 4px;\r\n}\r\n.detail-active {\r\n    width: 50%;\r\n    border-bottom: 1px solid var(--color-primary-darker);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .box-body {\r\n        display: inline;\r\n    }\r\n    .box-img-detail {\r\n        width: 200px;\r\n    }\r\n}\r\n  ",
+                    "styleUrl": "./restaurant-detail.component.css"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
@@ -2704,7 +2711,7 @@
                         "type": "HttpClient"
                     }
                 ],
-                "line": 12,
+                "line": 13,
                 "jsdoctags": [
                     {
                         "name": "http",
@@ -2718,7 +2725,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"content\">\n  <div class=\"row\">\n    <div class=\"col-xs-12\">\n      <div class=\"box box-solid\">\n        <div class=\"box-header with-border\">\n          <i class=\"fa fa-home\"></i>\n          <h3 class=\"box-title\">{{ restaurant?.name }}</h3>\n            <span class=\"pull-right\">\n              <i class=\"fa fa-star\"></i>\n              {{ restaurant?.rating }}\n            </span>\n        </div>\n        <div class=\"box-body\">\n          <div class=\"col-sm-3 col-xs-12\" *ngIf=\"restaurant\">\n              <img class=\"box-img-detail\" [src]=\"restaurant?.imagePath\" />\n          </div>\n            <dl class=\"col-sm-9 col-xs-12\">\n              <dt>Categoria</dt>\n              <dd>{{ restaurant?.category }}</dd>\n              <dt>Quem somos</dt>\n              <dd>{{ restaurant?.about }}</dd>\n              <dt>Horários</dt>\n              <dd>{{ restaurant?.hours}}</dd>\n            </dl>\n        </div>\n        <div class=\"box-footer detail-footer\">\n          <a class=\"pull-left\" routerLinkActive=\"detail-active\" [routerLink]=\"['menu']\">\n            Menu\n          </a>\n          <a class=\"pull-right\" routerLinkActive=\"detail-active\" [routerLink]=\"['reviews']\">\n            Avaliações\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n      <!-- <router-outlet></router-outlet> -->\n  </div>\n</section>\n  "
+            "templateData": "<storybook-square-white>\n  <div>\n    <div class=\"box-header\">\n      <span class=\"box-header-title\">\n        <a [routerLink]=\"['/']\">\n          <i class=\"fa fa-home\"></i>\n        </a>\n        <p>{{ restaurant?.name }}</p>\n      </span>\n    \n      <span class=\"box-header-title\">\n        <a [routerLink]=\"['/restaurant/jack-daniels/reviews']\">\n          <i class=\"fa fa-star\"></i>\n        </a>\n        <p>{{ restaurant?.rating }}</p>\n      </span>\n    </div>\n    \n    <div class=\"box-body\">\n      <div *ngIf=\"restaurant\">\n          <img class=\"box-img-detail\" [src]=\"restaurant?.imagePath\" />\n      </div>\n\n      <dl class=\"box-body-information\">\n        <dt>Categoria</dt>\n        <dd>{{ restaurant?.category }}</dd>\n        <dt>Quem somos</dt>\n        <dd>{{ restaurant?.about }}</dd>\n        <dt>Horários</dt>\n        <dd>{{ restaurant?.hours}}</dd>\n      </dl>\n    </div>\n    \n    <div class=\"box-footer\">\n      <a routerLinkActive=\"detail-active\" [routerLink]=\"['menu']\">\n        Menu\n      </a>\n\n      <a routerLinkActive=\"detail-active\" [routerLink]=\"['reviews']\">\n        Avaliações\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n      <router-outlet></router-outlet>\n  </div>\n</storybook-square-white>\n  "
         },
         {
             "name": "ReviewsComponent",
@@ -3036,7 +3043,7 @@
         },
         {
             "name": "SquareWhiteComponent",
-            "id": "component-SquareWhiteComponent-911ff22f019ebd1252707865dec33f85",
+            "id": "component-SquareWhiteComponent-89b1f82d8891d996601c5d253e474cdd",
             "file": "src/stories/components/square-white/square-white.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3054,6 +3061,11 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "height",
+                    "defaultValue": "false",
+                    "line": 10
+                },
+                {
                     "name": "space",
                     "defaultValue": "true",
                     "line": 9,
@@ -3069,7 +3081,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13
+                    "line": 14
                 }
             ],
             "hostBindings": [],
@@ -3077,11 +3089,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-square-white',\n  templateUrl: './square-white.component.html',\n  styleUrls: ['./square-white.component.css']\n})\nexport class SquareWhiteComponent implements OnInit {  \n  @Input() space: boolean = true;\n  \n  constructor() { }\n\n  ngOnInit(): void { }\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-square-white',\n  templateUrl: './square-white.component.html',\n  styleUrls: ['./square-white.component.css']\n})\nexport class SquareWhiteComponent implements OnInit {  \n  @Input() space: boolean = true;\n  @Input() height = false;\n  \n  constructor() { }\n\n  ngOnInit(): void { }\n\n  public get classes(): string[] {\n    const mode = this.height ? 'wrapper-height' : 'wrapper';\n\n    return [mode];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\r\n    height: 100%; \r\n    width: 100%;\r\n    display: flex;\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n.content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    margin-top: 20px;\r\n    height: 90%;\r\n    width: 70% !important;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .content {\r\n        width: 90% !important;\r\n    }\r\n}\r\n",
+                    "data": ".wrapper {\r\n    width: 100%;\r\n    display: flex;\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n.wrapper-height {\r\n    height: 100%; \r\n    width: 100%;\r\n    display: flex;\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n.content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    margin: 20px 0 30px 0;\r\n    height: 90%;\r\n    width: 70% !important;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .content {\r\n        width: 90% !important;\r\n    }\r\n}\r\n",
                     "styleUrl": "./square-white.component.css"
                 }
             ],
@@ -3090,12 +3102,23 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 9
+                "line": 10
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"wrapper\">\n    <div class=\"content\">\n        <div [hidden]=\"space\">\n            <br><br><br><br><br><br><br><br>\n            <br><br><br><br><br><br><br><br>\n        </div>\n        <ng-content>\n        </ng-content>\n    </div>\n</section>"
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 16
+                    }
+                }
+            },
+            "templateData": "<section class=\"wrapper\" [ngClass]=\"classes\">\n    <div class=\"content\">\n        <div [hidden]=\"space\">\n            <br><br><br><br><br><br><br><br>\n            <br><br><br><br><br><br><br><br>\n        </div>\n        <ng-content>\n        </ng-content>\n    </div>\n</section>"
         }
     ],
     "modules": [
@@ -3146,6 +3169,9 @@
                             "name": "AppComponent"
                         },
                         {
+                            "name": "CardItemComponent"
+                        },
+                        {
                             "name": "FooterComponent"
                         },
                         {
@@ -3156,9 +3182,6 @@
                         },
                         {
                             "name": "MenuComponent"
-                        },
-                        {
-                            "name": "MenuItemComponent"
                         },
                         {
                             "name": "NotFoundComponent"
@@ -3365,17 +3388,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "Large",
@@ -3425,7 +3448,7 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Square",
+                "name": "SquareWhite",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/components/square-white/Square-white.stories.ts",
@@ -3444,17 +3467,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/page/Page.stories.ts",
-                "type": "Story<PageComponent>",
-                "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
+                "file": "src/stories/components/square-white/Square-white.stories.ts",
+                "type": "Story<SquareWhiteComponent>",
+                "defaultValue": "(args: SquareWhiteComponent) => ({\n  component: SquareWhiteComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/square-white/Square-white.stories.ts",
-                "type": "Story<SquareWhiteComponent>",
-                "defaultValue": "(args: SquareWhiteComponent) => ({\n  component: SquareWhiteComponent,\n  props: args,\n})"
+                "file": "src/stories/components/page/Page.stories.ts",
+                "type": "Story<PageComponent>",
+                "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "VILLE_API",
@@ -3486,16 +3509,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -3504,6 +3517,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
                 }
             ],
             "src/stories/components/button/Button.stories.ts": [
@@ -3568,7 +3591,7 @@
             ],
             "src/stories/components/square-white/Square-white.stories.ts": [
                 {
-                    "name": "Square",
+                    "name": "SquareWhite",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/components/square-white/Square-white.stories.ts",
@@ -3741,16 +3764,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/restaurant-detail/menu-item/menu-item.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "MenuItemComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/restaurant-detail/menu-item/menu-item.model.ts",
+                "filePath": "src/app/restaurant-detail/menu/menu-item.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "MenuItem",
@@ -3955,6 +3969,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/components/card-item/card-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/components/page/Page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -3988,7 +4011,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Square",
+                "name": "SquareWhite",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -4009,7 +4032,7 @@
                 "linktype": "component",
                 "name": "SquareWhiteComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
