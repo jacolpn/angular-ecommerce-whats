@@ -11,10 +11,10 @@
     width: 70%;
 }
 .content-card {
-    width: 70%;
+    width: 60%;
 }
 .content-cart {
-    width: 30%;
+    width: 40%;
 }
 
 @media (max-width: 1100px) {

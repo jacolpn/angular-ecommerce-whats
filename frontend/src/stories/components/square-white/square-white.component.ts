@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class SquareWhiteComponent implements OnInit {  
   @Input() space: boolean = true;
   @Input() height = false;
+  @Input() classContent: string = 'content';
   
   constructor() { }
 

@@ -976,7 +976,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper-about {\r\n  height: 100%; \r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.content {\r\n  background-color: var(--color-box-footer);\r\n  border: 1px solid rgba(0, 0.3, 0, 0);\r\n  border-radius: 6px; \r\n  margin-top: 20px;\r\n  height: 90%;\r\n  width: 70%;\r\n}\r\nh1 {\r\n padding: 25px 25px 20px 25px; \r\n}\r\np {\r\n  padding: 7px 25px 0 25px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .content {\r\n      width: 90%;\r\n  }\r\n}\r\n",
+                    "data": ".wrapper-about {\r\n  height: 100%; \r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.content {\r\n  background-color: var(--color-box-footer);\r\n  border: 1px solid rgba(0, 0.3, 0, 0);\r\n  border-radius: 6px; \r\n  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);\r\n  height: 90%;\r\n  width: 70%;\r\n}\r\nh1 {\r\n padding: 25px 25px 20px 25px; \r\n}\r\np {\r\n  padding: 7px 25px 0 25px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .content {\r\n      width: 90%;\r\n  }\r\n}\r\n",
                     "styleUrl": "./about.component.css"
                 }
             ],
@@ -994,7 +994,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-4fed7dcae05101663f4ceb7f0c3b1716",
+            "id": "component-AppComponent-304a6d397a1002777e42257a5d828864",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1028,7 +1028,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent implements OnInit {\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent implements OnInit {\n  constructor() { }\n\n  ngOnInit(): void { }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1146,7 +1146,7 @@
         },
         {
             "name": "CardItemComponent",
-            "id": "component-CardItemComponent-eb88537c524f9327deadc5058428081e",
+            "id": "component-CardItemComponent-2f163c56adcce583834eb74b7b3e7a38",
             "file": "src/stories/components/card-item/card-item.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1154,7 +1154,9 @@
             "outputs": [],
             "providers": [],
             "selector": "storybook-card-item",
-            "styleUrls": [],
+            "styleUrls": [
+                "./card-item.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./card-item.component.html"
@@ -1163,7 +1165,7 @@
             "inputsClass": [
                 {
                     "name": "menuItem",
-                    "line": 23,
+                    "line": 21,
                     "type": "MenuItem"
                 }
             ],
@@ -1171,7 +1173,7 @@
                 {
                     "name": "add",
                     "defaultValue": "new EventEmitter()",
-                    "line": 24,
+                    "line": 22,
                     "type": "EventEmitter"
                 }
             ],
@@ -1182,7 +1184,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 24
                 }
             ],
             "methodsClass": [
@@ -1208,9 +1210,14 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { trigger, transition, state, style, animate } from '@angular/animations';\n\nimport { MenuItem } from '../../../app/restaurant-detail/menu/menu-item.model';\n\n@Component({\n  selector: 'storybook-card-item',\n  templateUrl: './card-item.component.html',\n  animations: [\n    trigger('menuItemAppeared', [\n      state('ready', style({ opacity: 1 })),\n      transition('void => ready', [\n        style({ opacity: 0, transform: 'translateY(-20px)'}),\n        animate('300ms 0s ease-in')\n      ])\n    ])\n  ]\n})\nexport class CardItemComponent implements OnInit {\n\n  menuItemState = 'ready';\n\n  @Input() menuItem: MenuItem;\n  @Output() add = new EventEmitter();\n\n  constructor() { }\n\n  ngOnInit() { }\n\n  emitAddEvent() {\n    this.add.emit(this.menuItem); \n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { trigger, transition, state, style, animate } from '@angular/animations';\n\nimport { MenuItem } from '../../../app/restaurant-detail/menu/menu-item.model';\n\n@Component({\n  selector: 'storybook-card-item',\n  templateUrl: './card-item.component.html',\n  styleUrls: ['./card-item.component.css'],\n  animations: [\n    trigger('menuItemAppeared', [\n      state('ready', style({ opacity: 1 })),\n      transition('void => ready', [\n        style({ opacity: 0, transform: 'translateY(-20px)'}),\n        animate('300ms 0s ease-in')\n      ])\n    ])\n  ]\n})\nexport class CardItemComponent implements OnInit {\n  @Input() menuItem: MenuItem;\n  @Output() add = new EventEmitter();\n  \n  menuItemState = 'ready';\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n  emitAddEvent() {\n    this.add.emit(this.menuItem); \n  }\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": "section {\r\n    margin-bottom: 6px;\r\n}\r\n.wrapper-card {\r\n    display: flex;\r\n    width: 100%;\r\n    height: 200px;\r\n}\r\n.wrapper-card:hover {\r\n    background-color: var(--color-box-hover);\r\n}\r\n.wrapper-card > img {\r\n    width: 140px;\r\n    padding: 20px 10px;\r\n}\r\n.content-description {\r\n    display: grid;\r\n    text-align: left;\r\n    width: 100%;\r\n    padding: 20px;\r\n    color: var(--color-text-base);\r\n}\r\n.content-description > h1 {\r\n    height: 25px;\r\n}\r\n.content-description > span {\r\n    overflow: hidden !important;\r\n    text-overflow: ellipsis !important;\r\n    height: 99px;\r\n}\r\n.content-price {\r\n    padding-top: 10px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-weight: 600;\r\n    color: var(--color-text-title);\r\n    height: 25px;\r\n}\r\n.content-price > a {\r\n    cursor: pointer;\r\n    color: var(--color-primary);\r\n}\r\n.content-price > a:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .wrapper-card > img {\r\n        width: 90px;\r\n        padding: 30px 10px;\r\n    }\r\n    .content-description > span {\r\n        margin-top: 0;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./card-item.component.css"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
@@ -1221,7 +1228,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"menu-item-info-box\" [@menuItemAppeared]=\"menuItemState\">\n  <span class=\"menu-item-info-box-icon\">\n    <img [src]=\"menuItem.imagePath\">\n  </span>\n  <div class=\"menu-item-info-box-content\">\n    <span class=\"menu-item-info-box-text\">\n      {{ menuItem.name }}\n    </span>\n    <span class=\"menu-item-info-box-detail\">\n      {{ menuItem.description }}\n    </span>\n    <span class=\"menu-item-info-box-price\">\n      {{ menuItem.price | currency: 'BRL': 'symbol' }}\n    </span>\n    <a class=\"\" (click)=\"emitAddEvent()\">\n      <i class=\"fa fa-plus-circle\"></i>\n      Adicionar\n    </a>\n  </div>\n</div>\n"
+            "templateData": "<section>\r\n  <storybook-square-white classContent=\"content content-width\">\r\n    <div class=\"wrapper-card\" [@menuItemAppeared]=\"menuItemState\">\r\n      <img [src]=\"menuItem.imagePath\">\r\n\r\n      <div class=\"content-description\">\r\n        <h1>\r\n          {{ menuItem.name }}\r\n        </h1>\r\n        <span>\r\n          {{ menuItem.description }}\r\n        </span>\r\n        <div class=\"content-price\">\r\n          <span>\r\n            {{ menuItem.price | currency: 'BRL': 'symbol' }}\r\n          </span>\r\n          <a (click)=\"emitAddEvent()\">\r\n            <i class=\"fa fa-plus-circle\"></i>\r\n            Adicionar\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </storybook-square-white>\r\n</section>"
         },
         {
             "name": "DeliveryCostsComponent",
@@ -1408,7 +1415,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper-header {\r\n  border-bottom: 1px solid rgba(0, 0.1, 0, 0);\r\n  background-color: var(--color-primary);\r\n  padding: 15px 20%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  margin: 0;\r\n\r\n  /* Impedir seleção do texto. */\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -khtml-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  color: var(--color-box-base);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .wrapper-header {\r\n    padding: 15px 30px;\r\n  }\r\n}\r\n",
+                    "data": ".wrapper-header {\r\n  border-bottom: 1px solid rgba(0, 0.1, 0, 0);\r\n  background-color: var(--color-primary);\r\n  padding: 15px 20%;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  margin: 0;\r\n\r\n  /* Impedir seleção do texto. */\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -khtml-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n  color: var(--color-box-white);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .wrapper-header {\r\n    padding: 15px 30px;\r\n  }\r\n}\r\n",
                     "styleUrl": "./header.component.css"
                 }
             ],
@@ -1514,7 +1521,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<storybook-square-white height=\"true\">\n  <h1>Bem vindo ao Whisky Ville!</h1>\n  \n  <p>\n    Bora beber? Peça e receba em casa.\n  </p>\n  <storybook-button primary=\"true\"\n                    label=\"Comprar\"\n                    (onClick)=\"navigateRestaurant()\"\n                    size=\"large\">\n  </storybook-button>\n</storybook-square-white>\n"
+            "templateData": "<storybook-square-white height=\"true\"\r\n                        classContent=\"content\">\r\n  <h1>Bem vindo ao Whisky Ville!</h1>\r\n  \r\n  <p>\r\n    Bora beber? Peça e receba em casa.\r\n  </p>\r\n  <storybook-button primary=\"true\"\r\n                    label=\"Comprar\"\r\n                    (onClick)=\"navigateRestaurant()\"\r\n                    size=\"large\">\r\n  </storybook-button>\r\n</storybook-square-white>\r\n"
         },
         {
             "name": "InputComponent",
@@ -1643,7 +1650,7 @@
         },
         {
             "name": "MenuComponent",
-            "id": "component-MenuComponent-e1e797242403cd8ec53fb8f2fd6c349a",
+            "id": "component-MenuComponent-917db0f76cda41ade8bc6270c2b48c12",
             "file": "src/app/restaurant-detail/menu/menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1651,7 +1658,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-menu",
-            "styleUrls": [],
+            "styleUrls": [
+                "./menu.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./menu.component.html"
@@ -1665,7 +1674,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 15
                 }
             ],
             "methodsClass": [
@@ -1675,7 +1684,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 28
+                    "line": 29
                 },
                 {
                     "name": "mockDB",
@@ -1683,7 +1692,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33
+                    "line": 34
                 },
                 {
                     "name": "ngOnInit",
@@ -1691,7 +1700,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 18
+                    "line": 19
                 }
             ],
             "hostBindings": [],
@@ -1699,9 +1708,14 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { VILLE_API } from 'src/app/app.api';\nimport { Restaurant } from '../restaurant.model';\n\n@Component({\n  selector: 'app-menu',\n  templateUrl: './menu.component.html'\n})\nexport class MenuComponent implements OnInit {\n  // menu: Observable<any>;\n  menu: any;\n\n  constructor(private http: HttpClient) { }\n\n  ngOnInit() {\n    let db = false;\n\n    if (db) {\n      this.getDB();\n    } else {\n      this.mockDB();\n    }\n  }\n\n  getDB() {\n    this.menu = this.http\n      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery/menu`)\n  }\n\n  mockDB() {\n    this.menu = [\n      {\n        \"id\": \"jack-daniels-black\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-black.jpg\",\n        \"name\": \"Jack Daniels\",\n        \"description\": \"Diferencia-se pelo seu cuidadoso processo de elaboração, destilação e envelhecimento.\",\n        \"price\": 136.99,\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"id\": \"jack-daniels-fire\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-fire.jpg\",\n        \"name\": \"Jack Daniels Fire\",\n        \"description\": \" Jack Daniels Fire destaca-se pela mistura natural de licor de canela picante com o clássico whiskey Americano Jack Daniels.\",\n        \"price\": 149.90,\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"id\": \"jack-daniels-honey\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-honey.jpg\",\n        \"name\": \"Jack Daniels Honey\",\n        \"description\": \"Suavidade do Jack Daniel levemente temperada com mel.\",\n        \"price\": 136.90,\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"id\": \"jack-daniels-apple\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-apple.jpg\",\n        \"name\": \"Jack Daniels Apple\",\n        \"description\": \"A nova bebida é a mistura do clássico Jack Daniels Tennessee Whiskey com licor de maçã.\",\n        \"price\": 134.90,\n        \"restaurantId\": \"bread-bakery\"\n      }\n    ];\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { VILLE_API } from 'src/app/app.api';\nimport { Restaurant } from '../restaurant.model';\n\n@Component({\n  selector: 'app-menu',\n  templateUrl: './menu.component.html',\n  styleUrls: ['./menu.component.css']\n})\nexport class MenuComponent implements OnInit {\n  // menu: Observable<any>;\n  menu: any;\n\n  constructor(private http: HttpClient) { }\n\n  ngOnInit() {\n    let db = false;\n\n    if (db) {\n      this.getDB();\n    } else {\n      this.mockDB();\n    }\n  }\n\n  getDB() {\n    this.menu = this.http\n      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery/menu`)\n  }\n\n  mockDB() {\n    this.menu = [\n      {\n        \"id\": \"jack-daniels-black\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-black.png\",\n        \"name\": \"Jack Daniels\",\n        \"description\": \"Diferencia-se pelo seu cuidadoso processo de elaboração, destilação e envelhecimento.\",\n        \"price\": 136.99,\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"id\": \"jack-daniels-fire\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-fire.png\",\n        \"name\": \"Jack Daniels Fire\",\n        \"description\": \" Jack Daniels Fire destaca-se pela mistura natural de licor de canela picante com o clássico whiskey Americano Jack Daniels.\",\n        \"price\": 149.90,\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"id\": \"jack-daniels-honey\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-honey.png\",\n        \"name\": \"Jack Daniels Honey\",\n        \"description\": \"Suavidade do Jack Daniel levemente temperada com mel.\",\n        \"price\": 136.90,\n        \"restaurantId\": \"bread-bakery\"\n      },\n      {\n        \"id\": \"jack-daniels-apple\",\n        \"imagePath\": \"assets/img/foods/jack-daniels-apple.png\",\n        \"name\": \"Jack Daniels Apple\",\n        \"description\": \"A nova bebida é a mistura do clássico Jack Daniels Tennessee Whiskey com licor de maçã.\",\n        \"price\": 134.90,\n        \"restaurantId\": \"bread-bakery\"\n      }\n    ];\n  }\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper-menu {\r\n    height: 100%;\r\n    width: 100%;\r\n    margin: 20px 0;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.content {\r\n    display: flex;\r\n    width: 70%;\r\n}\r\n.content-card {\r\n    width: 60%;\r\n}\r\n.content-cart {\r\n    width: 40%;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .content {\r\n      display: inline;\r\n      width: 100%;\r\n    }\r\n    .content-card {\r\n        width: 100%;\r\n    }\r\n    .content-cart {\r\n        width: 100%;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./menu.component.css"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
@@ -1712,7 +1726,7 @@
                         "type": "HttpClient"
                     }
                 ],
-                "line": 14,
+                "line": 15,
                 "jsdoctags": [
                     {
                         "name": "http",
@@ -1726,7 +1740,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"col-md-9 col-xs-12\">\n  <storybook-card-item\n    *ngFor=\"let item of menu\"\n    [menuItem]=\"item\"\n    (add)=\"shoppingCart.addItem($event)\"\n  >\n  <!-- *ngFor=\"let item of menu | async\" -->\n  </storybook-card-item>\n</div>\n<div class=\"col-md-3 col-xs-12\">\n  <app-shopping-cart #shoppingCart></app-shopping-cart>\n</div>\n"
+            "templateData": "<section class=\"wrapper-menu\">\n  <div class=\"content\">\n    <div class=\"content-card\">\n      <!-- *ngFor=\"let item of menu | async\" -->\n      <storybook-card-item\n        *ngFor=\"let item of menu\"\n        [menuItem]=\"item\"\n        (add)=\"shoppingCart.addItem($event)\"\n      >\n      </storybook-card-item>\n    </div>\n\n    <div class=\"content-cart\">\n      <app-shopping-cart #shoppingCart></app-shopping-cart>\n    </div>\n  </div>\n</section>\n"
         },
         {
             "name": "NotFoundComponent",
@@ -2697,7 +2711,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".box-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    margin: 5px 8px;\r\n}\r\n.box-header-title {\r\n    display: flex;\r\n}\r\n.box-header-title > a > i {\r\n    color: var(--color-text-title);\r\n    margin-right: 5px;\r\n    margin-top: 0.3px;\r\n}\r\n.box-header-title > p {\r\n    color: var(--color-text-complement);\r\n}\r\n.box-header-title > a {\r\n    color: var(--color-text-title);\r\n}\r\n.box-body {\r\n    display: flex;\r\n    padding: 25px;\r\n}\r\n.box-img-detail {\r\n    width: 250px;\r\n}\r\n.box-body-information {\r\n    text-align: left;\r\n    padding: 10px 0 0 15px;\r\n}\r\n.box-body-information > dt {\r\n    padding-bottom: 7px;\r\n    font-size: large;\r\n    font-weight: 600;\r\n}\r\n.box-body-information > dd {\r\n    padding: 0 20px 15px 0px;\r\n}\r\n.box-footer {\r\n    display: flex;\r\n}\r\n.box-footer > a {\r\n    color: var(--color-text-title);\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    width: 50%;\r\n    padding-bottom: 4px;\r\n}\r\n.detail-active {\r\n    width: 50%;\r\n    border-bottom: 1px solid var(--color-primary-darker);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .box-body {\r\n        display: inline;\r\n    }\r\n    .box-img-detail {\r\n        width: 200px;\r\n    }\r\n}\r\n  ",
+                    "data": ".box-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    border-bottom: 1px solid rgba(0, 0.1, 0, 0.05);\r\n}\r\n.box-header-title {\r\n    display: flex;\r\n    padding: 10px;\r\n}\r\n.box-header-title > a > i {\r\n    color: var(--color-text-title);\r\n    margin-right: 5px;\r\n    margin-top: 0.3px;\r\n}\r\n.box-header-title > a > i:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.box-header-title > p {\r\n    color: var(--color-text-complement);\r\n}\r\n.box-header-title > a {\r\n    color: var(--color-text-title);\r\n}\r\n.box-body {\r\n    display: flex;\r\n    padding: 25px;\r\n}\r\n.box-img-detail {\r\n    width: 250px;\r\n}\r\n.box-body-information {\r\n    text-align: left;\r\n    padding: 10px 0 0 15px;\r\n}\r\n.box-body-information > dt {\r\n    padding-bottom: 7px;\r\n    font-size: large;\r\n    font-weight: 600;\r\n}\r\n.box-body-information > dd {\r\n    padding: 0 20px 15px 0px;\r\n    color: var(--color-text-base);\r\n}\r\n.box-footer {\r\n    display: flex;\r\n}\r\n.box-footer > a {\r\n    color: var(--color-text-title);\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    width: 50%;\r\n}\r\n.box-footer > a:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.detail-active {\r\n    width: 50%;\r\n    border-bottom: 2px solid var(--color-primary-darker);\r\n    border-radius: 2px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .box-body {\r\n        display: inline;\r\n    }\r\n    .box-img-detail {\r\n        width: 200px;\r\n    }\r\n}\r\n  ",
                     "styleUrl": "./restaurant-detail.component.css"
                 }
             ],
@@ -2725,7 +2739,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<storybook-square-white>\n  <div>\n    <div class=\"box-header\">\n      <span class=\"box-header-title\">\n        <a [routerLink]=\"['/']\">\n          <i class=\"fa fa-home\"></i>\n        </a>\n        <p>{{ restaurant?.name }}</p>\n      </span>\n    \n      <span class=\"box-header-title\">\n        <a [routerLink]=\"['/restaurant/jack-daniels/reviews']\">\n          <i class=\"fa fa-star\"></i>\n        </a>\n        <p>{{ restaurant?.rating }}</p>\n      </span>\n    </div>\n    \n    <div class=\"box-body\">\n      <div *ngIf=\"restaurant\">\n          <img class=\"box-img-detail\" [src]=\"restaurant?.imagePath\" />\n      </div>\n\n      <dl class=\"box-body-information\">\n        <dt>Categoria</dt>\n        <dd>{{ restaurant?.category }}</dd>\n        <dt>Quem somos</dt>\n        <dd>{{ restaurant?.about }}</dd>\n        <dt>Horários</dt>\n        <dd>{{ restaurant?.hours}}</dd>\n      </dl>\n    </div>\n    \n    <div class=\"box-footer\">\n      <a routerLinkActive=\"detail-active\" [routerLink]=\"['menu']\">\n        Menu\n      </a>\n\n      <a routerLinkActive=\"detail-active\" [routerLink]=\"['reviews']\">\n        Avaliações\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n      <router-outlet></router-outlet>\n  </div>\n</storybook-square-white>\n  "
+            "templateData": "<storybook-square-white>\n  <div>\n    <div class=\"box-header\">\n      <span class=\"box-header-title\">\n        <a [routerLink]=\"['/']\">\n          <i class=\"fa fa-home\"></i>\n        </a>\n        <p>{{ restaurant?.name }}</p>\n      </span>\n    \n      <span class=\"box-header-title\">\n        <a [routerLink]=\"['/restaurant/jack-daniels/reviews']\">\n          <i class=\"fa fa-star\"></i>\n        </a>\n        <p>{{ restaurant?.rating }}</p>\n      </span>\n    </div>\n    \n    <div class=\"box-body\">\n      <div *ngIf=\"restaurant\">\n          <img class=\"box-img-detail\" [src]=\"restaurant?.imagePath\" />\n      </div>\n\n      <dl class=\"box-body-information\">\n        <dt>Categoria</dt>\n        <dd>{{ restaurant?.category }}</dd>\n        <dt>Quem somos</dt>\n        <dd>{{ restaurant?.about }}</dd>\n        <dt>Horários</dt>\n        <dd>{{ restaurant?.hours}}</dd>\n      </dl>\n    </div>\n    \n    <div class=\"box-footer\">\n      <a routerLinkActive=\"detail-active\" [routerLink]=\"['menu']\">\n        Menu\n      </a>\n\n      <a routerLinkActive=\"detail-active\" [routerLink]=\"['reviews']\">\n        Avaliações\n      </a>\n    </div>\n  </div>\n</storybook-square-white>\n\n<div class=\"row\">\n  <router-outlet></router-outlet>\n</div>\n  "
         },
         {
             "name": "ReviewsComponent",
@@ -2812,7 +2826,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"col-xs-12 col-sm-6\"\n     *ngFor=\"let review of reviews\">\n  <!-- *ngFor=\"let review of reviews | async\" -->\n  <div class=\"box box-solid\">\n    <div class=\"box-header with-border\">\n      <span class=\"review-score pull-right\">\n        <i class=\"fa fa-star\"></i>\n        {{ review.rating }}\n      </span>\n      <div class=\"user-block\">\n        <img\n          *ngIf=\"review.rating < 3\"\n          alt=\"User Image\"\n          class=\"img-circle\"\n          src=\"assets/img/reactions/pissed.png\"\n        >\n        <img\n          *ngIf=\"review.rating >= 3 && review.rating < 4\"\n          alt=\"User Image\"\n          class=\"img-circle\"\n          src=\"assets/img/reactions/soso.png\"\n        >\n        <img\n          *ngIf=\"review.rating >= 4\"\n          alt=\"User Image\"\n          class=\"img-circle\"\n          src=\"assets/img/reactions/loved.png\"\n        >\n        <span class=\"username\">\n          {{ review.name }}\n        </span>\n        <span class=\"description\">\n          {{ review.date | date:'dd/MM/yyyy'}}\n        </span>\n      </div>\n    </div>\n    <div class=\"box-body\">\n      <p>{{ review.comments }}</p>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<storybook-square-white>\n  <div class=\"col-xs-12 col-sm-6\"\n      *ngFor=\"let review of reviews\">\n    <!-- *ngFor=\"let review of reviews | async\" -->\n    <div class=\"box box-solid\">\n      <div class=\"box-header with-border\">\n        <span class=\"review-score pull-right\">\n          <i class=\"fa fa-star\"></i>\n          {{ review.rating }}\n        </span>\n        <div class=\"user-block\">\n          <img\n            *ngIf=\"review.rating < 3\"\n            alt=\"User Image\"\n            class=\"img-circle\"\n            src=\"assets/img/reactions/pissed.png\"\n          >\n          <img\n            *ngIf=\"review.rating >= 3 && review.rating < 4\"\n            alt=\"User Image\"\n            class=\"img-circle\"\n            src=\"assets/img/reactions/soso.png\"\n          >\n          <img\n            *ngIf=\"review.rating >= 4\"\n            alt=\"User Image\"\n            class=\"img-circle\"\n            src=\"assets/img/reactions/loved.png\"\n          >\n          <span class=\"username\">\n            {{ review.name }}\n          </span>\n          <span class=\"description\">\n            {{ review.date | date:'dd/MM/yyyy'}}\n          </span>\n        </div>\n      </div>\n      <div class=\"box-body\">\n        <p>{{ review.comments }}</p>\n      </div>\n    </div>\n  </div>\n</storybook-square-white>\n"
         },
         {
             "name": "ShoppingCartComponent",
@@ -2953,7 +2967,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"box box-solid\">\n    <div class=\"box-header\">\n      <i class=\"fa fa-shopping-cart\"></i>\n  \n      <h3 class=\"box-title\">Carrinho</h3>\n    </div>\n  \n    <div class=\"box-body\">\n      <div *ngIf=\"!items().length\">\n        <p class=\"text-center\">\n          Seu carrinho está vazio!\n        </p>\n      </div>\n      <div class=\"table-responsive\" *ngIf=\"items().length\">\n          <table class=\"table\">\n            <tbody>\n            <tr *ngFor=\"let item of items()\" [@row]=\"rowState\">\n              <th>\n                ({{ item.quantity }}x)\n                {{ item.menuItem.name }}\n              </th>\n  \n              <td class=\"text-right\">\n                {{ item.value() | currency: 'BRL': 'symbol'}}\n              </td>\n  \n              <td class=\"text-right\">\n                <a\n                  class=\"btn btn-sn danger\"\n                  (click)=\"removeItem(item)\">\n                  <i class=\"fa fa-remove\"></i>\n                </a>\n              </td>\n            </tr>\n            <tr>\n              <th>Total:</th>\n  \n              <td class=\"text-right\">\n                {{ total() | currency: 'BRL': 'symbol' }}\n              </td>\n            </tr>\n          </tbody></table>\n        </div>\n    </div>\n    <div class=\"box-footer\" *ngIf=\"items().length\">\n      <div class=\"pull-right\">\n        <button\n          type=\"button\"\n          class=\"btn btn-danger\"\n          (click)=\"clear()\">\n          <i class=\"fa fa-trash\"></i>\n          Limpar\n        </button>\n        <a\n          href=\"order.html\"\n          class=\"btn btn-success\"\n          [routerLink]=\"['/order']\"\n        >\n          <i class=\"fa fa-credit-card\"></i>\n          Fechar Pedido\n        </a>\n      </div>\n    </div>\n  </div>\n  "
+            "templateData": "<storybook-square-white>\r\n  <div class=\"box box-solid\">\r\n    <div class=\"box-header\">\r\n      <i class=\"fa fa-shopping-cart\"></i>\r\n  \r\n      <h3 class=\"box-title\">Carrinho</h3>\r\n    </div>\r\n  \r\n    <div class=\"box-body\">\r\n      <div *ngIf=\"!items().length\">\r\n        <p class=\"text-center\">\r\n          Seu carrinho está vazio!\r\n        </p>\r\n      </div>\r\n      <div class=\"table-responsive\" *ngIf=\"items().length\">\r\n          <table class=\"table\">\r\n            <tbody>\r\n            <tr *ngFor=\"let item of items()\" [@row]=\"rowState\">\r\n              <th>\r\n                ({{ item.quantity }}x)\r\n                {{ item.menuItem.name }}\r\n              </th>\r\n  \r\n              <td class=\"text-right\">\r\n                {{ item.value() | currency: 'BRL': 'symbol'}}\r\n              </td>\r\n  \r\n              <td class=\"text-right\">\r\n                <a\r\n                  class=\"btn btn-sn danger\"\r\n                  (click)=\"removeItem(item)\">\r\n                  <i class=\"fa fa-remove\"></i>\r\n                </a>\r\n              </td>\r\n            </tr>\r\n            <tr>\r\n              <th>Total:</th>\r\n  \r\n              <td class=\"text-right\">\r\n                {{ total() | currency: 'BRL': 'symbol' }}\r\n              </td>\r\n            </tr>\r\n          </tbody></table>\r\n        </div>\r\n    </div>\r\n    <div class=\"box-footer\" *ngIf=\"items().length\">\r\n      <div class=\"pull-right\">\r\n        <button\r\n          type=\"button\"\r\n          class=\"btn btn-danger\"\r\n          (click)=\"clear()\">\r\n          <i class=\"fa fa-trash\"></i>\r\n          Limpar\r\n        </button>\r\n        <a\r\n          href=\"order.html\"\r\n          class=\"btn btn-success\"\r\n          [routerLink]=\"['/order']\"\r\n        >\r\n          <i class=\"fa fa-credit-card\"></i>\r\n          Fechar Pedido\r\n        </a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</storybook-square-white>\r\n"
         },
         {
             "name": "SnackbarComponent",
@@ -3043,7 +3057,7 @@
         },
         {
             "name": "SquareWhiteComponent",
-            "id": "component-SquareWhiteComponent-89b1f82d8891d996601c5d253e474cdd",
+            "id": "component-SquareWhiteComponent-be6585df22ced3bc52898a96b0d13f2f",
             "file": "src/stories/components/square-white/square-white.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3060,6 +3074,12 @@
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "classContent",
+                    "defaultValue": "'content'",
+                    "line": 11,
+                    "type": "string"
+                },
                 {
                     "name": "height",
                     "defaultValue": "false",
@@ -3081,7 +3101,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14
+                    "line": 15
                 }
             ],
             "hostBindings": [],
@@ -3089,11 +3109,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-square-white',\n  templateUrl: './square-white.component.html',\n  styleUrls: ['./square-white.component.css']\n})\nexport class SquareWhiteComponent implements OnInit {  \n  @Input() space: boolean = true;\n  @Input() height = false;\n  \n  constructor() { }\n\n  ngOnInit(): void { }\n\n  public get classes(): string[] {\n    const mode = this.height ? 'wrapper-height' : 'wrapper';\n\n    return [mode];\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-square-white',\r\n  templateUrl: './square-white.component.html',\r\n  styleUrls: ['./square-white.component.css']\r\n})\r\nexport class SquareWhiteComponent implements OnInit {  \r\n  @Input() space: boolean = true;\r\n  @Input() height = false;\r\n  @Input() classContent: string = 'content';\r\n  \r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.height ? 'wrapper-height' : 'wrapper';\r\n\r\n    return ['wrapper', mode];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\r\n    width: 100%;\r\n    display: flex;\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n.wrapper-height {\r\n    height: 100%; \r\n    width: 100%;\r\n    display: flex;\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n.content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    margin: 20px 0 30px 0;\r\n    height: 90%;\r\n    width: 70% !important;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .content {\r\n        width: 90% !important;\r\n    }\r\n}\r\n",
+                    "data": ".wrapper {\r\n    width: 100%;\r\n    display: flex;\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n.wrapper-height {\r\n    height: 100%;\r\n}\r\n.content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    height: 90%;\r\n    width: 70%;\r\n    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);\r\n}\r\n.content-width {\r\n    width: 100% !important;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .content {\r\n        width: 90% !important;\r\n    }\r\n}\r\n",
                     "styleUrl": "./square-white.component.css"
                 }
             ],
@@ -3102,7 +3122,7 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 10
+                "line": 11
             },
             "implements": [
                 "OnInit"
@@ -3114,11 +3134,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 16
+                        "line": 17
                     }
                 }
             },
-            "templateData": "<section class=\"wrapper\" [ngClass]=\"classes\">\n    <div class=\"content\">\n        <div [hidden]=\"space\">\n            <br><br><br><br><br><br><br><br>\n            <br><br><br><br><br><br><br><br>\n        </div>\n        <ng-content>\n        </ng-content>\n    </div>\n</section>"
+            "templateData": "<section class=\"wrapper\" [ngClass]=\"classes\">\r\n    <div [class]=\"classContent\">\r\n        <div [hidden]=\"space\">\r\n            <br><br><br><br><br><br><br><br>\r\n            <br><br><br><br><br><br><br><br>\r\n        </div>\r\n        <ng-content>\r\n        </ng-content>\r\n    </div>\r\n</section>"
         }
     ],
     "modules": [
@@ -3167,9 +3187,6 @@
                     "elements": [
                         {
                             "name": "AppComponent"
-                        },
-                        {
-                            "name": "CardItemComponent"
                         },
                         {
                             "name": "FooterComponent"
@@ -3240,6 +3257,9 @@
                             "name": "ButtonComponent"
                         },
                         {
+                            "name": "CardItemComponent"
+                        },
+                        {
                             "name": "PageComponent"
                         },
                         {
@@ -3256,6 +3276,9 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "CardItemComponent"
                         },
                         {
                             "name": "PageComponent"
@@ -3456,6 +3479,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "SquareWhiteFullWidth",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/square-white/Square-white.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3592,6 +3623,14 @@
             "src/stories/components/square-white/Square-white.stories.ts": [
                 {
                     "name": "SquareWhite",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/square-white/Square-white.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SquareWhiteFullWidth",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/components/square-white/Square-white.stories.ts",
@@ -4021,6 +4060,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "SquareWhiteFullWidth",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/square-white/Square-white.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -4032,7 +4081,7 @@
                 "linktype": "component",
                 "name": "SquareWhiteComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

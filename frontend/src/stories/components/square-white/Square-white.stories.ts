@@ -19,3 +19,9 @@ export const SquareWhite = Template.bind({});
 SquareWhite.args = {
   space: false
 };
+
+export const SquareWhiteFullWidth = Template.bind({});
+SquareWhiteFullWidth.args = {
+  space: false,
+  classContent: 'content content-width'
+};
