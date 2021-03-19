@@ -19,7 +19,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { registerLocaleData } from '@angular/common';
 import { ComponentsModule } from 'src/stories/components/components.module';
 import { FooterComponent } from './footer/footer.component';
-import { CardItemComponent } from 'src/stories/components/card-item/card-item.component';
+import { CardItemComponent } from './restaurant-detail/menu/card-item/card-item.component';
 
 registerLocaleData(locatePt, 'pt');
 
@@ -34,7 +34,8 @@ registerLocaleData(locatePt, 'pt');
     ShoppingCartComponent,
     ReviewsComponent,
     OrderSummaryComponent,
-    FooterComponent
+    FooterComponent,
+    CardItemComponent
   ],
   imports: [
     BrowserModule,

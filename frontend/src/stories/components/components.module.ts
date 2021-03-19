@@ -8,14 +8,12 @@ import { PreloadAllModules, RouterModule } from '@angular/router';
 import { ROUTES } from 'src/app/app-route';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SquareWhiteComponent } from './square-white/square-white.component';
-import { CardItemComponent } from './card-item/card-item.component';
 
 @NgModule({
   declarations: [
     ButtonComponent,
     PageComponent,
-    SquareWhiteComponent,
-    CardItemComponent
+    SquareWhiteComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +32,7 @@ import { CardItemComponent } from './card-item/card-item.component';
     ReactiveFormsModule,
     ButtonComponent,
     PageComponent,
-    SquareWhiteComponent,
-    CardItemComponent
+    SquareWhiteComponent
   ]
 })
 export class ComponentsModule { }

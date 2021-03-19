@@ -1146,8 +1146,8 @@
         },
         {
             "name": "CardItemComponent",
-            "id": "component-CardItemComponent-2f163c56adcce583834eb74b7b3e7a38",
-            "file": "src/stories/components/card-item/card-item.component.ts",
+            "id": "component-CardItemComponent-3abc0ec9233d13b251b79db5b966690f",
+            "file": "src/app/restaurant-detail/menu/card-item/card-item.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1210,7 +1210,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { trigger, transition, state, style, animate } from '@angular/animations';\n\nimport { MenuItem } from '../../../app/restaurant-detail/menu/menu-item.model';\n\n@Component({\n  selector: 'storybook-card-item',\n  templateUrl: './card-item.component.html',\n  styleUrls: ['./card-item.component.css'],\n  animations: [\n    trigger('menuItemAppeared', [\n      state('ready', style({ opacity: 1 })),\n      transition('void => ready', [\n        style({ opacity: 0, transform: 'translateY(-20px)'}),\n        animate('300ms 0s ease-in')\n      ])\n    ])\n  ]\n})\nexport class CardItemComponent implements OnInit {\n  @Input() menuItem: MenuItem;\n  @Output() add = new EventEmitter();\n  \n  menuItemState = 'ready';\n\n  constructor() { }\n\n  ngOnInit(): void { }\n\n  emitAddEvent() {\n    this.add.emit(this.menuItem); \n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\nimport { trigger, transition, state, style, animate } from '@angular/animations';\r\n\r\nimport { MenuItem } from '../menu-item.model';\r\n\r\n@Component({\r\n  selector: 'storybook-card-item',\r\n  templateUrl: './card-item.component.html',\r\n  styleUrls: ['./card-item.component.css'],\r\n  animations: [\r\n    trigger('menuItemAppeared', [\r\n      state('ready', style({ opacity: 1 })),\r\n      transition('void => ready', [\r\n        style({ opacity: 0, transform: 'translateY(-20px)'}),\r\n        animate('300ms 0s ease-in')\r\n      ])\r\n    ])\r\n  ]\r\n})\r\nexport class CardItemComponent implements OnInit {\r\n  @Input() menuItem: MenuItem;\r\n  @Output() add = new EventEmitter();\r\n  \r\n  menuItemState = 'ready';\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  emitAddEvent() {\r\n    this.add.emit(this.menuItem); \r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1740,7 +1740,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"wrapper-menu\">\n  <div class=\"content\">\n    <div class=\"content-card\">\n      <!-- *ngFor=\"let item of menu | async\" -->\n      <storybook-card-item\n        *ngFor=\"let item of menu\"\n        [menuItem]=\"item\"\n        (add)=\"shoppingCart.addItem($event)\"\n      >\n      </storybook-card-item>\n    </div>\n\n    <div class=\"content-cart\">\n      <app-shopping-cart #shoppingCart></app-shopping-cart>\n    </div>\n  </div>\n</section>\n"
+            "templateData": "<section class=\"wrapper-menu\">\r\n  <div class=\"content\">\r\n    <div class=\"content-card\">\r\n      <!-- *ngFor=\"let item of menu | async\" -->\r\n      <storybook-card-item\r\n        *ngFor=\"let item of menu\"\r\n        [menuItem]=\"item\"\r\n        (add)=\"shoppingCart.addItem($event)\"\r\n      >\r\n      </storybook-card-item>\r\n    </div>\r\n\r\n    <div class=\"content-cart\">\r\n      <app-shopping-cart #shoppingCart></app-shopping-cart>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "NotFoundComponent",
@@ -3189,6 +3189,9 @@
                             "name": "AppComponent"
                         },
                         {
+                            "name": "CardItemComponent"
+                        },
+                        {
                             "name": "FooterComponent"
                         },
                         {
@@ -3257,9 +3260,6 @@
                             "name": "ButtonComponent"
                         },
                         {
-                            "name": "CardItemComponent"
-                        },
-                        {
                             "name": "PageComponent"
                         },
                         {
@@ -3276,9 +3276,6 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
-                        },
-                        {
-                            "name": "CardItemComponent"
                         },
                         {
                             "name": "PageComponent"
@@ -3498,17 +3495,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/square-white/Square-white.stories.ts",
-                "type": "Story<SquareWhiteComponent>",
-                "defaultValue": "(args: SquareWhiteComponent) => ({\n  component: SquareWhiteComponent,\n  props: args,\n})"
+                "file": "src/stories/components/page/Page.stories.ts",
+                "type": "Story<PageComponent>",
+                "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/page/Page.stories.ts",
-                "type": "Story<PageComponent>",
-                "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
+                "file": "src/stories/components/square-white/Square-white.stories.ts",
+                "type": "Story<SquareWhiteComponent>",
+                "defaultValue": "(args: SquareWhiteComponent) => ({\n  component: SquareWhiteComponent,\n  props: args,\n})"
             },
             {
                 "name": "VILLE_API",
@@ -3803,6 +3800,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/restaurant-detail/menu/card-item/card-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/restaurant-detail/menu/menu-item.model.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -4005,15 +4011,6 @@
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/8",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/components/card-item/card-item.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "CardItemComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
                 "status": "low"
             },
             {

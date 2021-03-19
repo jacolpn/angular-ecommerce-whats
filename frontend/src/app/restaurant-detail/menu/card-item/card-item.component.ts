@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trigger, transition, state, style, animate } from '@angular/animations';
 
-import { MenuItem } from '../../../app/restaurant-detail/menu/menu-item.model';
+import { MenuItem } from '../menu-item.model';
 
 @Component({
   selector: 'storybook-card-item',
