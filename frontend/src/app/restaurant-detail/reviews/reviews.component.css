@@ -1,0 +1,58 @@
+section {
+    margin: 12px 0 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section > div {
+    width: 72%;
+    text-align: center;
+}
+.content {
+    margin: 1px;
+    padding: 7px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 48%;
+}
+.box-header {
+    border-bottom: 1px solid var(--color-background);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 2px 10px;
+}
+.box-info {
+    display: flex;
+}
+.box-user-date {
+    display: grid;
+}
+.img-circle {
+    width: 45px;
+}
+.username {
+    font-weight: 600;
+    color: var(--color-text-title);
+}
+.date {
+    font-size: 12px;
+    color: var(--color-text-complement);
+}
+.review-score {
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--color-text-title);
+}
+.review-score > i:hover {
+    background-color: var(--color-box-hover);
+}
+.box-comment {
+    min-height: 50px;
+    padding: 13px;
+    text-align: left;
+}
+
+@media (max-width: 1100px) {
+    
+}

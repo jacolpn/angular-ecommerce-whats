@@ -8,7 +8,8 @@ import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-reviews',
-  templateUrl: './reviews.component.html'
+  templateUrl: './reviews.component.html',
+  styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
   // reviews: Observable<any>;
