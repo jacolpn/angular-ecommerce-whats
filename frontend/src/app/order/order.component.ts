@@ -9,7 +9,8 @@ import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-order',
-  templateUrl: './order.component.html'
+  templateUrl: './order.component.html',
+  styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
   numberPattern = /^[0-9]*$/;

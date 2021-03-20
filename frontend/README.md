@@ -18,4 +18,5 @@ $ `npx -p @storybook/cli sb init`
 $ `npm run storybook` (port 6006)
 
 # OBS:
-$ Caso de erro ao inciar o projeto, deletar o `package-lock.json`.
+$ Em caso de erro ao inciar o projeto, deletar o `package-lock.json`.
+$ Alterar tamanho dos ícones font-awesome: `fa-xs, fa-sm, fa-lg, fa-2x, fa-3x, fa-5x, fa-7x, fa-10x`.

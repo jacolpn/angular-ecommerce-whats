@@ -1,114 +1,123 @@
-<section class="invoice m-top">
-  <!-- {{ orderForm.valid }} -->
-  <!-- {{ orderForm.value | json }} -->
-  <form novalidate [formGroup]="orderForm">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2 class="page-header">
-          <i class="fa fa-shopping-cart"></i> Finalize o seu pedido
-        </h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-9">
-        <p class="lead">Seus dados:</p>
-      </div>
-      <div class="col-sm-6 col-xs-12">
-        <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
-                              label="Nome">
-          <input  type="text"
-                  class="form-control"
-                  formControlName="name"
-                  placeholder="Olá, qual seu nome? (ex. Jackson Neves)"
-                  autocomplete="off"/>
-        </app-input-container>
-      </div>
-      <div class="col-sm-6 col-xs-12">
-        <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
-                              label="Telefone">
-          <input  type="text"
-                  class="form-control"
-                  formControlName="phone"
-                  placeholder="Qual seu telefone? (ex. 47 9 9934-2827)"
-                  autocomplete="off">
-        </app-input-container>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <p class="lead">Endereço de Entrega:</p>
-      </div>
-      <div class="col-sm-6 col-xs-12">
-        <app-input-container
-          errorMessage="Campo obrigatório e com 5 caracteres."
-          label="Endereço">
-          <input  type="text"
-                  class="form-control"
-                  formControlName="address"
-                  placeholder="Qual seu endereço?"
-                  autocomplete="off"/>
-        </app-input-container>
-      </div>
-      <div class="col-sm-3 col-xs-6">
-        <app-input-container  errorMessage="Obrigatório e somente números."
-                              label="Número">
-          <input  type="text"
-                  class="form-control"
-                  placeholder="Número"
-                  formControlName="number"
-                  autocomplete="off">
-        </app-input-container>
-      </div>
-      <div class="col-sm-3 col-xs-6">
-        <app-input-container label="Complemento">
-          <input  type="text"
-                  class="form-control"
-                  placeholder="Complemento"
-                  formControlName="optionalAddress"
-                  autocomplete="off">
-        </app-input-container>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <p class="lead">Itens do Pedido:</p>
-      </div>
-      <app-order-items  [items]="cartItems()"
-                        (increaseQty)="increaseQty($event)"
-                        (decreaseQty)="decreaseQty($event)"
-                        (remove)="removeItem($event)">
-      </app-order-items>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-6 col-xs-12">
-        <p class="lead">Formas de Pagamento:</p>
-        <div class="form-group">
-            <app-radio  [options]="paymentOptions"
-                        formControlName="paymentOption">
-            </app-radio>
+<div class="body">
+  <section class="wrapper">
+    <div class="content">
+    <!-- {{ orderForm.valid }} -->
+    <!-- {{ orderForm.value | json }} -->
+      <form novalidate [formGroup]="orderForm">
+        <div class="box-header">
+            <i class="fa fa-shopping-cart fa-lg"></i>
+            <p>
+              Finalize o seu pedido
+            </p>
         </div>
-      </div>
 
-      <div class="col-sm-6 col-xs-12">
-        <p class="lead">Frete e Total:</p>
-        <app-delivery-costs [delivery]="delivery"
-                            [itemsValue]="itemsValue()">
-        </app-delivery-costs>
+        <div class="box-info-user">
+          <p>Seus dados:</p>
+
+          <div class="box-input-user">
+            <div class="box-input-name">
+              <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
+                                    label="Nome">
+                <input  type="text"
+                        class="form-input-name"
+                        formControlName="name"
+                        placeholder="Olá, qual seu nome? (ex. Jackson Neves)"
+                        autocomplete="off"/>
+              </app-input-container>
+            </div>
+            <div class="box-input-phone">
+              <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
+                                    label="Telefone">
+                <input  type="text"
+                        class="form-input-phone"
+                        formControlName="phone"
+                        placeholder="Qual seu telefone? (ex. 47 9 9934-2827)"
+                        autocomplete="off">
+              </app-input-container>
+            </div>
+          </div>
+        </div>
+        <div class="box-info-address">
+          <p>Endereço de Entrega:</p>
+
+          <div class="wrapper-address">
+            <div class="box-input-address">
+              <app-input-container
+                errorMessage="Campo obrigatório e com 5 caracteres."
+                label="Endereço">
+                <input  type="text"
+                        class="form-input-address"
+                        formControlName="address"
+                        placeholder="Qual seu endereço?"
+                        autocomplete="off"/>
+              </app-input-container>
+            </div>
+            <div class="box-input-number">
+              <app-input-container  errorMessage="Obrigatório e somente números."
+                                    label="Número">
+                <input  type="text"
+                        class="form-input-number"
+                        placeholder="Número"
+                        formControlName="number"
+                        autocomplete="off">
+              </app-input-container>
+            </div>
+            <div class="box-input-optional">
+              <app-input-container label="Complemento">
+                <input  type="text"
+                        class="form-input-optional"
+                        placeholder="Complemento"
+                        formControlName="optionalAddress"
+                        autocomplete="off">
+              </app-input-container>
+            </div>
+          </div>
+        </div>
+
+        <div class="box-itens">
+          <div class="content-itens">
+            <p>Itens do Pedido:</p>
+            
+            <app-order-items  [items]="cartItems()"
+                              (increaseQty)="increaseQty($event)"
+                              (decreaseQty)="decreaseQty($event)"
+                              (remove)="removeItem($event)">
+            </app-order-items>
+          </div>
+        </div>
+
+        <div class="box-payment">
+          <div class="content-payment">
+            <p>Formas de Pagamento:</p>
+            <div>
+                <app-radio  [options]="paymentOptions"
+                            formControlName="paymentOption">
+                </app-radio>
+            </div>
+          </div>
+
+          <div class="content-delivery">
+            <p>Frete e Total:</p>
+            <app-delivery-costs [delivery]="delivery"
+                                [itemsValue]="itemsValue()">
+            </app-delivery-costs>
+          </div>
+        </div>
+      </form>
+
+      <div class="box-footer">
+        <!-- [routerLink]="['/restaurant/jack-daniels'] -->
+        <button href="order-summary.html"
+                class="button-secondary">
+          <i class="fa fa-credit-card"></i> Voltar
+        </button>
+        <button href="order-summary.html"
+                class="button-primary"
+                [disabled]="!orderForm.valid || cartItems().length === 0"
+                (click)="checkOrder(orderForm.value)">
+          <i class="fa fa-credit-card"></i> Concluir Pedido
+        </button>
       </div>
     </div>
-  </form>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <button href="order-summary.html"
-              class="btn btn-success pull-right"
-              [disabled]="!orderForm.valid || cartItems().length === 0"
-              (click)="checkOrder(orderForm.value)">
-        <i class="fa fa-credit-card"></i> Concluir Pedido
-    </button>
-    </div>
-  </div>
-</section>
+  </section>
+</div>
