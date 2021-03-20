@@ -47,11 +47,12 @@
     font-size: large;
 }
 .box-footer > a {
+    border-top: 1px solid var(--color-background);
     color: var(--color-text-title);
     font-weight: 600;
     text-decoration: none;
     width: 50%;
-    padding-bottom: 5px;
+    padding: 8px 0;
 
     /* Impedir seleção do texto. */
     -webkit-touch-callout: none;

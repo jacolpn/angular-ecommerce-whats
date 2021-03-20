@@ -1,66 +1,62 @@
-<storybook-square-white>
-  <div class="box box-solid">
-    <div class="box-header">
-      <i class="fa fa-shopping-cart"></i>
-  
-      <h3 class="box-title">Carrinho</h3>
-    </div>
-  
-    <div class="box-body">
-      <div *ngIf="!items().length">
-        <p class="text-center">
-          Seu carrinho está vazio!
-        </p>
+<section>
+  <storybook-square-white classContent="content content-width-10">
+    <div class="wrapper">
+      <div class="box-header">
+        <i class="fa fa-shopping-cart"></i>
+    
+        <h3 class="box-title">Carrinho</h3>
       </div>
-      <div class="table-responsive" *ngIf="items().length">
-          <table class="table">
-            <tbody>
-            <tr *ngFor="let item of items()" [@row]="rowState">
-              <th>
-                ({{ item.quantity }}x)
-                {{ item.menuItem.name }}
-              </th>
-  
-              <td class="text-right">
-                {{ item.value() | currency: 'BRL': 'symbol'}}
-              </td>
-  
-              <td class="text-right">
-                <a
-                  class="btn btn-sn danger"
-                  (click)="removeItem(item)">
+    
+      <div class="box-body">
+        <div class="box-body-empty" *ngIf="!items().length">
+          <p>
+            Seu carrinho está vazio!
+          </p>
+        </div>
+        <div  class="table-responsive"
+              *ngIf="items().length">
+            <div class="table">
+              <div *ngFor="let item of items()"
+                  [@row]="rowState"
+                  class="tb-itens">
+                <p class="tb-name">
+                  ({{ item.quantity }}x)
+                  {{ item.menuItem.name }}
+                </p>
+    
+                <p class="tb-price">
+                  {{ item.value() | currency: 'BRL': 'symbol'}}
+                </p>
+    
+                <a class="tb-icon" (click)="removeItem(item)">
                   <i class="fa fa-remove"></i>
                 </a>
-              </td>
-            </tr>
-            <tr>
-              <th>Total:</th>
-  
-              <td class="text-right">
-                {{ total() | currency: 'BRL': 'symbol' }}
-              </td>
-            </tr>
-          </tbody></table>
-        </div>
-    </div>
-    <div class="box-footer" *ngIf="items().length">
-      <div class="pull-right">
-        <button
-          type="button"
-          class="btn btn-danger"
-          (click)="clear()">
-          <i class="fa fa-trash"></i>
-          Limpar
-        </button>
-        <a
-          href="order.html"
-          class="btn btn-success"
-          [routerLink]="['/order']"
-        >
-          <i class="fa fa-credit-card"></i>
-          Fechar Pedido
-        </a>
+              </div>
+              <div class="total">
+                <p>Total:</p>
+    
+                <span>
+                  {{ total() | currency: 'BRL': 'symbol' }}
+                </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="box-footer" *ngIf="items().length">
+        <storybook-button fontBlack="true"
+                          icon="fa fa-trash"
+                          size="small"
+                          label="Limpar"
+                          (click)="clear()">
+        </storybook-button>
+        <storybook-button primary="true"
+                          icon="fa fa-credit-card"
+                          size="small"
+                          label="Fechar Pedido"
+                          href="order.html"
+                          [routerLink]="['/order']">
+        </storybook-button>
       </div>
     </div>
-  </div>
-</storybook-square-white>
+  </storybook-square-white>
+</section>

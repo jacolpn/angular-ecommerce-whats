@@ -1,0 +1,84 @@
+section {
+    margin-left: 6%;
+}
+.box-header {
+    display: flex;
+    color: var(--color-text-base);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-background);
+}
+.box-header > i {
+    font-size: x-large !important;
+    padding: 10px 0 0 10px;
+}
+.box-header > h3 {
+    color: var(--color-text-complement);
+    font-weight: 400;
+    padding: 14px 0 0 10px;
+}
+.box-body-empty {
+    min-height: 80px;
+}
+.box-body > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table-responsive {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 10px 0;
+}
+.table {
+    width: 90%;
+}
+.tb-itens {
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 2px 0;
+}
+.tb-name {
+    width: 60%;
+}
+.tb-price {
+    width: 36%;
+}
+.tb-icon {
+    width: 4%;
+    color: tomato;
+    cursor: pointer;
+}
+.tb-icon:hover {
+    color: var(--color-primary-darker);
+}
+.total {
+    display: flex;
+    height: 15%;
+    padding: 35px 0 8px 0;
+}
+.total > p {
+    margin-right: 6px;
+    font-weight: 600;
+    color: var(--color-text-title);
+}
+.total > span {
+    color: var(--color-text-base);
+}
+.box-footer {
+    text-align: right;
+    padding: 0 15px 13px 0;
+}
+
+@media (max-width: 1100px) {
+    .box-body {
+        display: inline;
+    }
+    section {
+        margin: 5% 0 0 0;
+    }
+}
+  

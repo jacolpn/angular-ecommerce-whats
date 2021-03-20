@@ -18,8 +18,14 @@
 .content:hover {
     background-color: var(--color-box-hover);
 }
-.content-width {
+.content-width-10 {
     width: 100% !important;
+}
+.content-width-9 {
+    width: 90% !important;
+}
+.content-width-8 {
+    width: 80% !important;
 }
 
 @media (max-width: 1100px) {

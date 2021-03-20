@@ -9,20 +9,33 @@
     line-height: 1;
 }
 .storybook-button--primary {
-    color: white;
+    color: var(--color-button-text);
     background-color: var(--color-primary);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
 .storybook-button--primary:hover {
     background-color: var(--color-primary-darker);
+    box-shadow: rgba(250, 250, 250, 0.15) 0px 0px 0px 1px inset;
 }
 .storybook-button--secondary {
     color: var(--color-button-text);
     background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    box-shadow: rgba(250, 250, 250, 0.15) 0px 0px 0px 1px inset;
 }
 .storybook-button--secondary:hover {
     background-color: var(--color-text-title);
     color: var(--color-button-text);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+.font-black {
+    background-color: transparent;
+    color: var(--color-text-title);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+.font-black:hover {
+    background-color: var(--color-text-title);
+    color: var(--color-button-text);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
 .storybook-button--small {
     font-size: 12px;

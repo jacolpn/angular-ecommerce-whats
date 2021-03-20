@@ -18,22 +18,36 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  label: 'Button',
+  label: 'Button'
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+  label: 'Button'
+};
+
+export const SecondaryFontBlack = Template.bind({});
+SecondaryFontBlack.args = {
   label: 'Button',
+  fontBlack: true
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
   label: 'Button',
+  fontBlack: true
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
+  fontBlack: true
+};
+export const Icon = Template.bind({});
+Icon.args = {
+  label: 'Button',
+  fontBlack: true,
+  icon: 'fa fa-credit-card'
 };

@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SquareWhiteComponent implements OnInit {  
   @Input() space: boolean = true;
-  @Input() height = false;
+  @Input() classWrapper = false;
   @Input() classContent: string = 'content';
   
   constructor() { }
@@ -15,7 +15,7 @@ export class SquareWhiteComponent implements OnInit {
   ngOnInit(): void { }
 
   public get classes(): string[] {
-    const mode = this.height ? 'wrapper-height' : 'wrapper';
+    const mode = this.classWrapper ? 'wrapper-height' : 'wrapper';
 
     return ['wrapper', mode];
   }

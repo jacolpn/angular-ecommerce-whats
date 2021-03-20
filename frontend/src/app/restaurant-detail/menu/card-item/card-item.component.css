@@ -19,6 +19,7 @@ section {
 }
 .content-description > h1 {
     height: 25px;
+    font-size: large;
 }
 .content-description > span {
     overflow: hidden !important;
