@@ -50,7 +50,7 @@ export class ReviewsComponent implements OnInit {
         "restaurantId": "bread-bakery"
       },
       {
-        "name": "Renata",
+        "name": "Jackson Luís Peres das Neves",
         "date": "2016-12-12T18:25:43",
         "rating": 2,
         "comments": "Não foi muito agradável ao nosso paladar, e eu e meu esposo no outro dia passamos super mal. Pode até ter sido outra coisa, mas...",
