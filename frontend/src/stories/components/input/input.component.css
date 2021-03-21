@@ -1,5 +1,4 @@
 input {
-  font: 500 1.2rem Poppins;
   color: var(--color-text-base);
   margin: 0;
 }
@@ -27,6 +26,7 @@ input {
   position: absolute;
   left: 1rem;
   right: 1rem;
+  margin-bottom: 7px;
   bottom: 0;
 }
 
@@ -50,4 +50,14 @@ input {
   left: 1rem;
   right: 1rem;
   bottom: 0;
+}
+
+@media (max-width: 1100px) {
+  .input-block input {
+    font: 0.92rem Archivo;
+  }
+
+  .input-block-20 input {
+    font: 0.92rem Archivo;
+  }
 }

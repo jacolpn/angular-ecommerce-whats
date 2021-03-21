@@ -68,7 +68,7 @@ form {
 
 .box-input-optional {
     width: 25%;
-    padding-left: 6%;
+    margin-left: 6%;
 }
 
 .box-itens {
@@ -130,6 +130,40 @@ form {
         margin: 18px 20px 50px 15px;
         min-height: 80%;
         text-align: left;
+    }
+
+    .box-input-user {
+        display: inline-block;
+    }
+
+    .box-input-name {
+        width: 90%;
+        margin-bottom: 7px;
+    }
+    
+    .box-input-phone {
+        width: 90%;
+        margin-left: 0%;
+    }
+
+    .wrapper-address {
+        display: inline-block;
+    }
+    
+    .box-input-address {
+        width: 90%;
+        margin-bottom: 7px;
+    }
+    
+    .box-input-number {
+        width: 90%;
+        margin-left: 0%;
+        margin-bottom: 7px;
+    }
+    
+    .box-input-optional {
+        width: 90%;
+        margin-left: 0%;
     }
 
     .box-payment {
