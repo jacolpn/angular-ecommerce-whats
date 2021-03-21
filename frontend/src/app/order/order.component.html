@@ -1,9 +1,9 @@
 <div class="body">
-  <section class="wrapper">
-    <div class="content">
+  <storybook-square-white>
     <!-- {{ orderForm.valid }} -->
     <!-- {{ orderForm.value | json }} -->
-      <form novalidate [formGroup]="orderForm">
+      <form novalidate
+            [formGroup]="orderForm">
         <div class="box-header">
             <i class="fa fa-shopping-cart fa-lg"></i>
             <p>
@@ -107,7 +107,7 @@
 
       <div class="box-footer">
         <!-- [routerLink]="['/restaurant/jack-daniels'] -->
-        <button href="order-summary.html"
+        <!-- <button href="order-summary.html"
                 class="button-secondary">
           <i class="fa fa-credit-card"></i> Voltar
         </button>
@@ -116,8 +116,19 @@
                 [disabled]="!orderForm.valid || cartItems().length === 0"
                 (click)="checkOrder(orderForm.value)">
           <i class="fa fa-credit-card"></i> Concluir Pedido
-        </button>
+        </button> -->
+        <storybook-button fontBlack="true"
+                          label="Voltar"
+                          class="button-back"
+                          [routerLink]="['/restaurant/jack-daniels']">
+        </storybook-button>
+        <storybook-button primary="true"
+                          icon="fa fa-credit-card"
+                          label="Concluir Pedido"
+                          (click)="checkOrder(orderForm.value)"
+                          [routerLink]="['/order-summary']">
+                          <!-- [disabled]="!orderForm.valid || cartItems().length === 0" -->
+        </storybook-button>
       </div>
-    </div>
-  </section>
+  </storybook-square-white>
 </div>

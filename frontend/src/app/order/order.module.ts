@@ -4,6 +4,9 @@ import { DeliveryCostsComponent } from './delivery-costs/delivery-costs.componen
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { OrderComponent } from './order.component';
 import { NgModule } from '@angular/core';
+import { ComponentsModule } from 'src/stories/components/components.module';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const ROUTES: Routes = [
   { path: '', component: OrderComponent }
@@ -17,9 +20,11 @@ const ROUTES: Routes = [
   ],
   imports: [
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    ComponentsModule,
     RouterModule.forChild(ROUTES)
   ]
 })
-export class OrderModule {
-
-}
+export class OrderModule { }

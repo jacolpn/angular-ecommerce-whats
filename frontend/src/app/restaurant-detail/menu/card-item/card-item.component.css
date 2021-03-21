@@ -12,7 +12,7 @@ section {
 }
 .content-description {
     display: grid;
-    text-align: left;
+    text-align: justify;
     width: 100%;
     padding: 20px;
     color: var(--color-text-base);
