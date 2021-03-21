@@ -976,7 +976,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper-about {\r\n  height: 100%; \r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n.content {\r\n  background-color: var(--color-box-footer);\r\n  border: 1px solid rgba(0, 0.3, 0, 0);\r\n  border-radius: 6px; \r\n  height: 90%;\r\n  width: 70%;\r\n  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);\r\n}\r\n.content:hover {\r\n  background-color: var(--color-box-hover);\r\n}\r\nh1 {\r\n padding: 25px 25px 20px 25px; \r\n}\r\np {\r\n  padding: 7px 25px 0 25px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .content {\r\n    width: 90%;\r\n  }\r\n}\r\n",
+                    "data": "div {\r\n  text-align: justify;\r\n}\r\nh1 {\r\n padding: 25px 25px 20px 25px; \r\n}\r\np {\r\n  padding: 12px 25px 0 25px;\r\n}\r\n",
                     "styleUrl": "./about.component.css"
                 }
             ],
@@ -990,7 +990,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"wrapper-about\">\n  <div class=\"content\">\n    <h1>Sobre</h1>\n    \n    <p>\n      Whisky Ville | Aplication\n    </p>\n    <p>\n      MIT license\n    </p>\n    <p>\n      Copyright 2020 Whisky Ville\n    </p>\n    <p>\n      Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n    </p>\n    <p>\n      The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n    </p>\n  </div>\n</section>\n"
+            "templateData": "<storybook-square-white classWrapper=\"true\">\n  <div>\n    <h1>Sobre</h1>\n    \n    <p>\n      Whisky Ville | Aplication\n    </p>\n    <p>\n      MIT license\n    </p>\n    <p>\n      Copyright 2020 Whisky Ville\n    </p>\n    <p>\n      Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n    </p>\n    <p>\n      The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n    </p>\n  </div>\n</storybook-square-white>\n"
         },
         {
             "name": "AppComponent",
@@ -1226,7 +1226,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\r\n    margin-bottom: 6px;\r\n}\r\n.wrapper-card {\r\n    display: flex;\r\n    width: 100%;\r\n    height: 200px;\r\n}\r\n.wrapper-card > img {\r\n    width: 140px;\r\n    padding: 20px 10px;\r\n}\r\n.content-description {\r\n    display: grid;\r\n    text-align: left;\r\n    width: 100%;\r\n    padding: 20px;\r\n    color: var(--color-text-base);\r\n}\r\n.content-description > h1 {\r\n    height: 25px;\r\n    font-size: large;\r\n}\r\n.content-description > span {\r\n    overflow: hidden !important;\r\n    text-overflow: ellipsis !important;\r\n    height: 99px;\r\n}\r\n.content-price {\r\n    padding-top: 10px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-weight: 600;\r\n    color: var(--color-text-title);\r\n    height: 25px;\r\n}\r\n.content-price > a {\r\n    cursor: pointer;\r\n    color: var(--color-primary);\r\n}\r\n.content-price > a:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .wrapper-card > img {\r\n        width: 90px;\r\n        padding: 30px 10px;\r\n    }\r\n    .content-description > span {\r\n        margin-top: 0;\r\n    }\r\n}\r\n",
+                    "data": "section {\r\n    margin-bottom: 6px;\r\n}\r\n.wrapper-card {\r\n    display: flex;\r\n    width: 100%;\r\n    height: 200px;\r\n}\r\n.wrapper-card > img {\r\n    width: 140px;\r\n    padding: 20px 10px;\r\n}\r\n.content-description {\r\n    display: grid;\r\n    text-align: justify;\r\n    width: 100%;\r\n    padding: 20px;\r\n    color: var(--color-text-base);\r\n}\r\n.content-description > h1 {\r\n    height: 25px;\r\n    font-size: large;\r\n}\r\n.content-description > span {\r\n    overflow: hidden !important;\r\n    text-overflow: ellipsis !important;\r\n    height: 99px;\r\n}\r\n.content-price {\r\n    padding-top: 10px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    font-weight: 600;\r\n    color: var(--color-text-title);\r\n    height: 25px;\r\n}\r\n.content-price > a {\r\n    cursor: pointer;\r\n    color: var(--color-primary);\r\n}\r\n.content-price > a:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .wrapper-card > img {\r\n        width: 90px;\r\n        padding: 30px 10px;\r\n    }\r\n    .content-description > span {\r\n        margin-top: 0;\r\n    }\r\n}\r\n",
                     "styleUrl": "./card-item.component.css"
                 }
             ],
@@ -1308,7 +1308,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"table-responsive\">\n    <table class=\"table\">\n      <tbody><tr>\n        <th style=\"width:50%\">Itens:</th>\n        <td class=\"text-right\">\n          {{ itemsValue | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n      <tr>\n        <th>Frete:</th>\n        <td class=\"text-right\">\n          {{ delivery | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n      <tr>\n        <th>Total:</th>\n        <td class=\"text-right\">\n          {{ total() | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n    </tbody></table>\n  </div>\n  "
+            "templateData": "<div class=\"table-responsive\">\n    <table class=\"table\">\n      <tbody>\n        <tr class=\"tr-value\">\n        <th style=\"width:50%\">Itens:</th>\n        <td>\n          {{ itemsValue | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n      <tr class=\"tr-value\">\n        <th>Frete:</th>\n        <td>\n          {{ delivery | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n      <tr class=\"tr-value\">\n        <th>Total:</th>\n        <td>\n          {{ total() | currency: 'BRL': 'symbol' }}\n        </td>\n      </tr>\n    </tbody></table>\n  </div>\n  "
         },
         {
             "name": "FooterComponent",
@@ -1505,7 +1505,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "h1 {\r\n    padding-top: 116px;\r\n    font-size: xxx-large;\r\n}\r\np {\r\n    padding: 15px 0 36px 0;\r\n}\r\n",
+                    "data": "h1 {\r\n    color: var(--color-text-title);\r\n    padding-top: 116px;\r\n    font-size: xxx-large;\r\n}\r\np {\r\n    padding: 15px 0 36px 0;\r\n}\r\n",
                     "styleUrl": "./home.component.css"
                 }
             ],
@@ -2009,7 +2009,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\r\nheight: 100%; \r\nwidth: 100%;\r\ndisplay: flex;\r\njustify-content: center;\r\n}\r\n.content {\r\n    background-color: var(--color-box-footer);\r\n    border: 1px solid rgba(0, 0.3, 0, 0);\r\n    border-radius: 6px; \r\n    height: 90%;\r\n    width: 70%;\r\n    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);\r\n}\r\n.content:hover {\r\n    background-color: var(--color-box-hover);\r\n}\r\nform {\r\n    margin: 18px 30px 18px 20px;\r\n}\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    color: var(--color-text-base);\r\n    padding-bottom: 7px;\r\n    margin-bottom: 15px;\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n}\r\n.box-header > p {\r\n    margin-left: 13px;\r\n    font-size: large;\r\n}\r\n.box-info-user {\r\n    /* padding: 14px; */\r\n}\r\n.box-info-user > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-input-user {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.box-input-name {\r\n    width: 50%;\r\n}\r\n.form-input-name {\r\n    width: 100%;\r\n}\r\n.box-input-phone {\r\n    width: 50%;\r\n    margin-left: 6%;\r\n}\r\n.form-input-phone {\r\n    width: 100%;\r\n}\r\n.box-info-address > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.wrapper-address {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.box-input-address {\r\n    width: 50%;\r\n}\r\n.form-input-address {\r\n    width: 100%;\r\n}\r\n.box-input-number {\r\n    width: 19%;\r\n    margin-left: 6%;\r\n}\r\n.form-input-number {\r\n    width: 100%;\r\n}\r\n.box-input-optional {\r\n    width: 25%;\r\n    padding-left: 6%;\r\n}\r\n.form-input-optional {\r\n    width: 100%;\r\n}\r\n.box-itens {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.content-itens > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-payment {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.content-payment > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.content-delivery > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-footer {\r\n    width: 100%;\r\n    background-color: blue;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .content {\r\n      width: 90%;\r\n    }\r\n}",
+                    "data": ".body {\r\n    height: 100%;\r\n    margin-bottom: 25px;\r\n}\r\nform {\r\n    margin: 18px 30px 50px 20px;\r\n    min-height: 80%;\r\n    text-align: left;\r\n}\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    color: var(--color-text-base);\r\n    padding-bottom: 7px;\r\n    margin-bottom: 15px;\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n}\r\n.box-header > p {\r\n    margin-left: 13px;\r\n    font-size: large;\r\n}\r\n.box-info-user > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-input-user {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.box-input-name {\r\n    width: 50%;\r\n}\r\n.form-input-name {\r\n    width: 100%;\r\n}\r\n.box-input-phone {\r\n    width: 50%;\r\n    margin-left: 6%;\r\n}\r\n.form-input-phone {\r\n    width: 100%;\r\n}\r\n.box-info-address > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.wrapper-address {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.box-input-address {\r\n    width: 50%;\r\n}\r\n.form-input-address {\r\n    width: 100%;\r\n}\r\n.box-input-number {\r\n    width: 19%;\r\n    margin-left: 6%;\r\n}\r\n.form-input-number {\r\n    width: 100%;\r\n}\r\n.box-input-optional {\r\n    width: 25%;\r\n    padding-left: 6%;\r\n}\r\n.form-input-optional {\r\n    width: 100%;\r\n}\r\n.box-itens {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.content-itens > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-payment {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.content-payment {\r\n    width: 70%;\r\n}\r\n.content-payment > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.content-delivery {\r\n    width: 30%;\r\n    text-align: left;\r\n}\r\n.content-delivery > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-footer {\r\n    height: 20%;\r\n    width: 97.6%;\r\n    padding-bottom: 15px;\r\n    text-align: right;\r\n}\r\n.button-back {\r\n    margin-right: 10px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .body {\r\n      height: auto;\r\n    }\r\n    form {\r\n        margin: 18px 20px 50px 15px;\r\n        min-height: 80%;\r\n        text-align: left;\r\n    }\r\n    .box-payment {\r\n        display: inline-block;\r\n    }\r\n    .content-payment {\r\n        width: 100%;\r\n        padding-bottom: 18px;\r\n    }\r\n    .content-delivery {\r\n        width: 100%;\r\n    }\r\n    .button-back {\r\n        margin-right: 7px;\r\n    }\r\n    .box-footer {\r\n        width: 96.6%;\r\n    }\r\n}",
                     "styleUrl": "./order.component.css"
                 }
             ],
@@ -2059,7 +2059,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"wrapper\">\r\n  <div class=\"content\">\r\n  <!-- {{ orderForm.valid }} -->\r\n  <!-- {{ orderForm.value | json }} -->\r\n    <form novalidate [formGroup]=\"orderForm\">\r\n      <div class=\"box-header\">\r\n          <i class=\"fa fa-shopping-cart fa-lg\"></i>\r\n          <p>\r\n            Finalize o seu pedido\r\n          </p>\r\n      </div>\r\n\r\n      <div class=\"box-info-user\">\r\n        <p>Seus dados:</p>\r\n\r\n        <div class=\"box-input-user\">\r\n          <div class=\"box-input-name\">\r\n            <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                  label=\"Nome\">\r\n              <input  type=\"text\"\r\n                      class=\"form-input-name\"\r\n                      formControlName=\"name\"\r\n                      placeholder=\"Olá, qual seu nome? (ex. Jackson Neves)\"\r\n                      autocomplete=\"off\"/>\r\n            </app-input-container>\r\n          </div>\r\n          <div class=\"box-input-phone\">\r\n            <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                  label=\"Telefone\">\r\n              <input  type=\"text\"\r\n                      class=\"form-input-phone\"\r\n                      formControlName=\"phone\"\r\n                      placeholder=\"Qual seu telefone? (ex. 47 9 9934-2827)\"\r\n                      autocomplete=\"off\">\r\n            </app-input-container>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"box-info-address\">\r\n        <p>Endereço de Entrega:</p>\r\n\r\n        <div class=\"wrapper-address\">\r\n          <div class=\"box-input-address\">\r\n            <app-input-container\r\n              errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n              label=\"Endereço\">\r\n              <input  type=\"text\"\r\n                      class=\"form-input-address\"\r\n                      formControlName=\"address\"\r\n                      placeholder=\"Qual seu endereço?\"\r\n                      autocomplete=\"off\"/>\r\n            </app-input-container>\r\n          </div>\r\n          <div class=\"box-input-number\">\r\n            <app-input-container  errorMessage=\"Obrigatório e somente números.\"\r\n                                  label=\"Número\">\r\n              <input  type=\"text\"\r\n                      class=\"form-input-number\"\r\n                      placeholder=\"Número\"\r\n                      formControlName=\"number\"\r\n                      autocomplete=\"off\">\r\n            </app-input-container>\r\n          </div>\r\n          <div class=\"box-input-optional\">\r\n            <app-input-container label=\"Complemento\">\r\n              <input  type=\"text\"\r\n                      class=\"form-input-optional\"\r\n                      placeholder=\"Complemento\"\r\n                      formControlName=\"optionalAddress\"\r\n                      autocomplete=\"off\">\r\n            </app-input-container>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-itens\">\r\n        <div class=\"content-itens\">\r\n          <p>Itens do Pedido:</p>\r\n          \r\n          <app-order-items  [items]=\"cartItems()\"\r\n                            (increaseQty)=\"increaseQty($event)\"\r\n                            (decreaseQty)=\"decreaseQty($event)\"\r\n                            (remove)=\"removeItem($event)\">\r\n          </app-order-items>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-payment\">\r\n        <div class=\"content-payment\">\r\n          <p>Formas de Pagamento:</p>\r\n          <div>\r\n              <app-radio  [options]=\"paymentOptions\"\r\n                          formControlName=\"paymentOption\">\r\n              </app-radio>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"content-delivery\">\r\n          <p>Frete e Total:</p>\r\n          <app-delivery-costs [delivery]=\"delivery\"\r\n                              [itemsValue]=\"itemsValue()\">\r\n          </app-delivery-costs>\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n    <div class=\"box-footer\">a\r\n      <!-- [disabled]=\"!orderForm.valid || cartItems().length === 0\" -->\r\n      <storybook-button primary=\"true\"\r\n                        icon=\"fa fa-credit-card\"\r\n                        size=\"small\"\r\n                        label=\"Concluir Pedido\"\r\n                        (click)=\"checkOrder(orderForm.value)\"\r\n                        [routerLink]=\"['/order-summary']\">\r\n      </storybook-button>\r\n      <storybook-button primary=\"true\"\r\n                          icon=\"fa fa-credit-card\"\r\n                          label=\"Fechar Pedido\"\r\n                          [routerLink]=\"['/order']\">\r\n        </storybook-button>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<div class=\"body\">\r\n  <storybook-square-white>\r\n    <!-- {{ orderForm.valid }} -->\r\n    <!-- {{ orderForm.value | json }} -->\r\n      <form novalidate\r\n            [formGroup]=\"orderForm\">\r\n        <div class=\"box-header\">\r\n            <i class=\"fa fa-shopping-cart fa-lg\"></i>\r\n            <p>\r\n              Finalize o seu pedido\r\n            </p>\r\n        </div>\r\n\r\n        <div class=\"box-info-user\">\r\n          <p>Seus dados:</p>\r\n\r\n          <div class=\"box-input-user\">\r\n            <div class=\"box-input-name\">\r\n              <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                    label=\"Nome\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-name\"\r\n                        formControlName=\"name\"\r\n                        placeholder=\"Olá, qual seu nome? (ex. Jackson Neves)\"\r\n                        autocomplete=\"off\"/>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-phone\">\r\n              <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                    label=\"Telefone\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-phone\"\r\n                        formControlName=\"phone\"\r\n                        placeholder=\"Qual seu telefone? (ex. 47 9 9934-2827)\"\r\n                        autocomplete=\"off\">\r\n              </app-input-container>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"box-info-address\">\r\n          <p>Endereço de Entrega:</p>\r\n\r\n          <div class=\"wrapper-address\">\r\n            <div class=\"box-input-address\">\r\n              <app-input-container\r\n                errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                label=\"Endereço\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-address\"\r\n                        formControlName=\"address\"\r\n                        placeholder=\"Qual seu endereço?\"\r\n                        autocomplete=\"off\"/>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-number\">\r\n              <app-input-container  errorMessage=\"Obrigatório e somente números.\"\r\n                                    label=\"Número\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-number\"\r\n                        placeholder=\"Número\"\r\n                        formControlName=\"number\"\r\n                        autocomplete=\"off\">\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-optional\">\r\n              <app-input-container label=\"Complemento\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-optional\"\r\n                        placeholder=\"Complemento\"\r\n                        formControlName=\"optionalAddress\"\r\n                        autocomplete=\"off\">\r\n              </app-input-container>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"box-itens\">\r\n          <div class=\"content-itens\">\r\n            <p>Itens do Pedido:</p>\r\n            \r\n            <app-order-items  [items]=\"cartItems()\"\r\n                              (increaseQty)=\"increaseQty($event)\"\r\n                              (decreaseQty)=\"decreaseQty($event)\"\r\n                              (remove)=\"removeItem($event)\">\r\n            </app-order-items>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"box-payment\">\r\n          <div class=\"content-payment\">\r\n            <p>Formas de Pagamento:</p>\r\n            <div>\r\n                <app-radio  [options]=\"paymentOptions\"\r\n                            formControlName=\"paymentOption\">\r\n                </app-radio>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"content-delivery\">\r\n            <p>Frete e Total:</p>\r\n            <app-delivery-costs [delivery]=\"delivery\"\r\n                                [itemsValue]=\"itemsValue()\">\r\n            </app-delivery-costs>\r\n          </div>\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"box-footer\">\r\n        <!-- [routerLink]=\"['/restaurant/jack-daniels'] -->\r\n        <!-- <button href=\"order-summary.html\"\r\n                class=\"button-secondary\">\r\n          <i class=\"fa fa-credit-card\"></i> Voltar\r\n        </button>\r\n        <button href=\"order-summary.html\"\r\n                class=\"button-primary\"\r\n                [disabled]=\"!orderForm.valid || cartItems().length === 0\"\r\n                (click)=\"checkOrder(orderForm.value)\">\r\n          <i class=\"fa fa-credit-card\"></i> Concluir Pedido\r\n        </button> -->\r\n        <storybook-button fontBlack=\"true\"\r\n                          label=\"Voltar\"\r\n                          class=\"button-back\"\r\n                          [routerLink]=\"['/restaurant/jack-daniels']\">\r\n        </storybook-button>\r\n        <storybook-button primary=\"true\"\r\n                          icon=\"fa fa-credit-card\"\r\n                          label=\"Concluir Pedido\"\r\n                          (click)=\"checkOrder(orderForm.value)\"\r\n                          [routerLink]=\"['/order-summary']\">\r\n                          <!-- [disabled]=\"!orderForm.valid || cartItems().length === 0\" -->\r\n        </storybook-button>\r\n      </div>\r\n  </storybook-square-white>\r\n</div>"
         },
         {
             "name": "OrderItemsComponent",
@@ -2203,7 +2203,7 @@
         },
         {
             "name": "OrderSummaryComponent",
-            "id": "component-OrderSummaryComponent-33f345e73b4868bf363e080ca6f3d81f",
+            "id": "component-OrderSummaryComponent-e1148333235aea5bcd1ffbeee4824267",
             "file": "src/app/order-summary/order-summary.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2211,7 +2211,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-order-summary",
-            "styleUrls": [],
+            "styleUrls": [
+                "./order-summary.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./order-summary.component.html"
@@ -2225,7 +2227,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 8
+                    "line": 9
                 }
             ],
             "methodsClass": [
@@ -2235,7 +2237,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12
+                    "line": 13
                 },
                 {
                     "name": "rate",
@@ -2243,7 +2245,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14
+                    "line": 15
                 }
             ],
             "hostBindings": [],
@@ -2251,20 +2253,25 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-order-summary',\n  templateUrl: './order-summary.component.html'\n})\nexport class OrderSummaryComponent implements OnInit {\n  rated: boolean;\n\n  constructor() { }\n\n  ngOnInit() { }\n  \n  rate() {\n    this.rated = true;\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-order-summary',\n  templateUrl: './order-summary.component.html',\n  styleUrls: ['./order-summary.component.css']\n})\nexport class OrderSummaryComponent implements OnInit {\n  rated: boolean;\n\n  constructor() { }\n\n  ngOnInit(): void { }\n  \n  rate() {\n    this.rated = true;\n  }\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 90%;\r\n}\r\n.content {\r\n    text-align: center;\r\n}\r\nh1 {\r\n    color: var(--color-text-title);\r\n    margin-bottom: 15px;\r\n    font-size: xx-large;\r\n}\r\np {\r\n    color: var(--color-text-base);\r\n    padding: 2px;\r\n}\r\n.rating {\r\n    color: var(--color-primary-darker);\r\n    font-size: xx-large;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .wrapper {\r\n        margin: 0 20px;\r\n    }\r\n}\r\n",
+                    "styleUrl": "./order-summary.component.css"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 8
+                "line": 9
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<section class=\"content\">\n    <div class=\"jumbotron\">\n      <h2>Pedido Conluído</h2>\n      <p>\n        Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!\n      </p>\n      <p>\n        <b>Avalie</b> sua experiência:\n      </p>\n      <p>\n        <app-rating (rated)=\"rate()\">\n        </app-rating>\n      </p>\n        <p *ngIf=\"rated\">\n          Obrigado pela sua avaliação!\n        </p>\n    </div>\n  \n  </section>\n  "
+            "templateData": "<storybook-square-white classWrapper=\"true\">\n  <div class=\"wrapper\">\n    <div class=\"content\">\n      <h1>Pedido Conluído</h1>\n      \n      <p>\n        Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!\n      </p>\n      <p *ngIf=\"!rated\">\n        <b>Avalie</b> sua experiência:\n      </p>\n      <p *ngIf=\"rated\">\n        Obrigado pela sua avaliação!\n      </p>\n      <p>\n        <app-rating (rated)=\"rate()\" class=\"rating\">\n        </app-rating>\n      </p>\n    </div>\n  </div>\n</storybook-square-white>\n  "
         },
         {
             "name": "PageComponent",
@@ -2730,7 +2737,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".box-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    border-bottom: 1px solid rgba(0, 0.1, 0, 0.05);\r\n}\r\n.box-header-title {\r\n    display: flex;\r\n    padding: 10px;\r\n}\r\n.box-header-title > a > i {\r\n    color: var(--color-text-title);\r\n    margin-right: 5px;\r\n    margin-top: 0.3px;\r\n}\r\n.box-header-title > a > i:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.box-header-title > p {\r\n    color: var(--color-text-complement);\r\n}\r\n.box-header-title > a {\r\n    color: var(--color-text-title);\r\n}\r\n.box-body {\r\n    display: flex;\r\n    padding: 25px;\r\n}\r\n.box-img-detail {\r\n    width: 250px;\r\n}\r\n.box-body-information {\r\n    text-align: left;\r\n    padding: 10px 0 0 15px;\r\n}\r\n.box-body-information > dt {\r\n    padding-bottom: 7px;\r\n    font-size: large;\r\n    font-weight: 600;\r\n}\r\n.box-body-information > dd {\r\n    padding: 0 20px 15px 0px;\r\n    color: var(--color-text-base);\r\n}\r\n.box-footer {\r\n    display: flex;\r\n    font-size: large;\r\n}\r\n.box-footer > a {\r\n    border-top: 1px solid var(--color-background);\r\n    color: var(--color-text-title);\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    width: 50%;\r\n    padding: 8px 0;\r\n\r\n    /* Impedir seleção do texto. */\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -khtml-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n.box-footer > a:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.detail-active {\r\n    width: 50%;\r\n    border-bottom: 2px solid var(--color-primary-darker);\r\n    border-radius: 2px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .box-body {\r\n        display: inline;\r\n    }\r\n    .box-img-detail {\r\n        width: 200px;\r\n    }\r\n}\r\n  ",
+                    "data": ".box-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    border-bottom: 1px solid rgba(0, 0.1, 0, 0.05);\r\n}\r\n.box-header-title {\r\n    display: flex;\r\n    padding: 10px;\r\n}\r\n.box-header-title > a > i {\r\n    color: var(--color-text-title);\r\n    margin-right: 5px;\r\n    margin-top: 0.3px;\r\n}\r\n.box-header-title > a > i:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.box-header-title > p {\r\n    color: var(--color-text-complement);\r\n}\r\n.box-header-title > a {\r\n    color: var(--color-text-title);\r\n}\r\n.box-body {\r\n    display: flex;\r\n    padding: 25px;\r\n}\r\n.box-img-detail {\r\n    width: 250px;\r\n}\r\n.box-body-information {\r\n    text-align: justify;\r\n    padding: 10px 0 0 15px;\r\n}\r\n.box-body-information > dt {\r\n    padding-bottom: 7px;\r\n    font-size: large;\r\n    font-weight: 600;\r\n}\r\n.box-body-information > dd {\r\n    padding: 0 20px 15px 0px;\r\n    color: var(--color-text-base);\r\n}\r\n.box-footer {\r\n    display: flex;\r\n    font-size: large;\r\n}\r\n.box-footer > a {\r\n    border-top: 1px solid var(--color-background);\r\n    color: var(--color-text-title);\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    width: 50%;\r\n    padding: 8px 0;\r\n\r\n    /* Impedir seleção do texto. */\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -khtml-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n.box-footer > a:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.detail-active {\r\n    width: 50%;\r\n    border-bottom: 2px solid var(--color-primary-darker);\r\n    border-radius: 2px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .box-body {\r\n        display: inline;\r\n    }\r\n    .box-img-detail {\r\n        width: 200px;\r\n    }\r\n}\r\n  ",
                     "styleUrl": "./restaurant-detail.component.css"
                 }
             ],
@@ -2971,7 +2978,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\r\n    margin-left: 6%;\r\n}\r\n.box-header {\r\n    display: flex;\r\n    color: var(--color-text-base);\r\n    padding-bottom: 10px;\r\n    border-bottom: 1px solid var(--color-background);\r\n}\r\n.box-header > i {\r\n    font-size: x-large !important;\r\n    padding: 10px 0 0 10px;\r\n}\r\n.box-header > h3 {\r\n    color: var(--color-text-complement);\r\n    font-weight: 400;\r\n    padding: 14px 0 0 10px;\r\n}\r\n.box-body-empty {\r\n    min-height: 80px;\r\n}\r\n.box-body > div {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table-responsive {\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding: 10px 10px 10px 0;\r\n}\r\n.table {\r\n    width: 90%;\r\n}\r\n.tb-itens {\r\n    text-align: left;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    width: 100%;\r\n    padding: 2px 0;\r\n}\r\n.tb-name {\r\n    width: 60%;\r\n}\r\n.tb-price {\r\n    width: 36%;\r\n}\r\n.tb-icon {\r\n    width: 4%;\r\n    color: tomato;\r\n    cursor: pointer;\r\n}\r\n.tb-icon:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.total {\r\n    display: flex;\r\n    height: 15%;\r\n    padding: 35px 0 8px 0;\r\n}\r\n.total > p {\r\n    margin-right: 6px;\r\n    font-weight: 600;\r\n    color: var(--color-text-title);\r\n}\r\n.total > span {\r\n    color: var(--color-text-base);\r\n}\r\n.box-footer {\r\n    text-align: right;\r\n    padding: 0 15px 13px 0;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .box-body {\r\n        display: inline;\r\n    }\r\n    section {\r\n        margin: 5% 0 0 0;\r\n    }\r\n}\r\n  ",
+                    "data": "section {\r\n    margin-left: 6%;\r\n}\r\n.box-header {\r\n    display: flex;\r\n    color: var(--color-text-base);\r\n    padding-bottom: 10px;\r\n    border-bottom: 1px solid var(--color-background);\r\n}\r\n.box-header > i {\r\n    font-size: x-large !important;\r\n    padding: 10px 0 0 10px;\r\n}\r\n.box-header > h3 {\r\n    color: var(--color-text-complement);\r\n    font-weight: 400;\r\n    padding: 14px 0 0 10px;\r\n}\r\n.box-body-empty {\r\n    min-height: 80px;\r\n}\r\n.box-body > div {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n.table-responsive {\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    padding: 10px 10px 10px 0;\r\n}\r\n.table {\r\n    width: 90%;\r\n}\r\n.tb-itens {\r\n    text-align: left;\r\n    display: flex;\r\n    justify-content: space-around;\r\n    width: 100%;\r\n    padding: 2px 0;\r\n}\r\n.tb-name {\r\n    width: 60%;\r\n}\r\n.tb-price {\r\n    width: 36%;\r\n}\r\n.tb-icon {\r\n    width: 4%;\r\n    color: tomato;\r\n    cursor: pointer;\r\n}\r\n.tb-icon:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.total {\r\n    display: flex;\r\n    height: 15%;\r\n    padding: 35px 0 8px 0;\r\n}\r\n.total > p {\r\n    margin-right: 6px;\r\n    font-weight: 600;\r\n    color: var(--color-text-title);\r\n}\r\n.total > span {\r\n    color: var(--color-text-base);\r\n}\r\n.box-footer {\r\n    text-align: right;\r\n    padding: 0 15px 13px 0;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .box-body {\r\n        display: inline;\r\n    }\r\n    section {\r\n        margin: 5% 0 0 0;\r\n    }\r\n}\r\n",
                     "styleUrl": "./shopping-cart.component.css"
                 }
             ],
@@ -3058,7 +3065,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".snackbar {\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n    background-color: #333;\r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n  }\r\n  ",
+                    "data": ".snackbar {\r\n  min-width: 250px;\r\n  background-color: var(--color-primary-darker);\r\n  color: var(--color-title-in-primary);\r\n  border-radius: 1px;\r\n  text-align: center;\r\n  border-radius: 2px;\r\n  padding: 16px;\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 40%;\r\n  bottom: 30px;\r\n}\r\n  \r\n@media (max-width: 1100px) {\r\n  .snackbar {\r\n    position: sticky;\r\n  }\r\n}",
                     "styleUrl": "./snackbar.component.css"
                 }
             ],
@@ -3086,7 +3093,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"snackbar\" [@snack-visibility]=\"snackVisibility\">\n    {{ message }}\n  </div>\n  "
+            "templateData": "<div class=\"snackbar\" [@snack-visibility]=\"snackVisibility\">\n  {{ message }}\n</div>\n  "
         },
         {
             "name": "SquareWhiteComponent",
@@ -3441,17 +3448,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "Icon",
@@ -3586,16 +3593,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -3604,6 +3601,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
                 }
             ],
             "src/stories/components/button/Button.stories.ts": [
@@ -3723,7 +3730,33 @@
         "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
-    "routes": [],
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "kind": "component",
+                "component": "HomeComponent",
+                "path": ""
+            },
+            {
+                "kind": "component",
+                "component": "RestaurantDetailComponent",
+                "path": "restaurant/:id"
+            },
+            {
+                "kind": "component",
+                "component": "OrderSummaryComponent",
+                "path": "order-summary"
+            },
+            {
+                "kind": "component",
+                "component": "NotFoundComponent",
+                "path": "**"
+            }
+        ]
+    },
     "coverage": {
         "count": 0,
         "status": "low",

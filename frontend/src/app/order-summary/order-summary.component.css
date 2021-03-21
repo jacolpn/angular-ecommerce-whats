@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+.content {
+    text-align: center;
+}
+h1 {
+    color: var(--color-text-title);
+    margin-bottom: 15px;
+    font-size: xx-large;
+}
+p {
+    color: var(--color-text-base);
+    padding: 2px;
+}
+.rating {
+    color: var(--color-primary-darker);
+    font-size: xx-large;
+}
+
+@media (max-width: 1100px) {
+    .wrapper {
+        margin: 0 20px;
+    }
+}

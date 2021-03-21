@@ -1,20 +1,22 @@
-<section class="content">
-    <div class="jumbotron">
-      <h2>Pedido Conluído</h2>
+<storybook-square-white classWrapper="true">
+  <div class="wrapper">
+    <div class="content">
+      <h1>Pedido Conluído</h1>
+      
       <p>
         Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!
       </p>
-      <p>
+      <p *ngIf="!rated">
         <b>Avalie</b> sua experiência:
       </p>
+      <p *ngIf="rated">
+        Obrigado pela sua avaliação!
+      </p>
       <p>
-        <app-rating (rated)="rate()">
+        <app-rating (rated)="rate()" class="rating">
         </app-rating>
       </p>
-        <p *ngIf="rated">
-          Obrigado pela sua avaliação!
-        </p>
     </div>
-  
-  </section>
+  </div>
+</storybook-square-white>
   
