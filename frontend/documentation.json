@@ -1661,6 +1661,77 @@
             "templateData": "<div\n  class=\"form-group has-feedback\"\n  [class.has-success]=\"hasSuccess()\"\n  [class.has-error]=\"hasError()\"\n>\n  <label class=\"control-label sr-only\" for=\"inputSuccess\">\n    <i class=\"fa fa-check\"></i> {{ label }}\n  </label>\n  <ng-content></ng-content>\n  <span\n    class=\"help-block\"\n    *ngIf=\"showTip && hasSuccess()\"\n  >\n    <i class=\"fa fa-check\"></i> Ok\n  </span>\n  <span\n    class=\"help-block\"\n    *ngIf=\"showTip && hasError()\"\n  >\n  <i class=\"fa fa-remove\"></i> {{ errorMessage }}\n  </span>\n</div>\n"
         },
         {
+            "name": "InputComponent",
+            "id": "component-InputComponent-f67e11b8a5d2e2a4e7a3fd83b091c4a3-1",
+            "file": "src/stories/components/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-input",
+            "styleUrls": [
+                "./input.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "className",
+                    "defaultValue": "''",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
+                    "name": "placeHolder",
+                    "defaultValue": "'Story-Input'",
+                    "line": 9
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-input',\r\n  templateUrl: './input.component.html',\r\n  styleUrls: ['./input.component.css']\r\n})\r\nexport class InputComponent implements OnInit {\r\n  @Input() placeHolder = 'Story-Input';\r\n  @Input() className: string = '';\r\n  \r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "input {\r\n  font: 500 1.2rem Poppins;\r\n  color: var(--color-text-base);\r\n  margin: 0;\r\n}\r\n\r\n.input-block {\r\n  position: relative;\r\n}\r\n\r\n.input-block input {\r\n  width: 100%;\r\n  height: 2rem;\r\n  border-radius: 0.8rem;\r\n  background: var(--color-box-white);\r\n  border: 1px solid var(--color-line-in-white);\r\n  outline: 0;\r\n  padding: 0 1rem;\r\n  font: 1.1rem Archivo;\r\n}\r\n\r\n.input-block:focus-within::after {\r\n  width: calc(100% + 0.1rem);\r\n  height: 2px;\r\n  content: \"\";\r\n  background: var(--color-primary-light);\r\n  position: absolute;\r\n  left: 1rem;\r\n  right: 1rem;\r\n  bottom: 0;\r\n}\r\n\r\n.w-5 {\r\n  width: 50%;\r\n}\r\n\r\n.w-4 {\r\n  width: 40%;\r\n}\r\n\r\n.w-3 {\r\n  width: 30%;\r\n}\r\n\r\n.w-2 {\r\n  width: 20%;\r\n  background-color: brown;\r\n}\r\n\r\n.w-1 {\r\n  width: 10%;\r\n}\r\n",
+                    "styleUrl": "./input.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "InputComponent-1",
+            "templateData": "<div class=\"input-block\">\r\n  <input  type=\"text\"\r\n          [placeholder]=\"placeHolder\"\r\n          autocomplete=\"off\"\r\n          [class]=\"className\"/>\r\n</div>"
+        },
+        {
             "name": "MenuComponent",
             "id": "component-MenuComponent-917db0f76cda41ade8bc6270c2b48c12",
             "file": "src/app/restaurant-detail/menu/menu.component.ts",
@@ -2009,7 +2080,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".body {\r\n    height: 100%;\r\n    margin-bottom: 25px;\r\n}\r\nform {\r\n    margin: 18px 30px 50px 20px;\r\n    min-height: 80%;\r\n    text-align: left;\r\n}\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    color: var(--color-text-base);\r\n    padding-bottom: 7px;\r\n    margin-bottom: 15px;\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n}\r\n.box-header > p {\r\n    margin-left: 13px;\r\n    font-size: large;\r\n}\r\n.box-info-user > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-input-user {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.box-input-name {\r\n    width: 50%;\r\n}\r\n.form-input-name {\r\n    width: 100%;\r\n}\r\n.box-input-phone {\r\n    width: 50%;\r\n    margin-left: 6%;\r\n}\r\n.form-input-phone {\r\n    width: 100%;\r\n}\r\n.box-info-address > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.wrapper-address {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.box-input-address {\r\n    width: 50%;\r\n}\r\n.form-input-address {\r\n    width: 100%;\r\n}\r\n.box-input-number {\r\n    width: 19%;\r\n    margin-left: 6%;\r\n}\r\n.form-input-number {\r\n    width: 100%;\r\n}\r\n.box-input-optional {\r\n    width: 25%;\r\n    padding-left: 6%;\r\n}\r\n.form-input-optional {\r\n    width: 100%;\r\n}\r\n.box-itens {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.content-itens > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-payment {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.content-payment {\r\n    width: 70%;\r\n}\r\n.content-payment > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.content-delivery {\r\n    width: 30%;\r\n    text-align: left;\r\n}\r\n.content-delivery > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-footer {\r\n    height: 20%;\r\n    width: 97.6%;\r\n    padding-bottom: 15px;\r\n    text-align: right;\r\n}\r\n.button-back {\r\n    margin-right: 10px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .body {\r\n      height: auto;\r\n    }\r\n    form {\r\n        margin: 18px 20px 50px 15px;\r\n        min-height: 80%;\r\n        text-align: left;\r\n    }\r\n    .box-payment {\r\n        display: inline-block;\r\n    }\r\n    .content-payment {\r\n        width: 100%;\r\n        padding-bottom: 18px;\r\n    }\r\n    .content-delivery {\r\n        width: 100%;\r\n    }\r\n    .button-back {\r\n        margin-right: 7px;\r\n    }\r\n    .box-footer {\r\n        width: 96.6%;\r\n    }\r\n}",
+                    "data": ".body {\r\n    height: 100%;\r\n    margin-bottom: 25px;\r\n}\r\nform {\r\n    margin: 18px 30px 50px 20px;\r\n    min-height: 80%;\r\n    text-align: left;\r\n}\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    color: var(--color-text-base);\r\n    padding-bottom: 7px;\r\n    margin-bottom: 15px;\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n}\r\n.box-header > p {\r\n    margin-left: 13px;\r\n    font-size: large;\r\n}\r\n.box-info-user > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-input-user {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.box-input-name {\r\n    width: 50%;\r\n}\r\n.box-input-phone {\r\n    width: 40%;\r\n    /* margin-left: 6%; */\r\n}\r\n.form-input-phone {\r\n    width: 100%;\r\n}\r\n.box-info-address > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.wrapper-address {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.box-input-address {\r\n    width: 50%;\r\n}\r\n.form-input-address {\r\n    width: 100%;\r\n}\r\n.box-input-number {\r\n    width: 19%;\r\n    margin-left: 6%;\r\n}\r\n.form-input-number {\r\n    width: 100%;\r\n}\r\n.box-input-optional {\r\n    width: 25%;\r\n    padding-left: 6%;\r\n}\r\n.form-input-optional {\r\n    width: 100%;\r\n}\r\n.box-itens {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.content-itens > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-payment {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n.content-payment {\r\n    width: 70%;\r\n}\r\n.content-payment > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.content-delivery {\r\n    width: 30%;\r\n    text-align: left;\r\n}\r\n.content-delivery > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n.box-footer {\r\n    height: 20%;\r\n    width: 97.6%;\r\n    padding-bottom: 15px;\r\n    text-align: right;\r\n}\r\n.button-back {\r\n    margin-right: 10px;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .body {\r\n      height: auto;\r\n    }\r\n    form {\r\n        margin: 18px 20px 50px 15px;\r\n        min-height: 80%;\r\n        text-align: left;\r\n    }\r\n    .box-payment {\r\n        display: inline-block;\r\n    }\r\n    .content-payment {\r\n        width: 100%;\r\n        padding-bottom: 18px;\r\n    }\r\n    .content-delivery {\r\n        width: 100%;\r\n    }\r\n    .button-back {\r\n        margin-right: 7px;\r\n    }\r\n    .box-footer {\r\n        width: 96.6%;\r\n    }\r\n}",
                     "styleUrl": "./order.component.css"
                 }
             ],
@@ -2059,7 +2130,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"body\">\r\n  <storybook-square-white>\r\n    <!-- {{ orderForm.valid }} -->\r\n    <!-- {{ orderForm.value | json }} -->\r\n      <form novalidate\r\n            [formGroup]=\"orderForm\">\r\n        <div class=\"box-header\">\r\n            <i class=\"fa fa-shopping-cart fa-lg\"></i>\r\n            <p>\r\n              Finalize o seu pedido\r\n            </p>\r\n        </div>\r\n\r\n        <div class=\"box-info-user\">\r\n          <p>Seus dados:</p>\r\n\r\n          <div class=\"box-input-user\">\r\n            <div class=\"box-input-name\">\r\n              <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                    label=\"Nome\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-name\"\r\n                        formControlName=\"name\"\r\n                        placeholder=\"Olá, qual seu nome? (ex. Jackson Neves)\"\r\n                        autocomplete=\"off\"/>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-phone\">\r\n              <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                    label=\"Telefone\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-phone\"\r\n                        formControlName=\"phone\"\r\n                        placeholder=\"Qual seu telefone? (ex. 47 9 9934-2827)\"\r\n                        autocomplete=\"off\">\r\n              </app-input-container>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"box-info-address\">\r\n          <p>Endereço de Entrega:</p>\r\n\r\n          <div class=\"wrapper-address\">\r\n            <div class=\"box-input-address\">\r\n              <app-input-container\r\n                errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                label=\"Endereço\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-address\"\r\n                        formControlName=\"address\"\r\n                        placeholder=\"Qual seu endereço?\"\r\n                        autocomplete=\"off\"/>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-number\">\r\n              <app-input-container  errorMessage=\"Obrigatório e somente números.\"\r\n                                    label=\"Número\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-number\"\r\n                        placeholder=\"Número\"\r\n                        formControlName=\"number\"\r\n                        autocomplete=\"off\">\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-optional\">\r\n              <app-input-container label=\"Complemento\">\r\n                <input  type=\"text\"\r\n                        class=\"form-input-optional\"\r\n                        placeholder=\"Complemento\"\r\n                        formControlName=\"optionalAddress\"\r\n                        autocomplete=\"off\">\r\n              </app-input-container>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"box-itens\">\r\n          <div class=\"content-itens\">\r\n            <p>Itens do Pedido:</p>\r\n            \r\n            <app-order-items  [items]=\"cartItems()\"\r\n                              (increaseQty)=\"increaseQty($event)\"\r\n                              (decreaseQty)=\"decreaseQty($event)\"\r\n                              (remove)=\"removeItem($event)\">\r\n            </app-order-items>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"box-payment\">\r\n          <div class=\"content-payment\">\r\n            <p>Formas de Pagamento:</p>\r\n            <div>\r\n                <app-radio  [options]=\"paymentOptions\"\r\n                            formControlName=\"paymentOption\">\r\n                </app-radio>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"content-delivery\">\r\n            <p>Frete e Total:</p>\r\n            <app-delivery-costs [delivery]=\"delivery\"\r\n                                [itemsValue]=\"itemsValue()\">\r\n            </app-delivery-costs>\r\n          </div>\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"box-footer\">\r\n        <!-- [routerLink]=\"['/restaurant/jack-daniels'] -->\r\n        <!-- <button href=\"order-summary.html\"\r\n                class=\"button-secondary\">\r\n          <i class=\"fa fa-credit-card\"></i> Voltar\r\n        </button>\r\n        <button href=\"order-summary.html\"\r\n                class=\"button-primary\"\r\n                [disabled]=\"!orderForm.valid || cartItems().length === 0\"\r\n                (click)=\"checkOrder(orderForm.value)\">\r\n          <i class=\"fa fa-credit-card\"></i> Concluir Pedido\r\n        </button> -->\r\n        <storybook-button fontBlack=\"true\"\r\n                          label=\"Voltar\"\r\n                          class=\"button-back\"\r\n                          [routerLink]=\"['/restaurant/jack-daniels']\">\r\n        </storybook-button>\r\n        <storybook-button primary=\"true\"\r\n                          icon=\"fa fa-credit-card\"\r\n                          label=\"Concluir Pedido\"\r\n                          (click)=\"checkOrder(orderForm.value)\"\r\n                          [routerLink]=\"['/order-summary']\">\r\n                          <!-- [disabled]=\"!orderForm.valid || cartItems().length === 0\" -->\r\n        </storybook-button>\r\n      </div>\r\n  </storybook-square-white>\r\n</div>"
+            "templateData": "<div class=\"body\">\r\n  <storybook-square-white>\r\n    {{ orderForm.valid }}\r\n    {{ orderForm.value | json }}\r\n      <form novalidate\r\n            [formGroup]=\"orderForm\">\r\n        <div class=\"box-header\">\r\n            <i class=\"fa fa-shopping-cart fa-lg\"></i>\r\n            <p>\r\n              Finalize o seu pedido\r\n            </p>\r\n        </div>\r\n\r\n        <div class=\"box-info-user\">\r\n          <p>Seus dados:</p>\r\n\r\n          <div class=\"box-input-user\">\r\n            <div class=\"box-input-name\">\r\n              <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                    label=\"Nome\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"name\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Olá, qual seu nome? (ex. Jackson Neves)\">\r\n              </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-phone\">\r\n              <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                    label=\"Telefone\">\r\n                <storybook-input  ngDefaultControl\r\n                                  formControlName=\"phone\"\r\n                                  autocomplete=\"off\"\r\n                                  placeHolder=\"Qual seu telefone? (ex. 47 9 9934-2827)\"\r\n                                  class=\"form-input-phone\">\r\n                </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"box-info-address\">\r\n          <p>Endereço de Entrega:</p>\r\n\r\n          <div class=\"wrapper-address\">\r\n            <div class=\"box-input-address\">\r\n              <app-input-container  label=\"Endereço\"\r\n                                    errorMessage=\"Campo obrigatório e com 5 caracteres.\">\r\n                <storybook-input  ngDefaultControl\r\n                                  formControlName=\"address\"\r\n                                  autocomplete=\"off\"\r\n                                  placeHolder=\"Qual seu endereço?\"\r\n                                  class=\"form-input-address\">\r\n                </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-number\">\r\n              <app-input-container  errorMessage=\"Obrigatório e somente números.\"\r\n                                    label=\"Número\">\r\n                <storybook-input  ngDefaultControl\r\n                                  formControlName=\"number\"\r\n                                  autocomplete=\"off\"\r\n                                  placeHolder=\"Número\"\r\n                                  class=\"form-input-number\">\r\n                </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-optional\">\r\n              <app-input-container label=\"Complemento\">\r\n                <storybook-input  ngDefaultControl\r\n                                  formControlName=\"optionalAddress\"\r\n                                  autocomplete=\"off\"\r\n                                  placeHolder=\"Complemento\"\r\n                                  class=\"form-input-optional\">\r\n                </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"box-itens\">\r\n          <div class=\"content-itens\">\r\n            <p>Itens do Pedido:</p>\r\n            \r\n            <app-order-items  [items]=\"cartItems()\"\r\n                              (increaseQty)=\"increaseQty($event)\"\r\n                              (decreaseQty)=\"decreaseQty($event)\"\r\n                              (remove)=\"removeItem($event)\">\r\n            </app-order-items>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"box-payment\">\r\n          <div class=\"content-payment\">\r\n            <p>Formas de Pagamento:</p>\r\n            <div>\r\n                <app-radio  [options]=\"paymentOptions\"\r\n                            formControlName=\"paymentOption\">\r\n                </app-radio>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"content-delivery\">\r\n            <p>Frete e Total:</p>\r\n            <app-delivery-costs [delivery]=\"delivery\"\r\n                                [itemsValue]=\"itemsValue()\">\r\n            </app-delivery-costs>\r\n          </div>\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"box-footer\">\r\n        <!-- [routerLink]=\"['/restaurant/jack-daniels'] -->\r\n        <!-- <button href=\"order-summary.html\"\r\n                class=\"button-secondary\">\r\n          <i class=\"fa fa-credit-card\"></i> Voltar\r\n        </button>\r\n        <button href=\"order-summary.html\"\r\n                class=\"button-primary\"\r\n                [disabled]=\"!orderForm.valid || cartItems().length === 0\"\r\n                (click)=\"checkOrder(orderForm.value)\">\r\n          <i class=\"fa fa-credit-card\"></i> Concluir Pedido\r\n        </button> -->\r\n        <storybook-button fontBlack=\"true\"\r\n                          label=\"Voltar\"\r\n                          class=\"button-back\"\r\n                          [routerLink]=\"['/restaurant/jack-daniels']\">\r\n        </storybook-button>\r\n        <storybook-button primary=\"true\"\r\n                          icon=\"fa fa-credit-card\"\r\n                          label=\"Concluir Pedido\"\r\n                          (click)=\"checkOrder(orderForm.value)\"\r\n                          [routerLink]=\"['/order-summary']\">\r\n                          <!-- [disabled]=\"!orderForm.valid || cartItems().length === 0\" -->\r\n        </storybook-button>\r\n      </div>\r\n  </storybook-square-white>\r\n</div>"
         },
         {
             "name": "OrderItemsComponent",
@@ -2272,88 +2343,6 @@
                 "OnInit"
             ],
             "templateData": "<storybook-square-white classWrapper=\"true\">\n  <div class=\"wrapper\">\n    <div class=\"content\">\n      <h1>Pedido Conluído</h1>\n      \n      <p>\n        Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!\n      </p>\n      <p *ngIf=\"!rated\">\n        <b>Avalie</b> sua experiência:\n      </p>\n      <p *ngIf=\"rated\">\n        Obrigado pela sua avaliação!\n      </p>\n      <p>\n        <app-rating (rated)=\"rate()\" class=\"rating\">\n        </app-rating>\n      </p>\n    </div>\n  </div>\n</storybook-square-white>\n  "
-        },
-        {
-            "name": "PageComponent",
-            "id": "component-PageComponent-6ce10324288a54c1a64b90d64dc0b45b",
-            "file": "src/stories/components/page/page.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-page",
-            "styleUrls": [
-                "./page.component.css"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./page.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "line": 9,
-                    "type": "unknown"
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 12,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 10,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 11,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 16
-                }
-            ],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-page',\r\n  templateUrl: './page.component.html',\r\n  styleUrls: ['./page.component.css']\r\n})\r\nexport class PageComponent implements OnInit {\r\n  @Input() user: unknown = null;\r\n  @Output() onLogin = new EventEmitter<Event>();\r\n  @Output() onLogout = new EventEmitter<Event>();\r\n  @Output() onCreateAccount = new EventEmitter<Event>();\r\n  \r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "section {\r\n    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n    font-size: 14px;\r\n    line-height: 24px;\r\n    padding: 48px 20px;\r\n    margin: 0 auto;\r\n    max-width: 600px;\r\n    color: #333;\r\n    background-color: aliceblue;\r\n  }\r\n  \r\n  h2 {\r\n    font-weight: 900;\r\n    font-size: 32px;\r\n    line-height: 1;\r\n    margin: 0 0 4px;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n  }\r\n  \r\n  p {\r\n    margin: 1em 0;\r\n  }\r\n  \r\n  a {\r\n    text-decoration: none;\r\n    color: #1ea7fd;\r\n  }\r\n  \r\n  ul {\r\n    padding-left: 30px;\r\n    margin: 1em 0;\r\n  }\r\n  \r\n  li {\r\n    margin-bottom: 8px;\r\n  }\r\n  \r\n  .tip {\r\n    display: inline-block;\r\n    border-radius: 1em;\r\n    font-size: 11px;\r\n    line-height: 12px;\r\n    font-weight: 700;\r\n    background: #e7fdd8;\r\n    color: #66bf3c;\r\n    padding: 4px 12px;\r\n    margin-right: 10px;\r\n    vertical-align: top;\r\n  }\r\n  \r\n  .tip-wrapper {\r\n    font-size: 13px;\r\n    line-height: 20px;\r\n    margin-top: 40px;\r\n    margin-bottom: 40px;\r\n  }\r\n  \r\n  .tip-wrapper svg {\r\n    display: inline-block;\r\n    height: 12px;\r\n    width: 12px;\r\n    margin-right: 4px;\r\n    vertical-align: top;\r\n    margin-top: 3px;\r\n  }\r\n  \r\n  .tip-wrapper svg path {\r\n    fill: #1ea7fd;\r\n  }\r\n  ",
-                    "styleUrl": "./page.component.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "args": [],
-                "line": 12
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<article>\r\n    <section>\r\n      <h2>Pages in Storybook</h2>\r\n      <p>\r\n        We recommend building UIs with a\r\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          <strong>component-driven</strong>\r\n        </a>\r\n        process starting with atomic components and ending with pages.\r\n      </p>\r\n      <p>\r\n        Render pages with mock data. This makes it easy to build and review page states without\r\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\r\n        in Storybook:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Use a higher-level connected component. Storybook helps you compose such data from the\r\n          \"args\" of child component stories\r\n        </li>\r\n        <li>\r\n          Assemble data in the page component from your services. You can mock these services out\r\n          using Storybook.\r\n        </li>\r\n      </ul>\r\n      <p>\r\n        Get a guided tutorial on component-driven development at\r\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          Learn Storybook\r\n        </a>\r\n        . Read more in the\r\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          docs\r\n        </a>\r\n        .\r\n      </p>\r\n      <div class=\"tip-wrapper\">\r\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n              id=\"a\"\r\n              fill=\"#999\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        Viewports addon in the toolbar\r\n      </div>\r\n    </section>\r\n</article>"
         },
         {
             "name": "RadioComponent",
@@ -3097,7 +3086,7 @@
         },
         {
             "name": "SquareWhiteComponent",
-            "id": "component-SquareWhiteComponent-af256fc5b7f72b376b4dd1f9dbebce9f",
+            "id": "component-SquareWhiteComponent-d99618c8866c22582f5a025e548c86cb",
             "file": "src/stories/components/square-white/square-white.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3149,7 +3138,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-square-white',\r\n  templateUrl: './square-white.component.html',\r\n  styleUrls: ['./square-white.component.css']\r\n})\r\nexport class SquareWhiteComponent implements OnInit {  \r\n  @Input() space: boolean = true;\r\n  @Input() classWrapper = false;\r\n  @Input() classContent: string = 'content';\r\n  \r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.classWrapper ? 'wrapper-height' : 'wrapper';\r\n\r\n    return ['wrapper', mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-square-white',\r\n  templateUrl: './square-white.component.html',\r\n  styleUrls: ['./square-white.component.css']\r\n})\r\nexport class SquareWhiteComponent implements OnInit {  \r\n  @Input() space: boolean = true;\r\n  @Input() classWrapper = false;\r\n  @Input() classContent: string = 'content';\r\n  \r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.classWrapper ? 'wrapper-height' : 'wrapper';\r\n\r\n    return ['wrapper', mode];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3300,9 +3289,6 @@
                             "name": "ButtonComponent"
                         },
                         {
-                            "name": "PageComponent"
-                        },
-                        {
                             "name": "SquareWhiteComponent"
                         }
                     ]
@@ -3316,9 +3302,6 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
-                        },
-                        {
-                            "name": "PageComponent"
                         },
                         {
                             "name": "SquareWhiteComponent"
@@ -3448,17 +3431,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "Icon",
@@ -3469,18 +3452,18 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Large",
+                "name": "Input",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/button/Button.stories.ts",
+                "file": "src/stories/components/input/Input.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Page",
+                "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/page/Page.stories.ts",
+                "file": "src/stories/components/button/Button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -3559,9 +3542,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/page/Page.stories.ts",
-                "type": "Story<PageComponent>",
-                "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
+                "file": "src/stories/components/input/Input.stories.ts",
+                "type": "Story<InputComponent>",
+                "defaultValue": "(args: InputComponent) => ({\r\n  component: InputComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "VILLE_API",
@@ -3593,16 +3576,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -3611,6 +3584,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
                 }
             ],
             "src/stories/components/button/Button.stories.ts": [
@@ -3671,12 +3654,12 @@
                     "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
                 }
             ],
-            "src/stories/components/page/Page.stories.ts": [
+            "src/stories/components/input/Input.stories.ts": [
                 {
-                    "name": "Page",
+                    "name": "Input",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/components/page/Page.stories.ts",
+                    "file": "src/stories/components/input/Input.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -3684,9 +3667,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/components/page/Page.stories.ts",
-                    "type": "Story<PageComponent>",
-                    "defaultValue": "(args: PageComponent) => ({\r\n  component: PageComponent,\r\n  props: args,\r\n})"
+                    "file": "src/stories/components/input/Input.stories.ts",
+                    "type": "Story<InputComponent>",
+                    "defaultValue": "(args: InputComponent) => ({\r\n  component: InputComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/components/square-white/Square-white.stories.ts": [
@@ -4132,17 +4115,17 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/components/page/Page.stories.ts",
+                "filePath": "src/stories/components/input/Input.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Page",
+                "name": "Input",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/stories/components/page/Page.stories.ts",
+                "filePath": "src/stories/components/input/Input.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4152,12 +4135,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/components/page/page.component.ts",
+                "filePath": "src/stories/components/input/input.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "PageComponent",
+                "name": "InputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {

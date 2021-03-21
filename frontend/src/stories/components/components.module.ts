@@ -2,14 +2,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from './button/button.component';
-import { PageComponent } from './page/page.component';
 import { SquareWhiteComponent } from './square-white/square-white.component';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
     ButtonComponent,
-    PageComponent,
-    SquareWhiteComponent
+    SquareWhiteComponent,
+    InputComponent
   ],
   imports: [
     CommonModule,
@@ -18,9 +18,8 @@ import { SquareWhiteComponent } from './square-white/square-white.component';
   ],
   exports: [
     ButtonComponent,
-    PageComponent,
-    SquareWhiteComponent
+    SquareWhiteComponent,
+    InputComponent
   ]
 })
-export class ComponentsModule {
-}
+export class ComponentsModule { }

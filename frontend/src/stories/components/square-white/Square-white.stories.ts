@@ -7,7 +7,7 @@ export default {
   component: SquareWhiteComponent,
   argTypes: {
     backgroundColor: { control: 'color' },
-  },
+  }
 } as Meta;
 
 const Template: Story<SquareWhiteComponent> = (args: SquareWhiteComponent) => ({
@@ -17,11 +17,11 @@ const Template: Story<SquareWhiteComponent> = (args: SquareWhiteComponent) => ({
 
 export const SquareWhite = Template.bind({});
 SquareWhite.args = {
-  space: false
+  storyBookView: false
 };
 
 export const SquareWhiteFullWidth = Template.bind({});
 SquareWhiteFullWidth.args = {
-  space: false,
+  storyBookView: false,
   classContent: 'content content-width'
 };

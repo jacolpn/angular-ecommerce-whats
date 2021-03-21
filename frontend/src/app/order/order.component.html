@@ -1,7 +1,7 @@
 <div class="body">
   <storybook-square-white>
-    <!-- {{ orderForm.valid }} -->
-    <!-- {{ orderForm.value | json }} -->
+    <!-- {{ orderForm.valid }}
+    {{ orderForm.value | json }} -->
       <form novalidate
             [formGroup]="orderForm">
         <div class="box-header">
@@ -18,21 +18,21 @@
             <div class="box-input-name">
               <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
                                     label="Nome">
-                <input  type="text"
-                        class="form-input-name"
-                        formControlName="name"
-                        placeholder="Olá, qual seu nome? (ex. Jackson Neves)"
-                        autocomplete="off"/>
+              <storybook-input  ngDefaultControl
+                                formControlName="name"
+                                autocomplete="off"
+                                placeHolder="Olá, qual seu nome? (ex. Jackson Neves)">
+              </storybook-input>
               </app-input-container>
             </div>
             <div class="box-input-phone">
               <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
                                     label="Telefone">
-                <input  type="text"
-                        class="form-input-phone"
-                        formControlName="phone"
-                        placeholder="Qual seu telefone? (ex. 47 9 9934-2827)"
-                        autocomplete="off">
+                <storybook-input  ngDefaultControl
+                                  formControlName="phone"
+                                  autocomplete="off"
+                                  placeHolder="Qual seu telefone? (ex. 47 9 9934-2827)">
+                </storybook-input>
               </app-input-container>
             </div>
           </div>
@@ -42,33 +42,32 @@
 
           <div class="wrapper-address">
             <div class="box-input-address">
-              <app-input-container
-                errorMessage="Campo obrigatório e com 5 caracteres."
-                label="Endereço">
-                <input  type="text"
-                        class="form-input-address"
-                        formControlName="address"
-                        placeholder="Qual seu endereço?"
-                        autocomplete="off"/>
+              <app-input-container  label="Endereço"
+                                    errorMessage="Campo obrigatório e com 5 caracteres.">
+                <storybook-input  ngDefaultControl
+                                  formControlName="address"
+                                  autocomplete="off"
+                                  placeHolder="Qual seu endereço?">
+                </storybook-input>
               </app-input-container>
             </div>
             <div class="box-input-number">
               <app-input-container  errorMessage="Obrigatório e somente números."
                                     label="Número">
-                <input  type="text"
-                        class="form-input-number"
-                        placeholder="Número"
-                        formControlName="number"
-                        autocomplete="off">
+                <storybook-input  ngDefaultControl
+                                  formControlName="number"
+                                  autocomplete="off"
+                                  placeHolder="Número">
+                </storybook-input>
               </app-input-container>
             </div>
             <div class="box-input-optional">
               <app-input-container label="Complemento">
-                <input  type="text"
-                        class="form-input-optional"
-                        placeholder="Complemento"
-                        formControlName="optionalAddress"
-                        autocomplete="off">
+                <storybook-input  ngDefaultControl
+                                  formControlName="optionalAddress"
+                                  autocomplete="off"
+                                  placeHolder="Complemento">
+                </storybook-input>
               </app-input-container>
             </div>
           </div>
