@@ -1,4 +1,19 @@
-.tr-value {
-    padding-bottom: 15px;
+table {
+    height: 100%;
+    width: 100%;
+}
+tr {
+    /* color: var(); */
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid var(--color-background);
+}
+
+th {
+    color: var(--color-text-title);
+}
+
+td {
+    color: var(--color-text-base);
 }

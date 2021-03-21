@@ -1,24 +1,22 @@
-<div class="table-responsive">
-    <table class="table">
-      <tbody>
-        <tr class="tr-value">
-        <th style="width:50%">Itens:</th>
-        <td>
-          {{ itemsValue | currency: 'BRL': 'symbol' }}
-        </td>
-      </tr>
-      <tr class="tr-value">
-        <th>Frete:</th>
-        <td>
-          {{ delivery | currency: 'BRL': 'symbol' }}
-        </td>
-      </tr>
-      <tr class="tr-value">
-        <th>Total:</th>
-        <td>
-          {{ total() | currency: 'BRL': 'symbol' }}
-        </td>
-      </tr>
-    </tbody></table>
-  </div>
-  
+<table>
+  <tbody>
+    <tr>
+      <th>Itens:</th>
+      <td>
+        {{ itemsValue | currency: 'BRL': 'symbol' }}
+      </td>
+    </tr>
+    <tr>
+      <th>Frete:</th>
+      <td>
+        {{ delivery | currency: 'BRL': 'symbol' }}
+      </td>
+    </tr>
+    <tr>
+      <th>Total:</th>
+      <td>
+        {{ total() | currency: 'BRL': 'symbol' }}
+      </td>
+    </tr>
+  </tbody>
+</table>

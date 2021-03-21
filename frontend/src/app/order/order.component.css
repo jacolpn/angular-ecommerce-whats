@@ -86,7 +86,7 @@ form {
 .box-payment {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 103%;
     margin-bottom: 18px;
 }
 
@@ -168,6 +168,10 @@ form {
 
     .box-payment {
         display: inline-block;
+    }
+
+    .box-payment {
+        width: 100%;
     }
 
     .content-payment {
