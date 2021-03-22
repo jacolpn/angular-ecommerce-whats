@@ -50,7 +50,7 @@ export class OrderComponent implements OnInit {
         [Validators.required, Validators.pattern(this.numberPattern)]
       ),
       optionalAddress: new FormControl('', { updateOn: 'blur' }),
-      paymentOption: this.formBuilder.control('Dinheiro', [Validators.required])
+      paymentOption: this.formBuilder.control('', [Validators.required])
     });
   }
 

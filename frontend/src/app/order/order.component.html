@@ -6,9 +6,7 @@
             [formGroup]="orderForm">
         <div class="box-header">
             <i class="fa fa-shopping-cart fa-lg"></i>
-            <p>
-              Finalize o seu pedido
-            </p>
+            <p>Finalize o seu pedido</p>
         </div>
 
         <div class="box-info-user">
@@ -88,11 +86,9 @@
         <div class="box-payment">
           <div class="content-payment">
             <p>Formas de Pagamento:</p>
-            <div>
-                <app-radio  [options]="paymentOptions"
-                            formControlName="paymentOption">
-                </app-radio>
-            </div>
+            <app-radio  [options]="paymentOptions"
+                        formControlName="paymentOption">
+            </app-radio>
           </div>
 
           <div class="content-delivery">

@@ -1,5 +1,6 @@
 .wrapper {
   margin: 0;
+  height: 100vh;
 }
 
 .wrapper-header {
@@ -11,4 +12,7 @@
 }
 
 @media (max-width: 1100px) {
+  .wrapper-content {
+    height: 76vh;
+  }
 }

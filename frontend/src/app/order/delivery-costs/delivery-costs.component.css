@@ -11,7 +11,7 @@ tr {
 }
 
 th {
-    color: var(--color-text-title);
+    color: var(--color-text-base);
 }
 
 td {
