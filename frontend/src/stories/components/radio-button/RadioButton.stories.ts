@@ -1,8 +1,9 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
+
 import { RadioButtonComponent } from './radio-button.component';
 
 export default {
-  title: 'RadioButton',
+  title: 'Radio Button',
   component: RadioButtonComponent,
   argTypes: {
     backgroundColor: { control: 'color' },

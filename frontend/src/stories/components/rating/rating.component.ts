@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-rating',
+  selector: 'storybook-rating',
   templateUrl: './rating.component.html'
 })
 export class RatingComponent implements OnInit {

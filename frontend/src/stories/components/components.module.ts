@@ -6,13 +6,15 @@ import { ButtonComponent } from './button/button.component';
 import { SquareWhiteComponent } from './square-white/square-white.component';
 import { InputComponent } from './input/input.component';
 import { RadioButtonComponent } from './radio-button/radio-button.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
     ButtonComponent,
     SquareWhiteComponent,
     InputComponent,
-    RadioButtonComponent
+    RadioButtonComponent,
+    RatingComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { RadioButtonComponent } from './radio-button/radio-button.component';
     ButtonComponent,
     SquareWhiteComponent,
     InputComponent,
-    RadioButtonComponent
+    RadioButtonComponent,
+    RatingComponent
   ]
 })
 export class ComponentsModule { }

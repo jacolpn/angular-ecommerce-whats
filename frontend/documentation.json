@@ -2349,7 +2349,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<storybook-square-white classWrapper=\"true\">\n  <div class=\"wrapper\">\n    <div class=\"content\">\n      <h1>Pedido Conluído</h1>\n      \n      <p>\n        Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!\n      </p>\n      <p *ngIf=\"!rated\">\n        <b>Avalie</b> sua experiência:\n      </p>\n      <p *ngIf=\"rated\">\n        Obrigado pela sua avaliação!\n      </p>\n      <p>\n        <app-rating (rated)=\"rate()\" class=\"rating\">\n        </app-rating>\n      </p>\n    </div>\n  </div>\n</storybook-square-white>\n  "
+            "templateData": "<storybook-square-white classWrapper=\"true\">\n  <div class=\"wrapper\">\n    <div class=\"content\">\n      <h1>Pedido Conluído</h1>\n      \n      <p>\n        Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!\n      </p>\n      <p *ngIf=\"!rated\">\n        <b>Avalie</b> sua experiência:\n      </p>\n      <p *ngIf=\"rated\">\n        Obrigado pela sua avaliação!\n      </p>\n      <p>\n        <storybook-rating (rated)=\"rate()\" class=\"rating\">\n        </storybook-rating>\n      </p>\n    </div>\n  </div>\n</storybook-square-white>\n  "
         },
         {
             "name": "RadioButtonComponent",
@@ -2546,14 +2546,14 @@
         },
         {
             "name": "RatingComponent",
-            "id": "component-RatingComponent-ff598b6326eb9a396ec443565c2a802f",
-            "file": "src/app/shared/rating/rating.component.ts",
+            "id": "component-RatingComponent-85fe07a3b1fc867cd830f31233214c56",
+            "file": "src/stories/components/rating/rating.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-rating",
+            "selector": "storybook-rating",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -2661,7 +2661,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, EventEmitter, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-rating',\n  templateUrl: './rating.component.html'\n})\nexport class RatingComponent implements OnInit {\n\n  rates: number[] = [1, 2, 3, 4, 5];\n  rate = 0;\n  previusRate: number;\n\n  @Output() rated = new EventEmitter<number>();\n\n  constructor() { }\n\n  ngOnInit(): void {}\n\n  setRate(r: number) {\n    this.rate = r;\n    this.previusRate = undefined;\n    this.rated.emit(this.rate);\n  }\n\n  setTemporaryRate(r: number) {\n    if (this.previusRate === undefined) {\n      this.previusRate = this.rate;\n    }\n    this.rate = r;\n  }\n\n  clearTemporaryRate() {\n    if (this.previusRate !== undefined) {\n      this.rate = this.previusRate;\n      this.previusRate = undefined;\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit, EventEmitter, Output } from '@angular/core';\n\n@Component({\n  selector: 'storybook-rating',\n  templateUrl: './rating.component.html'\n})\nexport class RatingComponent implements OnInit {\n\n  rates: number[] = [1, 2, 3, 4, 5];\n  rate = 0;\n  previusRate: number;\n\n  @Output() rated = new EventEmitter<number>();\n\n  constructor() { }\n\n  ngOnInit(): void {}\n\n  setRate(r: number) {\n    this.rate = r;\n    this.previusRate = undefined;\n    this.rated.emit(this.rate);\n  }\n\n  setTemporaryRate(r: number) {\n    if (this.previusRate === undefined) {\n      this.previusRate = this.rate;\n    }\n    this.rate = r;\n  }\n\n  clearTemporaryRate() {\n    if (this.previusRate !== undefined) {\n      this.rate = this.previusRate;\n      this.previusRate = undefined;\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -3306,6 +3306,9 @@
                             "name": "RadioButtonComponent"
                         },
                         {
+                            "name": "RatingComponent"
+                        },
+                        {
                             "name": "SquareWhiteComponent"
                         }
                     ]
@@ -3322,6 +3325,9 @@
                         },
                         {
                             "name": "RadioButtonComponent"
+                        },
+                        {
+                            "name": "RatingComponent"
                         },
                         {
                             "name": "SquareWhiteComponent"
@@ -3395,9 +3401,6 @@
                             "name": "InputComponent"
                         },
                         {
-                            "name": "RatingComponent"
-                        },
-                        {
                             "name": "SnackbarComponent"
                         }
                     ]
@@ -3411,9 +3414,6 @@
                     "elements": [
                         {
                             "name": "InputComponent"
-                        },
-                        {
-                            "name": "RatingComponent"
                         },
                         {
                             "name": "SnackbarComponent"
@@ -3506,6 +3506,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Rating",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/rating/Rating.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3564,9 +3572,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/input/Input.stories.ts",
-                "type": "Story<InputComponent>",
-                "defaultValue": "(args: InputComponent) => ({\r\n  component: InputComponent,\r\n  props: args,\r\n})"
+                "file": "src/stories/components/radio-button/RadioButton.stories.ts",
+                "type": "Story<RadioButtonComponent>",
+                "defaultValue": "(args: RadioButtonComponent) => ({\r\n  component: RadioButtonComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/rating/Rating.stories.ts",
+                "type": "Story<RatingComponent>",
+                "defaultValue": "(args: RatingComponent) => ({\r\n  component: RatingComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -3580,9 +3596,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/radio-button/RadioButton.stories.ts",
-                "type": "Story<RadioButtonComponent>",
-                "defaultValue": "(args: RadioButtonComponent) => ({\r\n  component: RadioButtonComponent,\r\n  props: args,\r\n})"
+                "file": "src/stories/components/input/Input.stories.ts",
+                "type": "Story<InputComponent>",
+                "defaultValue": "(args: InputComponent) => ({\r\n  component: InputComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "VILLE_API",
@@ -3734,6 +3750,24 @@
                     "file": "src/stories/components/radio-button/RadioButton.stories.ts",
                     "type": "Story<RadioButtonComponent>",
                     "defaultValue": "(args: RadioButtonComponent) => ({\r\n  component: RadioButtonComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/components/rating/Rating.stories.ts": [
+                {
+                    "name": "Rating",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/rating/Rating.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/rating/Rating.stories.ts",
+                    "type": "Story<RatingComponent>",
+                    "defaultValue": "(args: RatingComponent) => ({\r\n  component: RatingComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/components/square-white/Square-white.stories.ts": [
@@ -4053,15 +4087,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/rating/rating.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "RatingComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/10",
-                "status": "low"
-            },
-            {
                 "filePath": "src/environments/environment.prod.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -4235,6 +4260,35 @@
                 "name": "RadioOption",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/rating/Rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Rating",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/rating/Rating.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/rating/rating.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RatingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {

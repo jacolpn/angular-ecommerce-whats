@@ -1,7 +1,6 @@
 import { NotificationService } from './messages/notification.service';
 import { OrderService } from './../order/order.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RatingComponent } from './rating/rating.component';
 import { InputComponent } from './input/input.component';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
@@ -11,7 +10,6 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     InputComponent,
-    RatingComponent,
     SnackbarComponent
   ],
   imports: [
@@ -21,7 +19,6 @@ import { CommonModule } from '@angular/common';
   ],
   exports: [
     InputComponent,
-    RatingComponent,
     SnackbarComponent
   ]
 })
