@@ -18,6 +18,7 @@ p {
 }
 .rating {
     color: var(--color-primary-darker);
+    cursor: pointer;
     font-size: xx-large;
 }
 

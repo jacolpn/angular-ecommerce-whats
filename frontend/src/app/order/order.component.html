@@ -110,8 +110,8 @@
                           icon="fa fa-credit-card"
                           label="Concluir Pedido"
                           (click)="checkOrder(orderForm.value)"
+                          [disabled]="!orderForm.valid || cartItems().length === 0"
                           [routerLink]="['/order-summary']">
-                          <!-- [disabled]="!orderForm.valid || cartItems().length === 0" -->
         </storybook-button>
       </div>
   </storybook-square-white>
