@@ -1,20 +1,21 @@
-import { RadioOption } from './radio-option.model';
 import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
+import { RadioOption } from './radio-option.model';
+
 @Component({
-  selector: 'app-radio',
-  templateUrl: './radio.component.html',
-  styleUrls: ['./radio.component.css'],
+  selector: 'storybook-radio-button',
+  templateUrl: './radio-button.component.html',
+  styleUrls: ['./radio-button.component.css'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => RadioComponent),
+      useExisting: forwardRef(() => RadioButtonComponent),
       multi: true
     }
   ]
 })
-export class RadioComponent implements OnInit, ControlValueAccessor {
+export class RadioButtonComponent implements OnInit, ControlValueAccessor {
 
   @Input() options: RadioOption[];
 

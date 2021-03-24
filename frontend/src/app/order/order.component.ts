@@ -1,11 +1,12 @@
-import { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';
-import { OrderService } from './order.service';
-import { RadioOption } from './../shared/radio/radio-option.model';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { Order, OrderItem } from './order.model';
 import { Router } from '@angular/router';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { tap } from 'rxjs/operators';
+
+import { Order, OrderItem } from './order.model';
+import { OrderService } from './order.service';
+import { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';
+import { RadioOption } from '../../stories/components/radio-button/radio-option.model';
 
 @Component({
   selector: 'app-order',

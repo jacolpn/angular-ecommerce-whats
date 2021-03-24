@@ -1,11 +1,12 @@
-import { VILLE_API } from './../app.api';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { VILLE_API } from './../app.api';
+import { Order } from './order.model';
 import { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';
 import { ShoppingCartService } from './../restaurant-detail/shopping-cart/shopping-cart.service';
-import { Injectable } from '@angular/core';
-import { Order } from './order.model';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class OrderService {

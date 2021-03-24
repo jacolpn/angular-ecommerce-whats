@@ -45,6 +45,7 @@ Small.args = {
   label: 'Button',
   fontBlack: true
 };
+
 export const Icon = Template.bind({});
 Icon.args = {
   label: 'Button',

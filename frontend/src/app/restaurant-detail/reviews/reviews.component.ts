@@ -1,10 +1,10 @@
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
 
 import { VILLE_API } from './../../app.api';
 import { Restaurant } from '../restaurant.model';
-import { map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-reviews',
