@@ -35,19 +35,19 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.orderForm = this.formBuilder.group({
       name: this.formBuilder.control(
-        'Jackson Neves',
+        '',
         [Validators.required, Validators.minLength(5)]
       ),
       phone: this.formBuilder.control(
-        '47999342827',
+        '',
         [Validators.required, Validators.pattern(this.numberPattern)]
       ),
       address: this.formBuilder.control(
-        'Rua Xanxerê',
+        '',
         [Validators.required, Validators.minLength(5)]
       ),
       number: this.formBuilder.control(
-        '650',
+        '',
         [Validators.required, Validators.pattern(this.numberPattern)]
       ),
       optionalAddress: new FormControl('', { updateOn: 'blur' }),

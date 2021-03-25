@@ -74,8 +74,12 @@ form {
 .box-itens {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 104%;
     margin-bottom: 18px;
+}
+
+.content-itens {
+    width: 104%;
 }
 
 .content-itens > p {
@@ -167,6 +171,10 @@ p {
     .box-input-optional {
         width: 90%;
         margin-left: 0%;
+    }
+
+    .box-itens {
+        width: 100%;
     }
 
     .box-payment {

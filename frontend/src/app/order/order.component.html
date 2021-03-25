@@ -2,117 +2,117 @@
   <storybook-square-white>
     <!-- {{ orderForm.valid }}
     {{ orderForm.value | json }} -->
-      <form novalidate
-            [formGroup]="orderForm">
-        <div class="box-header">
-            <i class="fa fa-shopping-cart fa-lg"></i>
-            <p>Finalize o seu pedido</p>
-        </div>
-
-        <div class="box-info-user">
-          <p>Seus dados:</p>
-
-          <div class="box-input-user">
-            <div class="box-input-name">
-              <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
-                                    label="Nome">
-              <storybook-input  ngDefaultControl
-                                formControlName="name"
-                                autocomplete="off"
-                                placeHolder="Olá, qual seu nome? (ex. Jackson Neves)">
-              </storybook-input>
-              </app-input-container>
-            </div>
-            <div class="box-input-phone">
-              <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
-                                    label="Telefone">
-                <storybook-input  ngDefaultControl
-                                  formControlName="phone"
-                                  autocomplete="off"
-                                  placeHolder="Qual seu telefone? (ex. 47 9 9934-2827)">
-                </storybook-input>
-              </app-input-container>
-            </div>
-          </div>
-        </div>
-        <div class="box-info-address">
-          <p>Endereço de Entrega:</p>
-
-          <div class="wrapper-address">
-            <div class="box-input-address">
-              <app-input-container  label="Endereço"
-                                    errorMessage="Campo obrigatório e com 5 caracteres.">
-                <storybook-input  ngDefaultControl
-                                  formControlName="address"
-                                  autocomplete="off"
-                                  placeHolder="Qual seu endereço?">
-                </storybook-input>
-              </app-input-container>
-            </div>
-            <div class="box-input-number">
-              <app-input-container  errorMessage="Obrigatório e somente números."
-                                    label="Número">
-                <storybook-input  ngDefaultControl
-                                  formControlName="number"
-                                  autocomplete="off"
-                                  placeHolder="Número">
-                </storybook-input>
-              </app-input-container>
-            </div>
-            <div class="box-input-optional">
-              <app-input-container label="Complemento">
-                <storybook-input  ngDefaultControl
-                                  formControlName="optionalAddress"
-                                  autocomplete="off"
-                                  placeHolder="Complemento">
-                </storybook-input>
-              </app-input-container>
-            </div>
-          </div>
-        </div>
-
-        <div class="box-itens">
-          <div class="content-itens">
-            <p>Itens do Pedido:</p>
-            
-            <app-order-items  [items]="cartItems()"
-                              (increaseQty)="increaseQty($event)"
-                              (decreaseQty)="decreaseQty($event)"
-                              (remove)="removeItem($event)">
-            </app-order-items>
-          </div>
-        </div>
-
-        <div class="box-payment">
-          <div class="content-payment">
-            <p>Formas de Pagamento:</p>
-            <storybook-radio-button   [options]="paymentOptions"
-                                      formControlName="paymentOption">
-            </storybook-radio-button>
-          </div>
-
-          <div class="content-delivery">
-            <p>Frete e Total:</p>
-            <app-delivery-costs [delivery]="delivery"
-                                [itemsValue]="itemsValue()">
-            </app-delivery-costs>
-          </div>
-        </div>
-      </form>
-
-      <div class="box-footer">
-        <storybook-button fontBlack="true"
-                          label="Voltar"
-                          class="button-back"
-                          [routerLink]="['/restaurant/jack-daniels']">
-        </storybook-button>
-        <storybook-button primary="true"
-                          icon="fa fa-credit-card"
-                          label="Concluir Pedido"
-                          (click)="checkOrder(orderForm.value)"
-                          [disabled]="!orderForm.valid || cartItems().length === 0"
-                          [routerLink]="['/order-summary']">
-        </storybook-button>
+    <form novalidate
+          [formGroup]="orderForm">
+      <div class="box-header">
+          <i class="fa fa-shopping-cart fa-lg"></i>
+          <p>Finalize o seu pedido</p>
       </div>
+
+      <div class="box-info-user">
+        <p>Seus dados:</p>
+
+        <div class="box-input-user">
+          <div class="box-input-name">
+            <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
+                                  label="Nome">
+            <storybook-input  ngDefaultControl
+                              formControlName="name"
+                              autocomplete="off"
+                              placeHolder="Olá, qual seu nome? (ex. Jackson Neves)">
+            </storybook-input>
+            </app-input-container>
+          </div>
+          <div class="box-input-phone">
+            <app-input-container  errorMessage="Campo obrigatório e com 5 caracteres."
+                                  label="Telefone">
+              <storybook-input  ngDefaultControl
+                                formControlName="phone"
+                                autocomplete="off"
+                                placeHolder="Qual seu telefone? (ex. 47 9 9934-2827)">
+              </storybook-input>
+            </app-input-container>
+          </div>
+        </div>
+      </div>
+      <div class="box-info-address">
+        <p>Endereço de Entrega:</p>
+
+        <div class="wrapper-address">
+          <div class="box-input-address">
+            <app-input-container  label="Endereço"
+                                  errorMessage="Campo obrigatório e com 5 caracteres.">
+              <storybook-input  ngDefaultControl
+                                formControlName="address"
+                                autocomplete="off"
+                                placeHolder="Qual seu endereço?">
+              </storybook-input>
+            </app-input-container>
+          </div>
+          <div class="box-input-number">
+            <app-input-container  errorMessage="Obrigatório e somente números."
+                                  label="Número">
+              <storybook-input  ngDefaultControl
+                                formControlName="number"
+                                autocomplete="off"
+                                placeHolder="Número">
+              </storybook-input>
+            </app-input-container>
+          </div>
+          <div class="box-input-optional">
+            <app-input-container label="Complemento">
+              <storybook-input  ngDefaultControl
+                                formControlName="optionalAddress"
+                                autocomplete="off"
+                                placeHolder="Complemento">
+              </storybook-input>
+            </app-input-container>
+          </div>
+        </div>
+      </div>
+
+      <div class="box-itens">
+        <div class="content-itens">
+          <p>Itens do Pedido:</p>
+          
+          <app-order-items  [items]="cartItems()"
+                            (increaseQty)="increaseQty($event)"
+                            (decreaseQty)="decreaseQty($event)"
+                            (remove)="removeItem($event)">
+          </app-order-items>
+        </div>
+      </div>
+
+      <div class="box-payment">
+        <div class="content-payment">
+          <p>Formas de Pagamento:</p>
+          <storybook-radio-button   [options]="paymentOptions"
+                                    formControlName="paymentOption">
+          </storybook-radio-button>
+        </div>
+
+        <div class="content-delivery">
+          <p>Frete e Total:</p>
+          <app-delivery-costs [delivery]="delivery"
+                              [itemsValue]="itemsValue()">
+          </app-delivery-costs>
+        </div>
+      </div>
+    </form>
+
+    <div class="box-footer">
+      <storybook-button fontBlack="true"
+                        label="Voltar"
+                        class="button-back"
+                        [routerLink]="['/restaurant/jack-daniels']">
+      </storybook-button>
+      <storybook-button primary="true"
+                        icon="fa fa-credit-card"
+                        label="Concluir Pedido"
+                        (click)="checkOrder(orderForm.value)"
+                        [disabled]="!orderForm.valid || cartItems().length === 0"
+                        [routerLink]="['/order-summary']">
+      </storybook-button>
+    </div>
   </storybook-square-white>
 </div>

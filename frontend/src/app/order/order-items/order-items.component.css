@@ -1,0 +1,39 @@
+.tbody {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--color-primary-lighter);
+    cursor: pointer;
+}
+
+a:hover {
+    font-weight: 600;
+    color: var(--color-primary-darker);
+}
+
+.th-qtd {
+    width: 4%;
+}
+
+.th-item {
+    width: 30%;
+}
+
+.th-description {
+    width: 50%;
+}
+
+.th-subtotal {
+    width: 10%;
+}
+
+.th-exclude {
+    width: 11%;
+}
+
+.tr {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
