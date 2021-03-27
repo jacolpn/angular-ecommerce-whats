@@ -5,46 +5,35 @@
   </p>
 </div>
   
-<div class="wrapper-items" *ngIf="items.length">
-  <table class="table table-striped">
-    <thead>
-      <tr class="tr">
-        <th class="th-qtd">Qtd</th>
-        <th class="th-item">Item</th>
-        <th class="th-description">Descrição</th>
-        <th class="th-subtotal">Subtotal</th>
-        <th class="th-exclude"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr class="content-items" *ngFor="let item of items">
-        <td class="text-center">
-          {{ item.quantity }}
-        </td>
-        <td>
-          {{ item.menuItem.name }}
-        </td>
-        <td>
-          {{ item.menuItem.description }}
-        </td>
-        <td class="text-right">
-          {{ item.value() | currency: 'BRL': 'symbol' }}
-        </td>
-        <td class="text-right">
-          <a (click)="emitIncreaseQty(item)" class="btn btn-sm">
-            <i class="fa fa-plus"></i>
-          </a>
-          <a (click)="emitDecreaseQty(item)" class="btn btn-sm">
-            <i class="fa fa-minus"></i>
-          </a>
+<div class="box-item" *ngIf="items.length">
+  <div class="wrapper-item" *ngFor="let item of items">
+    <div class="content-item">
+      <img class="img-item" [src]="item.menuItem.imagePath" />
+      <div class="infomation-items">
+        <div class="content-name">
+          <b>{{ item.menuItem.name }}</b>
           <a (click)="emitRemove(item)" class="btn btn-sm danger">
             <i class="fa fa-remove"></i>
           </a>
-        </td>
-      </tr>
-    </tbody>
-
-  </table>
+        </div>
+        <p>{{ item.menuItem.description }}</p>
+      </div>
+    </div>
+    <div class="values-item">
+      <div class="qtd-item">
+        <b>Quantidade:</b>
+        
+        <a (click)="emitDecreaseQty(item)" class="round-border">
+          <i class="fa fa-minus"></i>
+        </a>
+        {{ item.quantity }}
+        <a (click)="emitIncreaseQty(item)" class="round-border">
+          <i class="fa fa-plus"></i>
+        </a>
+      </div>
+      <div class="price-item">
+        {{ item.value() | currency: 'BRL': 'symbol' }}
+      </div>
+    </div>
+  </div>
 </div>
-  

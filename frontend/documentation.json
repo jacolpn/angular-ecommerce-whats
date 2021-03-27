@@ -1046,7 +1046,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"wrapper\">\r\n  <div class=\"wrapper-header\">\r\n    <app-header></app-header>\r\n  </div>\r\n  <div class=\"wrapper-content\">\r\n    <app-snackbar></app-snackbar>\r\n    <router-outlet></router-outlet>\r\n    <app-footer></app-footer>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"wrapper\">\r\n  <div class=\"wrapper-header\">\r\n    <app-header></app-header>\r\n  </div>\r\n  <div class=\"wrapper-content\">\r\n    <router-outlet></router-outlet>\r\n    <app-snackbar></app-snackbar>\r\n    <app-footer></app-footer>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1890,7 +1890,7 @@
         },
         {
             "name": "OrderComponent",
-            "id": "component-OrderComponent-10381e871b297f9289dfa04e4e1dc617",
+            "id": "component-OrderComponent-8fffb9e209ae223d45782e8776f4543e",
             "file": "src/app/order/order.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2083,11 +2083,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';\nimport { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { tap } from 'rxjs/operators';\n\nimport { Order, OrderItem } from './order.model';\nimport { OrderService } from './order.service';\nimport { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';\nimport { RadioOption } from '../../stories/components/radio-button/radio-option.model';\n\n@Component({\n  selector: 'app-order',\n  templateUrl: './order.component.html',\n  styleUrls: ['./order.component.css']\n})\nexport class OrderComponent implements OnInit {\n  numberPattern = /^[0-9]*$/;\n  orderForm: FormGroup;\n  delivery = 3.99;\n  orderId: string;\n  whatsApp = null;\n\n  paymentOptions: RadioOption[] = [\n    { label: 'Dinheiro', value: 'Dinheiro' },\n    { label: 'Cartão de débito', value: 'Cartão Débito' },\n    { label: 'Vale refeição', value: 'Vale Refeição' }\n  ];\n\n  constructor(\n    private orderService: OrderService,\n    private router: Router,\n    private formBuilder: FormBuilder\n  ) { }\n\n  ngOnInit(): void {\n    this.orderForm = this.formBuilder.group({\n      name: this.formBuilder.control(\n        'Jackson Neves',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      phone: this.formBuilder.control(\n        '47999342827',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      address: this.formBuilder.control(\n        'Rua Xanxerê',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      number: this.formBuilder.control(\n        '650',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      optionalAddress: new FormControl('', { updateOn: 'blur' }),\n      paymentOption: this.formBuilder.control('', [Validators.required])\n    });\n  }\n\n  itemsValue(): number {\n    return this.orderService.itemsValue();\n  }\n\n  cartItems(): CartItem[] {\n    return this.orderService.cartItems();\n  }\n\n  increaseQty(item: CartItem) {\n    this.orderService.increaseQty(item);\n  }\n\n  decreaseQty(item: CartItem) {\n    this.orderService.decreaseQty(item);\n  }\n\n  removeItem(item: CartItem) {\n    this.orderService.removeItem(item);\n  }\n\n  isOrderCompleted(): boolean {\n    return this.orderId !== undefined;\n  }\n\n  checkOrder(order: Order) {\n    let db = false;\n    let itens = [];\n    \n    order.orderItems = this\n      .cartItems()\n      .map((item: CartItem) => new OrderItem(\n        item.quantity,\n        item.menuItem.id,\n        item.menuItem.name\n        ));\n        \n    itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));\n        \n    if (db) {\n      this.orderService\n        .checkOrder(order)\n        .pipe(tap((orderId: string) => {\n          this.orderId = orderId;\n      })).subscribe((orderId: string) => {\n        this.orderService.clear();\n      });\n    }\n\n    this.whatsApp =\n      `https://wa.me/5547988458640/?text=` +\n      `Olá VilleMeat, gostaria de${itens}. ` +\n      `Pagamento: ${order.paymentOption}. ` +\n      `Entregar no endereço: ${order.address}, Nº ${order.number}. ` +\n      `(Ass. ${order.name}, ${order.phone})`;\n\n    // window.location.href = this.whatsApp; \n    this.router.navigate(['/order-summary']);\n    window.open(this.whatsApp, '_blank');\n  }\n}\n",
+            "sourceCode": "import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';\nimport { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { tap } from 'rxjs/operators';\n\nimport { Order, OrderItem } from './order.model';\nimport { OrderService } from './order.service';\nimport { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';\nimport { RadioOption } from '../../stories/components/radio-button/radio-option.model';\n\n@Component({\n  selector: 'app-order',\n  templateUrl: './order.component.html',\n  styleUrls: ['./order.component.css']\n})\nexport class OrderComponent implements OnInit {\n  numberPattern = /^[0-9]*$/;\n  orderForm: FormGroup;\n  delivery = 3.99;\n  orderId: string;\n  whatsApp = null;\n\n  paymentOptions: RadioOption[] = [\n    { label: 'Dinheiro', value: 'Dinheiro' },\n    { label: 'Cartão de débito', value: 'Cartão Débito' },\n    { label: 'Vale refeição', value: 'Vale Refeição' }\n  ];\n\n  constructor(\n    private orderService: OrderService,\n    private router: Router,\n    private formBuilder: FormBuilder\n  ) { }\n\n  ngOnInit(): void {\n    this.orderForm = this.formBuilder.group({\n      name: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      phone: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      address: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      number: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      optionalAddress: new FormControl('', { updateOn: 'blur' }),\n      paymentOption: this.formBuilder.control('', [Validators.required])\n    });\n  }\n\n  itemsValue(): number {\n    return this.orderService.itemsValue();\n  }\n\n  cartItems(): CartItem[] {\n    return this.orderService.cartItems();\n  }\n\n  increaseQty(item: CartItem) {\n    this.orderService.increaseQty(item);\n  }\n\n  decreaseQty(item: CartItem) {\n    this.orderService.decreaseQty(item);\n  }\n\n  removeItem(item: CartItem) {\n    this.orderService.removeItem(item);\n  }\n\n  isOrderCompleted(): boolean {\n    return this.orderId !== undefined;\n  }\n\n  checkOrder(order: Order) {\n    let db = false;\n    let itens = [];\n    \n    order.orderItems = this\n      .cartItems()\n      .map((item: CartItem) => new OrderItem(\n        item.quantity,\n        item.menuItem.id,\n        item.menuItem.name\n        ));\n        \n    itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));\n        \n    if (db) {\n      this.orderService\n        .checkOrder(order)\n        .pipe(tap((orderId: string) => {\n          this.orderId = orderId;\n      })).subscribe((orderId: string) => {\n        this.orderService.clear();\n      });\n    }\n\n    this.whatsApp =\n      `https://wa.me/5547988458640/?text=` +\n      `Olá VilleMeat, gostaria de${itens}. ` +\n      `Pagamento: ${order.paymentOption}. ` +\n      `Entregar no endereço: ${order.address}, Nº ${order.number}. ` +\n      `(Ass. ${order.name}, ${order.phone})`;\n\n    // window.location.href = this.whatsApp; \n    this.router.navigate(['/order-summary']);\n    window.open(this.whatsApp, '_blank');\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".body {\r\n    margin-bottom: 25px;\r\n}\r\n\r\nform {\r\n    margin: 18px 55px 50px 20px;\r\n    min-height: 80%;\r\n    text-align: left;\r\n}\r\n\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    color: var(--color-text-base);\r\n    padding-bottom: 7px;\r\n    margin-bottom: 15px;\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n}\r\n\r\n.box-header > p {\r\n    color: var(--color-text-base);\r\n    margin-left: 13px;\r\n    font-size: large;\r\n}\r\n\r\n.box-info-user > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.box-input-user {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.box-input-name {\r\n    width: 50%;\r\n}\r\n\r\n.box-input-phone {\r\n    width: 50%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-info-address > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.wrapper-address {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.box-input-address {\r\n    width: 50%;\r\n}\r\n\r\n.box-input-number {\r\n    width: 19%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-input-optional {\r\n    width: 25%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-itens {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.content-itens > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.box-payment {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 103%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.content-payment {\r\n    width: 70%;\r\n}\r\n\r\n.content-payment > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.content-delivery {\r\n    width: 30%;\r\n    text-align: left;\r\n}\r\n\r\n.content-delivery > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.box-footer {\r\n    height: 20%;\r\n    width: 97.6%;\r\n    padding-bottom: 15px;\r\n    text-align: right;\r\n}\r\n\r\n.button-back {\r\n    margin-right: 10px;\r\n}\r\n\r\np {\r\n    color: var(--color-text-title);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .body {\r\n      height: auto;\r\n    }\r\n\r\n    form {\r\n        margin: 18px 20px 50px 15px;\r\n        min-height: 80%;\r\n        text-align: left;\r\n    }\r\n\r\n    .box-input-user {\r\n        display: inline-block;\r\n    }\r\n\r\n    .box-input-name {\r\n        width: 90%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-phone {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n    }\r\n\r\n    .wrapper-address {\r\n        display: inline-block;\r\n    }\r\n    \r\n    .box-input-address {\r\n        width: 90%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-number {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-optional {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n    }\r\n\r\n    .box-payment {\r\n        display: inline-block;\r\n    }\r\n\r\n    .box-payment {\r\n        width: 100%;\r\n    }\r\n\r\n    .content-payment {\r\n        width: 100%;\r\n        padding-bottom: 18px;\r\n    }\r\n\r\n    .content-delivery {\r\n        width: 100%;\r\n    }\r\n\r\n    .button-back {\r\n        margin-right: 7px;\r\n    }\r\n\r\n    .box-footer {\r\n        width: 96.6%;\r\n    }\r\n}",
+                    "data": ".body {\r\n    margin-bottom: 25px;\r\n}\r\n\r\nform {\r\n    margin: 18px 55px 50px 20px;\r\n    min-height: 80%;\r\n    text-align: left;\r\n}\r\n\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    color: var(--color-text-base);\r\n    padding-bottom: 7px;\r\n    margin-bottom: 15px;\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n}\r\n\r\n.box-header > p {\r\n    color: var(--color-text-base);\r\n    margin-left: 13px;\r\n    font-size: large;\r\n}\r\n\r\n.box-info-user > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.box-input-user {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.box-input-name {\r\n    width: 50%;\r\n}\r\n\r\n.box-input-phone {\r\n    width: 50%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-info-address > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.wrapper-address {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.box-input-address {\r\n    width: 50%;\r\n}\r\n\r\n.box-input-number {\r\n    width: 19%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-input-optional {\r\n    width: 25%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-itens {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 104%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.content-itens {\r\n    width: 104%;\r\n}\r\n\r\n.content-itens > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.box-payment {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 103%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.content-payment {\r\n    width: 70%;\r\n}\r\n\r\n.content-payment > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.content-delivery {\r\n    width: 30%;\r\n    text-align: left;\r\n}\r\n\r\n.content-delivery > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.box-footer {\r\n    height: 20%;\r\n    width: 97.6%;\r\n    padding-bottom: 15px;\r\n    text-align: right;\r\n}\r\n\r\n.button-back {\r\n    margin-right: 10px;\r\n}\r\n\r\np {\r\n    color: var(--color-text-title);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .body {\r\n      height: auto;\r\n    }\r\n\r\n    form {\r\n        margin: 18px 20px 50px 15px;\r\n        min-height: 80%;\r\n        text-align: left;\r\n    }\r\n\r\n    .box-input-user {\r\n        display: inline-block;\r\n    }\r\n\r\n    .box-input-name {\r\n        width: 90%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-phone {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n    }\r\n\r\n    .wrapper-address {\r\n        display: inline-block;\r\n    }\r\n    \r\n    .box-input-address {\r\n        width: 90%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-number {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-optional {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n    }\r\n\r\n    .box-itens {\r\n        width: 100%;\r\n    }\r\n\r\n    .box-payment {\r\n        display: inline-block;\r\n    }\r\n\r\n    .box-payment {\r\n        width: 100%;\r\n    }\r\n\r\n    .content-payment {\r\n        width: 100%;\r\n        padding-bottom: 18px;\r\n    }\r\n\r\n    .content-delivery {\r\n        width: 100%;\r\n    }\r\n\r\n    .button-back {\r\n        margin-right: 7px;\r\n    }\r\n\r\n    .box-footer {\r\n        width: 96.6%;\r\n    }\r\n}",
                     "styleUrl": "./order.component.css"
                 }
             ],
@@ -2137,11 +2137,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"body\">\r\n  <storybook-square-white>\r\n    <!-- {{ orderForm.valid }}\r\n    {{ orderForm.value | json }} -->\r\n      <form novalidate\r\n            [formGroup]=\"orderForm\">\r\n        <div class=\"box-header\">\r\n            <i class=\"fa fa-shopping-cart fa-lg\"></i>\r\n            <p>Finalize o seu pedido</p>\r\n        </div>\r\n\r\n        <div class=\"box-info-user\">\r\n          <p>Seus dados:</p>\r\n\r\n          <div class=\"box-input-user\">\r\n            <div class=\"box-input-name\">\r\n              <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                    label=\"Nome\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"name\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Olá, qual seu nome? (ex. Jackson Neves)\">\r\n              </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-phone\">\r\n              <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                    label=\"Telefone\">\r\n                <storybook-input  ngDefaultControl\r\n                                  formControlName=\"phone\"\r\n                                  autocomplete=\"off\"\r\n                                  placeHolder=\"Qual seu telefone? (ex. 47 9 9934-2827)\">\r\n                </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"box-info-address\">\r\n          <p>Endereço de Entrega:</p>\r\n\r\n          <div class=\"wrapper-address\">\r\n            <div class=\"box-input-address\">\r\n              <app-input-container  label=\"Endereço\"\r\n                                    errorMessage=\"Campo obrigatório e com 5 caracteres.\">\r\n                <storybook-input  ngDefaultControl\r\n                                  formControlName=\"address\"\r\n                                  autocomplete=\"off\"\r\n                                  placeHolder=\"Qual seu endereço?\">\r\n                </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-number\">\r\n              <app-input-container  errorMessage=\"Obrigatório e somente números.\"\r\n                                    label=\"Número\">\r\n                <storybook-input  ngDefaultControl\r\n                                  formControlName=\"number\"\r\n                                  autocomplete=\"off\"\r\n                                  placeHolder=\"Número\">\r\n                </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n            <div class=\"box-input-optional\">\r\n              <app-input-container label=\"Complemento\">\r\n                <storybook-input  ngDefaultControl\r\n                                  formControlName=\"optionalAddress\"\r\n                                  autocomplete=\"off\"\r\n                                  placeHolder=\"Complemento\">\r\n                </storybook-input>\r\n              </app-input-container>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"box-itens\">\r\n          <div class=\"content-itens\">\r\n            <p>Itens do Pedido:</p>\r\n            \r\n            <app-order-items  [items]=\"cartItems()\"\r\n                              (increaseQty)=\"increaseQty($event)\"\r\n                              (decreaseQty)=\"decreaseQty($event)\"\r\n                              (remove)=\"removeItem($event)\">\r\n            </app-order-items>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"box-payment\">\r\n          <div class=\"content-payment\">\r\n            <p>Formas de Pagamento:</p>\r\n            <storybook-radio-button   [options]=\"paymentOptions\"\r\n                                      formControlName=\"paymentOption\">\r\n            </storybook-radio-button>\r\n          </div>\r\n\r\n          <div class=\"content-delivery\">\r\n            <p>Frete e Total:</p>\r\n            <app-delivery-costs [delivery]=\"delivery\"\r\n                                [itemsValue]=\"itemsValue()\">\r\n            </app-delivery-costs>\r\n          </div>\r\n        </div>\r\n      </form>\r\n\r\n      <div class=\"box-footer\">\r\n        <storybook-button fontBlack=\"true\"\r\n                          label=\"Voltar\"\r\n                          class=\"button-back\"\r\n                          [routerLink]=\"['/restaurant/jack-daniels']\">\r\n        </storybook-button>\r\n        <storybook-button primary=\"true\"\r\n                          icon=\"fa fa-credit-card\"\r\n                          label=\"Concluir Pedido\"\r\n                          (click)=\"checkOrder(orderForm.value)\"\r\n                          [disabled]=\"!orderForm.valid || cartItems().length === 0\"\r\n                          [routerLink]=\"['/order-summary']\">\r\n        </storybook-button>\r\n      </div>\r\n  </storybook-square-white>\r\n</div>"
+            "templateData": "<div class=\"body\">\r\n  <storybook-square-white>\r\n    <!-- {{ orderForm.valid }}\r\n    {{ orderForm.value | json }} -->\r\n    <form novalidate\r\n          [formGroup]=\"orderForm\">\r\n      <div class=\"box-header\">\r\n          <i class=\"fa fa-shopping-cart fa-lg\"></i>\r\n          <p>Finalize o seu pedido</p>\r\n      </div>\r\n\r\n      <div class=\"box-info-user\">\r\n        <p>Seus dados:</p>\r\n\r\n        <div class=\"box-input-user\">\r\n          <div class=\"box-input-name\">\r\n            <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                  label=\"Nome\">\r\n            <storybook-input  ngDefaultControl\r\n                              formControlName=\"name\"\r\n                              autocomplete=\"off\"\r\n                              placeHolder=\"Olá, qual seu nome? (ex. Jackson Neves)\">\r\n            </storybook-input>\r\n            </app-input-container>\r\n          </div>\r\n          <div class=\"box-input-phone\">\r\n            <app-input-container  errorMessage=\"Campo obrigatório e com 5 caracteres.\"\r\n                                  label=\"Telefone\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"phone\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Qual seu telefone? (ex. 47 9 9934-2827)\">\r\n              </storybook-input>\r\n            </app-input-container>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"box-info-address\">\r\n        <p>Endereço de Entrega:</p>\r\n\r\n        <div class=\"wrapper-address\">\r\n          <div class=\"box-input-address\">\r\n            <app-input-container  label=\"Endereço\"\r\n                                  errorMessage=\"Campo obrigatório e com 5 caracteres.\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"address\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Qual seu endereço?\">\r\n              </storybook-input>\r\n            </app-input-container>\r\n          </div>\r\n          <div class=\"box-input-number\">\r\n            <app-input-container  errorMessage=\"Obrigatório e somente números.\"\r\n                                  label=\"Número\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"number\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Número\">\r\n              </storybook-input>\r\n            </app-input-container>\r\n          </div>\r\n          <div class=\"box-input-optional\">\r\n            <app-input-container label=\"Complemento\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"optionalAddress\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Complemento\">\r\n              </storybook-input>\r\n            </app-input-container>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-itens\">\r\n        <div class=\"content-itens\">\r\n          <p>Itens do Pedido:</p>\r\n          \r\n          <app-order-items  [items]=\"cartItems()\"\r\n                            (increaseQty)=\"increaseQty($event)\"\r\n                            (decreaseQty)=\"decreaseQty($event)\"\r\n                            (remove)=\"removeItem($event)\">\r\n          </app-order-items>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-payment\">\r\n        <div class=\"content-payment\">\r\n          <p>Formas de Pagamento:</p>\r\n          <storybook-radio-button   [options]=\"paymentOptions\"\r\n                                    formControlName=\"paymentOption\">\r\n          </storybook-radio-button>\r\n        </div>\r\n\r\n        <div class=\"content-delivery\">\r\n          <p>Frete e Total:</p>\r\n          <app-delivery-costs [delivery]=\"delivery\"\r\n                              [itemsValue]=\"itemsValue()\">\r\n          </app-delivery-costs>\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n    <div class=\"box-footer\">\r\n      <storybook-button fontBlack=\"true\"\r\n                        label=\"Voltar\"\r\n                        class=\"button-back\"\r\n                        [routerLink]=\"['/restaurant/jack-daniels']\">\r\n      </storybook-button>\r\n      <storybook-button primary=\"true\"\r\n                        icon=\"fa fa-credit-card\"\r\n                        label=\"Concluir Pedido\"\r\n                        (click)=\"checkOrder(orderForm.value)\"\r\n                        [disabled]=\"!orderForm.valid || cartItems().length === 0\"\r\n                        [routerLink]=\"['/order-summary']\">\r\n      </storybook-button>\r\n    </div>\r\n  </storybook-square-white>\r\n</div>"
         },
         {
             "name": "OrderItemsComponent",
-            "id": "component-OrderItemsComponent-a176bddb9d9e48a6753efb31d6eaa6ac",
+            "id": "component-OrderItemsComponent-e30c83e07aaba1412be02a3d74d2c7ee",
             "file": "src/app/order/order-items/order-items.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2149,7 +2149,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-order-items",
-            "styleUrls": [],
+            "styleUrls": [
+                "./order-items.component.css"
+            ],
             "styles": [],
             "templateUrl": [
                 "./order-items.component.html"
@@ -2158,7 +2160,7 @@
             "inputsClass": [
                 {
                     "name": "items",
-                    "line": 11,
+                    "line": 12,
                     "type": "CartItem[]"
                 }
             ],
@@ -2166,19 +2168,19 @@
                 {
                     "name": "decreaseQty",
                     "defaultValue": "new EventEmitter<CartItem>()",
-                    "line": 14,
+                    "line": 15,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "increaseQty",
                     "defaultValue": "new EventEmitter<CartItem>()",
-                    "line": 13,
+                    "line": 14,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "remove",
                     "defaultValue": "new EventEmitter<CartItem>()",
-                    "line": 15,
+                    "line": 16,
                     "type": "EventEmitter"
                 }
             ],
@@ -2195,7 +2197,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 26,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -2217,7 +2219,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 22,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -2239,7 +2241,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 30,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -2256,7 +2258,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19
+                    "line": 20
                 }
             ],
             "hostBindings": [],
@@ -2264,20 +2266,25 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';\r\n\r\nimport { CartItem } from './../../restaurant-detail/shopping-cart/shopping-cart.model';\r\n\r\n@Component({\r\n  selector: 'app-order-items',\r\n  templateUrl: './order-items.component.html'\r\n})\r\nexport class OrderItemsComponent implements OnInit {\r\n\r\n  @Input() items: CartItem[];\r\n\r\n  @Output() increaseQty = new EventEmitter<CartItem>();\r\n  @Output() decreaseQty = new EventEmitter<CartItem>();\r\n  @Output() remove = new EventEmitter<CartItem>();\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  emitIncreaseQty(item: CartItem) {\r\n    this.increaseQty.emit(item);\r\n  }\r\n\r\n  emitDecreaseQty(item: CartItem) {\r\n    this.decreaseQty.emit(item);\r\n  }\r\n\r\n  emitRemove(item: CartItem) {\r\n    this.remove.emit(item);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';\r\n\r\nimport { CartItem } from './../../restaurant-detail/shopping-cart/shopping-cart.model';\r\n\r\n@Component({\r\n  selector: 'app-order-items',\r\n  templateUrl: './order-items.component.html',\r\n  styleUrls: ['./order-items.component.css']\r\n})\r\nexport class OrderItemsComponent implements OnInit {\r\n\r\n  @Input() items: CartItem[];\r\n\r\n  @Output() increaseQty = new EventEmitter<CartItem>();\r\n  @Output() decreaseQty = new EventEmitter<CartItem>();\r\n  @Output() remove = new EventEmitter<CartItem>();\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  emitIncreaseQty(item: CartItem) {\r\n    this.increaseQty.emit(item);\r\n  }\r\n\r\n  emitDecreaseQty(item: CartItem) {\r\n    this.decreaseQty.emit(item);\r\n  }\r\n\r\n  emitRemove(item: CartItem) {\r\n    this.remove.emit(item);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".tbody {\r\n    margin-bottom: 15px;\r\n}\r\n\r\na {\r\n    color: var(--color-primary-lighter);\r\n    cursor: pointer;\r\n}\r\n\r\na:hover {\r\n    font-weight: 600;\r\n    color: var(--color-primary-darker);\r\n}\r\n\r\n.th-qtd {\r\n    width: 4%;\r\n}\r\n\r\n.th-item {\r\n    width: 30%;\r\n}\r\n\r\n.th-description {\r\n    width: 50%;\r\n}\r\n\r\n.th-subtotal {\r\n    width: 10%;\r\n}\r\n\r\n.th-exclude {\r\n    width: 11%;\r\n}\r\n\r\n.tr {\r\n    width: 100%;\r\n    margin: 0;\r\n    padding: 0;\r\n}",
+                    "styleUrl": "./order-items.component.css"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 15
+                "line": 16
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"col-xs-12\" *ngIf=\"!items.length\">\n    <p>\n      Não há itens no seus carrinho. Que tal começar por\n      <a [routerLink]=\"['/restaurant/jack-daniels']\"> aqui</a>?\n    </p>\n  </div>\n  \n  <div class=\"col-xs-12 table-responsive\" *ngIf=\"items.length\">\n    <table class=\"table table-striped\">\n      <thead>\n      <tr>\n        <th class=\"text-center\">Quantidade</th>\n        <th>Item</th>\n        <th>Descrição</th>\n        <th class=\"text-right\">Subtotal</th>\n        <th class=\"text-right\"></th>\n      </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of items\">\n          <td class=\"text-center\">\n            <a (click)=\"emitDecreaseQty(item)\" class=\"btn btn-sm\">\n              <i class=\"fa fa-minus\"></i>\n            </a>\n            {{ item.quantity }}\n            <a (click)=\"emitIncreaseQty(item)\" class=\"btn btn-sm\">\n              <i class=\"fa fa-plus\"></i>\n            </a>\n          </td>\n          <td>{{ item.menuItem.name }}</td>\n          <td>{{ item.menuItem.description }}</td>\n          <td class=\"text-right\">\n            {{ item.value() | currency: 'BRL': 'symbol' }}\n          </td>\n          <td class=\"text-right\">\n            <a (click)=\"emitRemove(item)\" class=\"btn btn-sm danger\">\n              <i class=\"fa fa-remove\"></i>\n            </a>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  "
+            "templateData": "<div *ngIf=\"!items.length\">\n  <p>\n    Não há itens no seus carrinho. Que tal começar por\n    <a [routerLink]=\"['/restaurant/jack-daniels']\"> aqui</a>?\n  </p>\n</div>\n  \n<div class=\"wrapper-items\" *ngIf=\"items.length\">\n  <table class=\"table table-striped\">\n    <thead>\n      <tr class=\"tr\">\n        <th class=\"th-qtd\">Qtd</th>\n        <th class=\"th-item\">Item</th>\n        <th class=\"th-description\">Descrição</th>\n        <th class=\"th-subtotal\">Subtotal</th>\n        <th class=\"th-exclude\"></th>\n      </tr>\n    </thead>\n\n    <tbody>\n      <tr class=\"content-items\" *ngFor=\"let item of items\">\n        <td class=\"text-center\">\n          {{ item.quantity }}\n        </td>\n        <td>\n          {{ item.menuItem.name }}\n        </td>\n        <td>\n          {{ item.menuItem.description }}\n        </td>\n        <td class=\"text-right\">\n          {{ item.value() | currency: 'BRL': 'symbol' }}\n        </td>\n        <td class=\"text-right\">\n          <a (click)=\"emitIncreaseQty(item)\" class=\"btn btn-sm\">\n            <i class=\"fa fa-plus\"></i>\n          </a>\n          <a (click)=\"emitDecreaseQty(item)\" class=\"btn btn-sm\">\n            <i class=\"fa fa-minus\"></i>\n          </a>\n          <a (click)=\"emitRemove(item)\" class=\"btn btn-sm danger\">\n            <i class=\"fa fa-remove\"></i>\n          </a>\n        </td>\n      </tr>\n    </tbody>\n\n  </table>\n</div>\n  "
         },
         {
             "name": "OrderSummaryComponent",
@@ -2527,7 +2534,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "div {\r\n    width: 100%;\r\n    height: 22px;\r\n    padding: 0;\r\n    margin: 0;\r\n    color: var(--color-text-base);\r\n}\r\n\r\ninput {\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n\r\n\r\ninput[type='radio']:after {\r\n    width: 15px;\r\n    height: 15px;\r\n    border-radius: 15px;\r\n    top: -1px;\r\n    left: -1px;\r\n    position: relative;\r\n    background-color: var(--color-box-white);\r\n    border: 1px solid var(--color-text-complement);\r\n    content: '';\r\n    display: inline-block;\r\n    visibility: visible;\r\n    cursor: pointer;\r\n}\r\n\r\ninput[type='radio']:checked:after {\r\n    width: 17px;\r\n    height: 17px;\r\n    border-radius: 15px;\r\n    top: -2px;\r\n    left: -2px;\r\n    position: relative;\r\n    background-color: var(--color-primary-light);\r\n    content: '';\r\n    display: inline-block;\r\n    visibility: visible;\r\n    border: 1px solid var(--color-box-white);\r\n}\r\n\r\nspan {\r\n    margin-left: 7px;\r\n    padding: 0;\r\n}",
+                    "data": "div {\r\n    width: 100%;\r\n    height: 22px;\r\n    padding: 0;\r\n    margin: 0;\r\n    color: var(--color-text-base);\r\n}\r\n\r\ninput {\r\n    padding: 0;\r\n    margin: 0;\r\n}\r\n\r\n\r\ninput[type='radio']:after {\r\n    width: 15px;\r\n    height: 15px;\r\n    border-radius: 15px;\r\n    top: -2px;\r\n    left: -2px;\r\n    position: relative;\r\n    background-color: var(--color-box-white);\r\n    border: 1px solid var(--color-text-complement);\r\n    content: '';\r\n    display: inline-block;\r\n    visibility: visible;\r\n    cursor: pointer;\r\n}\r\n\r\ninput[type='radio']:checked:after {\r\n    width: 17px;\r\n    height: 17px;\r\n    border-radius: 15px;\r\n    top: -2px;\r\n    left: -2px;\r\n    position: relative;\r\n    background-color: var(--color-primary-light);\r\n    content: '';\r\n    display: inline-block;\r\n    visibility: visible;\r\n    border: 1px solid var(--color-box-white);\r\n}\r\n\r\nspan {\r\n    margin-left: 7px;\r\n    padding: 0;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    input[type='radio']:after {\r\n        top: -2px;\r\n        left: -2px;\r\n    }\r\n    \r\n    input[type='radio']:checked:after {\r\n        top: -2px;\r\n        left: -2px;\r\n    }\r\n}",
                     "styleUrl": "./radio-button.component.css"
                 }
             ],
@@ -2674,7 +2681,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<i\n  *ngFor=\"let r of rates\" class=\"fa\"\n  [class.fa-star]=\"r <= rate\"\n  [class.fa-star-o]=\"r > rate\"\n  (click)=\"setRate(r)\"\n  (mouseenter)=\"setTemporaryRate(r)\"\n  (mouseleave)=\"clearTemporaryRate()\"\n>\n</i>\n"
+            "templateData": "<i  *ngFor=\"let r of rates\"\n    class=\"fa\"\n    [class.fa-star]=\"r <= rate\"\n    [class.fa-star-o]=\"r > rate\"\n    (click)=\"setRate(r)\"\n    (mouseenter)=\"setTemporaryRate(r)\"\n    (mouseleave)=\"clearTemporaryRate()\">\n</i>\n"
         },
         {
             "name": "RestaurantDetailComponent",
@@ -2834,7 +2841,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\r\n    margin: 12px 0 20px 0;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\nsection > div {\r\n    width: 72%;\r\n    text-align: center;\r\n}\r\n.content {\r\n    margin: 1px;\r\n    padding: 7px;\r\n    display: inline-block;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 48%;\r\n}\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 10px 10px 2px 10px;\r\n}\r\n.box-info {\r\n    display: flex;\r\n}\r\n.img-circle {\r\n    width: 45px;\r\n}\r\n.box-user-date {\r\n    padding: 3px 0 0 6px;\r\n    display: grid;\r\n    text-align: center;\r\n}\r\n.username {\r\n    padding-top: 5px;\r\n    margin-bottom: -3px;\r\n    font-weight: 600;\r\n    color: var(--color-text-title);\r\n}\r\n.date {\r\n    font-size: 12px;\r\n    color: var(--color-text-complement);\r\n    margin-top: -5px;\r\n}\r\n.review-score {\r\n    font-weight: 600;\r\n    font-size: 30px;\r\n    color: var(--color-text-title);\r\n}\r\n.review-score:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.box-comment {\r\n    min-height: 50px;\r\n    padding: 13px;\r\n    text-align: left;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    section > div {\r\n        width: 100%;\r\n        text-align: center;\r\n    }\r\n    .content {\r\n        margin: 1px 0;\r\n        padding: 1px 0;\r\n        display: inline-block;\r\n        justify-content: center;\r\n        align-items: center;\r\n        width: 100%;\r\n    }\r\n    .box-info {\r\n        max-width: 83%;\r\n        padding: 0;\r\n        margin: 0;\r\n    }\r\n    .username {\r\n        margin-bottom: 0;\r\n    }\r\n    .date {\r\n        margin-top: 1px;\r\n    }\r\n    .review-score {\r\n        max-width: 30%;\r\n        padding: 0;\r\n        margin: 0;\r\n    }\r\n}\r\n",
+                    "data": "section {\r\n    margin: 12px 0 20px 0;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\nsection > div {\r\n    width: 72%;\r\n    text-align: center;\r\n}\r\n.content {\r\n    margin: 1px;\r\n    padding: 7px;\r\n    display: inline-block;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 48%;\r\n}\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    display: flex;\r\n    justify-content: space-between;\r\n    padding: 10px 10px 2px 10px;\r\n}\r\n.box-info {\r\n    display: flex;\r\n}\r\n.img-circle {\r\n    width: 45px;\r\n    height: 45px;\r\n}\r\n.box-user-date {\r\n    padding: 3px 0 0 6px;\r\n    display: grid;\r\n    text-align: center;\r\n}\r\n.username {\r\n    padding-top: 5px;\r\n    margin-bottom: -3px;\r\n    font-weight: 600;\r\n    color: var(--color-text-title);\r\n}\r\n.date {\r\n    font-size: 12px;\r\n    color: var(--color-text-complement);\r\n    margin-top: -5px;\r\n}\r\n.review-score {\r\n    font-weight: 600;\r\n    font-size: 30px;\r\n    color: var(--color-text-title);\r\n}\r\n.review-score:hover {\r\n    color: var(--color-primary-darker);\r\n}\r\n.box-comment {\r\n    min-height: 50px;\r\n    padding: 13px;\r\n    text-align: left;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    section > div {\r\n        width: 100%;\r\n        text-align: center;\r\n    }\r\n    .content {\r\n        margin: 1px 0;\r\n        padding: 1px 0;\r\n        display: inline-block;\r\n        justify-content: center;\r\n        align-items: center;\r\n        width: 100%;\r\n    }\r\n    .box-info {\r\n        max-width: 83%;\r\n        padding: 0;\r\n        margin: 0;\r\n    }\r\n    .username {\r\n        margin-bottom: 0;\r\n    }\r\n    .date {\r\n        margin-top: 1px;\r\n    }\r\n    .review-score {\r\n        max-width: 30%;\r\n        padding: 0;\r\n        margin: 0;\r\n    }\r\n}\r\n",
                     "styleUrl": "./reviews.component.css"
                 }
             ],
@@ -3068,7 +3075,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".snackbar {\r\n  min-width: 250px;\r\n  background-color: var(--color-primary-darker);\r\n  color: var(--color-title-in-primary);\r\n  border-radius: 1px;\r\n  text-align: center;\r\n  border-radius: 2px;\r\n  padding: 16px;\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 40%;\r\n  bottom: 30px;\r\n}\r\n  \r\n@media (max-width: 1100px) {\r\n  .snackbar {\r\n    position: sticky;\r\n  }\r\n}",
+                    "data": ".snackbar {\r\n  min-width: 400px;\r\n  background-color: var(--color-primary-darker);\r\n  color: var(--color-title-in-primary);\r\n  text-align: center;\r\n  border-radius: 2px;\r\n  padding: 16px 0;\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 35%;\r\n  bottom: 30px;\r\n}\r\n  \r\n@media (max-width: 1100px) {\r\n  .snackbar {\r\n    width: 100%;\r\n    padding: 16px 0;\r\n    left: 0;\r\n    bottom: 30px;\r\n    position: fixed;\r\n  }\r\n}",
                     "styleUrl": "./snackbar.component.css"
                 }
             ],
@@ -3445,17 +3452,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "Icon",
@@ -3630,16 +3637,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -3648,6 +3645,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
                 }
             ],
             "src/stories/components/button/Button.stories.ts": [
