@@ -55,13 +55,12 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  onlynumber(evt) {
-    var theEvent = evt || window.event;
-    var key = theEvent.keyCode || theEvent.which;
+  onlyNumber(evt) {
+    let theEvent = evt || window.event;
+    let key = theEvent.keyCode || theEvent.which;
+    let regex = /^[0-9.]+$/;
     
     key = String.fromCharCode(key);
-
-    var regex = /^[0-9.]+$/;
 
     if( !regex.test(key) ) {
        theEvent.returnValue = false;
