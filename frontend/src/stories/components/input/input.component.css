@@ -61,4 +61,29 @@ input {
   .input-block-20 input {
     font: 0.92rem Archivo;
   }
+
+  /* Garantir que o mobile não vai dar zoom */
+  input[type='text'],
+  input[type='number'],
+  textarea {
+    font: 16px Archivo !important;
+  }
+}
+
+/* Garantir que o mobile não vai dar zoom */
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px !important;
+  }
+}
+
+/* Garantir que o mobile não vai dar zoom */
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
 }
