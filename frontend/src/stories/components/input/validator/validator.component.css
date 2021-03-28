@@ -1,0 +1,9 @@
+.success {
+    color: var(--color-secundary-dark);
+    padding-left: 15px;
+}
+
+.error {
+    color: var(--color-danger);
+    padding-left: 15px;
+}

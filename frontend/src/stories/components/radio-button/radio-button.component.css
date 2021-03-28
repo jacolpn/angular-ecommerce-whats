@@ -48,12 +48,12 @@ span {
 
 @media (max-width: 1100px) {
     input[type='radio']:after {
-        top: -2px;
-        left: -2px;
+        top: -2.4px;
+        left: -2.4px;
     }
     
     input[type='radio']:checked:after {
-        top: -2px;
-        left: -2px;
+        top: -2.4px;
+        left: -2.4px;
     }
 }

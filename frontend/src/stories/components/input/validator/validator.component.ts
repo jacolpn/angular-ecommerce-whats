@@ -2,10 +2,11 @@ import { Component, Input, OnInit, ContentChild, AfterContentInit } from '@angul
 import { FormControlName, NgModel } from '@angular/forms';
 
 @Component({
-  selector: 'app-input-container',
-  templateUrl: './input.component.html'
+  selector: 'storybook-validator',
+  templateUrl: './validator.component.html',
+  styleUrls: ['./validator.component.css']
 })
-export class InputComponent implements OnInit, AfterContentInit {
+export class ValidatorComponent implements OnInit, AfterContentInit {
 
   @Input() label: string;
   @Input() errorMessage: string;
