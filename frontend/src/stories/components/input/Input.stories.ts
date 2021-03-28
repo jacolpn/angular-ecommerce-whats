@@ -19,5 +19,6 @@ export const Input = Template.bind({});
 
 export const InputPlaceHolder = Template.bind({});
 InputPlaceHolder.args = {
-  placeHolder: 'Inserindo placeHolder'
+  placeHolder: 'Inserindo placeHolder',
+  label: 'Label'
 };

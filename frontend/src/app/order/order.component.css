@@ -26,7 +26,7 @@ form {
 
 .box-info-user > p {
     font-size: large;
-    margin-bottom: 6px;
+    margin-bottom: 16px;
 }
 
 .box-input-user {
@@ -47,14 +47,14 @@ form {
 
 .box-info-address > p {
     font-size: large;
-    margin-bottom: 6px;
+    margin-bottom: 16px;
 }
 
 .wrapper-address {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
 }
 
 .box-input-address {
@@ -75,7 +75,7 @@ form {
     display: flex;
     justify-content: space-between;
     width: 104%;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
 }
 
 .content-itens {
@@ -84,14 +84,14 @@ form {
 
 .content-itens > p {
     font-size: large;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .box-payment {
     display: flex;
     justify-content: space-between;
     width: 103%;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
 }
 
 .content-payment {
@@ -100,7 +100,7 @@ form {
 
 .content-payment > p {
     font-size: large;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .content-delivery {
@@ -110,7 +110,7 @@ form {
 
 .content-delivery > p {
     font-size: large;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .box-footer {
@@ -144,12 +144,12 @@ p {
     }
 
     .box-input-name {
-        width: 90%;
+        width: 89%;
         margin-bottom: 7px;
     }
     
     .box-input-phone {
-        width: 90%;
+        width: 89%;
         margin-left: 0%;
     }
 
@@ -158,18 +158,18 @@ p {
     }
     
     .box-input-address {
-        width: 90%;
+        width: 89%;
         margin-bottom: 7px;
     }
     
     .box-input-number {
-        width: 90%;
+        width: 89%;
         margin-left: 0%;
         margin-bottom: 7px;
     }
     
     .box-input-optional {
-        width: 90%;
+        width: 89%;
         margin-left: 0%;
     }
 

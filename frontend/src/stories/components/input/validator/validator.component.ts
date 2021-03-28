@@ -7,8 +7,6 @@ import { FormControlName, NgModel } from '@angular/forms';
   styleUrls: ['./validator.component.css']
 })
 export class ValidatorComponent implements OnInit, AfterContentInit {
-
-  @Input() label: string;
   @Input() errorMessage: string;
   @Input() showTip: boolean = true;
 

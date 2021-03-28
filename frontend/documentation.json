@@ -1046,7 +1046,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"wrapper\">\r\n  <div class=\"wrapper-header\">\r\n    <app-header></app-header>\r\n  </div>\r\n  <div class=\"wrapper-content\">\r\n    <router-outlet></router-outlet>\r\n    <app-snackbar></app-snackbar>\r\n    <app-footer></app-footer>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"wrapper\">\r\n  <div class=\"wrapper-header\">\r\n    <app-header></app-header>\r\n  </div>\r\n  <div class=\"wrapper-content\">\r\n    <router-outlet></router-outlet>\r\n    <storybook-snackbar></storybook-snackbar>\r\n    <app-footer></app-footer>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1550,7 +1550,7 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-f20a5670081adc51b5d811081ba93790",
+            "id": "component-InputComponent-48078a5ca0962bc7216fe86de26e04d7",
             "file": "src/stories/components/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1567,6 +1567,16 @@
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "'input-block-icon'",
+                    "line": 12
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "line": 11
+                },
                 {
                     "name": "placeHolder",
                     "defaultValue": "'Story-Input'",
@@ -1587,7 +1597,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14
+                    "line": 16
                 }
             ],
             "hostBindings": [],
@@ -1595,11 +1605,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-input',\r\n  templateUrl: './input.component.html',\r\n  styleUrls: ['./input.component.css']\r\n})\r\nexport class InputComponent implements OnInit {\r\n  @Input() placeHolder = 'Story-Input';\r\n  @Input() type = 'text';\r\n  \r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-input',\r\n  templateUrl: './input.component.html',\r\n  styleUrls: ['./input.component.css']\r\n})\r\nexport class InputComponent implements OnInit {\r\n  @Input() placeHolder = 'Story-Input';\r\n  @Input() type = 'text';\r\n  @Input() label = '';\r\n  @Input() class = 'input-block-icon';\r\n  \r\n  constructor() { }\r\n\r\n  ngOnInit(): void { }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "input {\r\n  color: var(--color-text-base);\r\n  margin: 0;\r\n}\r\n\r\n.input-block {\r\n  position: relative;\r\n}\r\n\r\n.input-block input {\r\n  width: 100%;\r\n  height: 2rem;\r\n  border-radius: 0.8rem;\r\n  background: var(--color-box-white);\r\n  border: 1px solid var(--color-line-in-white);\r\n  outline: 0;\r\n  padding: 0 1rem;\r\n  font: 1.1rem Archivo;\r\n}\r\n\r\n.input-block:focus-within::after {\r\n  width: calc(100% + 0.1rem);\r\n  height: 2px;\r\n  content: \"\";\r\n  background: var(--color-primary-light);\r\n  position: absolute;\r\n  left: 1rem;\r\n  right: 1rem;\r\n  margin-bottom: 7px;\r\n  bottom: 0;\r\n}\r\n\r\n.input-block-20 input {\r\n  width: 20%;\r\n  height: 2rem;\r\n  border-radius: 0.8rem;\r\n  background: var(--color-box-white);\r\n  border: 1px solid var(--color-line-in-white);\r\n  outline: 0;\r\n  padding: 0 1rem;\r\n  font: 1.1rem Archivo;\r\n}\r\n\r\n.input-block-20:focus-within::after {\r\n  width: calc(100% + 0.1rem);\r\n  height: 2px;\r\n  content: \"\";\r\n  background: var(--color-primary-light);\r\n  position: absolute;\r\n  left: 1rem;\r\n  right: 1rem;\r\n  margin-bottom: 7px;\r\n  bottom: 0;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .input-block input {\r\n    font: 0.92rem Archivo;\r\n  }\r\n\r\n  .input-block-20 input {\r\n    font: 0.92rem Archivo;\r\n  }\r\n}",
+                    "data": "input {\r\n  color: var(--color-text-base);\r\n  margin: 0;\r\n}\r\n\r\n.input-block {\r\n  position: relative;\r\n}\r\n\r\n.input-block input {\r\n  width: 100%;\r\n  height: 2rem;\r\n  border-radius: 0.8rem;\r\n  background: var(--color-box-white);\r\n  border: 1px solid var(--color-line-in-white);\r\n  outline: 0;\r\n  padding: 0 1rem;\r\n  font: 1.1rem Archivo;\r\n}\r\n\r\n.input-block:focus-within::after {\r\n  width: calc(100% + 0.1rem);\r\n  height: 2px;\r\n  content: \"\";\r\n  background: var(--color-primary-light);\r\n  position: absolute;\r\n  left: 1rem;\r\n  right: 1rem;\r\n  margin-bottom: 7px;\r\n  bottom: 0;\r\n}\r\n\r\n.input-block-20 input {\r\n  width: 20%;\r\n  height: 2rem;\r\n  border-radius: 0.8rem;\r\n  background: var(--color-box-white);\r\n  border: 1px solid var(--color-line-in-white);\r\n  outline: 0;\r\n  padding: 0 1rem;\r\n  font: 1.1rem Archivo;\r\n}\r\n\r\n.input-block-20:focus-within::after {\r\n  width: calc(100% + 0.1rem);\r\n  height: 2px;\r\n  content: \"\";\r\n  background: var(--color-primary-light);\r\n  position: absolute;\r\n  left: 1rem;\r\n  right: 1rem;\r\n  margin-bottom: 7px;\r\n  bottom: 0;\r\n}\r\n\r\n.input-block-icon input {\r\n  width: 100%;\r\n  height: 2rem;\r\n  border-radius: 0.8rem;\r\n  background: var(--color-box-white);\r\n  border: 1px solid var(--color-line-in-white);\r\n  outline: 0;\r\n  padding: 0 1rem 0 10rem;\r\n  font: 1.1rem Archivo;\r\n}\r\n\r\n.input-block-icon:focus-within::after {\r\n  width: calc(100% + 0.1rem);\r\n  height: 2px;\r\n  content: \"\";\r\n  background: var(--color-primary-light);\r\n  position: absolute;\r\n  left: 10rem;\r\n  right: 1rem;\r\n  margin-bottom: 7px;\r\n  bottom: 0;\r\n}\r\n\r\nspan {\r\n  padding-left: 8px;\r\n  color: var(--color-text-base);\r\n  font-weight: 600;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  /* Garantir que o mobile não vai dar zoom */\r\n  input[type='text'],\r\n  input[type='number'],\r\n  textarea {\r\n    font: 16px Archivo !important;\r\n  }\r\n}\r\n\r\n/* Garantir que o mobile não vai dar zoom */\r\n@media screen and (-webkit-min-device-pixel-ratio:0) { \r\n  select:focus,\r\n  textarea:focus,\r\n  input:focus {\r\n    font-size: 16px !important;\r\n  }\r\n}\r\n\r\n/* Garantir que o mobile não vai dar zoom */\r\n@media screen and (-webkit-min-device-pixel-ratio:0) { \r\n  select,\r\n  textarea,\r\n  input {\r\n    font-size: 16px !important;\r\n  }\r\n}",
                     "styleUrl": "./input.component.css"
                 }
             ],
@@ -1608,12 +1618,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 10
+                "line": 12
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"input-block\">\r\n  <input  [type]=\"type\"\r\n          [placeholder]=\"placeHolder\"\r\n          autocomplete=\"off\" />\r\n</div>"
+            "templateData": "<div class=\"input-block\">\r\n  <span>{{ label }}</span>\r\n  <input  [type]=\"type\"\r\n          [placeholder]=\"placeHolder\"\r\n          autocomplete=\"off\"\r\n          [class]=\"class\" />\r\n</div>"
         },
         {
             "name": "MenuComponent",
@@ -1767,7 +1777,7 @@
         },
         {
             "name": "OrderComponent",
-            "id": "component-OrderComponent-8df8be78761a6c929c872d4f3b5f46e3",
+            "id": "component-OrderComponent-129dc0820f0f10cf43eb1ea4c75c8355",
             "file": "src/app/order/order.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1840,7 +1850,7 @@
                     "optional": false,
                     "returnType": "CartItem[]",
                     "typeParameters": [],
-                    "line": 62
+                    "line": 76
                 },
                 {
                     "name": "checkOrder",
@@ -1853,7 +1863,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 82,
+                    "line": 96,
                     "jsdoctags": [
                         {
                             "name": "order",
@@ -1875,7 +1885,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 84,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -1897,7 +1907,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 66,
+                    "line": 80,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -1914,7 +1924,7 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 78
+                    "line": 92
                 },
                 {
                     "name": "itemsValue",
@@ -1922,7 +1932,7 @@
                     "optional": false,
                     "returnType": "number",
                     "typeParameters": [],
-                    "line": 58
+                    "line": 72
                 },
                 {
                     "name": "ngOnInit",
@@ -1931,6 +1941,28 @@
                     "returnType": "void",
                     "typeParameters": [],
                     "line": 35
+                },
+                {
+                    "name": "onlyNumber",
+                    "args": [
+                        {
+                            "name": "evt",
+                            "type": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 58,
+                    "jsdoctags": [
+                        {
+                            "name": "evt",
+                            "type": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "removeItem",
@@ -1943,7 +1975,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 74,
+                    "line": 88,
                     "jsdoctags": [
                         {
                             "name": "item",
@@ -1960,11 +1992,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';\nimport { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { tap } from 'rxjs/operators';\n\nimport { Order, OrderItem } from './order.model';\nimport { OrderService } from './order.service';\nimport { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';\nimport { RadioOption } from '../../stories/components/radio-button/radio-option.model';\n\n@Component({\n  selector: 'app-order',\n  templateUrl: './order.component.html',\n  styleUrls: ['./order.component.css']\n})\nexport class OrderComponent implements OnInit {\n  numberPattern = /^[0-9]*$/;\n  orderForm: FormGroup;\n  delivery = 3.99;\n  orderId: string;\n  whatsApp = null;\n\n  paymentOptions: RadioOption[] = [\n    { label: 'Dinheiro', value: 'Dinheiro' },\n    { label: 'Cartão de débito', value: 'Cartão Débito' },\n    { label: 'Vale refeição', value: 'Vale Refeição' }\n  ];\n\n  constructor(\n    private orderService: OrderService,\n    private router: Router,\n    private formBuilder: FormBuilder\n  ) { }\n\n  ngOnInit(): void {\n    this.orderForm = this.formBuilder.group({\n      name: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      phone: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      address: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      number: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      optionalAddress: new FormControl(''),  // { updateOn: 'blur' }\n      paymentOption: this.formBuilder.control('', [Validators.required])\n    });\n  }\n\n  itemsValue(): number {\n    return this.orderService.itemsValue();\n  }\n\n  cartItems(): CartItem[] {\n    return this.orderService.cartItems();\n  }\n\n  increaseQty(item: CartItem) {\n    this.orderService.increaseQty(item);\n  }\n\n  decreaseQty(item: CartItem) {\n    this.orderService.decreaseQty(item);\n  }\n\n  removeItem(item: CartItem) {\n    this.orderService.removeItem(item);\n  }\n\n  isOrderCompleted(): boolean {\n    return this.orderId !== undefined;\n  }\n\n  checkOrder(order: Order) {\n    let db = false;\n    let itens = [];\n    \n    order.orderItems = this\n      .cartItems()\n      .map((item: CartItem) => new OrderItem(\n        item.quantity,\n        item.menuItem.id,\n        item.menuItem.name\n        ));\n        \n    itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));\n        \n    if (db) {\n      this.orderService\n        .checkOrder(order)\n        .pipe(tap((orderId: string) => {\n          this.orderId = orderId;\n      })).subscribe((orderId: string) => {\n        this.orderService.clear();\n      });\n    }\n\n    this.whatsApp =\n      `https://wa.me/5547988458640/?text=` +\n      `Olá VilleMeat, gostaria de${itens}. ` +\n      `Pagamento: ${order.paymentOption}. ` +\n      `Entregar no endereço: ${order.address}, Nº ${order.number}. ` +\n      `(Ass. ${order.name}, ${order.phone})`;\n\n    // window.location.href = this.whatsApp; \n    this.router.navigate(['/order-summary']);\n    window.open(this.whatsApp, '_blank');\n  }\n}\n",
+            "sourceCode": "import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';\nimport { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { tap } from 'rxjs/operators';\n\nimport { Order, OrderItem } from './order.model';\nimport { OrderService } from './order.service';\nimport { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';\nimport { RadioOption } from '../../stories/components/radio-button/radio-option.model';\n\n@Component({\n  selector: 'app-order',\n  templateUrl: './order.component.html',\n  styleUrls: ['./order.component.css']\n})\nexport class OrderComponent implements OnInit {\n  numberPattern = /^[0-9]*$/;\n  orderForm: FormGroup;\n  delivery = 3.99;\n  orderId: string;\n  whatsApp = null;\n\n  paymentOptions: RadioOption[] = [\n    { label: 'Dinheiro', value: 'Dinheiro' },\n    { label: 'Cartão de débito', value: 'Cartão Débito' },\n    { label: 'Vale refeição', value: 'Vale Refeição' }\n  ];\n\n  constructor(\n    private orderService: OrderService,\n    private router: Router,\n    private formBuilder: FormBuilder\n  ) { }\n\n  ngOnInit(): void {\n    this.orderForm = this.formBuilder.group({\n      name: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      phone: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      address: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.minLength(5)]\n      ),\n      number: this.formBuilder.control(\n        '',\n        [Validators.required, Validators.pattern(this.numberPattern)]\n      ),\n      optionalAddress: new FormControl(''),  // { updateOn: 'blur' }\n      paymentOption: this.formBuilder.control('', [Validators.required])\n    });\n  }\n\n  onlyNumber(evt) {\n    let theEvent = evt || window.event;\n    let key = theEvent.keyCode || theEvent.which;\n    \n    key = String.fromCharCode(key);\n    \n    let regex = /^[0-9.]+$/;\n\n    if( !regex.test(key) ) {\n       theEvent.returnValue = false;\n       if(theEvent.preventDefault) theEvent.preventDefault();\n    }\n  }\n\n  itemsValue(): number {\n    return this.orderService.itemsValue();\n  }\n\n  cartItems(): CartItem[] {\n    return this.orderService.cartItems();\n  }\n\n  increaseQty(item: CartItem) {\n    this.orderService.increaseQty(item);\n  }\n\n  decreaseQty(item: CartItem) {\n    this.orderService.decreaseQty(item);\n  }\n\n  removeItem(item: CartItem) {\n    this.orderService.removeItem(item);\n  }\n\n  isOrderCompleted(): boolean {\n    return this.orderId !== undefined;\n  }\n\n  checkOrder(order: Order) {\n    let db = false;\n    let itens = [];\n    \n    order.orderItems = this\n      .cartItems()\n      .map((item: CartItem) => new OrderItem(\n        item.quantity,\n        item.menuItem.id,\n        item.menuItem.name\n        ));\n        \n    itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));\n        \n    if (db) {\n      this.orderService\n        .checkOrder(order)\n        .pipe(tap((orderId: string) => {\n          this.orderId = orderId;\n      })).subscribe((orderId: string) => {\n        this.orderService.clear();\n      });\n    }\n\n    this.whatsApp =\n      `https://wa.me/5547988458640/?text=` +\n      `Olá VilleMeat, gostaria de${itens}. ` +\n      `Pagamento: ${order.paymentOption}. ` +\n      `Entregar no endereço: ${order.address}, Nº ${order.number}. ` +\n      `(Ass. ${order.name}, ${order.phone})`;\n\n    // window.location.href = this.whatsApp; \n    this.router.navigate(['/order-summary']);\n    window.open(this.whatsApp, '_blank');\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".body {\r\n    margin-bottom: 25px;\r\n}\r\n\r\nform {\r\n    margin: 18px 55px 50px 20px;\r\n    min-height: 80%;\r\n    text-align: left;\r\n}\r\n\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    color: var(--color-text-base);\r\n    padding-bottom: 7px;\r\n    margin-bottom: 15px;\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n}\r\n\r\n.box-header > p {\r\n    color: var(--color-text-base);\r\n    margin-left: 13px;\r\n    font-size: large;\r\n}\r\n\r\n.box-info-user > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.box-input-user {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.box-input-name {\r\n    width: 50%;\r\n}\r\n\r\n.box-input-phone {\r\n    width: 50%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-info-address > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.wrapper-address {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.box-input-address {\r\n    width: 50%;\r\n}\r\n\r\n.box-input-number {\r\n    width: 19%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-input-optional {\r\n    width: 25%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-itens {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 104%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.content-itens {\r\n    width: 104%;\r\n}\r\n\r\n.content-itens > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.box-payment {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 103%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.content-payment {\r\n    width: 70%;\r\n}\r\n\r\n.content-payment > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.content-delivery {\r\n    width: 30%;\r\n    text-align: left;\r\n}\r\n\r\n.content-delivery > p {\r\n    font-size: large;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.box-footer {\r\n    height: 20%;\r\n    width: 97.6%;\r\n    padding-bottom: 15px;\r\n    text-align: right;\r\n}\r\n\r\n.button-back {\r\n    margin-right: 10px;\r\n}\r\n\r\np {\r\n    color: var(--color-text-title);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .body {\r\n      height: auto;\r\n    }\r\n\r\n    form {\r\n        margin: 18px 20px 50px 15px;\r\n        min-height: 80%;\r\n        text-align: left;\r\n    }\r\n\r\n    .box-input-user {\r\n        display: inline-block;\r\n    }\r\n\r\n    .box-input-name {\r\n        width: 90%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-phone {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n    }\r\n\r\n    .wrapper-address {\r\n        display: inline-block;\r\n    }\r\n    \r\n    .box-input-address {\r\n        width: 90%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-number {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-optional {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n    }\r\n\r\n    .box-itens {\r\n        width: 100%;\r\n    }\r\n\r\n    .box-payment {\r\n        display: inline-block;\r\n    }\r\n\r\n    .box-payment {\r\n        width: 100%;\r\n    }\r\n\r\n    .content-payment {\r\n        width: 100%;\r\n        padding-bottom: 18px;\r\n    }\r\n\r\n    .content-delivery {\r\n        width: 100%;\r\n    }\r\n\r\n    .button-back {\r\n        margin-right: 7px;\r\n    }\r\n\r\n    .box-footer {\r\n        width: 96.6%;\r\n    }\r\n}",
+                    "data": ".body {\r\n    margin-bottom: 25px;\r\n}\r\n\r\nform {\r\n    margin: 18px 55px 50px 20px;\r\n    min-height: 80%;\r\n    text-align: left;\r\n}\r\n\r\n.box-header {\r\n    border-bottom: 1px solid var(--color-background);\r\n    color: var(--color-text-base);\r\n    padding-bottom: 7px;\r\n    margin-bottom: 15px;\r\n    display: flex;\r\n    justify-content: left;\r\n    align-items: center;\r\n}\r\n\r\n.box-header > p {\r\n    color: var(--color-text-base);\r\n    margin-left: 13px;\r\n    font-size: large;\r\n}\r\n\r\n.box-info-user > p {\r\n    font-size: large;\r\n    margin-bottom: 16px;\r\n}\r\n\r\n.box-input-user {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 18px;\r\n}\r\n\r\n.box-input-name {\r\n    width: 50%;\r\n}\r\n\r\n.box-input-phone {\r\n    width: 50%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-info-address > p {\r\n    font-size: large;\r\n    margin-bottom: 16px;\r\n}\r\n\r\n.wrapper-address {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    margin-bottom: 25px;\r\n}\r\n\r\n.box-input-address {\r\n    width: 50%;\r\n}\r\n\r\n.box-input-number {\r\n    width: 19%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-input-optional {\r\n    width: 25%;\r\n    margin-left: 6%;\r\n}\r\n\r\n.box-itens {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 104%;\r\n    margin-bottom: 25px;\r\n}\r\n\r\n.content-itens {\r\n    width: 104%;\r\n}\r\n\r\n.content-itens > p {\r\n    font-size: large;\r\n    margin-bottom: 8px;\r\n}\r\n\r\n.box-payment {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 103%;\r\n    margin-bottom: 25px;\r\n}\r\n\r\n.content-payment {\r\n    width: 70%;\r\n}\r\n\r\n.content-payment > p {\r\n    font-size: large;\r\n    margin-bottom: 8px;\r\n}\r\n\r\n.content-delivery {\r\n    width: 30%;\r\n    text-align: left;\r\n}\r\n\r\n.content-delivery > p {\r\n    font-size: large;\r\n    margin-bottom: 8px;\r\n}\r\n\r\n.box-footer {\r\n    height: 20%;\r\n    width: 97.6%;\r\n    padding-bottom: 15px;\r\n    text-align: right;\r\n}\r\n\r\n.button-back {\r\n    margin-right: 10px;\r\n}\r\n\r\np {\r\n    color: var(--color-text-title);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .body {\r\n      height: auto;\r\n    }\r\n\r\n    form {\r\n        margin: 18px 20px 50px 15px;\r\n        min-height: 80%;\r\n        text-align: left;\r\n    }\r\n\r\n    .box-input-user {\r\n        display: inline-block;\r\n    }\r\n\r\n    .box-input-name {\r\n        width: 90%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-phone {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n    }\r\n\r\n    .wrapper-address {\r\n        display: inline-block;\r\n    }\r\n    \r\n    .box-input-address {\r\n        width: 90%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-number {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n        margin-bottom: 7px;\r\n    }\r\n    \r\n    .box-input-optional {\r\n        width: 90%;\r\n        margin-left: 0%;\r\n    }\r\n\r\n    .box-itens {\r\n        width: 100%;\r\n    }\r\n\r\n    .box-payment {\r\n        display: inline-block;\r\n    }\r\n\r\n    .box-payment {\r\n        width: 100%;\r\n    }\r\n\r\n    .content-payment {\r\n        width: 100%;\r\n        padding-bottom: 18px;\r\n    }\r\n\r\n    .content-delivery {\r\n        width: 100%;\r\n    }\r\n\r\n    .button-back {\r\n        margin-right: 7px;\r\n    }\r\n\r\n    .box-footer {\r\n        width: 96.6%;\r\n    }\r\n}",
                     "styleUrl": "./order.component.css"
                 }
             ],
@@ -2014,7 +2046,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"body\">\r\n  <storybook-square-white>\r\n    <!-- {{ orderForm.valid }}\r\n    {{ orderForm.value | json }} -->\r\n    <form novalidate\r\n          [formGroup]=\"orderForm\">\r\n      <div class=\"box-header\">\r\n          <i class=\"fa fa-shopping-cart fa-lg\"></i>\r\n          <p>Finalize o seu pedido</p>\r\n      </div>\r\n\r\n      <div class=\"box-info-user\">\r\n        <p>Seus dados:</p>\r\n\r\n        <div class=\"box-input-user\">\r\n          <div class=\"box-input-name\">\r\n            <storybook-validator errorMessage=\"Campo obrigatório!\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"name\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Olá, qual seu nome? (ex. Jackson Neves)\">\r\n              </storybook-input>\r\n            </storybook-validator>\r\n          </div>\r\n\r\n          <div class=\"box-input-phone\">\r\n            <storybook-validator errorMessage=\"Campo obrigatório!\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"phone\"\r\n                                type=\"number\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Qual seu telefone? (ex. 47 9 9934-2827)\">\r\n              </storybook-input>\r\n            </storybook-validator>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-info-address\">\r\n        <p>Endereço de Entrega:</p>\r\n\r\n        <div class=\"wrapper-address\">\r\n          <div class=\"box-input-address\">\r\n            <storybook-validator errorMessage=\"Campo obrigatório!\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"address\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Qual seu endereço?\">\r\n              </storybook-input>\r\n            </storybook-validator>\r\n          </div>\r\n\r\n          <div class=\"box-input-number\">\r\n            <storybook-validator errorMessage=\"Campo obrigatório!\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"number\"\r\n                                type=\"number\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Número\">\r\n              </storybook-input>\r\n            </storybook-validator>\r\n          </div>\r\n\r\n          <div class=\"box-input-optional\">\r\n            <storybook-validator>\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"optionalAddress\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"Complemento\">\r\n              </storybook-input>\r\n          </storybook-validator>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-itens\">\r\n        <div class=\"content-itens\">\r\n          <p>Itens do Pedido:</p>\r\n          \r\n          <app-order-items  [items]=\"cartItems()\"\r\n                            (increaseQty)=\"increaseQty($event)\"\r\n                            (decreaseQty)=\"decreaseQty($event)\"\r\n                            (remove)=\"removeItem($event)\">\r\n          </app-order-items>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-payment\">\r\n        <div class=\"content-payment\">\r\n          <p>Formas de Pagamento:</p>\r\n          <storybook-radio-button   [options]=\"paymentOptions\"\r\n                                    formControlName=\"paymentOption\">\r\n          </storybook-radio-button>\r\n        </div>\r\n\r\n        <div class=\"content-delivery\">\r\n          <p>Frete e Total:</p>\r\n          <app-delivery-costs [delivery]=\"delivery\"\r\n                              [itemsValue]=\"itemsValue()\">\r\n          </app-delivery-costs>\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n    <div class=\"box-footer\">\r\n      <storybook-button fontBlack=\"true\"\r\n                        label=\"Voltar\"\r\n                        class=\"button-back\"\r\n                        [routerLink]=\"['/restaurant/jack-daniels']\">\r\n      </storybook-button>\r\n      <storybook-button primary=\"true\"\r\n                        icon=\"fa fa-credit-card\"\r\n                        label=\"Concluir Pedido\"\r\n                        (click)=\"checkOrder(orderForm.value)\"\r\n                        [disabled]=\"!orderForm.valid || cartItems().length === 0\"\r\n                        [routerLink]=\"['/order-summary']\">\r\n      </storybook-button>\r\n    </div>\r\n  </storybook-square-white>\r\n</div>"
+            "templateData": "<div class=\"body\">\r\n  <storybook-square-white>\r\n    <!-- {{ orderForm.valid }}\r\n    {{ orderForm.value | json }} -->\r\n    <form novalidate\r\n          [formGroup]=\"orderForm\">\r\n      <div class=\"box-header\">\r\n          <i class=\"fa fa-shopping-cart fa-lg\"></i>\r\n          <p>Finalize o seu pedido</p>\r\n      </div>\r\n\r\n      <div class=\"box-info-user\">\r\n        <p>Seus dados:</p>\r\n\r\n        <div class=\"box-input-user\">\r\n          <div class=\"box-input-name\">\r\n            <storybook-validator errorMessage=\"Campo obrigatório!\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"name\"\r\n                                autocomplete=\"off\"\r\n                                label=\"Nome:\"\r\n                                class=\"input-block-icon\"\r\n                                placeHolder=\"(ex. Jackson Neves)\">\r\n              </storybook-input>\r\n            </storybook-validator>\r\n          </div>\r\n\r\n          <div class=\"box-input-phone\">\r\n            <storybook-validator errorMessage=\"Campo obrigatório!\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"phone\"\r\n                                type=\"number\"\r\n                                label=\"Telefone:\"\r\n                                onkeypress=\"onlyNumber()\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"(ex. 47 9 9934-2827)\">\r\n              </storybook-input>\r\n            </storybook-validator>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-info-address\">\r\n        <p>Endereço de Entrega:</p>\r\n\r\n        <div class=\"wrapper-address\">\r\n          <div class=\"box-input-address\">\r\n            <storybook-validator errorMessage=\"Campo obrigatório!\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"address\"\r\n                                label=\"Endereço:\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"(ex: Rua chuville)\">\r\n              </storybook-input>\r\n            </storybook-validator>\r\n          </div>\r\n\r\n          <div class=\"box-input-number\">\r\n            <storybook-validator errorMessage=\"Campo obrigatório!\">\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"number\"\r\n                                type=\"number\"\r\n                                label=\"Número:\"\r\n                                onkeypress=\"onlyNumber()\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"(ex: 100)\">\r\n              </storybook-input>\r\n            </storybook-validator>\r\n          </div>\r\n\r\n          <div class=\"box-input-optional\">\r\n            <storybook-validator>\r\n              <storybook-input  ngDefaultControl\r\n                                formControlName=\"optionalAddress\"\r\n                                label=\"Complemento:\"\r\n                                autocomplete=\"off\"\r\n                                placeHolder=\"(ex: Apto 101, BL 1)\">\r\n              </storybook-input>\r\n          </storybook-validator>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-itens\">\r\n        <div class=\"content-itens\">\r\n          <p>Itens do Pedido:</p>\r\n          \r\n          <app-order-items  [items]=\"cartItems()\"\r\n                            (increaseQty)=\"increaseQty($event)\"\r\n                            (decreaseQty)=\"decreaseQty($event)\"\r\n                            (remove)=\"removeItem($event)\">\r\n          </app-order-items>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"box-payment\">\r\n        <div class=\"content-payment\">\r\n          <p>Formas de Pagamento:</p>\r\n          <storybook-radio-button   [options]=\"paymentOptions\"\r\n                                    formControlName=\"paymentOption\">\r\n          </storybook-radio-button>\r\n        </div>\r\n\r\n        <div class=\"content-delivery\">\r\n          <p>Frete e Total:</p>\r\n          <app-delivery-costs [delivery]=\"delivery\"\r\n                              [itemsValue]=\"itemsValue()\">\r\n          </app-delivery-costs>\r\n        </div>\r\n      </div>\r\n    </form>\r\n\r\n    <div class=\"box-footer\">\r\n      <storybook-button fontBlack=\"true\"\r\n                        label=\"Voltar\"\r\n                        class=\"button-back\"\r\n                        [routerLink]=\"['/restaurant/jack-daniels']\">\r\n      </storybook-button>\r\n      <storybook-button primary=\"true\"\r\n                        icon=\"fa fa-credit-card\"\r\n                        label=\"Concluir Pedido\"\r\n                        (click)=\"checkOrder(orderForm.value)\"\r\n                        [disabled]=\"!orderForm.valid || cartItems().length === 0\"\r\n                        [routerLink]=\"['/order-summary']\">\r\n      </storybook-button>\r\n    </div>\r\n  </storybook-square-white>\r\n</div>"
         },
         {
             "name": "OrderItemsComponent",
@@ -2898,14 +2930,14 @@
         },
         {
             "name": "SnackbarComponent",
-            "id": "component-SnackbarComponent-428498da360a85d3e1dd780254aec67a",
+            "id": "component-SnackbarComponent-21950c7e5777daeb15d86b629f8bc1b4",
             "file": "src/stories/components/snackbar/snackbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-snackbar",
+            "selector": "storybook-snackbar",
             "styleUrls": [
                 "./snackbar.component.css"
             ],
@@ -2948,7 +2980,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { state, style, trigger, transition, animate } from '@angular/animations';\nimport { tap, switchMap } from 'rxjs/operators';\nimport { timer } from 'rxjs';\n\nimport { NotificationService } from './notification.service';\n\n@Component({\n  selector: 'app-snackbar',\n  templateUrl: './snackbar.component.html',\n  styleUrls: ['./snackbar.component.css'],\n  animations: [\n    trigger('snack-visibility', [\n      state('hidden', style({\n        opacity: 0,\n        bottom: 0\n      })),\n      state('visible', style({\n        opacity: 1,\n        bottom: '30px'\n      })),\n      transition(\n        'hidden => visible',\n        animate('500ms 0s ease-in')\n      ),\n      transition(\n        'visible => hidden',\n        animate('500ms 0s ease-out')\n      )\n    ])\n  ]\n})\nexport class SnackbarComponent implements OnInit {\n\n  message: string;\n  snackVisibility = 'hidden';\n\n  constructor(private notificationService: NotificationService) { }\n\n  ngOnInit(): void {\n    this.notificationService.notifier\n      .pipe(\n        tap(message => {\n          this.message = message;\n          this.snackVisibility = 'visible';\n        }), switchMap(message => timer(2000))\n      ).subscribe(timer => this.snackVisibility = 'hidden');\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { state, style, trigger, transition, animate } from '@angular/animations';\nimport { tap, switchMap } from 'rxjs/operators';\nimport { timer } from 'rxjs';\n\nimport { NotificationService } from './notification.service';\n\n@Component({\n  selector: 'storybook-snackbar',\n  templateUrl: './snackbar.component.html',\n  styleUrls: ['./snackbar.component.css'],\n  animations: [\n    trigger('snack-visibility', [\n      state('hidden', style({\n        opacity: 0,\n        bottom: 0\n      })),\n      state('visible', style({\n        opacity: 1,\n        bottom: '30px'\n      })),\n      transition(\n        'hidden => visible',\n        animate('500ms 0s ease-in')\n      ),\n      transition(\n        'visible => hidden',\n        animate('500ms 0s ease-out')\n      )\n    ])\n  ]\n})\nexport class SnackbarComponent implements OnInit {\n\n  message: string;\n  snackVisibility = 'hidden';\n\n  constructor(private notificationService: NotificationService) { }\n\n  ngOnInit(): void {\n    this.notificationService.notifier\n      .pipe(\n        tap(message => {\n          this.message = message;\n          this.snackVisibility = 'visible';\n        }), switchMap(message => timer(2000))\n      ).subscribe(timer => this.snackVisibility = 'hidden');\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3182,7 +3214,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".success {\r\n    color: var(--color-secundary-dark);\r\n    padding-left: 15px;\r\n}\r\n\r\n.error {\r\n    color: var(--color-danger);\r\n    padding-left: 15px;\r\n}",
+                    "data": ".success {\r\n    color: var(--color-secundary-dark);\r\n    padding-left: 10px;\r\n    margin-top: -26px;\r\n    position: absolute;\r\n}\r\n\r\n.error {\r\n    color: var(--color-danger);\r\n    padding-left: 15px;\r\n}",
                     "styleUrl": "./validator.component.css"
                 }
             ],
@@ -3197,7 +3229,7 @@
                 "OnInit",
                 "AfterContentInit"
             ],
-            "templateData": "<div  class=\"form-group has-feedback\"\n      [class.has-success]=\"hasSuccess()\"\n      [class.has-error]=\"hasError()\">\n  <label class=\"control-label sr-only\" for=\"inputSuccess\">\n    <i class=\"fa fa-check\"></i> {{ label }}\n  </label>\n\n  <ng-content></ng-content>\n  \n  <span class=\"success\"\n        *ngIf=\"showTip && hasSuccess()\">\n    <i class=\"fa fa-check\"></i> Preenchido com sucesso!\n  </span>\n  <span class=\"error\"\n        *ngIf=\"showTip && hasError()\">\n    <i class=\"fa fa-remove\"></i> {{ errorMessage }}\n  </span>\n</div>\n"
+            "templateData": "<div  class=\"form-group has-feedback\"\n      [class.has-success]=\"hasSuccess()\"\n      [class.has-error]=\"hasError()\">\n  <label class=\"control-label sr-only\" for=\"inputSuccess\">\n    <i class=\"fa fa-check\"></i> {{ label }}\n  </label>\n\n  <ng-content></ng-content>\n  \n  <span class=\"success\"\n        *ngIf=\"showTip && hasSuccess()\">\n    <i class=\"fa fa-check fa-lg\"></i>\n  </span>\n  <span class=\"error\"\n        *ngIf=\"showTip && hasError()\">\n    <i class=\"fa fa-remove\"></i> {{ errorMessage }}\n  </span>\n</div>\n"
         }
     ],
     "modules": [
@@ -3428,17 +3460,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
             },
             {
                 "name": "Icon",
@@ -3555,9 +3587,33 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/components/rating/Rating.stories.ts",
+                "type": "Story<RatingComponent>",
+                "defaultValue": "(args: RatingComponent) => ({\r\n  component: RatingComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/input/Input.stories.ts",
+                "type": "Story<InputComponent>",
+                "defaultValue": "(args: InputComponent) => ({\r\n  component: InputComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/components/button/Button.stories.ts",
                 "type": "Story<ButtonComponent>",
                 "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/square-white/Square-white.stories.ts",
+                "type": "Story<SquareWhiteComponent>",
+                "defaultValue": "(args: SquareWhiteComponent) => ({\n  component: SquareWhiteComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -3574,30 +3630,6 @@
                 "file": "src/stories/components/snackbar/Snackbar.stories.ts",
                 "type": "Story<SnackbarComponent>",
                 "defaultValue": "(args: SnackbarComponent) => ({\r\n  component: SnackbarComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/components/rating/Rating.stories.ts",
-                "type": "Story<RatingComponent>",
-                "defaultValue": "(args: RatingComponent) => ({\r\n  component: RatingComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/components/square-white/Square-white.stories.ts",
-                "type": "Story<SquareWhiteComponent>",
-                "defaultValue": "(args: SquareWhiteComponent) => ({\n  component: SquareWhiteComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/components/input/Input.stories.ts",
-                "type": "Story<InputComponent>",
-                "defaultValue": "(args: InputComponent) => ({\r\n  component: InputComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "VILLE_API",
@@ -3629,16 +3661,6 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -3647,6 +3669,16 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true,\n  api: 'http://localhost:3000'\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  api: 'http://localhost:3000'\n}"
                 }
             ],
             "src/stories/components/button/Button.stories.ts": [
@@ -3965,7 +3997,7 @@
                 "linktype": "component",
                 "name": "OrderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/17",
                 "status": "low"
             },
             {
@@ -4211,7 +4243,7 @@
                 "linktype": "component",
                 "name": "InputComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {

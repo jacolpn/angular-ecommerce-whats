@@ -58,15 +58,16 @@ export class OrderComponent implements OnInit {
   onlyNumber(evt) {
     let theEvent = evt || window.event;
     let key = theEvent.keyCode || theEvent.which;
-    let regex = /^[0-9.]+$/;
     
     key = String.fromCharCode(key);
+    
+    let regex = /^[0-9.]+$/;
 
     if( !regex.test(key) ) {
        theEvent.returnValue = false;
        if(theEvent.preventDefault) theEvent.preventDefault();
     }
- }
+  }
 
   itemsValue(): number {
     return this.orderService.itemsValue();

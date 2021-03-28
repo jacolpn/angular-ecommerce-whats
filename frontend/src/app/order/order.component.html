@@ -18,7 +18,8 @@
               <storybook-input  ngDefaultControl
                                 formControlName="name"
                                 autocomplete="off"
-                                placeHolder="Olá, qual seu nome? (ex. Jackson Neves)">
+                                label="Nome:"
+                                placeHolder="(ex. Jackson Neves)">
               </storybook-input>
             </storybook-validator>
           </div>
@@ -28,9 +29,10 @@
               <storybook-input  ngDefaultControl
                                 formControlName="phone"
                                 type="number"
+                                label="Telefone:"
                                 onkeypress="onlyNumber()"
                                 autocomplete="off"
-                                placeHolder="Qual seu telefone? (ex. 47 9 9934-2827)">
+                                placeHolder="(ex. 47 9 9934-2827)">
               </storybook-input>
             </storybook-validator>
           </div>
@@ -45,8 +47,9 @@
             <storybook-validator errorMessage="Campo obrigatório!">
               <storybook-input  ngDefaultControl
                                 formControlName="address"
+                                label="Endereço:"
                                 autocomplete="off"
-                                placeHolder="Qual seu endereço?">
+                                placeHolder="(ex: Rua chuville)">
               </storybook-input>
             </storybook-validator>
           </div>
@@ -56,9 +59,10 @@
               <storybook-input  ngDefaultControl
                                 formControlName="number"
                                 type="number"
+                                label="Número:"
                                 onkeypress="onlyNumber()"
                                 autocomplete="off"
-                                placeHolder="Número">
+                                placeHolder="(ex: 100)">
               </storybook-input>
             </storybook-validator>
           </div>
@@ -67,8 +71,9 @@
             <storybook-validator>
               <storybook-input  ngDefaultControl
                                 formControlName="optionalAddress"
+                                label="Complemento:"
                                 autocomplete="off"
-                                placeHolder="Complemento">
+                                placeHolder="(ex: Apto 101, BL 1)">
               </storybook-input>
           </storybook-validator>
           </div>

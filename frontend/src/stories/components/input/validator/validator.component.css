@@ -1,6 +1,15 @@
+.has-feedback {
+    width: 100%;
+    position: relative;
+}
+
 .success {
     color: var(--color-secundary-dark);
-    padding-left: 15px;
+    padding-left: 101%;
+    margin-top: 5px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
 }
 
 .error {
