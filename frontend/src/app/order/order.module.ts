@@ -7,7 +7,6 @@ import { ComponentsModule } from '../../stories/components/components.module';
 import { DeliveryCostsComponent } from './delivery-costs/delivery-costs.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { OrderComponent } from './order.component';
-import { SharedModule } from './../shared/shared.module';
 
 const ROUTES: Routes = [
   { path: '', component: OrderComponent }
@@ -20,11 +19,10 @@ const ROUTES: Routes = [
     DeliveryCostsComponent
   ],
   imports: [
-    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    ComponentsModule,
+    ComponentsModule.forRoot(),
     RouterModule.forChild(ROUTES)
   ]
 })

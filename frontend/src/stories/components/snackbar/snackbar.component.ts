@@ -1,11 +1,12 @@
-import { timer } from 'rxjs';
-import { NotificationService } from './../notification.service';
 import { Component, OnInit } from '@angular/core';
 import { state, style, trigger, transition, animate } from '@angular/animations';
 import { tap, switchMap } from 'rxjs/operators';
+import { timer } from 'rxjs';
+
+import { NotificationService } from './notification.service';
 
 @Component({
-  selector: 'app-snackbar',
+  selector: 'storybook-snackbar',
   templateUrl: './snackbar.component.html',
   styleUrls: ['./snackbar.component.css'],
   animations: [

@@ -13,10 +13,10 @@ const ROUTES: Routes = [
 @NgModule({
   declarations: [AboutComponent],
   imports: [
-    ComponentsModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    ComponentsModule,
     RouterModule.forChild(ROUTES)
   ]
 })

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { MenuItem } from './../menu/menu-item.model';
 import { CartItem } from './shopping-cart.model';
-import { NotificationService } from './../../shared/messages/notification.service';
+import { NotificationService } from '../../../stories/components/snackbar/notification.service';
 
 @Injectable()
 export class ShoppingCartService {

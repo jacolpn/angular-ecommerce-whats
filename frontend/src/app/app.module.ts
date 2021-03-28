@@ -1,4 +1,3 @@
-import { SharedModule } from './shared/shared.module';
 import { ROUTES } from './app-route';
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
@@ -41,8 +40,7 @@ registerLocaleData(locatePt, 'pt');
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ComponentsModule,
-    SharedModule.forRoot(),
+    ComponentsModule.forRoot(),
     RouterModule.forRoot(
       ROUTES,
       { preloadingStrategy: PreloadAllModules }
