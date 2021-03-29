@@ -5,9 +5,8 @@
 
 .success {
     color: var(--color-secundary-dark);
-    padding-left: 101%;
+    padding-left: 15px;
     margin-top: 5px;
-    position: absolute;
     z-index: 1;
     width: 100%;
 }
