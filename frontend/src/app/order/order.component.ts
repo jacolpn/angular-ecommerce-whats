@@ -55,20 +55,6 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  onlyNumber(evt) {
-    let theEvent = evt || window.event;
-    let key = theEvent.keyCode || theEvent.which;
-    
-    key = String.fromCharCode(key);
-    
-    let regex = /^[0-9.]+$/;
-
-    if( !regex.test(key) ) {
-       theEvent.returnValue = false;
-       if(theEvent.preventDefault) theEvent.preventDefault();
-    }
-  }
-
   itemsValue(): number {
     return this.orderService.itemsValue();
   }
@@ -116,16 +102,15 @@ export class OrderComponent implements OnInit {
         this.orderService.clear();
       });
     }
+    
+    let phone = "5547988458640";
+    let whats = `Olá Whisky Ville, gostaria de realizar o seguinte pedido:\n\n` +
+                `*Produtos:* ${itens}.\n` +
+                `*Pagamento:* ${order.paymentOption}.\n` +
+                `*Entregar no endereço:* ${order.address}, Nº ${order.number}.\n\n` +
+                `(Ass. ${order.name}, ${order.phone})`
 
-    this.whatsApp =
-      `https://wa.me/5547988458640/?text=` +
-      `Olá VilleMeat, gostaria de${itens}. ` +
-      `Pagamento: ${order.paymentOption}. ` +
-      `Entregar no endereço: ${order.address}, Nº ${order.number}. ` +
-      `(Ass. ${order.name}, ${order.phone})`;
-
-    // window.location.href = this.whatsApp; 
-    this.router.navigate(['/order-summary']);
-    window.open(this.whatsApp, '_blank');
+    whats = window.encodeURIComponent(whats);
+    window.open("https://api.whatsapp.com/send?phone=" + phone + "&text=" + whats, '_blank');
   }
 }
