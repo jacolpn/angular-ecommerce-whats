@@ -46,4 +46,8 @@ export class SnackbarComponent implements OnInit {
         }), switchMap(message => timer(2000))
       ).subscribe(timer => this.snackVisibility = 'hidden');
   }
+
+  clicked() {
+    this.snackVisibility = 'hidden'
+  }
 }
