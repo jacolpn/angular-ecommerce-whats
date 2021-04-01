@@ -12,7 +12,7 @@ import { Restaurant } from '../restaurant.model';
 })
 export class MenuComponent implements OnInit {
   // menu: Observable<any>;
-  menu: any;
+   menu: any;
 
   constructor(private http: HttpClient) { }
 
@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
 
   getDB() {
     this.menu = this.http
-      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery/menu`)
+      .get<Restaurant>(`${VILLE_API}/restaurants/jack-daniels/menu`);
   }
 
   mockDB() {

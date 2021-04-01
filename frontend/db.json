@@ -18,31 +18,31 @@
       "name": "Jack Daniel's",
       "description": "Diferencia-se pelo seu cuidadoso processo de elaboração, destilação e envelhecimento.",
       "price": 136.99,
-      "restaurantId": "bread-bakery"
+      "restaurantId": "jack-daniels"
     },
     {
       "id": "jack-daniels-fire",
       "imagePath": "assets/img/foods/jack-daniels-fire.png",
       "name": "Jack Daniels Fire",
       "description": " Jack Daniels Fire destaca-se pela mistura natural de licor de canela picante com o clássico whiskey Americano Jack Daniels.",
-      "price": 149.90,
-      "restaurantId": "bread-bakery"
+      "price": 149.9,
+      "restaurantId": "jack-daniels"
     },
     {
       "id": "jack-daniels-honey",
       "imagePath": "assets/img/foods/jack-daniels-honey.png",
       "name": "Jack Daniels Honey",
       "description": "Suavidade do Jack Daniel levemente temperada com mel.",
-      "price": 136.90,
-      "restaurantId": "bread-bakery"
+      "price": 136.9,
+      "restaurantId": "jack-daniels"
     },
     {
       "id": "jack-daniels-apple",
       "imagePath": "assets/img/foods/jack-daniels-apple.png",
       "name": "Jack Daniels Apple",
       "description": "A nova bebida é a mistura do clássico Jack Daniels Tennessee Whiskey com licor de maçã.",
-      "price": 134.90,
-      "restaurantId": "bread-bakery"
+      "price": 134.9,
+      "restaurantId": "jack-daniels"
     }
   ],
   "reviews": [
@@ -51,28 +51,28 @@
       "date": "2017-01-23T18:25:43",
       "rating": 4.5,
       "comments": "Tudo muito bom, entrega no tempo certo",
-      "restaurantId": "bread-bakery"
+      "restaurantId": "jack-daniels"
     },
     {
       "name": "Aline",
       "date": "2016-12-12T18:25:43",
       "rating": 3,
       "comments": "NÃO recomendo. O recheio é só um creme, não tem camarão e nem carne",
-      "restaurantId": "bread-bakery"
+      "restaurantId": "jack-daniels"
     },
     {
       "name": "Renata",
       "date": "2016-12-12T18:25:43",
       "rating": 2,
       "comments": "Não foi muito agradável ao nosso paladar, e eu e meu esposo no outro dia passamos super mal. Pode até ter sido outra coisa, mas...",
-      "restaurantId": "bread-bakery"
+      "restaurantId": "jack-daniels"
     },
     {
       "name": "Renata",
       "date": "2016-12-12T18:25:43",
       "rating": 5,
       "comments": "Nunca deixou na mão, comida sempre deliciosa.",
-      "restaurantId": "bread-bakery"
+      "restaurantId": "jack-daniels"
     }
   ],
   "orders": [
@@ -119,6 +119,22 @@
         }
       ],
       "id": 2
+    },
+    {
+      "name": "Jackson Neves",
+      "phone": "999342827",
+      "address": "Rua Xanxerê",
+      "number": "650",
+      "optionalAddress": "Apto 104",
+      "paymentOption": "Dinheiro",
+      "orderItems": [
+        {
+          "quantity": 3,
+          "menuId": "jack-daniels-black",
+          "name": "Jack Daniel's"
+        }
+      ],
+      "id": 3
     }
   ]
 }

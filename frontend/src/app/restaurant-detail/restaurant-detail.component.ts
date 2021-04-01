@@ -39,7 +39,7 @@ export class RestaurantDetailComponent implements OnInit {
 
   getDB() {
     this.http
-      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery`)
+      .get<Restaurant>(`${VILLE_API}/restaurants/jack-daniels`)
       .subscribe( restaurant => this.restaurant = restaurant );
   }
 }

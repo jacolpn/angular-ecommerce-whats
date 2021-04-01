@@ -29,7 +29,7 @@ export class ReviewsComponent implements OnInit {
 
   getDB() {
     this.reviews = this.http
-      .get<Restaurant>(`${VILLE_API}/restaurants/bread-bakery/reviews`)
+      .get<Restaurant>(`${VILLE_API}/restaurants/jack-daniels/reviews`)
       .pipe(tap(console.log));
   }
 
