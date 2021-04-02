@@ -44,7 +44,7 @@ export class OrderComponent implements OnInit {
       ),
       address: this.formBuilder.control(
         '',
-        [Validators.required, Validators.minLength(5)]
+        [Validators.required]
       ),
       number: this.formBuilder.control(
         '',
@@ -53,6 +53,16 @@ export class OrderComponent implements OnInit {
       optionalAddress: new FormControl(''),  // { updateOn: 'blur' }
       paymentOption: this.formBuilder.control('', [Validators.required])
     });
+  }
+
+  applyError(controlName) {
+    if (this.orderForm.get(controlName).valid && this.orderForm.get(controlName).dirty) {
+      return 'has-feedback'
+    }
+
+    if (this.orderForm.get(controlName).invalid && this.orderForm.get(controlName).dirty) {
+      return 'has-error'
+    }
   }
 
   itemsValue(): number {

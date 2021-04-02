@@ -1,6 +1,17 @@
 <div class="input-block">
   <span>{{ label }}</span>
+  
   <input  [type]="type"
           [placeholder]="placeHolder"
-          autocomplete="off" />
+          autocomplete="off"
+          [class]="class" />
+</div>
+
+<div class="content-error">
+  <span class="error"
+        *ngIf="class == 'has-error'">
+    <i class="fa fa-remove"></i> 
+    
+    <p>{{ errorMessage }}</p>
+  </span>
 </div>

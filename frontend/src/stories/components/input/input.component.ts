@@ -7,8 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class InputComponent implements OnInit {
   @Input() placeHolder = 'Story-Input';
-  @Input() type = 'text';
-  @Input() label = '';
+  @Input() errorMessage: string;
+  @Input() type: string = 'text';
+  @Input() label: string = '';
+  @Input() class: string;
   
   constructor() { }
 
