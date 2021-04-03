@@ -21,6 +21,7 @@ a:hover {
 
 .box-item {
     display: grid;
+    text-align: justify;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 1em;
@@ -67,5 +68,16 @@ a:hover {
         width: 91%;
         padding: 15px;
         margin: 4px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .values-item {
+        display: inline;
+        text-align: center;
+    }
+
+    .price-item {
+        margin-top: 12px;
     }
 }

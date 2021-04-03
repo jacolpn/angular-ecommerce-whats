@@ -33,6 +33,9 @@ export class OrderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //Direcionar a pagina ao topo quando iniciada.
+    window.scrollTo(0, 0);
+
     this.orderForm = this.formBuilder.group({
       name: this.formBuilder.control(
         '',
