@@ -20,16 +20,25 @@ export class RadioButtonComponent implements OnInit, ControlValueAccessor {
   @Input() options: RadioOption[];
 
   value: any;
+  label: any;
+  cents: number;
   onChange: any;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  setValue(value: any) {
-    this.value = value;
-    this.onChange(this.value);
+  setValue(value: any, label: any, cents?: any) {
+    this.label = label;
+    this.onChange(this.label);
+    
+    if (label == 'Dinheiro' && cents != undefined && cents != 'Nenhum') {
+      this.value = `${value} (_troco para R$: ${this.cents},00_)`;
+      this.onChange(this.value);  
+    } else {
+      this.value = value;
+      this.onChange(this.value);
+    }
   }
 
   writeValue(obj: any): void {

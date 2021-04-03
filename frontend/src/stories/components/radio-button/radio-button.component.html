@@ -1,12 +1,33 @@
-<div *ngFor="let option of options">
-  <input  (click)="setValue(option.value)"
-          [class.checked]="option.value === value"
-          aria-checked="false"
-          aria-disabled="false"
-          type="radio"
-          name="option.value"
-          value="option.value"/>
-  <span>
-    {{ option.label }}
-  </span>
+<div  *ngFor="let option of options"
+      class="wrapper">
+  <div>
+    <input  (click)="setValue(option.value, option.label, cents)"
+            [class.checked]="option.value === value"
+            aria-checked="false"
+            aria-disabled="false"
+            type="radio"
+            name="option.label"
+            value="option.value" #radio/>
+    <span>
+      {{ option.label }}
+    </span>
+  </div>
+  
+  <div  class="input-money"
+        *ngIf="option.label == 'Dinheiro' && label == 'Dinheiro'">
+    <div class="box-select">
+      <span>Troco: </span>
+
+      <select class="imobBoxTipo"
+              [(ngModel)]="cents"
+              (ngModelChange)="setValue(option.value, option.label, cents)">
+        <option>Nenhum</option>
+        <option [ngValue]="cent"
+                *ngFor="let cent of option.cents">
+          {{ cent | currency: 'BRL'}}
+        </option>
+      </select>
+    </div>
+    <span class="span-optional">Opcional</span>
+  </div>
 </div>

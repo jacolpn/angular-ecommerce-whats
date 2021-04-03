@@ -21,8 +21,8 @@ export class OrderComponent implements OnInit {
   whatsApp = null;
 
   paymentOptions: RadioOption[] = [
-    { label: 'Dinheiro', value: 'Dinheiro' },
-    { label: 'Cartão de débito', value: 'Cartão Débito' },
+    { label: 'Dinheiro', value: 'Dinheiro', cents: [50, 100, 150, 200] },
+    { label: 'Cartão de débito', value: 'Cartão de débito' },
     { label: 'Vale refeição', value: 'Vale Refeição' }
   ];
 

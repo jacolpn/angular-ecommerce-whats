@@ -13,11 +13,11 @@ import { NotificationService } from './notification.service';
     trigger('snack-visibility', [
       state('hidden', style({
         opacity: 0,
-        bottom: 0
+        bottom: '-50px'
       })),
       state('visible', style({
         opacity: 1,
-        bottom: '30px'
+        bottom: '20px'
       })),
       transition(
         'hidden => visible',
