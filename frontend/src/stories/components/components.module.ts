@@ -1,6 +1,7 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TextMaskModule } from 'angular2-text-mask';
 
 import { ButtonComponent } from './button/button.component';
 import { SquareWhiteComponent } from './square-white/square-white.component';
@@ -26,7 +27,8 @@ import { PhoneMaskDirective } from './phone-mask.directive';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TextMaskModule
   ],
   exports: [
     ButtonComponent,

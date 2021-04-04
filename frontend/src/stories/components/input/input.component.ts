@@ -11,8 +11,14 @@ export class InputComponent implements OnInit {
   @Input() type: string = 'text';
   @Input() label: string = '';
   @Input() class: string;
-  
+
   constructor() { }
 
   ngOnInit(): void { }
+
+  public mask = {
+    guide: false,
+    showMask: false,
+    mask: ['(', /\d/, /\d/, ')', ' ', /\d/, ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+  };
 }

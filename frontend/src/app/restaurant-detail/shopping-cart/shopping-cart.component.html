@@ -16,9 +16,9 @@
         <div  class="table-responsive"
               *ngIf="items().length">
             <div class="table">
-              <div *ngFor="let item of items()"
-                  [@row]="rowState"
-                  class="tb-itens">
+              <div  *ngFor="let item of items()"
+                    [@row]="rowState"
+                    class="tb-itens">
                 <p class="tb-name">
                   ({{ item.quantity }}x)
                   {{ item.menuItem.name }}

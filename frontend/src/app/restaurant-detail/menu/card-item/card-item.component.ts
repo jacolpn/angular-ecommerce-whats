@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { trigger, transition, state, style, animate } from '@angular/animations';
 
 import { MenuItem } from '../menu-item.model';
+import { ShoppingCartService } from '../../shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'storybook-card-item',
@@ -22,12 +23,63 @@ export class CardItemComponent implements OnInit {
   @Output() add = new EventEmitter();
   
   menuItemState = 'ready';
+  quantity: number;
 
-  constructor() { }
+  constructor(private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit(): void { }
 
   emitAddEvent() {
-    this.add.emit(this.menuItem); 
+    this.add.emit(this.menuItem);
+
+    this.shoppingCartService.items.find(item => {
+      if (item.menuItem.id == this.menuItem.id) {
+        return this.quantity = item.quantity;
+      }
+      
+      return;
+    });
+  }
+
+  listIdCart() {
+    return this.shoppingCartService.items.map(item => {
+      return item.menuItem.id;
+    });
+  }
+
+  findIdCart() {
+    return this.listIdCart().find(itemId => {
+      if (itemId == this.menuItem.id) {
+        return true
+      }
+    });
+  }
+
+  emitIncreaseQty(itemCart: MenuItem) {
+    this.shoppingCartService.increaseQty(this.shoppingCartService.items.find(item => {
+      if (item.menuItem.id == itemCart.id) {
+        return item.quantity;
+      }
+    }));
+
+    this.findQuantity(itemCart);
+  }
+
+  emitDecreaseQty(itemCart: MenuItem) {
+    this.shoppingCartService.decreaseQty(this.shoppingCartService.items.find(item => {
+      if (item.menuItem.id == itemCart.id) {
+        return item.quantity;
+      }
+    }));
+
+    this.findQuantity(itemCart);
+  }
+
+  findQuantity(itemCart: MenuItem) {
+    this.shoppingCartService.items.find(item => {
+      if (item.menuItem.id == itemCart.id) {
+        return this.quantity = item.quantity;
+      }
+    });
   }
 }

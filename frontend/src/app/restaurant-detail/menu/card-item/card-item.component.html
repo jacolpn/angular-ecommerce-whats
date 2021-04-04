@@ -14,10 +14,20 @@
           <span>
             {{ menuItem.price | currency: 'BRL': 'symbol' }}
           </span>
-          <a (click)="emitAddEvent()">
+          <a (click)="emitAddEvent()" *ngIf="!(findIdCart() == menuItem.id)">
             <i class="fa fa-plus-circle"></i>
             Adicionar
           </a>
+
+          <div *ngIf="findIdCart() == menuItem.id && quantity > 0" class="content-buttons">
+            <a (click)="emitDecreaseQty(menuItem)" class="round-border">
+              <i class="fa fa-minus"></i>
+            </a>
+            {{ quantity }}
+            <a (click)="emitIncreaseQty(menuItem)" class="round-border">
+              <i class="fa fa-plus"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>

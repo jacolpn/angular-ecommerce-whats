@@ -86,7 +86,6 @@ span {
 
 .span-optional {
     font-size: xx-small;
-    padding-left: 98px;
 }
 
 @media (max-width: 1100px) {
@@ -98,5 +97,9 @@ span {
     input[type='radio']:checked:after {
         top: -2.4px;
         left: -2.4px;
+    }
+
+    .input-money {
+        width: 200px;
     }
 }
