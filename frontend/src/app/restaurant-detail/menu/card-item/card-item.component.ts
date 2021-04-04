@@ -27,7 +27,9 @@ export class CardItemComponent implements OnInit {
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.findQuantity(this.menuItem);
+   }
 
   emitAddEvent() {
     this.add.emit(this.menuItem);

@@ -20,6 +20,9 @@ $ `npm run storybook` (port 6006)
 # Font's:
 $ `Foi adicionado as fontes 'Archivo' e 'Poppins'`.
 
+# Package's:
+$ `npm i angular2-text-mask`
+
 # OBS:
 $ Em caso de erro ao inciar o projeto, deletar o `package-lock.json`.
 $ Alterar tamanho dos ícones font-awesome: `fa-xs, fa-sm, fa-lg, fa-2x, fa-3x, fa-5x, fa-7x, fa-10x`.

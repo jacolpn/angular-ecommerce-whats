@@ -1,6 +1,6 @@
 <div  *ngFor="let option of options"
       class="wrapper">
-  <div>
+  <div class="content">
     <input  (click)="setValue(option.value, option.label, cents)"
             [class.checked]="option.value === value"
             aria-checked="false"
