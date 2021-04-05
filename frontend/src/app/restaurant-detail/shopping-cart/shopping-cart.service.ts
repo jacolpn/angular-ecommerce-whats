@@ -9,6 +9,7 @@ export class ShoppingCartService {
   items: CartItem[] = [];
 
   constructor(private notificationService: NotificationService) {}
+  
   clear() {
     this.items = [];
   }

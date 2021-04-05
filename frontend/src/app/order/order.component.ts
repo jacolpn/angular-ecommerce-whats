@@ -19,11 +19,16 @@ export class OrderComponent implements OnInit {
   delivery = 3.99;
   orderId: string;
   whatsApp = null;
+  name = '';
+  phone = '';
+  address = '';
+  number = '';
+  optionalAddress = '';
 
   paymentOptions: RadioOption[] = [
     { label: 'Dinheiro', value: 'Dinheiro', cents: [50, 100, 150, 200] },
     { label: 'Cartão de débito', value: 'Cartão de débito' },
-    { label: 'Vale refeição', value: 'Vale Refeição' }
+    { label: 'Vale refeição (Alelo)', value: 'Vale Refeição' }
   ];
 
   constructor(
@@ -35,6 +40,8 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     //Direcionar a pagina ao topo quando iniciada.
     window.scrollTo(0, 0);
+
+    this.showLocalStorageValue();
 
     this.orderForm = this.formBuilder.group({
       name: this.formBuilder.control(
@@ -120,10 +127,26 @@ export class OrderComponent implements OnInit {
     let whats = `Olá Whisky Ville, gostaria de realizar o seguinte pedido:\n\n` +
                 `*Produtos:* ${itens}.\n` +
                 `*Pagamento:* ${order.paymentOption}.\n` +
-                `*Entregar no endereço:* ${order.address}, Nº ${order.number}.\n\n` +
+                `*Entregar no endereço:* ${order.address}, Nº ${order.number} - ${order.optionalAddress}.\n\n` +
                 `(Ass. ${order.name}, ${order.phone})`
 
     whats = window.encodeURIComponent(whats);
     window.open("https://api.whatsapp.com/send?phone=" + phone + "&text=" + whats, '_blank');
+  }
+
+  saveLocalStorage(key, value) {
+    localStorage.setItem(key, value);
+  }
+
+  showLocalStorageValue() {
+    this.name = localStorage.getItem('name');
+    this.phone = localStorage.getItem('phone');
+    this.address = localStorage.getItem('address');
+    this.number = localStorage.getItem('number');
+    this.optionalAddress = localStorage.getItem('optionalAddress');
+  }
+
+  removeRegisterLocalStorage(key) {
+    return localStorage.removeItem(key);
   }
 }

@@ -15,6 +15,9 @@
         <div class="box-input-user">
           <div class="box-input-name">
             <storybook-input  ngDefaultControl
+                              [(ngModel)]="name"
+                              (focusout)="saveLocalStorage('name', name)"
+                              [value]="name"
                               formControlName="name"
                               autocomplete="off"
                               label="Nome: *"
@@ -27,6 +30,9 @@
           <div class="box-input-phone">
             <storybook-input  ngDefaultControl
                               formControlName="phone"
+                              [value]="phone"
+                              [(ngModel)]="phone"
+                              (focusout)="saveLocalStorage('phone', phone)"
                               type="number"
                               label="Telefone: *"
                               autocomplete="off"
@@ -45,6 +51,9 @@
           <div class="box-input-address">
             <storybook-input  ngDefaultControl
                               formControlName="address"
+                              [value]="address"
+                              [(ngModel)]="address"
+                              (focusout)="saveLocalStorage('address', address)"
                               label="Endereço: *"
                               autocomplete="off"
                               placeHolder="(ex: Rua chuville)"
@@ -56,6 +65,9 @@
           <div class="box-input-number">
             <storybook-input  ngDefaultControl
                               formControlName="number"
+                              [value]="number"
+                              [(ngModel)]="number"
+                              (focusout)="saveLocalStorage('number', number)"
                               type="number"
                               label="Número: *"
                               autocomplete="off"
@@ -68,6 +80,9 @@
           <div class="box-input-optional">
             <storybook-input  ngDefaultControl
                               formControlName="optionalAddress"
+                              [value]="optionalAddress"
+                              [(ngModel)]="optionalAddress"
+                              (focusout)="saveLocalStorage('optionalAddress', optionalAddress)"
                               [class]="applyError('optionalAddress')"
                               label="Complemento:"
                               autocomplete="off"
@@ -92,8 +107,8 @@
       <div class="box-payment">
         <div class="content-payment">
           <p>Formas de Pagamento:</p>
-          <storybook-radio-button   [options]="paymentOptions"
-                                    formControlName="paymentOption">
+          <storybook-radio-button [options]="paymentOptions"
+                                  formControlName="paymentOption">
           </storybook-radio-button>
         </div>
 
@@ -108,7 +123,7 @@
 
     <div class="box-footer">
       <storybook-button fontBlack="true"
-                        label="Voltar"
+                        label="Escolher mais produtos"
                         class="button-back"
                         [routerLink]="['/restaurant/jack-daniels']">
       </storybook-button>

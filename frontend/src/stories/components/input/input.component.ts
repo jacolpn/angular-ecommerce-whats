@@ -11,6 +11,7 @@ export class InputComponent implements OnInit {
   @Input() type: string = 'text';
   @Input() label: string = '';
   @Input() class: string;
+  @Input() value: any;
 
   constructor() { }
 
