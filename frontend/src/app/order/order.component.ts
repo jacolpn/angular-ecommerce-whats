@@ -6,6 +6,7 @@ import { tap } from 'rxjs/operators';
 import { Order, OrderItem } from './order.model';
 import { OrderService } from './order.service';
 import { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';
+import { DB } from 'src/app/app.api';
 import * as data from '../../../db.json';
 
 @Component({
@@ -96,7 +97,6 @@ export class OrderComponent implements OnInit {
   }
 
   checkOrder(order: Order) {
-    let db = false;
     let itens = [];
     
     order.orderItems = this
@@ -108,17 +108,14 @@ export class OrderComponent implements OnInit {
         ));
         
     itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));
-        
-    if (db) {
+
+    if (DB) {
       this.orderService
         .checkOrder(order)
-        .pipe(tap((orderId: string) => {
-          this.orderId = orderId;
-      })).subscribe((orderId: string) => {
-        this.orderService.clear();
-      });
+        .pipe(tap((orderId: string) => this.orderId = orderId))
+        .subscribe(() => this.orderService.clear());
     }
-    
+
     let phone = "5547988458640";
     let whats = `Olá Whisky Ville, gostaria de realizar o seguinte pedido:\n\n` +
                 `*Produtos:* ${itens}.\n` +

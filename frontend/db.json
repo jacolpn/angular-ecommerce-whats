@@ -1,5 +1,5 @@
 {
-   "restaurants": [
+  "restaurants": [
     {
       "id": "jack-daniels",
       "name": "Jack Daniels",
@@ -12,9 +12,26 @@
     }
   ],
   "paymentOptions": [
-    { "label": "Dinheiro", "value": "Dinheiro", "cents": [50, 100, 150, 200] },
-    { "label": "Cartão de débito", "value": "Cartão de débito", "cents": [] },
-    { "label": "Vale refeição (Alelo)", "value": "Vale Refeição", "cents": [] }
+    {
+      "label": "Dinheiro",
+      "value": "Dinheiro",
+      "cents": [
+        50,
+        100,
+        150,
+        200
+      ]
+    },
+    {
+      "label": "Cartão de débito",
+      "value": "Cartão de débito",
+      "cents": []
+    },
+    {
+      "label": "Vale refeição (Alelo)",
+      "value": "Vale Refeição",
+      "cents": []
+    }
   ],
   "menu": [
     {
@@ -80,7 +97,7 @@
       "restaurantId": "jack-daniels"
     }
   ],
- "orders": [
+  "orders": [
     {
       "name": "Jackson Neves",
       "email": "jacoLPN@outlook.com",
@@ -140,6 +157,69 @@
         }
       ],
       "id": 3
+    },
+    {
+      "name": "Jackson Neves",
+      "phone": "53988458640",
+      "address": "Rua Xanxerê",
+      "number": "650",
+      "optionalAddress": "Apto 104, BL 03",
+      "paymentOption": "Cartão de débito",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "jack-daniels-black",
+          "name": "Jack Daniel's"
+        },
+        {
+          "quantity": 1,
+          "menuId": "jack-daniels-fire",
+          "name": "Jack Daniels Fire"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Jackson Neves",
+      "phone": "53988458640",
+      "address": "Rua Xanxerê",
+      "number": "650",
+      "optionalAddress": "Apto 104, BL 03",
+      "paymentOption": "Dinheiro (_troco para R$: 100,00_)",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "jack-daniels-apple",
+          "name": "Jack Daniels Apple"
+        },
+        {
+          "quantity": 1,
+          "menuId": "jack-daniels-honey",
+          "name": "Jack Daniels Honey"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "Jackson Neves",
+      "phone": "53988458640",
+      "address": "Rua Xanxerê",
+      "number": "650",
+      "optionalAddress": "Apto 104, BL 03",
+      "paymentOption": "Cartão de débito",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "jack-daniels-black",
+          "name": "Jack Daniel's"
+        },
+        {
+          "quantity": 1,
+          "menuId": "jack-daniels-fire",
+          "name": "Jack Daniels Fire"
+        }
+      ],
+      "id": 6
     }
   ]
 }

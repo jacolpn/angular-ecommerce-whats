@@ -1,17 +1,15 @@
 <section class="wrapper-menu">
   <div class="content">
     <div class="content-card">
-      <!-- *ngFor="let item of menu | async" -->
-      <storybook-card-item
-        *ngFor="let item of menu"
-        [menuItem]="item"
-        (add)="shoppingCart.addItem($event)"
-      >
+      <storybook-card-item  *ngFor="let item of menu"
+                            [menuItem]="item"
+                            (add)="shoppingCart.addItem($event)">
       </storybook-card-item>
     </div>
 
     <div class="content-cart">
-      <app-shopping-cart #shoppingCart></app-shopping-cart>
+      <app-shopping-cart #shoppingCart>
+      </app-shopping-cart>
     </div>
   </div>
 </section>

@@ -2,28 +2,21 @@
   <div>
     <div class="content"
     *ngFor="let review of reviews">
-    <!-- *ngFor="let review of reviews | async" -->
       <storybook-square-white classContent="content content-width-10">
         <div class="box-header">
           <div class="box-info">
-            <img
-              *ngIf="review.rating < 3"
-              alt="User Image"
-              class="img-circle"
-              src="assets/img/reactions/pissed.png"
-            >
-            <img
-              *ngIf="review.rating >= 3 && review.rating < 4"
-              alt="User Image"
-              class="img-circle"
-              src="assets/img/reactions/soso.png"
-            >
-            <img
-              *ngIf="review.rating >= 4"
-              alt="User Image"
-              class="img-circle"
-              src="assets/img/reactions/loved.png"
-            >
+            <img  *ngIf="review.rating < 3"
+                  alt="User Image"
+                  class="img-circle"
+                  src="assets/img/reactions/pissed.png">
+            <img  *ngIf="review.rating >= 3 && review.rating < 4"
+                  alt="User Image"
+                  class="img-circle"
+                  src="assets/img/reactions/soso.png">
+            <img  *ngIf="review.rating >= 4"
+                  alt="User Image"
+                  class="img-circle"
+                  src="assets/img/reactions/loved.png">
             <div class="box-user-date">
               <span class="username">
                 {{ review.name }}
