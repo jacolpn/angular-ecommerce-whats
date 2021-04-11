@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 
 import { VILLE_API } from './../../app.api';
 import { Restaurant } from '../restaurant.model';
+import * as data from '../../../../db.json';
 
 @Component({
   selector: 'app-reviews',
@@ -14,6 +15,7 @@ import { Restaurant } from '../restaurant.model';
 export class ReviewsComponent implements OnInit {
   // reviews: Observable<any>;
   reviews: any;
+  dbJson = data.reviews;
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +25,7 @@ export class ReviewsComponent implements OnInit {
     if (db) {
       this.getDB();
     } else {
-      this.mockDB();
+      this.reviews = this.dbJson;
     }
   }
 
@@ -31,38 +33,5 @@ export class ReviewsComponent implements OnInit {
     this.reviews = this.http
       .get<Restaurant>(`${VILLE_API}/restaurants/jack-daniels/reviews`)
       .pipe(tap(console.log));
-  }
-
-  mockDB() {
-    this.reviews = [
-      {
-        "name": "Julia",
-        "date": "2017-01-23T18:25:43",
-        "rating": 4.5,
-        "comments": "Tudo muito bom, entrega no tempo certo",
-        "restaurantId": "jack-daniels"
-      },
-      {
-        "name": "Aline",
-        "date": "2016-12-12T18:25:43",
-        "rating": 3,
-        "comments": "NÃO recomendo. O recheio é só um creme, não tem camarão e nem carne",
-        "restaurantId": "jack-daniels"
-      },
-      {
-        "name": "Jackson Neves",
-        "date": "2016-12-12T18:25:43",
-        "rating": 2,
-        "comments": "Não foi muito agradável ao nosso paladar, e eu e meu esposo no outro dia passamos super mal. Pode até ter sido outra coisa, mas...",
-        "restaurantId": "jack-daniels"
-      },
-      {
-        "name": "Renata",
-        "date": "2016-12-12T18:25:43",
-        "rating": 5,
-        "comments": "Nunca deixou na mão, comida sempre deliciosa.",
-        "restaurantId": "jack-daniels"
-      }
-    ];
   }
 }

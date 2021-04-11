@@ -66,6 +66,7 @@ span {
 
 .box-select > select {
     margin-left: 4px;
+    cursor: pointer;
 }
 
 .imobBoxTipo {

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { VILLE_API } from 'src/app/app.api';
 import { Restaurant } from '../restaurant.model';
+import * as data from '../../../../db.json';
 
 @Component({
   selector: 'app-menu',
@@ -13,6 +14,7 @@ import { Restaurant } from '../restaurant.model';
 export class MenuComponent implements OnInit {
   // menu: Observable<any>;
    menu: any;
+   dbJson = data.menu;
 
   constructor(private http: HttpClient) { }
 
@@ -22,49 +24,12 @@ export class MenuComponent implements OnInit {
     if (db) {
       this.getDB();
     } else {
-      this.mockDB();
+      this.menu = this.dbJson;
     }
   }
 
   getDB() {
     this.menu = this.http
       .get<Restaurant>(`${VILLE_API}/restaurants/jack-daniels/menu`);
-  }
-
-  mockDB() {
-    this.menu = [
-      {
-        "id": "jack-daniels-black",
-        "imagePath": "assets/img/foods/jack-daniels-black.png",
-        "name": "Jack Daniels",
-        "description": "Diferencia-se pelo seu cuidadoso processo de elaboração, destilação e envelhecimento.",
-        "price": 136.99,
-        "restaurantId": "jack-daniels"
-      },
-      {
-        "id": "jack-daniels-fire",
-        "imagePath": "assets/img/foods/jack-daniels-fire.png",
-        "name": "Jack Daniels Fire",
-        "description": " Jack Daniels Fire destaca-se pela mistura natural de licor de canela picante com o clássico whiskey Americano Jack Daniels.",
-        "price": 149.90,
-        "restaurantId": "jack-daniels"
-      },
-      {
-        "id": "jack-daniels-honey",
-        "imagePath": "assets/img/foods/jack-daniels-honey.png",
-        "name": "Jack Daniels Honey",
-        "description": "Suavidade do Jack Daniel levemente temperada com mel.",
-        "price": 136.90,
-        "restaurantId": "jack-daniels"
-      },
-      {
-        "id": "jack-daniels-apple",
-        "imagePath": "assets/img/foods/jack-daniels-apple.png",
-        "name": "Jack Daniels Apple",
-        "description": "A nova bebida é a mistura do clássico Jack Daniels Tennessee Whiskey com licor de maçã.",
-        "price": 134.90,
-        "restaurantId": "jack-daniels"
-      }
-    ];
   }
 }

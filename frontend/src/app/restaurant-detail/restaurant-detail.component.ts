@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { VILLE_API } from './../app.api';
 import { Restaurant } from './restaurant.model';
+import * as data from '../../../db.json';
 
 @Component({
   selector: 'app-restaurant-detail',
@@ -11,6 +12,7 @@ import { Restaurant } from './restaurant.model';
 })
 export class RestaurantDetailComponent implements OnInit {
   restaurant: Restaurant;
+  dbJson = data.restaurants[0];
 
   constructor(private http: HttpClient) { }
 
@@ -20,20 +22,7 @@ export class RestaurantDetailComponent implements OnInit {
     if (db) {
       this.getDB();
     } else {
-      this.mockDB();
-    }
-  }
-
-  mockDB() {
-    this.restaurant = {
-      "id": "jack-daniels",
-      "name": "Jack Daniel's",
-      "category": "Whisky",
-      "deliveryEstimate": "25m",
-      "rating": 9.9,
-      "imagePath": "assets/img/restaurants/jack-daniels.png",
-      "about": "Mais de 150 anos se passaram desde que Nearest e Jack começaram a fazer whiskey juntos e, até hoje, sempre houve um membro da família Green trabalhando na Destilaria Jack Daniel.",
-      "hours": "Funciona de segunda à segunda, de 00h às 23h"
+      this.restaurant = this.dbJson;
     }
   }
 

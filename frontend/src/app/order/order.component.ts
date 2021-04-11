@@ -6,7 +6,7 @@ import { tap } from 'rxjs/operators';
 import { Order, OrderItem } from './order.model';
 import { OrderService } from './order.service';
 import { CartItem } from './../restaurant-detail/shopping-cart/shopping-cart.model';
-import { RadioOption } from '../../stories/components/radio-button/radio-option.model';
+import * as data from '../../../db.json';
 
 @Component({
   selector: 'app-order',
@@ -18,18 +18,14 @@ export class OrderComponent implements OnInit {
   orderForm: FormGroup;
   delivery = 3.99;
   orderId: string;
-  whatsApp = null;
+  dbJson = data.paymentOptions;
+  urlToJson = 'assets/order.json';
+
   name = '';
   phone = '';
   address = '';
   number = '';
   optionalAddress = '';
-
-  paymentOptions: RadioOption[] = [
-    { label: 'Dinheiro', value: 'Dinheiro', cents: [50, 100, 150, 200] },
-    { label: 'Cartão de débito', value: 'Cartão de débito' },
-    { label: 'Vale refeição (Alelo)', value: 'Vale Refeição' }
-  ];
 
   constructor(
     private orderService: OrderService,
