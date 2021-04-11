@@ -25,13 +25,11 @@ import { ShoppingCartService } from './shopping-cart.service';
   ]
 })
 export class ShoppingCartComponent implements OnInit {
-
   rowState = 'ready';
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   items(): any[] {
     return this.shoppingCartService.items;

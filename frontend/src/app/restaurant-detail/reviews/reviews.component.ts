@@ -40,28 +40,28 @@ export class ReviewsComponent implements OnInit {
         "date": "2017-01-23T18:25:43",
         "rating": 4.5,
         "comments": "Tudo muito bom, entrega no tempo certo",
-        "restaurantId": "bread-bakery"
+        "restaurantId": "jack-daniels"
       },
       {
         "name": "Aline",
         "date": "2016-12-12T18:25:43",
         "rating": 3,
         "comments": "NÃO recomendo. O recheio é só um creme, não tem camarão e nem carne",
-        "restaurantId": "bread-bakery"
+        "restaurantId": "jack-daniels"
       },
       {
         "name": "Jackson Neves",
         "date": "2016-12-12T18:25:43",
         "rating": 2,
         "comments": "Não foi muito agradável ao nosso paladar, e eu e meu esposo no outro dia passamos super mal. Pode até ter sido outra coisa, mas...",
-        "restaurantId": "bread-bakery"
+        "restaurantId": "jack-daniels"
       },
       {
         "name": "Renata",
         "date": "2016-12-12T18:25:43",
         "rating": 5,
         "comments": "Nunca deixou na mão, comida sempre deliciosa.",
-        "restaurantId": "bread-bakery"
+        "restaurantId": "jack-daniels"
       }
     ];
   }

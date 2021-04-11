@@ -48,9 +48,14 @@ a:hover {
     margin-right: 7px;
 }
 
+.infomation-items {
+    width: 100%;
+}
+
 .content-name {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .values-item {

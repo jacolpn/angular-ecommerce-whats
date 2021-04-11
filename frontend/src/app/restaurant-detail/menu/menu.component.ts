@@ -39,7 +39,7 @@ export class MenuComponent implements OnInit {
         "name": "Jack Daniels",
         "description": "Diferencia-se pelo seu cuidadoso processo de elaboração, destilação e envelhecimento.",
         "price": 136.99,
-        "restaurantId": "bread-bakery"
+        "restaurantId": "jack-daniels"
       },
       {
         "id": "jack-daniels-fire",
@@ -47,7 +47,7 @@ export class MenuComponent implements OnInit {
         "name": "Jack Daniels Fire",
         "description": " Jack Daniels Fire destaca-se pela mistura natural de licor de canela picante com o clássico whiskey Americano Jack Daniels.",
         "price": 149.90,
-        "restaurantId": "bread-bakery"
+        "restaurantId": "jack-daniels"
       },
       {
         "id": "jack-daniels-honey",
@@ -55,7 +55,7 @@ export class MenuComponent implements OnInit {
         "name": "Jack Daniels Honey",
         "description": "Suavidade do Jack Daniel levemente temperada com mel.",
         "price": 136.90,
-        "restaurantId": "bread-bakery"
+        "restaurantId": "jack-daniels"
       },
       {
         "id": "jack-daniels-apple",
@@ -63,7 +63,7 @@ export class MenuComponent implements OnInit {
         "name": "Jack Daniels Apple",
         "description": "A nova bebida é a mistura do clássico Jack Daniels Tennessee Whiskey com licor de maçã.",
         "price": 134.90,
-        "restaurantId": "bread-bakery"
+        "restaurantId": "jack-daniels"
       }
     ];
   }
