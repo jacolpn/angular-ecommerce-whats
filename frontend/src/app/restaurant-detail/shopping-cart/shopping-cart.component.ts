@@ -29,21 +29,21 @@ export class ShoppingCartComponent implements OnInit {
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   items(): any[] {
     return this.shoppingCartService.items;
   }
 
-  clear() {
+  clear(): void {
     this.shoppingCartService.clear();
   }
 
-  removeItem(item: any) {
+  removeItem(item: any): void {
     this.shoppingCartService.removeItem(item);
   }
 
-  addItem(item: any) {
+  addItem(item: any): void {
     this.shoppingCartService.addItem(item);
   }
 

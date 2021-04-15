@@ -4,7 +4,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RadioOption } from './radio-option.model';
 
 @Component({
-  selector: 'storybook-radio-button',
+  selector: 'app-storybook-radio-button',
   templateUrl: './radio-button.component.html',
   styleUrls: ['./radio-button.component.css'],
   providers: [
@@ -28,13 +28,13 @@ export class RadioButtonComponent implements OnInit, ControlValueAccessor {
 
   ngOnInit(): void { }
 
-  setValue(value: any, label: any, cents?: any) {
+  setValue(value: any, label: any, cents?: any): void {
     this.label = label;
     this.onChange(this.label);
-    
-    if (label == 'Dinheiro' && cents != undefined && cents != 'Nenhum') {
+
+    if (label === 'Dinheiro' && cents !== undefined && cents !== 'Nenhum') {
       this.value = `${value} (_troco para R$: ${this.cents},00_)`;
-      this.onChange(this.value);  
+      this.onChange(this.value);
     } else {
       this.value = value;
       this.onChange(this.value);

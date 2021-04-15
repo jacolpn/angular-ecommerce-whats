@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'storybook-rating',
+  selector: 'app-storybook-rating',
   templateUrl: './rating.component.html'
 })
 export class RatingComponent implements OnInit {
@@ -16,20 +16,20 @@ export class RatingComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  setRate(r: number) {
+  setRate(r: number): void {
     this.rate = r;
     this.previusRate = undefined;
     this.rated.emit(this.rate);
   }
 
-  setTemporaryRate(r: number) {
+  setTemporaryRate(r: number): void {
     if (this.previusRate === undefined) {
       this.previusRate = this.rate;
     }
     this.rate = r;
   }
 
-  clearTemporaryRate() {
+  clearTemporaryRate(): void {
     if (this.previusRate !== undefined) {
       this.rate = this.previusRate;
       this.previusRate = undefined;

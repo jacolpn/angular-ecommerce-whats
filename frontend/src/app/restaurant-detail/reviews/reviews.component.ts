@@ -16,15 +16,15 @@ export class ReviewsComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (DB) {
       this.getDB();
     } else {
-      this.reviews = this.dbJson
+      this.reviews = this.dbJson;
     }
   }
 
-  getDB() {
+  getDB(): void {
     this.http
       .get<Restaurant>(`${VILLE_API}/restaurants/jack-daniels/reviews`)
       .subscribe({

@@ -24,28 +24,26 @@ export class OrderService {
     return this.cartService.items;
   }
 
-  increaseQty(item: CartItem) {
+  increaseQty(item: CartItem): void {
     this.cartService.increaseQty(item);
   }
 
-  decreaseQty(item: CartItem) {
+  decreaseQty(item: CartItem): void {
     this.cartService.decreaseQty(item);
   }
 
-  removeItem(item: CartItem) {
+  removeItem(item: CartItem): void {
     this.cartService.removeItem(item);
   }
 
-  clear() {
+  clear(): void {
     this.cartService.clear();
   }
 
   // checkOrder(order: Order): Observable<Order> {
   checkOrder(order: Order): Observable<string> {
-    return this.http.post<Order>(
-      `${VILLE_API}/orders`,
-      order,
-    )
-      .pipe(map(order => order.id));
+    return this.http
+      .post<Order>(`${VILLE_API}/orders`, order)
+      .pipe(map(orders => orders.id));
   }
 }

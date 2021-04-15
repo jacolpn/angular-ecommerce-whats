@@ -1,7 +1,7 @@
 class Order {
   constructor(
     public address: string,
-    public number: number,
+    public num: number,
     public optionalAddress: string,
     public paymentOption: string,
     public orderItems: OrderItem[] = [],
@@ -22,4 +22,4 @@ class OrderItem {
 export {
   Order,
   OrderItem
-}
+};

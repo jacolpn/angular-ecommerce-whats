@@ -1,15 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'storybook-input',
+  selector: 'app-storybook-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-  @Input() placeHolder = 'Story-Input';
+  @Input() placeHolder: string;
   @Input() errorMessage: string;
-  @Input() type: string = 'text';
-  @Input() label: string = '';
+  @Input() type: string;
+  @Input() label: string;
   @Input() class: string;
   @Input() value: any;
 
@@ -17,9 +17,11 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  public mask = {
-    guide: false,
-    showMask: false,
-    mask: ['(', /\d/, /\d/, ')', ' ', /\d/, ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
-  };
+  /*
+    public mask = {
+      guide: false,
+      showMask: false,
+      mask: ['(', /\d/, /\d/, ')', ' ', /\d/, ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+    };
+  */
 }

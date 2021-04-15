@@ -9,13 +9,13 @@ export class ShoppingCartService {
   items: CartItem[] = [];
 
   constructor(private notificationService: NotificationService) {}
-  
-  clear() {
+
+  clear(): void {
     this.items = [];
   }
 
-  addItem(item: MenuItem) {
-    let foundItem = this.items.find(
+  addItem(item: MenuItem): void {
+    const foundItem = this.items.find(
       (mItem) => mItem.menuItem.id === item.id
     );
 
@@ -27,11 +27,11 @@ export class ShoppingCartService {
     this.notificationService.notify(`Você adicionou o item ${item.name}`);
   }
 
-  increaseQty(item: CartItem) {
+  increaseQty(item: CartItem): void {
     item.quantity = item.quantity + 1;
   }
 
-  decreaseQty(item: CartItem) {
+  decreaseQty(item: CartItem): void {
     item.quantity = item.quantity - 1;
 
     if (item.quantity === 0) {
@@ -39,7 +39,7 @@ export class ShoppingCartService {
     }
   }
 
-  removeItem(item: CartItem) {
+  removeItem(item: CartItem): void {
     this.items.splice(this.items.indexOf(item), 1);
     this.notificationService.notify(`Você removeu o item ${item.menuItem.name}`);
   }

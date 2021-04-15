@@ -9,17 +9,16 @@ export class PhoneMaskDirective {
   constructor(public ngControl: NgControl) { }
 
   @HostListener('ngModelChange', ['$event'])
-  onModelChange(event) {
+  onModelChange(event): void {
     this.onInputChange(event, false);
   }
 
   @HostListener('keydown.backspace', ['$event'])
-  keydownBackspace(event) {
+  keydownBackspace(event): void {
     this.onInputChange(event.target.value, true);
   }
-  
 
-  onInputChange(event, backspace) {
+  onInputChange(event, backspace): void {
     let newVal = event.replace(/\D/g, '');
     if (backspace && newVal.length <= 6) {
       newVal = newVal.substring(0, newVal.length - 1);

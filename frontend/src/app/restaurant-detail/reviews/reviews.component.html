@@ -2,7 +2,7 @@
   <div>
     <div class="content"
     *ngFor="let review of reviews">
-      <storybook-square-white classContent="content content-width-10">
+      <app-storybook-square-white classContent="content-width-10">
         <div class="box-header">
           <div class="box-info">
             <img  *ngIf="review.rating < 3"
@@ -34,7 +34,7 @@
         <div class="box-comment">
           <p>{{ review.comments }}</p>
         </div>
-      </storybook-square-white>
+      </app-storybook-square-white>
     </div>
   </div>
 </section>

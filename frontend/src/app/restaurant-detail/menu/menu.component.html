@@ -1,10 +1,10 @@
 <section class="wrapper-menu">
   <div class="content">
     <div class="content-card">
-      <storybook-card-item  *ngFor="let item of menu"
+      <app-card-item  *ngFor="let item of menu"
                             [menuItem]="item"
                             (add)="shoppingCart.addItem($event)">
-      </storybook-card-item>
+      </app-card-item>
     </div>
 
     <div class="content-cart">

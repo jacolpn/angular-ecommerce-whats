@@ -1406,7 +1406,7 @@
             ],
             "outputsClass": [
                 {
-                    "name": "onAbout",
+                    "name": "about",
                     "defaultValue": "new EventEmitter<Event>()",
                     "line": 11,
                     "type": "EventEmitter"
@@ -1436,7 +1436,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.css']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n  @Input() titleHeader = \"Whisky Ville\";\r\n  @Output() onAbout = new EventEmitter<Event>();\r\n  \r\n  constructor(private router: Router) { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  navigateAbout() {\r\n    this.router.navigate(['/about']);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  templateUrl: './header.component.html',\r\n  styleUrls: ['./header.component.css']\r\n})\r\nexport class HeaderComponent implements OnInit {\r\n  @Input() titleHeader = \"Whisky Ville\";\r\n  @Output() about = new EventEmitter<Event>();\r\n  \r\n  constructor(private router: Router) { }\r\n\r\n  ngOnInit(): void { }\r\n\r\n  navigateAbout() {\r\n    this.router.navigate(['/about']);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {

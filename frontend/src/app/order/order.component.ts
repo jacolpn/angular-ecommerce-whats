@@ -35,7 +35,7 @@ export class OrderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //Direcionar a pagina ao topo quando iniciada.
+    // Direcionar a pagina ao topo quando iniciada.
     window.scrollTo(0, 0);
 
     this.showLocalStorageValue();
@@ -62,13 +62,13 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  applyError(controlName) {
+  applyError(controlName): any {
     if (this.orderForm.get(controlName).valid && this.orderForm.get(controlName).dirty) {
-      return 'has-feedback'
+      return 'has-feedback';
     }
 
     if (this.orderForm.get(controlName).invalid && this.orderForm.get(controlName).dirty) {
-      return 'has-error'
+      return 'has-error';
     }
   }
 
@@ -80,15 +80,15 @@ export class OrderComponent implements OnInit {
     return this.orderService.cartItems();
   }
 
-  increaseQty(item: CartItem) {
+  increaseQty(item: CartItem): void {
     this.orderService.increaseQty(item);
   }
 
-  decreaseQty(item: CartItem) {
+  decreaseQty(item: CartItem): void {
     this.orderService.decreaseQty(item);
   }
 
-  removeItem(item: CartItem) {
+  removeItem(item: CartItem): void {
     this.orderService.removeItem(item);
   }
 
@@ -96,9 +96,9 @@ export class OrderComponent implements OnInit {
     return this.orderId !== undefined;
   }
 
-  checkOrder(order: Order) {
+  checkOrder(order: Order): void {
     let itens = [];
-    
+
     order.orderItems = this
       .cartItems()
       .map((item: CartItem) => new OrderItem(
@@ -106,7 +106,7 @@ export class OrderComponent implements OnInit {
         item.menuItem.id,
         item.menuItem.name
         ));
-        
+
     itens = order.orderItems.map(item => (` (${item.quantity}) ${item.name}`));
 
     if (DB) {
@@ -116,22 +116,22 @@ export class OrderComponent implements OnInit {
         .subscribe(() => this.orderService.clear());
     }
 
-    let phone = "5547988458640";
+    const phone = '5547988458640';
     let whats = `Olá Whisky Ville, gostaria de realizar o seguinte pedido:\n\n` +
                 `*Produtos:* ${itens}.\n` +
                 `*Pagamento:* ${order.paymentOption}.\n` +
-                `*Entregar no endereço:* ${order.address}, Nº ${order.number} - ${order.optionalAddress}.\n\n` +
-                `(Ass. ${order.name}, ${order.phone})`
+                `*Entregar no endereço:* ${order.address}, Nº ${order.num} - ${order.optionalAddress}.\n\n` +
+                `(Ass. ${order.name}, ${order.phone})`;
 
     whats = window.encodeURIComponent(whats);
-    window.open("https://api.whatsapp.com/send?phone=" + phone + "&text=" + whats, '_blank');
+    window.open('https://api.whatsapp.com/send?phone=' + phone + '&text=' + whats, '_blank');
   }
 
-  saveLocalStorage(key, value) {
+  saveLocalStorage(key, value): void {
     localStorage.setItem(key, value);
   }
 
-  showLocalStorageValue() {
+  showLocalStorageValue(): void {
     this.name = localStorage.getItem('name');
     this.phone = localStorage.getItem('phone');
     this.address = localStorage.getItem('address');
@@ -139,7 +139,7 @@ export class OrderComponent implements OnInit {
     this.optionalAddress = localStorage.getItem('optionalAddress');
   }
 
-  removeRegisterLocalStorage(key) {
+  removeRegisterLocalStorage(key): void {
     return localStorage.removeItem(key);
   }
 }

@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  navigateRestaurant() {
+  navigateRestaurant(): void {
     this.router.navigate(['/restaurant/jack-daniels']);
   }
 }

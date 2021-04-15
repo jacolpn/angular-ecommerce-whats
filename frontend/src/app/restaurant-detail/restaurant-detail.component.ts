@@ -13,10 +13,12 @@ import * as data from '../../../db.json';
 export class RestaurantDetailComponent implements OnInit {
   restaurant: Restaurant;
   dbJson = data.restaurants[0];
+  urlToJson = 'assets/restaurant.json';
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    // this.getJsonOffline();
     if (DB) {
       this.getDB();
     } else {
@@ -24,12 +26,21 @@ export class RestaurantDetailComponent implements OnInit {
     }
   }
 
-  getDB() {
+  getDB(): void {
     this.http
       .get<Restaurant>(`${VILLE_API}/restaurants/jack-daniels`)
       .subscribe({
         next: restaurant => this.restaurant = restaurant,
         error: error => this.restaurant = this.dbJson
+      });
+  }
+
+  getJsonOffline(): void {
+    this.http
+      .get<Restaurant>(this.urlToJson)
+      .subscribe({
+        next: menu => this.restaurant = menu,
+        error: () => this.restaurant = this.dbJson
       });
   }
 }

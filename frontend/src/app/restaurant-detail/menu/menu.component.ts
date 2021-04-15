@@ -16,15 +16,15 @@ export class MenuComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (DB) {
       this.getDB();
     } else {
-      this.menu = this.dbJson
+      this.menu = this.dbJson;
     }
   }
 
-  getDB() {
+  getDB(): void {
     this.http
       .get<Restaurant>(`${VILLE_API}/restaurants/jack-daniels/menu`)
       .subscribe({

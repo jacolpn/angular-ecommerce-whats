@@ -5,7 +5,7 @@ import { MenuItem } from '../menu-item.model';
 import { ShoppingCartService } from '../../shopping-cart/shopping-cart.service';
 
 @Component({
-  selector: 'storybook-card-item',
+  selector: 'app-card-item',
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.css'],
   animations: [
@@ -21,7 +21,7 @@ import { ShoppingCartService } from '../../shopping-cart/shopping-cart.service';
 export class CardItemComponent implements OnInit {
   @Input() menuItem: MenuItem;
   @Output() add = new EventEmitter();
-  
+
   menuItemState = 'ready';
   quantity: number;
 
@@ -31,55 +31,59 @@ export class CardItemComponent implements OnInit {
     this.findQuantity(this.menuItem);
    }
 
-  emitAddEvent() {
+  emitAddEvent(): void {
     this.add.emit(this.menuItem);
 
     this.shoppingCartService.items.find(item => {
-      if (item.menuItem.id == this.menuItem.id) {
+      if (item.menuItem.id === this.menuItem.id) {
         return this.quantity = item.quantity;
       }
-      
+
       return;
     });
   }
 
-  listIdCart() {
+  listIdCart(): any {
     return this.shoppingCartService.items.map(item => {
       return item.menuItem.id;
     });
   }
 
-  findIdCart() {
+  findIdCart(): any {
     return this.listIdCart().find(itemId => {
-      if (itemId == this.menuItem.id) {
-        return true
+      if (itemId === this.menuItem.id) {
+        return true;
       }
     });
   }
 
-  emitIncreaseQty(itemCart: MenuItem) {
-    this.shoppingCartService.increaseQty(this.shoppingCartService.items.find(item => {
-      if (item.menuItem.id == itemCart.id) {
-        return item.quantity;
-      }
-    }));
+  emitIncreaseQty(itemCart: MenuItem): void {
+    this.shoppingCartService.increaseQty(
+      this.shoppingCartService.items.find(item => {
+        if (item.menuItem.id === itemCart.id) {
+          return item.quantity;
+        }
+      })
+    );
 
     this.findQuantity(itemCart);
   }
 
-  emitDecreaseQty(itemCart: MenuItem) {
-    this.shoppingCartService.decreaseQty(this.shoppingCartService.items.find(item => {
-      if (item.menuItem.id == itemCart.id) {
-        return item.quantity;
-      }
-    }));
+  emitDecreaseQty(itemCart: MenuItem): void {
+    this.shoppingCartService.decreaseQty(
+      this.shoppingCartService.items.find(item => {
+        if (item.menuItem.id === itemCart.id) {
+          return item.quantity;
+        }
+      })
+    );
 
     this.findQuantity(itemCart);
   }
 
-  findQuantity(itemCart: MenuItem) {
+  findQuantity(itemCart: MenuItem): void {
     this.shoppingCartService.items.find(item => {
-      if (item.menuItem.id == itemCart.id) {
+      if (item.menuItem.id === itemCart.id) {
         return this.quantity = item.quantity;
       }
     });

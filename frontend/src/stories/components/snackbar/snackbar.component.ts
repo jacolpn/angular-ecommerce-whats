@@ -6,7 +6,7 @@ import { timer } from 'rxjs';
 import { NotificationService } from './notification.service';
 
 @Component({
-  selector: 'storybook-snackbar',
+  selector: 'app-storybook-snackbar',
   templateUrl: './snackbar.component.html',
   styleUrls: ['./snackbar.component.css'],
   animations: [
@@ -44,10 +44,10 @@ export class SnackbarComponent implements OnInit {
           this.message = message;
           this.snackVisibility = 'visible';
         }), switchMap(message => timer(2000))
-      ).subscribe(timer => this.snackVisibility = 'hidden');
+      ).subscribe(timing => this.snackVisibility = 'hidden');
   }
 
-  clicked() {
-    this.snackVisibility = 'hidden'
+  clicked(): void {
+    this.snackVisibility = 'hidden';
   }
 }

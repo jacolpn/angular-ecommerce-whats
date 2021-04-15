@@ -1,5 +1,5 @@
 <section>
-  <storybook-square-white classContent="content content-width-10">
+  <app-storybook-square-white classContent="content-width-10">
     <div class="wrapper">
       <div class="box-header">
         <i class="fa fa-shopping-cart"></i>
@@ -43,19 +43,19 @@
           </div>
       </div>
       <div class="box-footer" *ngIf="items().length">
-        <storybook-button fontBlack="true"
+        <app-storybook-button fontBlack="true"
                           icon="fa fa-trash"
                           size="small"
                           label="Limpar"
                           (click)="clear()">
-        </storybook-button>
-        <storybook-button primary="true"
+        </app-storybook-button>
+        <app-storybook-button primary="true"
                           icon="fa fa-credit-card"
                           size="small"
                           label="Fechar Pedido"
                           [routerLink]="['/order']">
-        </storybook-button>
+        </app-storybook-button>
       </div>
     </div>
-  </storybook-square-white>
+  </app-storybook-square-white>
 </section>

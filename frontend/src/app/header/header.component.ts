@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() titleHeader = "Whisky Ville";
-  @Output() onAbout = new EventEmitter<Event>();
-  
+  @Input() titleHeader = 'Whisky Ville';
+  @Output() about = new EventEmitter<Event>();
+
   constructor(private router: Router) { }
 
   ngOnInit(): void { }
 
-  navigateAbout() {
+  navigateAbout(): void {
     this.router.navigate(['/about']);
   }
 }
