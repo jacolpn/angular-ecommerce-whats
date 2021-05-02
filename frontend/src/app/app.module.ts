@@ -20,6 +20,7 @@ import { ComponentsModule } from 'src/stories/components/components.module';
 import { FooterComponent } from './footer/footer.component';
 import { CardItemComponent } from './restaurant-detail/menu/card-item/card-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingModule } from './loading/loading.module';
 
 registerLocaleData(locatePt, 'pt');
 
@@ -42,6 +43,7 @@ registerLocaleData(locatePt, 'pt');
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    LoadingModule,
     ComponentsModule.forRoot(),
     RouterModule.forRoot(
       ROUTES,

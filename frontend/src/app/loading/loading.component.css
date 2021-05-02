@@ -1,0 +1,28 @@
+.loading {
+    margin: 0;
+    background: linear-gradient(
+        270deg,
+        #6239c2,
+        #643dc0,
+        #6842C2,
+        #774DD6,
+        #8257E5,
+        #916BEA,
+        #9871F5
+    );
+    animation: progress 2s ease;
+    height: 0.2em;
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 98%;
+    }
+}
+
+.stopped {
+    display: none;
+}

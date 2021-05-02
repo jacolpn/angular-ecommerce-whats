@@ -19,6 +19,7 @@ export class RestaurantDetailComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getJsonOffline();
+
     if (DB) {
       this.getDB();
     } else {
