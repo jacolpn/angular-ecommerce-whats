@@ -47,7 +47,7 @@ export class OrderComponent implements OnInit {
       ),
       phone: this.formBuilder.control(
         '',
-        [Validators.required, Validators.pattern(this.numberPattern)]
+        [Validators.required]
       ),
       address: this.formBuilder.control(
         '',
@@ -141,5 +141,9 @@ export class OrderComponent implements OnInit {
 
   removeRegisterLocalStorage(key): void {
     return localStorage.removeItem(key);
+  }
+
+  updatePhone(evento) {
+    this.phone = evento;
   }
 }

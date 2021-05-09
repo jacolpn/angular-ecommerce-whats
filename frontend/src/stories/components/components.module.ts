@@ -12,7 +12,6 @@ import { ShoppingCartService } from 'src/app/restaurant-detail/shopping-cart/sho
 import { OrderService } from 'src/app/order/order.service';
 import { NotificationService } from './snackbar/notification.service';
 import { SnackbarComponent } from './snackbar/snackbar.component';
-import { PhoneMaskDirective } from './phone-mask.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { PhoneMaskDirective } from './phone-mask.directive';
     InputComponent,
     RadioButtonComponent,
     RatingComponent,
-    PhoneMaskDirective,
     SnackbarComponent
   ],
   imports: [
@@ -36,7 +34,6 @@ import { PhoneMaskDirective } from './phone-mask.directive';
     InputComponent,
     RadioButtonComponent,
     RatingComponent,
-    PhoneMaskDirective,
     SnackbarComponent
   ]
 })
