@@ -7,7 +7,7 @@ import { ComponentsModule } from '../../stories/components/components.module';
 import { DeliveryCostsComponent } from './delivery-costs/delivery-costs.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { OrderComponent } from './order.component';
-import { NumberMaskModule } from '../shared/directives/number-mask/number-mask.module';
+import { DirectivesModule } from '../shared/directives/directives.module';
 
 const ROUTES: Routes = [
   { path: '', component: OrderComponent }
@@ -24,7 +24,7 @@ const ROUTES: Routes = [
     ReactiveFormsModule,
     CommonModule,
     ComponentsModule,
-    NumberMaskModule,
+    DirectivesModule,
     RouterModule.forChild(ROUTES)
   ]
 })

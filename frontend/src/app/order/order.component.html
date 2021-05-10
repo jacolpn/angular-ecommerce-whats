@@ -2,10 +2,10 @@
   <app-storybook-square-white>
     <!-- {{ orderForm.valid }}
     {{ orderForm.value | json }} -->
-    <form novalidate
-          [formGroup]="orderForm">
+    <form novalidate [formGroup]="orderForm">
       <div class="box-header">
           <i class="fa fa-shopping-cart fa-lg"></i>
+
           <p>Finalize o seu pedido</p>
       </div>
 
@@ -14,33 +14,36 @@
 
         <div class="box-input-user">
           <div class="box-input-name">
-            <app-storybook-input  ngDefaultControl
-                              [(ngModel)]="name"
-                              (focusout)="saveLocalStorage('name', name)"
-                              [value]="name"
-                              formControlName="name"
-                              autocomplete="off"
-                              label="Nome: *"
-                              placeHolder="(ex. Jackson Neves)"
-                              [class]="applyError('name')"
-                              errorMessage="Seu nome deve conter no mínimo 5 caracteres!">
+            <app-storybook-input
+              ngDefaultControl
+              [(ngModel)]="name"
+              (focusout)="saveLocalStorage('name', name)"
+              [value]="name"
+              formControlName="name"
+              label="Nome: *"
+              placeHolder="(ex. Jackson Neves)"
+              [class]="applyError('name')"
+              errorMessage="Seu nome deve conter no mínimo 5 caracteres!"
+            >
             </app-storybook-input>
           </div>
 
+          <!-- numberMask="(99) 9 9999-9999" -->
           <div class="box-input-phone">
-            <app-storybook-input  ngDefaultControl
-                              formControlName="phone"
-                              [value]="phone"
-                              [(ngModel)]="phone"
-                              numberMask="(99) 9 9999-9999"
-                              (updateNumberMask)="updatePhone($event)"
-                              (focusout)="saveLocalStorage('phone', phone)"
-                              type="text"
-                              label="Telefone: *"
-                              autocomplete="off"
-                              placeHolder="(ex. 47 9 9934-2827)"
-                              [class]="applyError('phone')"
-                              errorMessage="Campo obrigatório">
+            <app-storybook-input
+              ngDefaultControl
+              appPhoneMask
+              formControlName="phone"
+              [value]="phone"
+              [(ngModel)]="phone"
+              (updateNumberMask)="updatePhone($event)"
+              (focusout)="saveLocalStorage('phone', phone)"
+              type="text"
+              label="Telefone: *"
+              placeHolder="(ex. 47 9 9934-2827)"
+              [class]="applyError('phone')"
+              errorMessage="Campo obrigatório"
+            >
             </app-storybook-input>
           </div>
         </div>
@@ -51,44 +54,47 @@
 
         <div class="wrapper-address">
           <div class="box-input-address">
-            <app-storybook-input  ngDefaultControl
-                              formControlName="address"
-                              [value]="address"
-                              [(ngModel)]="address"
-                              (focusout)="saveLocalStorage('address', address)"
-                              label="Endereço: *"
-                              autocomplete="off"
-                              placeHolder="(ex: Rua chuville)"
-                              [class]="applyError('address')"
-                              errorMessage="Campo obrigatório!">
+            <app-storybook-input
+              ngDefaultControl
+              formControlName="address"
+              [value]="address"
+              [(ngModel)]="address"
+              (focusout)="saveLocalStorage('address', address)"
+              label="Endereço: *"
+              placeHolder="(ex: Rua chuville)"
+              [class]="applyError('address')"
+              errorMessage="Campo obrigatório!"
+            >
             </app-storybook-input>
           </div>
 
           <div class="box-input-number">
-            <app-storybook-input  ngDefaultControl
-                              formControlName="number"
-                              [value]="number"
-                              [(ngModel)]="number"
-                              (focusout)="saveLocalStorage('number', number)"
-                              type="number"
-                              label="Número: *"
-                              autocomplete="off"
-                              placeHolder="(ex: 100)"
-                              [class]="applyError('number')"
-                              errorMessage="Campo obrigatório!">
+            <app-storybook-input
+              ngDefaultControl
+              formControlName="number"
+              [value]="number"
+              [(ngModel)]="number"
+              (focusout)="saveLocalStorage('number', number)"
+              type="number"
+              label="Número: *"
+              placeHolder="(ex: 100)"
+              [class]="applyError('number')"
+              errorMessage="Campo obrigatório!"
+            >
             </app-storybook-input>
           </div>
 
           <div class="box-input-optional">
-            <app-storybook-input  ngDefaultControl
-                              formControlName="optionalAddress"
-                              [value]="optionalAddress"
-                              [(ngModel)]="optionalAddress"
-                              (focusout)="saveLocalStorage('optionalAddress', optionalAddress)"
-                              [class]="applyError('optionalAddress')"
-                              label="Complemento:"
-                              autocomplete="off"
-                              placeHolder="(ex: Apto 101, BL 1)">
+            <app-storybook-input
+              ngDefaultControl
+              formControlName="optionalAddress"
+              [value]="optionalAddress"
+              [(ngModel)]="optionalAddress"
+              (focusout)="saveLocalStorage('optionalAddress', optionalAddress)"
+              [class]="applyError('optionalAddress')"
+              label="Complemento:"
+              placeHolder="(ex: Apto 101, BL 1)"
+            >
             </app-storybook-input>
           </div>
         </div>
@@ -98,10 +104,12 @@
         <div class="content-itens">
           <p>Itens do Pedido:</p>
           
-          <app-order-items  [items]="cartItems()"
-                            (increaseQty)="increaseQty($event)"
-                            (decreaseQty)="decreaseQty($event)"
-                            (remove)="removeItem($event)">
+          <app-order-items
+            [items]="cartItems()"
+            (increaseQty)="increaseQty($event)"
+            (decreaseQty)="decreaseQty($event)"
+            (remove)="removeItem($event)"
+          >
           </app-order-items>
         </div>
       </div>
@@ -109,33 +117,44 @@
       <div class="box-payment">
         <div class="content-payment">
           <p>Formas de Pagamento:</p>
-          <app-storybook-radio-button [options]="dbJson"
-                                  formControlName="paymentOption">
+
+          <app-storybook-radio-button
+            [options]="dbJson"
+            formControlName="paymentOption"
+          >
           </app-storybook-radio-button>
         </div>
 
         <div class="content-delivery">
           <p>Frete e Total:</p>
-          <app-delivery-costs [delivery]="delivery"
-                              [itemsValue]="itemsValue()">
+
+          <app-delivery-costs
+            [delivery]="delivery"
+            [itemsValue]="itemsValue()"
+          >
           </app-delivery-costs>
         </div>
       </div>
     </form>
 
     <div class="box-footer">
-      <app-storybook-button fontBlack="true"
-                        label="Escolher mais produtos"
-                        class="button-back"
-                        icon="fa fa-caret-square-left"
-                        [routerLink]="['/restaurant/jack-daniels']">
+      <app-storybook-button
+        fontBlack="true"
+        label="Escolher mais produtos"
+        class="button-back"
+        icon="fa fa-caret-square-left"
+        [routerLink]="['/restaurant/jack-daniels']"
+      >
       </app-storybook-button>
-      <app-storybook-button primary="true"
-                        icon="fa fa-credit-card"
-                        label="Concluir Pedido"
-                        (click)="checkOrder(orderForm.value)"
-                        [disabled]="!orderForm.valid || cartItems().length === 0"
-                        [routerLink]="['/order-summary']">
+
+      <app-storybook-button
+        primary="true"
+        icon="fa fa-credit-card"
+        label="Concluir Pedido"
+        (click)="checkOrder(orderForm.value)"
+        [disabled]="!orderForm.valid || cartItems().length === 0"
+        [routerLink]="['/order-summary']"
+      >
       </app-storybook-button>
     </div>
   </app-storybook-square-white>

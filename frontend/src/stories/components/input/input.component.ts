@@ -17,11 +17,4 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  /*
-    public mask = {
-      guide: false,
-      showMask: false,
-      mask: ['(', /\d/, /\d/, ')', ' ', /\d/, ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
-    };
-  */
 }

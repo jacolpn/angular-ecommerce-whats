@@ -1,7 +1,6 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TextMaskModule } from 'angular2-text-mask';
 
 import { ButtonComponent } from './button/button.component';
 import { SquareWhiteComponent } from './square-white/square-white.component';
@@ -25,8 +24,7 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-    TextMaskModule
+    ReactiveFormsModule
   ],
   exports: [
     ButtonComponent,
